@@ -1,0 +1,25 @@
+body{
+  background-color: #588da8;
+}
+hr{
+  color: #e58a8a;
+  width: 75%;
+}
+h1{
+  color: #ccafaf;
+  text-align: center;
+}
+h2{
+  color: #ccafaf;
+  text-align: center;
+}
+h3{
+  color: #ccafaf;
+  text-align: center;
+}
+img{
+  background-color: #00909e;
+}
+img:hover{
+  background-color: black;
+}
