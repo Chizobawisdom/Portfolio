@@ -1,132 +1,108 @@
-/* ===== Base Styles ===== */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+/* ===== Global Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* ===== Base Styles ===== */
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  color: #333;
+  background-color: #f8f9fa;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Header Section ===== */
 header {
-    background-color: #1f2937;
-    color: white;
-    text-align: center;
-    padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
 header img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 4px solid #3b82f6;
-    margin-bottom: 1rem;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #ccc;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 header p {
-    margin: 0.3rem 0;
-    font-size: 1rem;
+  font-style: italic;
+  color: #555;
 }
 
+/* ===== Section Styling ===== */
 section {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 1rem 2rem;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 25px;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 section h2 {
-    color: #1f2937;
-    border-bottom: 2px solid #3b82f6;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 4px;
 }
 
-article {
-    margin-bottom: 1.5rem;
+/* ===== Work Experience Table ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
 }
 
-article h3 {
-    margin-bottom: 0.3rem;
-    color: #3b82f6;
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
 }
 
-article p {
-    font-style: italic;
-    color: #555;
+th {
+  background-color: #f1f1f1;
+  font-weight: bold;
 }
 
+tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* ===== Lists ===== */
 ul {
-    padding-left: 1.5rem;
+  list-style-type: none;
+  padding-left: 0;
 }
 
+ul li {
+  padding: 4px 0;
+}
+
+/* ===== Footer / Contact ===== */
 footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #1f2937;
-    color: white;
-    margin-top: 2rem;
-}
-
-/* ===== Responsive Design ===== */
-@media (max-width: 768px) {
-    header img {
-        width: 120px;
-        height: 120px;
-    }
-
-    header h1 {
-        font-size: 1.6rem;
-    }
-
-    section {
-        margin: 1rem;
-        padding: 1rem;
-    }
-
-    section h2 {
-        font-size: 1.4rem;
-    }
-
-    article h3 {
-        font-size: 1.1rem;
-    }
-
-    ul {
-        padding-left: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    header img {
-        width: 100px;
-        height: 100px;
-    }
-
-    header p {
-        font-size: 0.9rem;
-    }
-
-    section {
-        padding: 0.8rem;
-    }
-
-    section h2 {
-        font-size: 1.2rem;
-    }
-
-    article h3 {
-        font-size: 1rem;
-    }
-
-    footer {
-        font-size: 0.85rem;
-    }
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
 }
