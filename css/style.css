@@ -1,25 +1,115 @@
-body{
-  background-color: #588da8;
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li, table, th, td {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-hr{
-  color: #e58a8a;
-  width: 75%;
+
+/* Body and general fonts */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+  padding: 20px;
 }
-h1{
-  color: #ccafaf;
-  text-align: center;
+
+/* Table for profile header */
+table {
+  width: 100%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
 }
-h2{
-  color: #ccafaf;
-  text-align: center;
+
+table td {
+  vertical-align: top;
+  padding: 10px;
 }
-h3{
-  color: #ccafaf;
-  text-align: center;
+
+/* Profile picture */
+img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 2px solid #007acc;
 }
-img{
-  background-color: #00909e;
+
+/* Headings */
+h1 {
+  font-size: 2em;
+  color: #007acc;
+  margin-bottom: 5px;
 }
-img:hover{
-  background-color: black;
+
+h2, h3 {
+  color: #005a99;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 3px;
+}
+
+/* Paragraphs */
+p {
+  margin-bottom: 10px;
+}
+
+/* Lists */
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+ul li ul {
+  list-style-type: circle;
+  margin-left: 20px;
+}
+
+/* Table inside work experience */
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  text-align: left;
+  font-size: 0.9em;
+}
+
+/* Links */
+a {
+  color: #007acc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Section separators */
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 25px 0;
+}
+
+/* Highlight job titles */
+strong {
+  color: #005a99;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  table {
+    display: block;
+  }
+
+  table td {
+    display: block;
+    width: 100%;
+  }
+
+  img {
+    margin-bottom: 10px;
+  }
 }
