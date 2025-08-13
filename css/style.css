@@ -92,7 +92,7 @@ ul li:last-child {
 .contact-form input,
 .contact-form textarea,
 .contact-form button {
-  width: 100%;
+  width: 97%;
   padding: 0.7rem;
   margin-top: 0.6rem;
   border: 1px solid #ccc;
@@ -109,6 +109,7 @@ ul li:last-child {
   color: #fff;
   border: none;
   cursor: pointer;
+  width: 100%;
 }
 
 .contact-form button:hover {
