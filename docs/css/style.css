@@ -1,11 +1,14 @@
+:root {
+  color-scheme: light dark;
+}
 /* ---------- Global Styles ---------- */
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background-color: #f8f9fa;
-  color: #333;
+  background-color: light-dark(#efedea, #223a2c);
+  color: light-dark(#333b3c, #efefec);
 }
 
 h1, h2, h3 {
