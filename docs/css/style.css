@@ -8,6 +8,13 @@ body {
   color: #333b3c;
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #223a2c; /* Dark mode */
+    color: #efefec;            /* Dark mode */
+  }
+}
+
 h1, h2, h3 {
   margin-bottom: 0.5rem;
 }
@@ -179,9 +186,3 @@ ul li:last-child {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #223a2c; /* Dark mode */
-    color: #efefec;            /* Dark mode */
-  }
-}
