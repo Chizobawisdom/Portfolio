@@ -1,14 +1,11 @@
-:root {
-  color-scheme: light dark;
-}
 /* ---------- Global Styles ---------- */
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background-color: light-dark(#efedea, #223a2c);
-  color: light-dark(#333b3c, #efefec);
+  background-color: #efedea;
+  color: #333b3c;
 }
 
 h1, h2, h3 {
@@ -179,5 +176,12 @@ ul li:last-child {
   .contact-form textarea,
   .contact-form button {
     font-size: 0.9rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #223a2c; /* Dark mode */
+    color: #efefec;            /* Dark mode */
   }
 }
