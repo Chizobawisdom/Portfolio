@@ -181,9 +181,6 @@ ul li:last-child {
 
 .course-details {
   margin-top: 0.3em;
-  margin-left: 10em;
+  margin-left: 50em;
   font-size: 0.95em;
-}
-.course-details .label {
-  font-weight: 600;
 }
