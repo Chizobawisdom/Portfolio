@@ -1,3 +1,3 @@
-# Project: Predictive Maintenance
+# Project: Prediction / Classification 
 
-Developed an ML model to predict equipment failure based on sensor data.
+ML models to predict outputs based on digital input
