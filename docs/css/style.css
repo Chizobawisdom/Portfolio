@@ -234,3 +234,56 @@ ul li:last-child {
     font-size: 1.1rem;
   }
 }
+
+/* ---------- Dark Mode (Automatic) ---------- */
+@media (prefers-color-scheme: dark) {
+
+  body {
+    background-color: #1a1a1a;
+    color: #eee;
+  }
+
+  section {
+    background-color: #242424;
+    color: #eee;
+    box-shadow: 0 2px 4px rgba(255,255,255,0.05);
+  }
+
+  .profile-header {
+    background: #242424;
+    border-bottom: 3px solid #66aaff;
+  }
+
+  .project {
+    background: #2a2a2a;
+    box-shadow: 0 2px 6px rgba(255,255,255,0.1);
+  }
+
+  .project h3 {
+    color: #8cc1ff;
+  }
+
+  .tags {
+    color: #bbb;
+  }
+
+  .contact-form fieldset {
+    border: 1px solid #444;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    background: #333;
+    color: #eee;
+    border: 1px solid #555;
+  }
+
+  .contact-form button {
+    background: #0078d4;
+    color: white;
+  }
+
+  a {
+    color: #66aaff;
+  }
+}
