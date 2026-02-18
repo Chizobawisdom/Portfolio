@@ -230,18 +230,27 @@
       <li>LinkedIn: <a href="https://www.linkedin.com/in/wisdomfavourchizoba">Profil ansehen</a></li>
     </ul>
 
-    <form action="mailto:wchizoba@gmail.com" method="post" enctype="text/plain" class="contact-form">
+    
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
       <fieldset>
         <legend>Wie kann ich Ihnen helfen?</legend>
-        <input type="text" name="yourName" placeholder="Your Name" required>
-        <input type="email" name="yourEmail" placeholder="Email Address" required>
-        <div>
-          <label><input type="radio" name="gender" value="male"> Männlich</label>
-          <label><input type="radio" name="gender" value="female"> Weiblich</label>
-          <label><input type="radio" name="gender" value="Non-Binary"> Nicht Binäre</label>
+    
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Ihr Name">
+    
+        <label for="email">E-Mail-Adresse</label>
+        <input type="email" id="email" name="email" required placeholder="Ihre E-Mail-Adresse">
+    
+        <div class="gender-options">
+          <label><input type="radio" name="gender" value="Male"> Männlich</label>
+          <label><input type="radio" name="gender" value="Female"> Weiblich</label>
+          <label><input type="radio" name="gender" value="Non-Binary"> Nicht-binär</label>
         </div>
-        <textarea name="yourMessage" placeholder="Type text here..." rows="5"></textarea>
-        <button type="submit">Submit</button>
+    
+        <label for="message">Nachricht</label>
+        <textarea id="message" name="message" rows="5" placeholder="Ihre Nachricht..."></textarea>
+    
+        <button type="submit">Absenden</button>
       </fieldset>
     </form>
   </section>
