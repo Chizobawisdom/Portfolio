@@ -184,3 +184,53 @@ ul li:last-child {
   margin-left: 15em;
   font-size: 0.95em;
 }
+/* ---------- Fully Responsive Additions ---------- */
+/* Make images fluid */
+.profile-img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive section spacing */
+@media (max-width: 500px) {
+  section {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+}
+
+/* Responsive project grid */
+.projects-container {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Fully responsive form inputs */
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Fix course details margin */
+.course-details {
+  margin-left: 0;
+}
+
+@media (min-width: 800px) {
+  .course-details {
+    margin-left: 2rem;
+  }
+}
+
+/* Better mobile typography */
+@media (max-width: 450px) {
+  body {
+    font-size: 0.9rem;
+  }
+  h1, h2, h3 {
+    font-size: 1.1rem;
+  }
+}
