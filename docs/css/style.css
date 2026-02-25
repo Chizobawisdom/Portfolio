@@ -250,3 +250,86 @@ ul li:last-child {
     font-size: 1.1rem;
   }
 }
+
+/* ---------- System Dark Mode ---------- */
+@media (prefers-color-scheme: dark) {
+
+  body {
+    background-color: #1a1a1a;
+    color: #e6e6e6;
+  }
+
+  a {
+    color: #4fa8ff;
+  }
+
+  .language-switch {
+    background: #005a9e;
+    color: white;
+  }
+
+  .language-switch a {
+    color: white;
+  }
+
+  .profile-header {
+    background: #262626;
+    border-bottom: 3px solid #4fa8ff;
+  }
+
+  section {
+    background: #262626;
+    color: #e6e6e6;
+    box-shadow: 0 2px 4px rgba(255,255,255,0.05);
+  }
+
+  section h2 {
+    border-bottom: 2px solid #4fa8ff;
+    color: #ffffff;
+  }
+
+  .project {
+    background: #2d2d2d;
+    box-shadow: 0 2px 6px rgba(255,255,255,0.08);
+  }
+
+  .project h3 {
+    color: #7bc4ff;
+  }
+
+  .tags {
+    color: #bbbbbb;
+  }
+
+  ul li {
+    border-bottom: 1px solid #444;
+  }
+
+  .experience h3 {
+    color: #7bc4ff;
+  }
+
+  .contact-form fieldset {
+    border: 1px solid #555;
+  }
+
+  .contact-form legend {
+    color: #4fa8ff;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    background: #333;
+    border: 1px solid #555;
+    color: #e6e6e6;
+  }
+
+  .contact-form button {
+    background: #4fa8ff;
+    color: #1a1a1a;
+  }
+
+  .contact-form button:hover {
+    background: #1f7acb;
+  }
+}
