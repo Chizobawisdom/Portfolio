@@ -8,13 +8,20 @@ body {
   color: #333;
 }
 
-
 .language-switch {
   position: fixed;
   top: 15px;
   right: 15px;
-  z-index: 999;
-  font-weight: bold;
+  background: #0078d4;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  z-index: 1000;
+}
+.language-switch a {
+  color: white;
+  text-decoration: none;
 }
 
 
