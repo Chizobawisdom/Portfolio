@@ -22,8 +22,8 @@ Feature engineering & selection
 - SelectFromModel (Random Forest importance)
 
 ML pipeline & hyperparameter tuning
-- Gaussian Naive Bayes + PCA + PowerTransformer
-- GridSearchCV optimisation
+- Light GBM (previously Naive Bayes) + hyperparameter tuning
+- RandomisedSearchCV optimisation
 - RandomForest alternative model for comparison
 
 Industrial signal characteristics
@@ -35,17 +35,15 @@ This is a project on predictive maintenance, manufacturing analytics, and indust
 ---
 
 Key Learnings
-- Naive Bayes struggles on:
+- Naive Bayes struggled on:
   - continuous data that deviates from Gaussian assumptions
   - Highly correlated input features
   - Complex nonlinear boundaries
 - FFT industrial signals produce strong multicollinearity, requiring PCA or feature removal
-- SMOTE + bootstrapping helps significantly
-- Random Forests generally outperform NB in industrial fault detection due to:
-  - Nonlinearity
-  - Complex signal interactions
+- bootstrapping helps reduce class imbalance
+
 
 ---
 
 Improvement
- - Switch to random forest or gradient boosting models since the dataset is nonlinear.
+ - Switched to lightgbm since the dataset is nonlinear.
