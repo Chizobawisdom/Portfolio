@@ -1,4 +1,5 @@
 Wisdom Favour Chizoba
+
 Industrial Engineer | Applied AI | Digital Manufacturing | Industry 4.0
 
 Welcome to my engineering portfolio. I specialise in Digital Manufacturing, Industrial AI, Simulation, Quality Engineering, and Machine Vision.
