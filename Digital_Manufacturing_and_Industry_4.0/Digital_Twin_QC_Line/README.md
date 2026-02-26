@@ -2,6 +2,8 @@
 
 Created a digital twin of a 3-station production process using simulation tools for quality control.
 
+Cutting >>> Assembly >>> Inspection
+
 ---
 
 The Simulation Algorithm utilised here is as follows:
