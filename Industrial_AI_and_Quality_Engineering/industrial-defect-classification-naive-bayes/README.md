@@ -35,12 +35,17 @@ This is a project on predictive maintenance, manufacturing analytics, and indust
 ---
 
 Key Learnings
--Naive Bayes struggles on:
-  -Continuous data that deviates from Gaussian assumptions
-  -Highly correlated input features
-  -Complex nonlinear boundaries
--FFT industrial signals produce strong multicollinearity, requiring PCA or feature removal
--SMOTE + bootstrapping helps significantly
--Random Forests generally outperform NB in industrial fault detection due to:
-  -Nonlinearity
-  -Complex signal interactions
+- Naive Bayes struggles on:
+  - continuous data that deviates from Gaussian assumptions
+  - Highly correlated input features
+  - Complex nonlinear boundaries
+- FFT industrial signals produce strong multicollinearity, requiring PCA or feature removal
+- SMOTE + bootstrapping helps significantly
+- Random Forests generally outperform NB in industrial fault detection due to:
+  - Nonlinearity
+  - Complex signal interactions
+
+---
+
+Improvement
+ - Switch to random forest or gradient boosting models since the dataset is nonlinear.
