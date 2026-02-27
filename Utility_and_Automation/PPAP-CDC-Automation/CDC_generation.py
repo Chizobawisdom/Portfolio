@@ -11,10 +11,25 @@ from reportlab.lib import colors
 from reportlab.lib.units import mm
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.platypus import (
-    SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak
+    SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
 )
 
 from PyPDF2 import PdfReader, PdfWriter
+
+# -------------------------------
+# Optional: tiny helper to fetch files from RAW URLs (not blob pages)
+# Comment this out if you only use local files.
+# -------------------------------
+def download_if_url(path_or_url: str, out_name: str) -> str:
+    if path_or_url.lower().startswith("http"):
+        # Requires requests; if not available, save locally manually instead.
+        import requests
+        r = requests.get(path_or_url, timeout=30)
+        r.raise_for_status()
+        with open(out_name, "wb") as f:
+            f.write(r.content)
+        return out_name
+    return path_or_url
 
 # I/O: Read CSV/Excel
 def load_data(input_path: str) -> pd.DataFrame:
@@ -64,7 +79,6 @@ def capability_metrics(values: np.ndarray, lsl: float, usl: float):
     return cp, cpk, pp, ppk, n, mean, s_within, np.min(vals), np.max(vals)
 
 # Build tables from WIDE format
-# Expect: columns like Diameter, Diameter_LSL, Diameter_USL
 def build_tables_from_wide(df: pd.DataFrame):
     cols = df.columns.tolist()
     numeric_cols = df.select_dtypes(include=[np.number]).columns.tolist()
@@ -121,7 +135,6 @@ def build_tables_from_wide(df: pd.DataFrame):
     return (cap_header, cap_rows), (insp_header, insp_rows)
 
 # Build tables from LONG format
-# Expect columns: Characteristic, Value, LSL, USL
 def build_tables_from_long(df: pd.DataFrame):
     rename_map = {}
     for col in df.columns:
@@ -188,7 +201,6 @@ def extract_header_info(df: pd.DataFrame):
     }
 
 # Build flowables (title, meta, capability & inspection tables)
-# These will be laid out inside the BODY area (margins respected).
 def build_flowables(header_info, cap_table, insp_table, report_title="PPAP / CDC – Capability & Inspection"):
     styles = getSampleStyleSheet()
     styles.add(ParagraphStyle(name="Small", fontSize=8, leading=10))
@@ -198,7 +210,7 @@ def build_flowables(header_info, cap_table, insp_table, report_title="PPAP / CDC
     content = []
     content.append(Paragraph(report_title, styles["Header"]))
 
-    # Meta block (kept compact so it fits in body area top)
+    # Meta block
     meta_data = [
         ["Customer", header_info.get("Customer",""), "Supplier", header_info.get("Supplier","")],
         ["Part Number", header_info.get("PartNumber",""), "Part Name", header_info.get("PartName","")],
@@ -219,7 +231,7 @@ def build_flowables(header_info, cap_table, insp_table, report_title="PPAP / CDC
     cap_header, cap_rows = cap_table
     content.append(Paragraph("Capability Study", styles["SubHeader"]))
     cap_data = [cap_header] + cap_rows
-    cap_tbl = Table(cap_data, repeatRows=1)  # widths auto-fit to body width by DocTemplate
+    cap_tbl = Table(cap_data, repeatRows=1)
     cap_tbl.setStyle(TableStyle([
         ("BOX", (0,0), (-1,-1), 0.75, colors.black),
         ("INNERGRID", (0,0), (-1,-1), 0.25, colors.grey),
@@ -256,19 +268,14 @@ def build_flowables(header_info, cap_table, insp_table, report_title="PPAP / CDC
     return content
 
 # Render overlay PDF (transparent pages) sized to match the template.
-# Margins ensure we do not write over header/footer.
 def render_overlay(flowables, page_size, body_margins, out_buffer=None):
-    """
-    body_margins: dict with left, right, top, bottom margins in points.
-                  These margins define the BODY area (between header/footer).
-    """
     if out_buffer is None:
         out_buffer = io.BytesIO()
 
     left = body_margins.get("left", 15*mm)
     right = body_margins.get("right", 15*mm)
-    top = body_margins.get("top", 35*mm)       # Increase top to avoid header area
-    bottom = body_margins.get("bottom", 20*mm) # Increase bottom to avoid footer area
+    top = body_margins.get("top", 35*mm)       # below header
+    bottom = body_margins.get("bottom", 20*mm) # above footer
 
     doc = SimpleDocTemplate(
         out_buffer,
@@ -282,8 +289,7 @@ def render_overlay(flowables, page_size, body_margins, out_buffer=None):
     out_buffer.seek(0)
     return out_buffer
 
-# Merge overlay pages onto template pages.
-# Reuse the last template page if overlays exceed template length.
+# Merge overlay with template
 def merge_overlay_with_template(template_pdf_path, overlay_pdf_buffer, output_pdf_path, reuse_last_template_page=True):
     template_reader = PdfReader(template_pdf_path)
     overlay_reader  = PdfReader(overlay_pdf_buffer)
@@ -299,26 +305,16 @@ def merge_overlay_with_template(template_pdf_path, overlay_pdf_buffer, output_pd
         if i < T:
             base_page = tmpl_pages[i]
         else:
-            if reuse_last_template_page:
-                base_page = tmpl_pages[-1]
-            else:
-                # If not reusing last page, just append an overlay page alone (rare)
-                base_page = None
+            base_page = tmpl_pages[-1] if reuse_last_template_page else None
 
-        if i < M:
-            overlay_page = over_pages[i]
-        else:
-            overlay_page = None
+        overlay_page = over_pages[i] if i < M else None
 
         if base_page is not None and overlay_page is not None:
-            # Merge overlay on base (header/footer preserved beneath)
             base_page.merge_page(overlay_page)
             writer.add_page(base_page)
         elif base_page is not None and overlay_page is None:
-            # No overlay content for this page -> add template page as is
             writer.add_page(base_page)
         elif base_page is None and overlay_page is not None:
-            # No base template page -> add overlay page alone
             writer.add_page(overlay_page)
 
     with open(output_pdf_path, "wb") as f:
@@ -339,7 +335,7 @@ def generate_ppap_overlay_pdf(input_path, template_pdf, output_pdf,
     else:
         cap_table, insp_table = build_tables_from_wide(df)
 
-    # Read template size (first page). Fallback to A4 if missing.
+    # Read template size (first page). Fallback to A4
     try:
         treader = PdfReader(template_pdf)
         mbox = treader.pages[0].mediabox
@@ -347,34 +343,35 @@ def generate_ppap_overlay_pdf(input_path, template_pdf, output_pdf,
     except Exception:
         page_size = A4
 
-    # Build the PPAP/CDC flowables for the BODY area
     flowables = build_flowables(header_info, cap_table, insp_table, report_title=report_title)
 
-    # Margins to protect header/footer area on the template
     if body_margins_pts is None:
-        body_margins_pts = {
-            "left": 15*mm,
-            "right": 15*mm,
-            "top": 40*mm,     # adjust upward to clear your header
-            "bottom": 25*mm,  # adjust downward to clear your footer
-        }
+        body_margins_pts = {"left": 15*mm, "right": 15*mm, "top": 40*mm, "bottom": 25*mm}
 
-    # Render overlay PDF (may create multiple pages if content overflows)
     overlay_buf = render_overlay(flowables, page_size, body_margins_pts)
-
-    # Merge overlay pages onto template pages
     merged_path = merge_overlay_with_template(template_pdf, overlay_buf, output_pdf)
     return merged_path
 
-# Example usage:
+# -------------------------------
+# Example usage
+# -------------------------------
 if __name__ == "__main__":
-     input_data = "Chizobawisdom/Portfolio/Utility_and_Automation/PPAP-CDC-Automation/src/cdc_sample_wide.xlsx"  # or .csv
-     template   = "ppap_static_template.pdf"
-     output     = "ppap_filled_overlay.pdf"
-     print("Generating PPAP/CDC overlay...")
-     result_path = generate_ppap_overlay_pdf(
-         input_data, template, output,
-         report_title="PPAP / CDC – Capability & Inspection Report",
-         body_margins_pts={"left": 15*mm, "right": 15*mm, "top": 42*mm, "bottom": 28*mm}
-     )
-     print(f"Saved: {result_path}")
+    # OR: Download from RAW URL first (NOT from /blob/)
+    # (Uncomment this block if you need it)
+    raw_xlsx = "https://raw.githubusercontent.com/Chizobawisdom/Portfolio/main/Utility_and_Automation/PPAP-CDC-Automation/src/cdc_sample_wide.xlsx"
+    raw_pdf  = "https://raw.githubusercontent.com/Chizobawisdom/Portfolio/main/Utility_and_Automation/PPAP-CDC-Automation/src/cdc_template.pdf"
+    input_data = download_if_url(raw_xlsx, "cdc_sample_wide.xlsx")
+    template   = download_if_url(raw_pdf, "cdc_template.pdf")
+
+    # For now, assume local files exist:
+    input_data = "cdc_sample_wide.xlsx"
+    template   = "cdc_template.pdf"
+    output     = os.path.join(os.getcwd(), "ppap_filled_overlay.pdf")
+
+    print("Generating PPAP/CDC overlay...")
+    result_path = generate_ppap_overlay_pdf(
+        input_data, template, output,
+        report_title="PPAP / CDC – Capability & Inspection Report",
+        body_margins_pts={"left": 15*mm, "right": 15*mm, "top": 42*mm, "bottom": 28*mm}
+    )
+    print(f"Saved: {result_path}")
