@@ -1,1 +1,0 @@
-# collects all the stations of the QC line and their respective functions
