@@ -16,10 +16,7 @@ from reportlab.platypus import (
 
 from PyPDF2 import PdfReader, PdfWriter
 
-# -------------------------------
-# Optional: tiny helper to fetch files from RAW URLs (not blob pages)
 # Comment this out if you only use local files.
-# -------------------------------
 def download_if_url(path_or_url: str, out_name: str) -> str:
     if path_or_url.lower().startswith("http"):
         # Requires requests; if not available, save locally manually instead.
@@ -352,20 +349,16 @@ def generate_ppap_overlay_pdf(input_path, template_pdf, output_pdf,
     merged_path = merge_overlay_with_template(template_pdf, overlay_buf, output_pdf)
     return merged_path
 
-# -------------------------------
 # Example usage
-# -------------------------------
 if __name__ == "__main__":
-    # OR: Download from RAW URL first (NOT from /blob/)
-    # (Uncomment this block if you need it)
     raw_xlsx = "https://raw.githubusercontent.com/Chizobawisdom/Portfolio/main/Utility_and_Automation/PPAP-CDC-Automation/src/cdc_sample_wide.xlsx"
     raw_pdf  = "https://raw.githubusercontent.com/Chizobawisdom/Portfolio/main/Utility_and_Automation/PPAP-CDC-Automation/src/cdc_template.pdf"
     input_data = download_if_url(raw_xlsx, "cdc_sample_wide.xlsx")
     template   = download_if_url(raw_pdf, "cdc_template.pdf")
 
     # For now, assume local files exist:
-    input_data = "cdc_sample_wide.xlsx"
-    template   = "cdc_template.pdf"
+    # input_data = "cdc_sample_wide.xlsx"
+    # template   = "cdc_template.pdf"
     output     = os.path.join(os.getcwd(), "ppap_filled_overlay.pdf")
 
     print("Generating PPAP/CDC overlay...")
