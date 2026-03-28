@@ -1,12 +1,12 @@
-# 🚗 Vehicle Classification Project
+# Vehicle Classification Project
 A deep learning-based vehicle classification system that identifies different types of vehicles from images.
 
-## 📋 Table of Contents
+## Table of Contents
 - [Overview](#overview)
 - [Requirements](#requirements)
 - [Model Architecture](#model-architecture)
 
-## 🔍 Overview
+## Overview
 This project implements a vehicle classification model using deep learning to identify various vehicle types (car, truck, motorcycle, bus, etc.) from images. The model is built using TensorFlow/Keras and can be used for real-time vehicle detection and classification.
 
 ### Key Features
@@ -16,7 +16,7 @@ This project implements a vehicle classification model using deep learning to id
 - 📈 Training and evaluation metrics
 - 🔄 Data augmentation for better generalization
 
-### 📊 Dataset
+### Dataset
 The dataset is split into training, validation, and test subsets
 
 ### Dataset Requirements
@@ -24,7 +24,7 @@ The dataset is split into training, validation, and test subsets
 - Each class should have a minimum of 100-200 images for good performance
 - Images can be of varying sizes (will be resized during preprocessing)
 
-## 💻 Requirements
+## Requirements
 
 ### System Requirements
 - Python 3.8 or higher
