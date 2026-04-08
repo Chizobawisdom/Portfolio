@@ -1,7 +1,15 @@
-AnyLogic Case Study Dataset (Synthetic, 1 Year) — Resequencing Warehouse between Body Shop and Paint Shop
+# AnyLogic Case Study Dataset (Synthetic, 1 Year) — Resequencing Warehouse between Body Shop and Paint Shop
 Period: 2024-01-01 to 2024-12-30  (timezone reference: Europe/Berlin)
 Total vehicles: 181,606
 
+---
+Applications:
+ - Warehouse Capacity Optimization Between Body & Paint Shops
+ - Downtime Cost Minimization in High‑Value Manufacturing
+ - Digital Twin of Inter‑Shop Logistics
+ - Training & Decision‑Making Tool for Manufacturing Planners
+
+---
 COST PARAMETERS (as given in task)
 - Parking space cost: €15,000 per space (capex)
 - Body shop unplanned downtime cost (due to warehouse full): €400,000 per hour
@@ -40,6 +48,7 @@ FILES
    Columns:
    - shop, downtime_start, downtime_end, duration_min, reason
 
+---
 INTENDED SIMULATION USE
 - Use body_exit_time as arrivals into a warehouse buffer with capacity X.
 - Implement a resequencing policy that releases bodies to paint aiming to restore planned_global_sequence.
