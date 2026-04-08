@@ -2,6 +2,14 @@
 Description:
 This circuit implements a multi-stage signal conditioning system combining differential amplification and active filtering. The design features:
 
+---
+Applications
+ - Sensor Signal conditioning in Industrial Systems
+ - Noise Rejection & Signal Integrity Improvement
+ - Analog Front-End for Data Acquisition Systems
+
+---
+
 Input Stage: Differential amplifier using dual op-amps (U1, U2) with matched 10K/150K feedback networks for high common-mode rejection
 
 Intermediate Stage: Universal op-amp (U5) configured for signal processing
@@ -12,6 +20,6 @@ Power Supply: ±14V dual rail configuration
 
 Test Signal: 50mV pulse input with 50Ω source impedance
 
-Applications: Sensor signal conditioning, biomedical instrumentation, audio processing
+---
 
 Simulation: Transient analysis over 10ms
