@@ -11,6 +11,13 @@ Using the 'Seoul Bike Sharing Demand' dataset from the UCI Machine Learning Repo
 
 ---
 
+Applications
+ - Bike Fleet Planning 
+ - Operational Resource Optimization
+ - Smart Urban Planning
+
+---
+
 Technologies & Libraries
 - 'Python'  
 - 'Pandas', 'NumPy'  
