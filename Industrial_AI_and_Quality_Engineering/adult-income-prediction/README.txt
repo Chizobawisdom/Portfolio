@@ -2,6 +2,13 @@
 This project builds a full machine learning pipeline for predicting whether an individual earns  
 “> 50K” or “≤ 50K” annually, using the widely studied 'Adult Income Prediction Dataset' (UCI / Kaggle).
 
+---
+Applications: 
+ - Income Bracket classification
+ - Policy Impact & Workforce Analytics
+ - Risk & Eligibility Screening
+
+---
 The workflow includes:
 - Exploratory data analysis (EDA)
 - Categorical & numerical distribution plots

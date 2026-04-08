@@ -5,6 +5,13 @@ Created a digital twin of a 3-station production process using simulation tools 
 Cutting >>> Assembly >>> Inspection
 
 ---
+Applications
+ - Digital Twin-Based Production System Design
+ - Quality Control & Yield Optimization
+ - OEE Driven Performance Analytics
+ - Bottleneck Identification & Throuput Improvement
+
+---
 
 The Simulation Algorithm utilised here is as follows:
  - A raw part arrives and queues waiting availability at the cutting station (beginning of process)
