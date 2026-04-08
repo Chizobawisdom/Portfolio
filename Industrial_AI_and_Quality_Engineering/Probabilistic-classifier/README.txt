@@ -10,7 +10,12 @@ The goal is to understand how Bayes’ Theorem is applied in classification task
 This is part of my broader exploration into 'probability models', 'machine learning fundamentals', and 'statistical decision-making'.
 
 ---
+Applications
+ - Baseline Model for Classification Problems
+ - Low compute Classification Scenarios
 
+
+---
 Project Overview
 
 Using a classic example dataset (“Play Tennis”), the project predicts whether tennis should be played given four categorical weather conditions:

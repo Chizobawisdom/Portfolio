@@ -4,6 +4,12 @@ This project is a complete mini‑pipeline for 'industrial defect classification
 The goal is to simulate a realistic workflow from 'raw manufacturing data' → 'balancing' → 'feature reduction' → 'model tuning' → 'classification evaluation', similar to what would occur in industrial predictive maintenance or sensor‑based QA systems.
 
 ---
+Applications
+ - Predictive maintenancein manufacturing
+ - Condition monitoring of industrial Assets
+ - General Industrial Signal Classification
+ 
+---
 Key Concepts Demonstrated
 
 This project shows real industrial ML workflow skills:
