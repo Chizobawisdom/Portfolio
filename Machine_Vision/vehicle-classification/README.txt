@@ -1,6 +1,16 @@
 # Vehicle Classification Project
 A deep learning-based vehicle classification system that identifies different types of vehicles from images.
 
+---
+
+Applications:
+ - Intelligent Traffic Monitoring Systems
+ - Parking Management & Access Control
+ - Logistics & Fleet Management
+ - Foundation for Advanced Traffic Vision Systems
+
+---
+
 ## Table of Contents
 - [Overview](#overview)
 - [Requirements](#requirements)
