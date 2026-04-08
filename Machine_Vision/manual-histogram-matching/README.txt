@@ -1,4 +1,4 @@
-
+# Manual Histogram Matching technique
 This project demonstrates manual histogram specification (histogram matching) for image enhancement.  
 Instead of using high-level library functions, I implement the core math:
 

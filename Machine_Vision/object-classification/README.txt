@@ -1,9 +1,17 @@
-
+# Image classification
 This project demonstrates a full machine vision classification pipeline for distinguishing between:
 - Shoes
 - Sandals
 - Boots
 
+---
+
+Applications
+ - Automated Product Classification in Retail & E‑Commerce
+ - Warehouse Sorting & Logistics Automation
+ - Edge‑Ready Computer Vision Applications
+
+---
 The model is trained using 'EfficientNetV2B0', a state‑of‑the‑art lightweight convolutional neural network pre-trained on ImageNet.
 The dataset contains 15,000 images, which are split into training (70%), validation (15%), and test (15%) using the `split-folders` library.
 

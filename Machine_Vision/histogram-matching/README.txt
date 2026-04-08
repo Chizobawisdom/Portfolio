@@ -1,7 +1,8 @@
-
+# Histogram matching technique
 This project demonstrates the use of histogram specification (also called histogram matching) to enhance the contrast of a dark image by matching its intensity distribution to that of a high‑contrast reference image.
 
-This is a common image-processing technique used in:
+---
+Applications
 - image enhancement  
 - medical imaging  
 - computer vision preprocessing  
