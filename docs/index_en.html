@@ -122,9 +122,19 @@
 
   <section>
     <h2>Available Project Areas</h2>    
-    <p>Representative project areas demonstrating applied AI, data analytics, and digital manufacturing skills in industrial contexts.</p>
+    <p>Representative project areas demonstrating applied AI, data analytics, and digital manufacturing skills in industrial contexts.
+      Select a category below to explore specific industrial engineering use cases, algorithms, and simulations.</p>
+    
+    <div class="category-carousel">
+      <button class="category-tab active" onclick="switchCategory('all')">All Categories</button>
+      <button class="category-tab" onclick="switchCategory('automation')">Automation & Tooling</button>
+      <button class="category-tab" onclick="switchCategory('vision')">Computer Vision</button>
+      <button class="category-tab" onclick="switchCategory('ml')">Industrial ML & Analytics</button>
+      <button class="category-tab" onclick="switchCategory('simulation')">Digital Twins & Sim</button>
+    </div>
+    
     <div class="projects-container">
-    <div class="project">
+    <div class="project" data-category="automation">
       <h3>Automation & Engineering Productivity Tools</h3>
       <p>• Development of Python-based helper scripts for calculating the roots of arbitrary polynomials or transcendental equations.
         <br>• Automation of complex PDF workflows (merging, sorting, formatting) for structured technical documentation in a regulated environment.
@@ -134,7 +144,7 @@
       <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation" target="_blank">View on Github</a>
     </div>
 
-    <div class="project">
+    <div class="project" data-category="vision">
       <h3>Computer Vision & Image-Based Quality Inspection</h3>
       <p>• Application of classical image processing techniques to enhance signal quality in noisy or low-contrast images.
         <br> • Feature extraction and similarity analysis for comparing images and detecting deviations or patterns.
@@ -144,7 +154,7 @@
       <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision" target="_blank">View on Github</a>
     </div>
 
-    <div class="project">
+    <div class="project" data-category="ml">
       <h3>Industrial Machine Learning, Predictive Modeling & Quality Analytics</h3>
       <p>• End-to-end machine learning pipelines for identifying error patterns and anomalies in multivariate sensor data from production processes.
         <br>• Classification models for predicting quality states or process conditions based on industrial production data.
@@ -155,7 +165,7 @@
       <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering" target="_blank">View on Github</a>
     </div>
 
-    <div class="project">
+    <div class="project" data-category="simulation">
       <h3>System Modeling, Simulation & Digital Twins for Manufacturing</h3>
       <p>• Discrete-event digital twin of a multi-station production line, enabling analysis of throughput, bottlenecks, and system dynamics.
         <br>• Simulation-based dimensioning studies for high-bay warehouse systems to support logistics and capacity planning decisions using AnyLogic.
@@ -164,15 +174,7 @@
       <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0" target="_blank">View on Github</a>
     </div>
     </div></section>
-<!--
-    <div class="project">
-      <h3>Masters Thesis</h3>
-      <p>• In Progress</p>
-      <p class="tags">NA • NA • NA • NA • NA • NA</p>
-      <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Thesis" target="_blank">View on Github</a>
-    </div>
-  </section>
--->
+
   <section>
     <h2>Education</h2>
     <ul>
