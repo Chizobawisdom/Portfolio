@@ -5,6 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Me - Wisdom Favour Chizoba</title>
   <link rel="stylesheet" href="css/style.css">
+  <script>
+    function switchCategory(category) {
+      const tabs = document.querySelectorAll('.category-tab');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      event.target.classList.add('active');
+    
+      const projects = document.querySelectorAll('.project');
+      projects.forEach(project => {
+        if (category === 'all' || project.getAttribute('data-category') === category) {
+          project.style.display = 'block';
+        } else {
+          project.style.display = 'none';
+        }
+      });
+    }
+  </script>
 </head>
 <body>
  
@@ -134,8 +150,82 @@
     </div>
     
     <div class="projects-container">
+      
     <div class="project" data-category="automation">
-      <h3>Automation & Engineering Productivity Tools</h3>
+      <h3>Algorithmic Roots & Polynomial Solvers</h3>
+      <div class="project-meta-grid">
+        <div class="project-details">
+          <p><strong>Objective:</strong> Automate mathematical root determination for complex high-order arbitrary polynomial equations ($n \geq 2$) without relying on heavy commercial mathematical frameworks or black-box engineering tools.</p>
+          <p><strong>Process:</strong> Implemented a purely algorithmic solution based on the iterative Newton-Raphson method ($x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$). Programmed explicit Horner's method logic to efficiently evaluate polynomials, built an automated array-mapping derivative module (`dpoly`), and protected convergence using a time-bounded loop tracking unique root sets to a precision tolerance of $1e-6$.</p>
+          <p><strong>Outcome:</strong> Created a fast, standalone numerical script that validates inputs, calculates all unique real roots, and leverages `matplotlib` to graph the behaviour of the targeted physical process function curve.</p>
+          <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation" target="_blank">View Repository</a>
+        </div>
+        <div class="project-visuals">
+          <span class="visual-label">Newton Iteration Core</span>
+            <pre><code>def solver(xi, coeff):
+                maxError = 1e-6
+                error = math.inf
+                while (error > maxError):
+                    df = poly(xi, dpoly(coeff))
+                    if (df != 0):
+                        xn = xi - poly(xi, coeff)/df
+                    else:
+                        xn = xi - poly(xi, coeff)/random.uniform(-1e-12, 1e-12)
+                    error = abs(xn - xi)
+                    xi = xn
+                return format(xn, '.4f')
+          </code></pre>
+        </div>
+      </div>
+
+    <div class="project" data-category="automation">
+    <h3>Automated Quality Document Assembly</h3>
+    <div class="project-meta-grid">
+      <div class="project-details">
+        <p><strong>Objective:</strong> Eliminate the manual overhead and human compilation errors associated with combining fragmented quality audit reports, supplier certifications, and Root-Cause-Analysis (RCA) records generated via automated Power Automate cloud tasks.</p>
+        <p><strong>Process:</strong> Programmed an automated file system pipeline in Python that scans directory buffers using dynamic MIME-type filtering (`mimetypes`). The engine sequences target files chronologically based on file creation timestamps (`getctime`) and merges the dynamic streams using memory-optimized operations via `PyPDF2.PdfMerger` into uniform, production-ready compliance dossiers.</p>
+        <p><strong>Outcome:</strong> Automated a multi-step document compilation pipeline within an aerospace manufacturing workflow, reducing manual handling time to zero and ensuring complete chronological traceability for final audit review packages.</p>
+        <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation" target="_blank">View Repository</a>
+      </div>
+      <div class="project-visuals">
+        <span class="visual-label">Chronological Document Pipeline</span>
+        <pre><code># Dynamic MIME & Time-Sorted Processing
+        pdf_files = [f for f in os.listdir(pdf_folder)
+                     if mimetypes.guess_type(os.path.join(pdf_folder, f))[0] == 'application/pdf']
+        pdf_files.sort(key=lambda x: os.path.getctime(os.path.join(pdf_folder, x)))
+        
+        merger = PdfMerger()
+        for pdf in pdf_files:
+            merger.append(os.path.join(pdf_folder, pdf))
+        merger.write(merged_pdf_path)</code></pre>
+        </div>
+      </div>
+    </div>    
+
+    <div class="project" data-category="automation">
+    <h3>Algorithmic Signal Synthesis & Sequencing Engine</h3>
+    <div class="project-meta-grid">
+      <div class="project-details">
+        <p><strong>Objective:</strong> Parse tokenized data arrays and synthesize raw discrete-time waveforms into structured audio sequences dynamically without external heavy multimedia dependencies.</p>
+        <p><strong>Process:</strong> Programmed a lightweight digital signal synthesis pipeline in Python. Built a dictionary mapper for standard frequency sets ($f$) and configured math operations using `NumPy` to generate discrete sine waves ($\sin(2\pi ft)$). Implemented sequential array concatenation (`np.concatenate`), mathematical scaling for 16-bit signed integer depth ranges ($2^{15} - 1$), and precision pacing by injecting specific inter-tone space intervals.</p>
+        <p><strong>Outcome:</strong> A functional standalone audio rendering utility that streams binary array buffers directly to hardware via `simpleaudio`, demonstrating deep competence in low-level digital signal manipulation and chronological dataset array logic.</p>
+        <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation" target="_blank">View Repository</a>
+      </div>
+      <div class="project-visuals">
+        <span class="visual-label">Waveform Synthesis Block</span>
+        <pre><code># Discrete Time Sine Wave Vector
+        tv = np.linspace(0, td, int(td * fs), False)
+        tone = np.sin(2 * np.pi * f1 * tv)
+        
+        # Space Inversion & Int16 Normalization
+        space_tone = np.linspace(0, 0, int(sd * fs), False)
+        dtone_space = np.concatenate((tone, space_tone))
+        dtone_seq = dtone_space * (2**15 - 1) / np.max(np.abs(dtone_space))
+        return dtone_seq.astype(np.int16)</code></pre>
+        </div>
+      </div>
+    </div>
+      
       <p>• Development of Python-based helper scripts for calculating the roots of arbitrary polynomials or transcendental equations.
         <br>• Automation of complex PDF workflows (merging, sorting, formatting) for structured technical documentation in a regulated environment.
         <br>• Algorithmic generation of structured outputs (e.g. converting symbolic or sequential data into formatted files such as sheet music.
