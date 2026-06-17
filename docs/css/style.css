@@ -219,6 +219,35 @@ ul li:last-child {
   }
 }
 
+.button {
+  display: inline-block;
+  margin-top: auto; /* Pushes the button to the bottom of the grid card */
+  padding: 0.5rem 1rem;
+  background-color: #0078d4;
+  color: #fff !important; /* Forces link text to remain white */
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: #005a9e;
+  text-decoration: none;
+}
+
+/* Ensure the dark mode config handles the text inversion neatly */
+@media (prefers-color-scheme: dark) {
+  .button {
+    background-color: #4fa8ff;
+    color: #1a1a1a !important;
+  }
+  .button:hover {
+    background-color: #1f7acb;
+  }
+}
+
 .course-details {
   margin-top: 0.3em;
   font-size: 0.95em;
@@ -365,3 +394,4 @@ ul li:last-child {
     background: #1f7acb;
   }
 }
+
