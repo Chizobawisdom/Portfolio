@@ -179,12 +179,13 @@ ul li:last-child { border-bottom: none; }
 .carousel-wrapper {
   position: relative;
   overflow: hidden;
+  transition: height 0.3s ease-in-out;
 }
 
 .carousel-track {
   display: flex;
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  align-items: stretch;
+  align-items: flex-start;
 }
 
 /* Each slide fills exactly the wrapper width */
@@ -197,7 +198,7 @@ ul li:last-child { border-bottom: none; }
 /* Slide card styling – inherits from .project but overrides margin */
 .carousel-slide .project {
   margin-bottom: 0;
-  height: 100%;
+  height: auto;
 }
 
 /* Prev / Next arrow buttons */
