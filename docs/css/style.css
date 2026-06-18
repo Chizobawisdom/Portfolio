@@ -1,128 +1,11 @@
-/* ---------- Project Card Structural Refinements ---------- */
-.project {
-  background: white;
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 2rem !important; /* Forces breathing room between items */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  display: block;
-}
+/* ============================================================
+   PORTFOLIO – style.css
+   Global + Carousel + Dark Mode + Responsive
+   ============================================================ */
 
-/* Two-column internal asset grid for wide screens */
-.project-meta-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  margin-top: 1rem;
-}
+/* ---------- Reset / Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
 
-@media (min-width: 850px) {
-  .project-meta-grid {
-    grid-template-columns: 1.2fr 0.8fr;
-  }
-}
-
-.project-details p {
-  margin: 0 0 0.8rem 0;
-  font-size: 0.95rem;
-}
-
-/* ---------- Visual Blocks Container Styling ---------- */
-.project-visuals {
-  background: #f4f6f9;
-  border: 1px dashed #0078d4;
-  border-radius: 8px;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.visual-label {
-  display: block;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  color: #0078d4;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.5px;
-}
-
-/* Code Snippet Styles */
-.project-visuals pre {
-  margin: 0;
-  background: #1e1e1e;
-  color: #d4d4d4;
-  padding: 0.8rem;
-  border-radius: 6px;
-  overflow-x: auto;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 0.85rem;
-  line-height: 1.3;
-}
-
-/* Diagram Placeholders & Equations */
-.mock-diagram {
-  background: #e9ecef;
-  border: 1px solid #ced4da;
-  border-radius: 6px;
-  padding: 1.5rem;
-  text-align: center;
-  position: relative;
-  min-height: 80px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.box-overlay {
-  position: absolute;
-  border: 2px solid #ff4d4d;
-  background: rgba(255, 77, 77, 0.1);
-  color: #ff4d4d;
-  font-size: 0.7rem;
-  font-weight: bold;
-  padding: 2px;
-}
-
-.placeholder-text {
-  font-size: 0.8rem;
-  color: #6c757d;
-  font-style: italic;
-}
-
-.sample-equation {
-  font-size: 1.1rem;
-  text-align: center;
-  color: #333;
-  margin: 0.5rem 0;
-}
-
-/* ---------- System Dark Mode Synchronization ---------- */
-@media (prefers-color-scheme: dark) {
-  .project {
-    background: #2d2d2d;
-  }
-  .project-visuals {
-    background: #1a1a1a;
-    border: 1px dashed #4fa8ff;
-  }
-  .visual-label {
-    color: #4fa8ff;
-  }
-  .mock-diagram {
-    background: #262626;
-    border: 1px solid #444;
-  }
-  .sample-equation {
-    color: #fff;
-  }
-  .placeholder-text {
-    color: #aaa;
-  }
-}
-/* ---------- Global Styles ---------- */
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
@@ -132,6 +15,12 @@ body {
   color: #333;
 }
 
+h1, h2, h3 { margin-bottom: 0.5rem; }
+
+a { color: #0078d4; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---------- Language Toggle ---------- */
 .language-switch {
   position: fixed;
   top: 15px;
@@ -143,23 +32,7 @@ body {
   font-weight: 600;
   z-index: 1000;
 }
-.language-switch a {
-  color: white;
-  text-decoration: none;
-}
-
-
-h1, h2, h3 {
-  margin-bottom: 0.5rem;
-}
-
-a {
-  color: #0078d4;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
+.language-switch a { color: white; text-decoration: none; }
 
 /* ---------- Header ---------- */
 .profile-header {
@@ -173,6 +46,7 @@ a:hover {
 
 .profile-img {
   width: 180px;
+  max-width: 100%;
   height: auto;
   border-radius: 8px;
   margin-right: 1.5rem;
@@ -200,326 +74,333 @@ section h2 {
   margin-bottom: 1rem;
 }
 
+/* ---------- Experience Cards ---------- */
+.project2 {
+  background: white;
+  border-radius: 12px;
+  padding: 0.6rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+.project2:hover { transform: translateY(-3px); }
+.project2 h3 { margin: 0 0 0.4rem 0; color: #005b96; }
+.project2 h4 { margin: 0 0 0.4rem 0; }
+.project2 p  { margin-bottom: 0.3rem; }
+
+/* ---------- Skills Cards ---------- */
 .project {
   background: white;
   border-radius: 12px;
   padding: 1.5rem;
-  margin-bottom: 0; /* Let the container grid gap handle structural spacing */
+  margin-bottom: 1.5rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   transition: transform 0.2s ease;
-  
-  /* Flexbox logic ensures buttons align uniformly along card bases */
   display: flex;
   flex-direction: column;
 }
-.project:hover {
-      transform: translateY(-3px);
-    }
-.project h3 {
-      margin-top: 0;
-      color: #005b96;
-    }
-.project p {
-      margin-bottom: 0.5rem;
-    }
+.project:hover { transform: translateY(-3px); }
+.project h3  { margin-top: 0; color: #005b96; }
+.project p   { margin-bottom: 0.5rem; }
 
-.project2 {
-      background: white;
-      border-radius: 12px;
-      padding: 0.6rem 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      transition: transform 0.2s ease;
-    }
-.project2:hover {
-      transform: translateY(-3px);
-    }
-.project2 h3 {
-      margin: 0 0 0.4rem 0;
-      color: #005b96;
-    }
-.project2 h4 {
-      margin: 0 0 0.4rem 0;
-    }
-.project2 p {
-      margin-bottom: 0.3rem;
-    }
+/* ---------- Tags ---------- */
+.tags { font-size: 0.9em; color: #666; }
 
-.tags {
-      font-size: 0.9em;
-      color: #666;
-    }
+/* ---------- Lists ---------- */
+ul { list-style: none; padding: 0; }
+ul li { padding: 0.4rem 0; border-bottom: 1px solid #eee; }
+ul li:last-child { border-bottom: none; }
 
-ul {
-  list-style: none;
-  padding: 0;
-}
+.experience ul { margin-left: 1rem; list-style: disc; }
+.experience h3 { color: #005a9e; margin-top: 1.2rem; }
 
-ul li {
-  padding: 0.4rem 0;
-  border-bottom: 1px solid #eee;
-}
-
-ul li:last-child {
-  border-bottom: none;
-}
-
-/* ---------- Contact Form ---------- */
-.contact-form {
-  margin-top: 1rem;
-}
-
-.contact-form fieldset {
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  padding: 1rem;
-}
-
-.contact-form legend {
-  font-weight: bold;
-  color: #0078d4;
-}
-
-.contact-form input,
-.contact-form textarea,
-.contact-form button {
-  width: 97%;
-  padding: 0.7rem;
-  margin-top: 0.6rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-.contact-form input[type="radio"] {
-  width: auto;
-  margin-right: 0.4rem;
-}
-
-.contact-form button {
-  background: #0078d4;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-.contact-form button:hover {
-  background: #005a9e;
-}
-
-/* ---------- Experience Lists ---------- */
-.experience h3 {
-  color: #005a9e;
-  margin-top: 1.2rem;
-}
-
-.experience ul {
-  margin-left: 1rem;
-  list-style: disc;
-}
-
-/* ---------- Responsive Design ---------- */
-@media (max-width: 768px) {
-  .profile-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .profile-img {
-    margin: 0 0 1rem 0;
-  }
-
-  .profile-info {
-    text-align: center;
-  }
-}
-
-@media (max-width: 500px) {
-  body {
-    font-size: 0.95rem;
-  }
-
-  .contact-form input,
-  .contact-form textarea,
-  .contact-form button {
-    font-size: 0.9rem;
-  }
-}
-
+/* ---------- Button ---------- */
 .button {
   display: inline-block;
-  margin-top: auto; /* Pushes the button to the bottom of the grid card */
+  margin-top: auto;
   padding: 0.5rem 1rem;
   background-color: #0078d4;
-  color: #fff !important; /* Forces link text to remain white */
+  color: #fff !important;
   border-radius: 6px;
   font-weight: 600;
   font-size: 0.9rem;
   text-align: center;
   transition: background-color 0.2s ease;
+  align-self: flex-start;
 }
+.button:hover { background-color: #005a9e; text-decoration: none; }
 
-.button:hover {
-  background-color: #005a9e;
-  text-decoration: none;
-}
+/* ---------- Course Details ---------- */
+.course-details { margin-top: 0.3em; font-size: 0.95em; }
+@media (min-width: 800px) { .course-details { margin-left: 2rem; } }
 
-/* Ensure the dark mode config handles the text inversion neatly */
-@media (prefers-color-scheme: dark) {
-  .button {
-    background-color: #4fa8ff;
-    color: #1a1a1a !important;
-  }
-  .button:hover {
-    background-color: #1f7acb;
-  }
-}
-
-.course-details {
-  margin-top: 0.3em;
-  font-size: 0.95em;
-}
-/* ---------- Fully Responsive Additions ---------- */
-/* Make images fluid */
-.profile-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Responsive section spacing */
-@media (max-width: 500px) {
-  section {
-    margin: 0.5rem;
-    padding: 1rem;
-  }
-}
-
-/* Responsive project grid */
-.projects-container {
-  display: grid;
-  gap: 1.2rem;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-/* Fully responsive form inputs */
+/* ---------- Contact Form ---------- */
+.contact-form { margin-top: 1rem; }
+.contact-form fieldset { border: 1px solid #ccc; border-radius: 6px; padding: 1rem; }
+.contact-form legend  { font-weight: bold; color: #0078d4; }
 .contact-form input,
 .contact-form textarea,
-.contact-form button {
-  width: 100%;
+.contact-form button  { width: 100%; padding: 0.7rem; margin-top: 0.6rem; border: 1px solid #ccc; border-radius: 6px; }
+.contact-form input[type="radio"] { width: auto; margin-right: 0.4rem; }
+.contact-form button  { background: #0078d4; color: #fff; border: none; cursor: pointer; }
+.contact-form button:hover { background: #005a9e; }
+
+/* ============================================================
+   CAROUSEL – per-category sliding carousel
+   ============================================================ */
+
+/* Category tabs row */
+.category-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.category-tab {
+  padding: 0.4rem 1rem;
+  border: 2px solid #0078d4;
+  border-radius: 20px;
+  background: transparent;
+  color: #0078d4;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.category-tab:hover  { background: #e6f2fb; }
+.category-tab.active { background: #0078d4; color: #fff; }
+
+/* One carousel block per category */
+.carousel-block { display: none; }
+.carousel-block.active { display: block; }
+
+/* Sliding track wrapper */
+.carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  align-items: stretch;
+}
+
+/* Each slide fills exactly the wrapper width */
+.carousel-slide {
+  min-width: 100%;
   box-sizing: border-box;
+  padding: 0 0.25rem; /* tiny side padding so box-shadow shows */
 }
 
-/* Fix course details margin */
-.course-details {
-  margin-left: 0;
+/* Slide card styling – inherits from .project but overrides margin */
+.carousel-slide .project {
+  margin-bottom: 0;
+  height: 100%;
 }
 
-@media (min-width: 800px) {
-  .course-details {
-    margin-left: 2rem;
-  }
+/* Prev / Next arrow buttons */
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
-/* Better mobile typography */
+.carousel-btn {
+  background: #0078d4;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+.carousel-btn:hover    { background: #005a9e; }
+.carousel-btn:disabled { background: #b0ccde; cursor: default; }
+
+/* Dot indicators */
+.carousel-dots {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #b0ccde;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+.carousel-dot.active   { background: #0078d4; transform: scale(1.3); }
+
+/* Slide counter label */
+.carousel-counter {
+  font-size: 0.82rem;
+  color: #666;
+  min-width: 50px;
+  text-align: center;
+}
+
+/* ============================================================
+   Project Card Visual Blocks
+   ============================================================ */
+.project-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+@media (min-width: 850px) {
+  .project-meta-grid { grid-template-columns: 1.2fr 0.8fr; }
+}
+
+.project-details p { margin: 0 0 0.8rem 0; font-size: 0.95rem; }
+
+.project-visuals {
+  background: #f4f6f9;
+  border: 1px dashed #0078d4;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.visual-label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #0078d4;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.project-visuals pre {
+  margin: 0;
+  background: #1e1e1e;
+  color: #d4d4d4;
+  padding: 0.8rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.85rem;
+  line-height: 1.3;
+}
+
+.mock-diagram {
+  background: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-overlay {
+  position: absolute;
+  border: 2px solid #ff4d4d;
+  background: rgba(255,77,77,0.1);
+  color: #ff4d4d;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 2px;
+}
+
+.placeholder-text { font-size: 0.8rem; color: #6c757d; font-style: italic; }
+.sample-equation  { font-size: 1.1rem; text-align: center; color: #333; margin: 0.5rem 0; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .profile-header { flex-direction: column; align-items: center; text-align: center; }
+  .profile-img    { margin: 0 0 1rem 0; }
+  .profile-info   { text-align: center; }
+}
+
+@media (max-width: 500px) {
+  body { font-size: 0.95rem; }
+  section { margin: 0.5rem; padding: 1rem; }
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button { font-size: 0.9rem; }
+}
+
 @media (max-width: 450px) {
-  body {
-    font-size: 0.9rem;
-  }
-  h1, h2, h3 {
-    font-size: 1.1rem;
-  }
+  body     { font-size: 0.9rem; }
+  h1, h2, h3 { font-size: 1.1rem; }
 }
 
-/* ---------- System Dark Mode ---------- */
+/* ============================================================
+   DARK MODE
+   ============================================================ */
 @media (prefers-color-scheme: dark) {
+  body { background-color: #1a1a1a; color: #e6e6e6; }
+  a    { color: #4fa8ff; }
 
-  body {
-    background-color: #1a1a1a;
-    color: #e6e6e6;
-  }
+  .language-switch   { background: #005a9e; }
+  .language-switch a { color: white; }
 
-  a {
-    color: #4fa8ff;
-  }
-
-  .language-switch {
-    background: #005a9e;
-    color: white;
-  }
-
-  .language-switch a {
-    color: white;
-  }
-
-  .profile-header {
-    background: #262626;
-    border-bottom: 3px solid #4fa8ff;
-  }
+  .profile-header { background: #262626; border-bottom: 3px solid #4fa8ff; }
 
   section {
     background: #262626;
     color: #e6e6e6;
     box-shadow: 0 2px 4px rgba(255,255,255,0.05);
   }
+  section h2 { border-bottom: 2px solid #4fa8ff; color: #ffffff; }
 
-  section h2 {
-    border-bottom: 2px solid #4fa8ff;
-    color: #ffffff;
-  }
+  .project  { background: #2d2d2d; box-shadow: 0 2px 6px rgba(255,255,255,0.08); }
+  .project h3 { color: #7bc4ff; }
+  .project2 { background: #2d2d2d; box-shadow: 0 2px 6px rgba(255,255,255,0.08); }
+  .project2 h3 { color: #7bc4ff; }
 
-  .project {
-    background: #2d2d2d;
-    box-shadow: 0 2px 6px rgba(255,255,255,0.08);
-  }
+  .tags   { color: #bbbbbb; }
+  ul li   { border-bottom: 1px solid #444; }
 
-  .project h3 {
-    color: #7bc4ff;
-  }
+  .experience h3 { color: #7bc4ff; }
 
-  .project2 {
-    background: #2d2d2d;
-    box-shadow: 0 2px 6px rgba(255,255,255,0.08);
-  }
-
-  .project2 h3 {
-    color: #7bc4ff;
-  }
-  
-  .tags {
-    color: #bbbbbb;
-  }
-
-  ul li {
-    border-bottom: 1px solid #444;
-  }
-
-  .experience h3 {
-    color: #7bc4ff;
-  }
-
-  .contact-form fieldset {
-    border: 1px solid #555;
-  }
-
-  .contact-form legend {
-    color: #4fa8ff;
-  }
-
+  .contact-form fieldset   { border: 1px solid #555; }
+  .contact-form legend     { color: #4fa8ff; }
   .contact-form input,
-  .contact-form textarea {
-    background: #333;
-    border: 1px solid #555;
-    color: #e6e6e6;
-  }
+  .contact-form textarea   { background: #333; border: 1px solid #555; color: #e6e6e6; }
+  .contact-form button     { background: #4fa8ff; color: #1a1a1a; }
+  .contact-form button:hover { background: #1f7acb; }
 
-  .contact-form button {
-    background: #4fa8ff;
-    color: #1a1a1a;
-  }
+  /* Carousel dark */
+  .category-tab         { border-color: #4fa8ff; color: #4fa8ff; }
+  .category-tab:hover   { background: #1a2d40; }
+  .category-tab.active  { background: #4fa8ff; color: #1a1a1a; }
+  .carousel-btn         { background: #4fa8ff; color: #1a1a1a; }
+  .carousel-btn:hover   { background: #1f7acb; }
+  .carousel-btn:disabled{ background: #2d4a66; }
+  .carousel-dot         { background: #2d4a66; }
+  .carousel-dot.active  { background: #4fa8ff; }
+  .carousel-counter     { color: #aaa; }
 
-  .contact-form button:hover {
-    background: #1f7acb;
-  }
+  .project-visuals { background: #1a1a1a; border: 1px dashed #4fa8ff; }
+  .visual-label    { color: #4fa8ff; }
+  .mock-diagram    { background: #262626; border: 1px solid #444; }
+  .sample-equation { color: #fff; }
+  .placeholder-text{ color: #aaa; }
+
+  .button { background-color: #4fa8ff; color: #1a1a1a !important; }
+  .button:hover { background-color: #1f7acb; }
 }
-
