@@ -5,338 +5,535 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Me - Wisdom Favour Chizoba</title>
   <link rel="stylesheet" href="css/style.css">
-  <script>
-    function switchCategory(category) {
-      const tabs = document.querySelectorAll('.category-tab');
-      tabs.forEach(tab => tab.classList.remove('active'));
-      event.target.classList.add('active');
-    
-      const projects = document.querySelectorAll('.project');
-      projects.forEach(project => {
-        if (category === 'all' || project.getAttribute('data-category') === category) {
-          project.style.display = 'block';
-        } else {
-          project.style.display = 'none';
-        }
-      });
-    }
-  </script>
 </head>
 <body>
- 
-   <section>
-   <header class="profile-header">
-    <nav class="language-switch">
-      <a href="index.html">DE</a>
-    </nav>
-    <img src="images/my face.jpg" alt="Profile Picture" class="profile-img">
-    <div class="profile-info">
-      <h1>Wisdom Favour Chizoba</h1>
-      <p><em>M.Eng. Applied AI for Digital Production Management<br>
-      B.Eng Industrial Engineering<br>
-      Industrial Data & AI Engineer<br>
-      Applied AI | Digital Manufacturing | Data-Driven Process Optimization</em></p>
-    </div>
-  </header>
+
+  <!-- ─── HEADER ─── -->
+  <section>
+    <header class="profile-header">
+      <nav class="language-switch"><a href="index.html">DE</a></nav>
+      <img src="images/my face.jpg" alt="Profile Picture" class="profile-img">
+      <div class="profile-info">
+        <h1>Wisdom Favour Chizoba</h1>
+        <p><em>M.Eng. Applied AI for Digital Production Management<br>
+        B.Eng Industrial Engineering<br>
+        Industrial Data &amp; AI Engineer<br>
+        Applied AI | Digital Manufacturing | Data-Driven Process Optimization</em></p>
+      </div>
+    </header>
   </section>
 
+  <!-- ─── ABOUT ─── -->
   <section>
     <h2>About Me</h2>
     <p>
-        Industrial Data & AI engineer with hands-on experience in AI-driven manufacturing, quality engineering, and digital production systems. I focus on implementing data‑driven solutions for manufacturing and quality systems, combining industrial engineering, applied AI, and analytics.
-        <br>Experience across automotive, aerospace, and semiconductor production environments with real shop‑floor and quality data.
-        <br><br>Available for full-time roles in: AI engineering (Manufacturing / Industrial AI), Quality & Process Engineering, Digital Manufacturing / Industry 4.0 and production data engineering in Germany, Europe, and remote.
-        <br><br>
-        <b>Core competencies</b>
-        <br>Machine learning for manufacturing | Industrial Automation & Digitalisation | Quality Engineering & SPC | Data Engineering & Pipelines (ETL/ELT) | Predictive Analytics & Sensor Data Analysis | Process Optimisation
+      Industrial Data &amp; AI engineer with hands-on experience in AI-driven manufacturing, quality engineering,
+      and digital production systems. I focus on implementing data‑driven solutions for manufacturing and quality
+      systems, combining industrial engineering, applied AI, and analytics.
+      <br>Experience across automotive, aerospace, and semiconductor production environments with real shop‑floor
+      and quality data.
+      <br><br>Available for full-time roles in: AI engineering (Manufacturing / Industrial AI), Quality &amp; Process
+      Engineering, Digital Manufacturing / Industry 4.0 and production data engineering in Germany, Europe, and remote.
+      <br><br><b>Core competencies</b><br>
+      Machine learning for manufacturing | Industrial Automation &amp; Digitalisation | Quality Engineering &amp; SPC |
+      Data Engineering &amp; Pipelines (ETL/ELT) | Predictive Analytics &amp; Sensor Data Analysis | Process Optimisation
     </p>
   </section>
-  
+
+  <!-- ─── EXPERIENCE ─── -->
   <section>
     <h2>Professional Experience</h2>
     <div class="experience">
+
       <div class="project2">
-        <h3>Quality & Process Engineering (Working Student)</h3>
-        <h4>ams OSRAM, Regensburg<br>
-        <em>Oct 2025 - Present</em>
-        </h4>
+        <h3>Quality &amp; Process Engineering (Working Student)</h3>
+        <h4>ams OSRAM, Regensburg<br><em>Oct 2025 – Present</em></h4>
         <ul>
-          <li>Creation, validation, and maintenance of CDC and PPAP documentation (Control Plans, FMEAs, Flowcharts, Capability Studies, Inspection Reports, Proofs of Conformity) to ensure full compliance with IATF 16949, APQP, and ISO 9001 standards, as well as to enhance readiness for customer approval. </li>
-  
-          <li>Supported PPAP (Production Part Approval Process) documentation through structured data collection and continuous quality tracking, enabling faster customer response and improved transparency.</li>
-          
-          <li>Analysed quality and test data to identify recurring failure patterns and insights relevant to customer quality management and production optimisation.</li>
-          
-          <li>Collaborated with cross‑functional teams (quality, production, engineering) in a highly regulated manufacturing environment, translating manufacturing data into actionable quality insights.</li>
+          <li>Creation, validation, and maintenance of CDC and PPAP documentation (Control Plans, FMEAs, Flowcharts, Capability Studies, Inspection Reports, Proofs of Conformity) ensuring full compliance with IATF 16949, APQP, and ISO 9001.</li>
+          <li>Supported PPAP documentation through structured data collection and continuous quality tracking, enabling faster customer response and improved transparency.</li>
+          <li>Analysed quality and test data to identify recurring failure patterns and insights for production optimisation.</li>
+          <li>Collaborated with cross‑functional teams (quality, production, engineering) in a highly regulated manufacturing environment.</li>
         </ul>
-        <p class="tags">Technologies & Methods: Python • SQL • Excel • PowerBI • PDF Tools • Quality Analytics</p>
+        <p class="tags">Technologies &amp; Methods: Python • SQL • Excel • PowerBI • PDF Tools • Quality Analytics</p>
       </div>
 
       <div class="project2">
         <h3>Quality Systems Engineering (Bachelor's Thesis)</h3>
-        <h4>Mubea Aerostructures GmbH, Munich<br>
-        <em>Apr 2025 – Oct 2025</em>
-        </h4>
+        <h4>Mubea Aerostructures GmbH, Munich<br><em>Apr 2025 – Oct 2025</em></h4>
         <ul>
-          <li>Led the design and implementation of a digital low‑code solution (Microsoft Power Apps) to automate and standardise Root Cause Analysis (RCA) documentation in aerospace manufacturing</li>
-  
-          <li>Transformed manual quality workflows into structured, analyzable digital datasets, improving traceability, compliance, and long‑term data usability.</li>
-          
-          <li>Enhanced audit readiness and compliance with EN9100 and EASA Part‑145 / Part‑21 through structured digital documentation and workflow automation.</li>
-          
-          <li>Worked closely with quality, engineering, and compliance stakeholders to align digital systems with operational and regulatory requirements.</li>
-          
+          <li>Led design and implementation of a digital low‑code solution (Microsoft Power Apps) to automate and standardise Root Cause Analysis documentation in aerospace manufacturing.</li>
+          <li>Transformed manual quality workflows into structured, analyzable digital datasets, improving traceability and compliance.</li>
+          <li>Enhanced audit readiness and compliance with EN9100 and EASA Part‑145/Part‑21 through digital documentation automation.</li>
           <li>Reduced documentation inefficiencies and improved RCA consistency.</li>
         </ul>
-        <p class="tags">Technologies & Methods: PowerApps • PowerAutomate • RCA • Quality Systems • Databases</p>
+        <p class="tags">Technologies &amp; Methods: PowerApps • PowerAutomate • RCA • Quality Systems • Databases</p>
       </div>
-      
+
       <div class="project2">
         <h3>Quality Engineering (Working Student)</h3>
-        <h4>Mubea Aerostructures GmbH, Munich<br>
-        <em>Apr 2024 – Oct 2025</em>
-        </h4>
+        <h4>Mubea Aerostructures GmbH, Munich<br><em>Apr 2024 – Oct 2025</em></h4>
         <ul>
-          <li>Supported process planning and quality assurance activities using data‑driven analysis to monitor production performance and process stability.</li>
-  
-          <li>Analysed manufacturing and quality KPIs to support continuous improvement initiatives and root‑cause investigations.</li>
-              
-          <li>Conducted Gemba walks in production areas to verify compliance with quality standards and document observations.</li>
-              
-          <li>Contributed to the digitalisation of quality and process documentation, improving data availability and cross‑functional collaboration.</li>
-              
-          <li>Supported the handling of customer complaints and nonconformities (NCRs), including data tracking and reporting.</li>
-              
-          <li>Contributed to corrective and preventive actions (CAPA) with data-driven feedback</li>
+          <li>Supported process planning and quality assurance using data‑driven analysis to monitor production performance and process stability.</li>
+          <li>Analysed manufacturing and quality KPIs to support continuous improvement and root‑cause investigations.</li>
+          <li>Conducted Gemba walks in production areas to verify compliance with quality standards.</li>
+          <li>Contributed to digitalisation of quality documentation, improving data availability and cross‑functional collaboration.</li>
+          <li>Supported handling of customer complaints and NCRs, including data tracking and reporting.</li>
+          <li>Contributed to CAPA processes with data-driven feedback.</li>
         </ul>
-        <p class="tags">Technologies & Methods: Audits • Process Analytics • Quality Metrics • Continuous Improvement • Quality Management</p>
+        <p class="tags">Technologies &amp; Methods: Audits • Process Analytics • Quality Metrics • Continuous Improvement • Quality Management</p>
       </div>
 
       <div class="project2">
         <h3>Data Engineering (Intern)</h3>
-        <h4>ZF Friedrichshafen AG, Friedrichshafen<br>
-        <em>Oct 2023 – Apr 2024</em>
-        </h4>
+        <h4>ZF Friedrichshafen AG, Friedrichshafen<br><em>Oct 2023 – Apr 2024</em></h4>
         <ul>
-          <li>Designed and deployed automated Power BI dashboards connected to live internal data sources, enabling real‑time KPI monitoring for supplier innovation and performance.</li>
-  
-          <li>Cleaned, validated, and transformed raw supplier and process data using Python, Excel, VBA, and SQL, improving data accuracy and reliability.</li>
-              
-          <li>Delivered monthly and on‑demand analytical insights to support management decision‑making and supplier evaluation.</li>
-              
-          <li>Reduced manual reporting effort by automating data pipelines and recurring KPI updates.</li>
-              
-          <li>Conducted benchmarking studies to compare supplier innovations with industry standards and competitors.</li>
-  
-          <li>Developed and implemented a social media content plan to increase visibility into supplier performance and innovation metrics.</li>
+          <li>Designed and deployed automated Power BI dashboards with live data sources for real‑time KPI monitoring of supplier performance.</li>
+          <li>Cleaned, validated, and transformed raw supplier and process data using Python, Excel, VBA, and SQL.</li>
+          <li>Delivered monthly and on‑demand analytical insights to support management decision‑making.</li>
+          <li>Reduced manual reporting effort by automating data pipelines and KPI updates.</li>
+          <li>Conducted benchmarking studies to compare supplier innovations against industry standards.</li>
         </ul>
-        <p class="tags">Technologies & Methods: PowerBI • SQL • Databases • KPI Analytics • Data Management</p>
+        <p class="tags">Technologies &amp; Methods: PowerBI • SQL • Databases • KPI Analytics • Data Management</p>
       </div>
-      
+
     </div>
   </section>
 
-  <section>
-    <h2>Available Project Areas</h2>    
-    <p>Representative project areas demonstrating applied AI, data analytics, and digital manufacturing skills in industrial contexts.
-      Select a category below to explore specific industrial engineering use cases, algorithms, and simulations.</p>
-    
-    <div class="category-carousel">
-      <button class="category-tab active" onclick="switchCategory('all')">All Categories</button>
-      <button class="category-tab" onclick="switchCategory('automation')">Automation & Tooling</button>
-      <button class="category-tab" onclick="switchCategory('vision')">Computer Vision</button>
-      <button class="category-tab" onclick="switchCategory('ml')">Industrial ML & Analytics</button>
-      <button class="category-tab" onclick="switchCategory('simulation')">Digital Twins & Sim</button>
+  <!-- ─── PROJECTS – CAROUSEL ─── -->
+  <section class="carousel-section">
+    <h2>Available Project Areas</h2>
+    <p>Representative project areas demonstrating applied AI, data analytics, and digital manufacturing skills
+       in industrial contexts. Select a category to explore specific use cases.</p>
+
+    <!-- TAB ROW -->
+    <div class="category-tabs">
+      <button class="category-tab active" data-category="automation">Automation &amp; Tooling</button>
+      <button class="category-tab" data-category="vision">Computer Vision</button>
+      <button class="category-tab" data-category="ml">Industrial ML &amp; Analytics</button>
+      <button class="category-tab" data-category="simulation">Digital Twins &amp; Sim</button>
     </div>
-    
-    <div class="projects-container">
-      
-    <div class="project" data-category="automation">
-      <h3>Algorithmic Roots & Polynomial Solvers</h3>
-      <div class="project-meta-grid">
-        <div class="project-details">
-          <p><strong>Objective:</strong> Automate mathematical root determination for complex high-order arbitrary polynomial equations ($n \geq 2$) without relying on heavy commercial mathematical frameworks or black-box engineering tools.</p>
-          <p><strong>Process:</strong> Implemented a purely algorithmic solution based on the iterative Newton-Raphson method ($x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$). Programmed explicit Horner's method logic to efficiently evaluate polynomials, built an automated array-mapping derivative module (`dpoly`), and protected convergence using a time-bounded loop tracking unique root sets to a precision tolerance of $1e-6$.</p>
-          <p><strong>Outcome:</strong> Created a fast, standalone numerical script that validates inputs, calculates all unique real roots, and leverages `matplotlib` to graph the behaviour of the targeted physical process function curve.</p>
-          <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation" target="_blank">View Repository</a>
+
+    <!-- ── AUTOMATION ── -->
+    <div class="carousel-block active" data-category="automation">
+      <div class="carousel-wrapper">
+        <div class="carousel-track">
+
+          <!-- slide 1 -->
+          <div class="carousel-slide">
+            <div class="project">
+              <h3>Algorithmic Roots &amp; Polynomial Solvers</h3>
+              <div class="project-meta-grid">
+                <div class="project-details">
+                  <p><strong>Objective:</strong> Automate mathematical root determination for complex high-order polynomials
+                  (n ≥ 2) without relying on heavy commercial frameworks.</p>
+                  <p><strong>Process:</strong> Implemented an iterative Newton-Raphson solver with explicit Horner's method
+                  evaluation, an automated derivative module (<code>dpoly</code>), and convergence protection via a
+                  time-bounded loop tracking unique root sets to 1e-6 precision.</p>
+                  <p><strong>Outcome:</strong> Fast, standalone numerical script that validates inputs, finds all unique real
+                  roots, and graphs the target function using <code>matplotlib</code>.</p>
+                  <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation" target="_blank">View Repository</a>
+                </div>
+                <div class="project-visuals">
+                  <span class="visual-label">Newton Iteration Core</span>
+                  <pre><code>def solver(xi, coeff):
+                  maxError = 1e-6
+                  error = math.inf
+                  while (error > maxError):
+                      df = poly(xi, dpoly(coeff))
+                      if (df != 0):
+                          xn = xi - poly(xi, coeff)/df
+                      else:
+                          xn = xi - poly(xi, coeff)/\
+                               random.uniform(-1e-12, 1e-12)
+                      error = abs(xn - xi)
+                      xi = xn
+                  return format(xn, '.4f')</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- slide 2 -->
+          <div class="carousel-slide">
+            <div class="project">
+              <h3>Automated Quality Document Assembly</h3>
+              <div class="project-meta-grid">
+                <div class="project-details">
+                  <p><strong>Objective:</strong> Eliminate manual overhead and human errors when combining fragmented
+                  quality audit reports, supplier certifications, and RCA records from Power Automate cloud tasks.</p>
+                  <p><strong>Process:</strong> Python pipeline that scans directory buffers with dynamic MIME-type filtering,
+                  sequences files chronologically via <code>getctime</code>, and merges them using
+                  memory-optimised <code>PyPDF2.PdfMerger</code> into production-ready compliance dossiers.</p>
+                  <p><strong>Outcome:</strong> Fully automated multi-step document compilation for aerospace manufacturing
+                  workflows — zero manual handling, complete chronological traceability for audit review packages.</p>
+                  <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation" target="_blank">View Repository</a>
+                </div>
+                <div class="project-visuals">
+                  <span class="visual-label">Chronological Document Pipeline</span>
+                  <pre><code>pdf_files = [
+                  f for f in os.listdir(pdf_folder)
+                  if mimetypes.guess_type(
+                      os.path.join(pdf_folder, f)
+                  )[0] == 'application/pdf'
+                  ]
+                  pdf_files.sort(
+                      key=lambda x: os.path.getctime(
+                          os.path.join(pdf_folder, x)
+                      )
+                  )
+                  merger = PdfMerger()
+                  for pdf in pdf_files:
+                      merger.append(os.path.join(pdf_folder, pdf))
+                  merger.write(merged_pdf_path)</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- slide 3 -->
+          <div class="carousel-slide">
+            <div class="project">
+              <h3>Algorithmic Signal Synthesis &amp; Sequencing Engine</h3>
+              <div class="project-meta-grid">
+                <div class="project-details">
+                  <p><strong>Objective:</strong> Parse tokenized data arrays and synthesize raw discrete-time waveforms
+                  into structured audio sequences without external multimedia dependencies.</p>
+                  <p><strong>Process:</strong> Lightweight Python DSP pipeline with a dictionary frequency mapper,
+                  NumPy discrete sine-wave generation, sequential array concatenation, 16-bit signed integer scaling
+                  (2¹⁵ − 1), and precise inter-tone spacing.</p>
+                  <p><strong>Outcome:</strong> Standalone audio rendering utility streaming binary buffers directly to
+                  hardware via <code>simpleaudio</code>, demonstrating deep low-level digital signal manipulation.</p>
+                  <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation" target="_blank">View Repository</a>
+                </div>
+                <div class="project-visuals">
+                  <span class="visual-label">Waveform Synthesis Block</span>
+                  <pre><code>tv = np.linspace(0, td, int(td * fs), False)
+                  tone = np.sin(2 * np.pi * f1 * tv)
+                  
+                  # Space interval & Int16 normalisation
+                  space_tone = np.linspace(0, 0,
+                                           int(sd * fs), False)
+                  dtone_space = np.concatenate((tone, space_tone))
+                  dtone_seq = (dtone_space *
+                      (2**15 - 1) / np.max(np.abs(dtone_space)))
+                  return dtone_seq.astype(np.int16)</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- slide 4 – summary card -->
+          <div class="carousel-slide">
+            <div class="project">
+              <h3>Automation &amp; Engineering Productivity – Overview</h3>
+              <p>• Python-based helper scripts for calculating roots of arbitrary polynomials and transcendental equations.<br>
+              • Automation of complex PDF workflows (merging, sorting, formatting) for structured technical documentation
+                in regulated environments.<br>
+              • Algorithmic generation of structured outputs — converting symbolic or sequential data into formatted files
+                such as sheet music.<br>
+              • Automated data collection and preprocessing pipelines using web scraping for downstream analysis.</p>
+              <p class="tags">Python • Automation • Scripting • Data Processing • Engineering Productivity • Documentation</p>
+              <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation" target="_blank">View on GitHub</a>
+            </div>
+          </div>
+
+        </div><!-- /carousel-track -->
+      </div><!-- /carousel-wrapper -->
+      <div class="carousel-controls">
+        <button class="carousel-btn" data-dir="-1" aria-label="Previous">&#8592;</button>
+        <div class="carousel-dots">
+          <button class="carousel-dot active" aria-label="Slide 1"></button>
+          <button class="carousel-dot" aria-label="Slide 2"></button>
+          <button class="carousel-dot" aria-label="Slide 3"></button>
+          <button class="carousel-dot" aria-label="Slide 4"></button>
         </div>
-        <div class="project-visuals">
-          <span class="visual-label">Newton Iteration Core</span>
-            <pre><code>def solver(xi, coeff):
-                maxError = 1e-6
-                error = math.inf
-                while (error > maxError):
-                    df = poly(xi, dpoly(coeff))
-                    if (df != 0):
-                        xn = xi - poly(xi, coeff)/df
-                    else:
-                        xn = xi - poly(xi, coeff)/random.uniform(-1e-12, 1e-12)
-                    error = abs(xn - xi)
-                    xi = xn
-                return format(xn, '.4f')
-          </code></pre>
+        <button class="carousel-btn" data-dir="1" aria-label="Next">&#8594;</button>
+        <span class="carousel-counter">1 / 4</span>
+      </div>
+    </div><!-- /automation block -->
+
+    <!-- ── COMPUTER VISION ── -->
+    <div class="carousel-block" data-category="vision">
+      <div class="carousel-wrapper">
+        <div class="carousel-track">
+
+          <div class="carousel-slide">
+            <div class="project">
+              <h3>Classical Image Enhancement &amp; Noise Reduction</h3>
+              <p>Application of classical image processing techniques — spatial filtering, histogram equalisation,
+              and frequency-domain methods — to enhance signal quality in noisy or low-contrast industrial images.</p>
+              <p class="tags">OpenCV • NumPy • Image Processing • Quality Inspection</p>
+              <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision" target="_blank">View on GitHub</a>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div class="project">
+              <h3>Feature Extraction &amp; Similarity Analysis</h3>
+              <p>Feature extraction and similarity analysis pipelines for comparing images and detecting deviations
+              or recurring visual patterns in production parts and assemblies.</p>
+              <p class="tags">OpenCV • scikit-image • Feature Descriptors • Anomaly Detection</p>
+              <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision" target="_blank">View on GitHub</a>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div class="project">
+              <h3>Supervised Object &amp; Pattern Recognition</h3>
+              <p>Supervised ML models for object and pattern recognition in annotated image datasets, including
+              CNN architectures trained on domain-specific inspection data using TensorFlow and CVAT-annotated sets.</p>
+              <p class="tags">TensorFlow • CNNs • CVAT • Deep Learning • Quality Inspection</p>
+              <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision" target="_blank">View on GitHub</a>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div class="project">
+              <h3>Low-Altitude Aerial Object Detection</h3>
+              <p>Applied computer vision use case for inspection and monitoring scenarios — training and evaluating
+              object detection models on low-altitude aerial imagery relevant to industrial site monitoring.</p>
+              <p class="tags">Object Detection • Aerial Imaging • TensorFlow • Computer Vision</p>
+              <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision" target="_blank">View on GitHub</a>
+            </div>
+          </div>
+
         </div>
       </div>
-
-    <div class="project" data-category="automation">
-    <h3>Automated Quality Document Assembly</h3>
-    <div class="project-meta-grid">
-      <div class="project-details">
-        <p><strong>Objective:</strong> Eliminate the manual overhead and human compilation errors associated with combining fragmented quality audit reports, supplier certifications, and Root-Cause-Analysis (RCA) records generated via automated Power Automate cloud tasks.</p>
-        <p><strong>Process:</strong> Programmed an automated file system pipeline in Python that scans directory buffers using dynamic MIME-type filtering (`mimetypes`). The engine sequences target files chronologically based on file creation timestamps (`getctime`) and merges the dynamic streams using memory-optimized operations via `PyPDF2.PdfMerger` into uniform, production-ready compliance dossiers.</p>
-        <p><strong>Outcome:</strong> Automated a multi-step document compilation pipeline within an aerospace manufacturing workflow, reducing manual handling time to zero and ensuring complete chronological traceability for final audit review packages.</p>
-        <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation" target="_blank">View Repository</a>
+      <div class="carousel-controls">
+        <button class="carousel-btn" data-dir="-1" aria-label="Previous">&#8592;</button>
+        <div class="carousel-dots">
+          <button class="carousel-dot active" aria-label="Slide 1"></button>
+          <button class="carousel-dot" aria-label="Slide 2"></button>
+          <button class="carousel-dot" aria-label="Slide 3"></button>
+          <button class="carousel-dot" aria-label="Slide 4"></button>
+        </div>
+        <button class="carousel-btn" data-dir="1" aria-label="Next">&#8594;</button>
+        <span class="carousel-counter">1 / 4</span>
       </div>
-      <div class="project-visuals">
-        <span class="visual-label">Chronological Document Pipeline</span>
-        <pre><code># Dynamic MIME & Time-Sorted Processing
-        pdf_files = [f for f in os.listdir(pdf_folder)
-                     if mimetypes.guess_type(os.path.join(pdf_folder, f))[0] == 'application/pdf']
-        pdf_files.sort(key=lambda x: os.path.getctime(os.path.join(pdf_folder, x)))
-        
-        merger = PdfMerger()
-        for pdf in pdf_files:
-            merger.append(os.path.join(pdf_folder, pdf))
-        merger.write(merged_pdf_path)</code></pre>
+    </div><!-- /vision block -->
+
+    <!-- ── INDUSTRIAL ML ── -->
+    <div class="carousel-block" data-category="ml">
+      <div class="carousel-wrapper">
+        <div class="carousel-track">
+
+          <div class="carousel-slide">
+            <div class="project">
+              <h3>End-to-End ML Pipelines for Anomaly Detection</h3>
+              <p>Full machine learning pipelines for identifying error patterns and anomalies in multivariate
+              sensor data from production processes — from raw data ingestion through feature engineering,
+              model training, evaluation, and deployment-ready export.</p>
+              <p class="tags">scikit-learn • pandas • ETL • Anomaly Detection • Sensor Data</p>
+              <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering" target="_blank">View on GitHub</a>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div class="project">
+              <h3>Classification Models for Quality State Prediction</h3>
+              <p>Supervised classification models for predicting quality states or process conditions based on
+              industrial production data, including threshold optimisation and confusion-matrix-driven calibration
+              for imbalanced defect datasets.</p>
+              <p class="tags">scikit-learn • XGBoost • SVM • Quality Engineering • Production Data</p>
+              <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering" target="_blank">View on GitHub</a>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div class="project">
+              <h3>Time-Series Forecasting for Production Planning</h3>
+              <p>Demand estimation and material requirements forecasting models using time-series approaches
+              (ARIMA, Prophet, LSTM) to support production planning with lead-time-aware prediction intervals.</p>
+              <p class="tags">ARIMA • Prophet • LSTM • Forecasting • Production Planning</p>
+              <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering" target="_blank">View on GitHub</a>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div class="project">
+              <h3>Bayesian Decision Models &amp; Statistical Process Capability</h3>
+              <p>Probabilistic pattern recognition using Bayesian decision theory for uncertainty-aware
+              classification, plus automated SPC process capability analysis and CDC reporting to support
+              data-driven quality engineering workflows.</p>
+              <p class="tags">Bayesian Methods • SPC • Statistical Modeling • CDC Reporting • Quality Analytics</p>
+              <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering" target="_blank">View on GitHub</a>
+            </div>
+          </div>
+
         </div>
       </div>
-    </div>    
-
-    <div class="project" data-category="automation">
-    <h3>Algorithmic Signal Synthesis & Sequencing Engine</h3>
-    <div class="project-meta-grid">
-      <div class="project-details">
-        <p><strong>Objective:</strong> Parse tokenized data arrays and synthesize raw discrete-time waveforms into structured audio sequences dynamically without external heavy multimedia dependencies.</p>
-        <p><strong>Process:</strong> Programmed a lightweight digital signal synthesis pipeline in Python. Built a dictionary mapper for standard frequency sets ($f$) and configured math operations using `NumPy` to generate discrete sine waves ($\sin(2\pi ft)$). Implemented sequential array concatenation (`np.concatenate`), mathematical scaling for 16-bit signed integer depth ranges ($2^{15} - 1$), and precision pacing by injecting specific inter-tone space intervals.</p>
-        <p><strong>Outcome:</strong> A functional standalone audio rendering utility that streams binary array buffers directly to hardware via `simpleaudio`, demonstrating deep competence in low-level digital signal manipulation and chronological dataset array logic.</p>
-        <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation" target="_blank">View Repository</a>
+      <div class="carousel-controls">
+        <button class="carousel-btn" data-dir="-1" aria-label="Previous">&#8592;</button>
+        <div class="carousel-dots">
+          <button class="carousel-dot active" aria-label="Slide 1"></button>
+          <button class="carousel-dot" aria-label="Slide 2"></button>
+          <button class="carousel-dot" aria-label="Slide 3"></button>
+          <button class="carousel-dot" aria-label="Slide 4"></button>
+        </div>
+        <button class="carousel-btn" data-dir="1" aria-label="Next">&#8594;</button>
+        <span class="carousel-counter">1 / 4</span>
       </div>
-      <div class="project-visuals">
-        <span class="visual-label">Waveform Synthesis Block</span>
-        <pre><code># Discrete Time Sine Wave Vector
-        tv = np.linspace(0, td, int(td * fs), False)
-        tone = np.sin(2 * np.pi * f1 * tv)
-        
-        # Space Inversion & Int16 Normalization
-        space_tone = np.linspace(0, 0, int(sd * fs), False)
-        dtone_space = np.concatenate((tone, space_tone))
-        dtone_seq = dtone_space * (2**15 - 1) / np.max(np.abs(dtone_space))
-        return dtone_seq.astype(np.int16)</code></pre>
+    </div><!-- /ml block -->
+
+    <!-- ── SIMULATION ── -->
+    <div class="carousel-block" data-category="simulation">
+      <div class="carousel-wrapper">
+        <div class="carousel-track">
+
+          <div class="carousel-slide">
+            <div class="project">
+              <h3>Discrete-Event Digital Twin – Multi-Station Production Line</h3>
+              <p>AnyLogic-based discrete-event simulation modelling a sequencing buffer between body shop and
+              paint shop in automotive production. Includes parameter variation experiments optimising warehouse
+              capacity, throughput analysis, and bottleneck identification across production line states.</p>
+              <p class="tags">AnyLogic • Discrete-Event Simulation • Digital Twin • Automotive Production • Bottleneck Analysis</p>
+              <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0" target="_blank">View on GitHub</a>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div class="project">
+              <h3>High-Bay Warehouse Dimensioning Studies</h3>
+              <p>Simulation-based capacity and layout dimensioning for high-bay warehouse systems to support
+              logistics planning decisions — modelling crane cycles, storage strategies, and throughput under
+              varying demand scenarios using AnyLogic.</p>
+              <p class="tags">AnyLogic • Logistics Simulation • Warehouse Systems • Capacity Planning • Industry 4.0</p>
+              <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0" target="_blank">View on GitHub</a>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div class="project">
+              <h3>Electronic Circuit Modelling &amp; Simulation</h3>
+              <p>Modelling and simulation of electronic circuits — instrumentation amplifiers and active filters —
+              using LTSpice and SciPy to analyse system behaviour, frequency response, and performance parameters
+              under nominal and fault conditions.</p>
+              <p class="tags">LTSpice • SciPy • Circuit Simulation • Signal Processing • MATLAB</p>
+              <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0" target="_blank">View on GitHub</a>
+            </div>
+          </div>
+
         </div>
       </div>
-    </div>
-      
-      <p>• Development of Python-based helper scripts for calculating the roots of arbitrary polynomials or transcendental equations.
-        <br>• Automation of complex PDF workflows (merging, sorting, formatting) for structured technical documentation in a regulated environment.
-        <br>• Algorithmic generation of structured outputs (e.g. converting symbolic or sequential data into formatted files such as sheet music.
-        <br>• Automated data collection and preprocessing pipelines using web scraping for downstream analysis and modelling.</p>
-      <p class="tags">Python • Automation • Scripting • Data Processing • Engineering Productivity • Documentation</p>
-      <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation" target="_blank">View on Github</a>
-    </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn" data-dir="-1" aria-label="Previous">&#8592;</button>
+        <div class="carousel-dots">
+          <button class="carousel-dot active" aria-label="Slide 1"></button>
+          <button class="carousel-dot" aria-label="Slide 2"></button>
+          <button class="carousel-dot" aria-label="Slide 3"></button>
+        </div>
+        <button class="carousel-btn" data-dir="1" aria-label="Next">&#8594;</button>
+        <span class="carousel-counter">1 / 3</span>
+      </div>
+    </div><!-- /simulation block -->
 
-    <div class="project" data-category="vision">
-      <h3>Computer Vision & Image-Based Quality Inspection</h3>
-      <p>• Application of classical image processing techniques to enhance signal quality in noisy or low-contrast images.
-        <br> • Feature extraction and similarity analysis for comparing images and detecting deviations or patterns.
-        <br> • Development of supervised machine learning models for object and pattern recognition in annotated image datasets.
-        <br> • Low-altitude aerial object detection as an applied computer vision use case relevant to inspection and monitoring scenarios</p>
-      <p class="tags">Computer Vision • Image Processing • Deep Learning • TensorFlow • Quality Inspection • CVAT</p>
-      <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision" target="_blank">View on Github</a>
-    </div>
+  </section><!-- /carousel-section -->
 
-    <div class="project" data-category="ml">
-      <h3>Industrial Machine Learning, Predictive Modeling & Quality Analytics</h3>
-      <p>• End-to-end machine learning pipelines for identifying error patterns and anomalies in multivariate sensor data from production processes.
-        <br>• Classification models for predicting quality states or process conditions based on industrial production data.
-        <br>• Time-series forecasting models to support production planning, demand estimation, and material requirements prediction.
-        <br>• Probabilistic pattern recognition using Bayesian decision theory for uncertainty-aware classification.
-        <br>• Statistical process capability analysis and automated CDC reporting to support data-driven quality engineering.</p>
-      <p class="tags">Industrial AI • Predictive Analytics • Quality Engineering • Sensor Data • Statistical Modeling</p>
-      <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering" target="_blank">View on Github</a>
-    </div>
-
-    <div class="project" data-category="simulation">
-      <h3>System Modeling, Simulation & Digital Twins for Manufacturing</h3>
-      <p>• Discrete-event digital twin of a multi-station production line, enabling analysis of throughput, bottlenecks, and system dynamics.
-        <br>• Simulation-based dimensioning studies for high-bay warehouse systems to support logistics and capacity planning decisions using AnyLogic.
-        <br>• Modelling and simulation of electronic circuits (instrumentation amplifiers, active filters) to analyse system behaviour and performance.</p>
-      <p class="tags">Digital Twin • Industry 4.0 • Discrete-Event Simulation • Manufacturing Systems Engineering • SciPy • Anylogic</p>
-      <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0" target="_blank">View on Github</a>
-    </div>
-    </div></section>
-
+  <!-- ─── EDUCATION ─── -->
   <section>
     <h2>Education</h2>
     <ul>
-     <li>
+      <li>
         <a href="https://www.th-deg.de/dm-m-en" target="_blank" rel="noopener noreferrer">
           Technische Hochschule Deggendorf
         </a> – M.Eng. Applied AI for Digital Production Management | 2025–2027
       </li>
-      <li><a href="https://www.th-deg.de">Technische Hochschule Deggendorf</a> – B.Eng. Industrial Engineering | 2020–2025 (including industry thesis in 2025)</li>
+      <li>
+        <a href="https://www.th-deg.de">Technische Hochschule Deggendorf</a>
+        – B.Eng. Industrial Engineering | 2020–2025 (including industry thesis in 2025)
+      </li>
     </ul>
   </section>
 
-  <section>        
+  <!-- ─── SKILLS – CAROUSEL ─── -->
+  <section class="carousel-section">
     <h2>Functional Skills</h2>
-      <div class="project">
-        <h3>Core Technical & Data</h3>
-        <ul>
-          <li>
-            Industrial Data Analytics & AI: Python (pandas, NumPy, scikit-learn), SQL, Machine Learning pipelines, anomaly detection, classification, time‑series analysis
-          </li>
-          <li>
-            Predictive & Statistical Modelling: Process capability analysis, SPC, probabilistic modelling, forecasting for production and material planning
-          </li>
-          <li>
-            Industrial Computer Vision: Image processing, feature extraction, supervised learning, CNNs, OpenCV, TensorFlow, CVAT
-          </li>
-          <li>
-            Simulation & Digital Twins: Discrete‑event simulation, system modelling, digital production lines (AnyLogic, SciPy), MATLAB
-          </li>
-        </ul>
+
+    <div class="category-tabs">
+      <button class="category-tab active" data-category="core">Core Technical &amp; Data</button>
+      <button class="category-tab" data-category="mfg">Manufacturing &amp; Quality</button>
+      <button class="category-tab" data-category="tools">Automation &amp; Toolchain</button>
+    </div>
+
+    <!-- core -->
+    <div class="carousel-block active" data-category="core">
+      <div class="carousel-wrapper">
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <div class="project">
+              <h3>Core Technical &amp; Data</h3>
+              <ul>
+                <li>Industrial Data Analytics &amp; AI: Python (pandas, NumPy, scikit-learn), SQL, Machine Learning pipelines, anomaly detection, classification, time-series analysis.</li>
+                <li>Predictive &amp; Statistical Modelling: Process capability analysis, SPC, probabilistic modelling, forecasting for production and material planning.</li>
+                <li>Industrial Computer Vision: Image processing, feature extraction, supervised learning, CNNs, OpenCV, TensorFlow, CVAT.</li>
+                <li>Simulation &amp; Digital Twins: Discrete‑event simulation, system modelling, digital production lines (AnyLogic, SciPy), MATLAB.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
-    
-      <div class="project">    
-        <h3>Manufacturing, Quality & Process Engineering</h3>
-        <ul>
-          <li>
-            Digital Manufacturing & Industry 4.0: MES concepts, SCADA data analysis, IoT sensor data, digital twin principles, reliability monitoring
-          </li>
-          <li>
-            Quality Engineering & Compliance: PPAP, FMEA, 8D, 5 Whys, SPC, ISO 9001, IATF 16949, Six Sigma, Lean Manufacturing
-          </li>
-          <li>
-            Process Optimisation & RCA: Root Cause Analysis, CAPA, error tracking, production flow optimisation, BPMN process mapping
-          </li>
-          <li>
-            Supplier & Production Analytics: KPI monitoring, trend analysis, data‑driven supplier evaluation, performance reporting
-          </li>
-        </ul>
+      <div class="carousel-controls">
+        <button class="carousel-btn" data-dir="-1" aria-label="Previous">&#8592;</button>
+        <div class="carousel-dots"><button class="carousel-dot active" aria-label="Slide 1"></button></div>
+        <button class="carousel-btn" data-dir="1" aria-label="Next">&#8594;</button>
+        <span class="carousel-counter">1 / 1</span>
       </div>
-    
-      <div class="project">    
-        <h3>Automation, Systems & Engineering Toolchain</h3>
-        <ul>
-          <li>
-            Data Engineering & Pipelines: Relational databases, data modelling, ETL / ELT pipelines, query optimisation, KNIME
-          </li>
-          <li>
-            Manufacturing Systems & Automation: PLC fundamentals, MES exposure, automated testing and digital quality documentation
-          </li>
-          <li>
-            Analytics & Visualisation: Power BI, dashboard automation, LTSpice, engineering data visualisation
-          </li>
-          <li>
-            Enterprise & Productivity Tools: SAP QM & ERP, Power Apps, Power Automate, Excel (advanced), PowerPoint
-          </li>
-          <li>
-            Programming & Web Fundamentals: HTML, CSS, JavaScript, MySQL
-          </li>
-        </ul>
+    </div>
+
+    <!-- manufacturing -->
+    <div class="carousel-block" data-category="mfg">
+      <div class="carousel-wrapper">
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <div class="project">
+              <h3>Manufacturing, Quality &amp; Process Engineering</h3>
+              <ul>
+                <li>Digital Manufacturing &amp; Industry 4.0: MES concepts, SCADA data analysis, IoT sensor data, digital twin principles, reliability monitoring.</li>
+                <li>Quality Engineering &amp; Compliance: PPAP, FMEA, 8D, 5 Whys, SPC, ISO 9001, IATF 16949, Six Sigma, Lean Manufacturing.</li>
+                <li>Process Optimisation &amp; RCA: Root Cause Analysis, CAPA, error tracking, production flow optimisation, BPMN process mapping.</li>
+                <li>Supplier &amp; Production Analytics: KPI monitoring, trend analysis, data‑driven supplier evaluation, performance reporting.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn" data-dir="-1" aria-label="Previous">&#8592;</button>
+        <div class="carousel-dots"><button class="carousel-dot active" aria-label="Slide 1"></button></div>
+        <button class="carousel-btn" data-dir="1" aria-label="Next">&#8594;</button>
+        <span class="carousel-counter">1 / 1</span>
+      </div>
+    </div>
+
+    <!-- toolchain -->
+    <div class="carousel-block" data-category="tools">
+      <div class="carousel-wrapper">
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <div class="project">
+              <h3>Automation, Systems &amp; Engineering Toolchain</h3>
+              <ul>
+                <li>Data Engineering &amp; Pipelines: Relational databases, data modelling, ETL/ELT pipelines, query optimisation, KNIME.</li>
+                <li>Manufacturing Systems &amp; Automation: PLC fundamentals, MES exposure, automated testing and digital quality documentation.</li>
+                <li>Analytics &amp; Visualisation: Power BI, dashboard automation, LTSpice, engineering data visualisation.</li>
+                <li>Enterprise &amp; Productivity Tools: SAP QM &amp; ERP, Power Apps, Power Automate, Excel (advanced), PowerPoint.</li>
+                <li>Programming &amp; Web Fundamentals: HTML, CSS, JavaScript, MySQL.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn" data-dir="-1" aria-label="Previous">&#8592;</button>
+        <div class="carousel-dots"><button class="carousel-dot active" aria-label="Slide 1"></button></div>
+        <button class="carousel-btn" data-dir="1" aria-label="Next">&#8594;</button>
+        <span class="carousel-counter">1 / 1</span>
+      </div>
+    </div>
+
   </section>
 
+  <!-- ─── LANGUAGES ─── -->
   <section>
     <h2>Languages</h2>
     <ul>
@@ -345,14 +542,17 @@
     </ul>
   </section>
 
+  <!-- ─── CONTACT ─── -->
   <section>
     <h2>Interested in Collaboration or Full‑Time Roles? Contact Me</h2>
     <p>Open to Industrial AI, Manufacturing Data, Digital Manufacturing and Quality Analytics roles.</p>
     <ul>
       <li>Email: <a href="mailto:wchizoba@gmail.com">wchizoba@gmail.com</a></li>
-      <li>Mobil: +49 157 5591 8419</li>
+      <li>Mobile: +49 157 5591 8419</li>
       <li>LinkedIn: <a href="https://www.linkedin.com/in/wisdomfavourchizoba">View Profile</a></li>
     </ul>
   </section>
+
+  <script src="js/portfolio-carousel.js"></script>
 </body>
 </html>
