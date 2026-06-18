@@ -99,296 +99,691 @@
     </div>
   </section>
 
-  <!-- ─── PROJEKTE – CAROUSEL ─── -->
+  <!-- ─── PROJECTS – CAROUSEL ─── -->
   <section class="carousel-section">
-    <h2>Verfügbare Projekte</h2>
-    <p>Repräsentative Projektbereiche zur Demonstration angewandter KI‑, Datenanalyse‑ und Digital‑Manufacturing‑Kompetenzen.
-    Wählen Sie eine Kategorie aus.</p>
+    <h2>Verfügbare Projectbereiche</h2>
+    <p>Beispielhafte Projektbereiche, die den Einsatz von KI, Datenanalyse und Kompetenzen im Bereich der digitalen Fertigung
+       im industriellen Kontext veranschaulichen. Wählen Sie eine Kategorie aus, um konkrete Anwendungsfälle zu erkunden.</p>
 
+    <!-- TAB ROW -->
     <div class="category-tabs">
-      <button class="category-tab active" data-category="automation">Automatisierung &amp; Tools</button>
+      <button class="category-tab active" data-category="automation">Automatisierung &amp; Werkzeugbau</button>
       <button class="category-tab" data-category="vision">Computer Vision</button>
-      <button class="category-tab" data-category="ml">Industrial ML &amp; Analytik</button>
-      <button class="category-tab" data-category="simulation">Digitale Zwillinge &amp; Sim</button>
+      <button class="category-tab" data-category="ml">Maschinelles Lernen in der Industrie &amp; Analytik</button>
+      <button class="category-tab" data-category="simulation">Digitale Zwillinge &amp; Simulation</button>
     </div>
 
-    <!-- AUTOMATISIERUNG -->
+    <!-- ── AUTOMATION ── -->
     <div class="carousel-block active" data-category="automation">
       <div class="carousel-wrapper">
         <div class="carousel-track">
 
+          <!-- slide 1 -->
           <div class="carousel-slide">
-            <div class="project">
-              <h3>Algorithmische Wurzelberechnung &amp; Polynom‑Solver</h3>
+            <div class="project" data-category="automation">
+              <h3>Algorithmische Wurzeln und Polynomlöser</h3>
               <div class="project-meta-grid">
                 <div class="project-details">
-                  <p><strong>Ziel:</strong> Automatische Wurzelbestimmung für beliebige Polynome (n ≥ 2) ohne kommerzielle Frameworks.</p>
-                  <p><strong>Vorgehen:</strong> Iteratives Newton-Raphson-Verfahren mit explizitem Horner-Schema, automatisiertem Ableitungsmodul (<code>dpoly</code>) und Konvergenzschutz auf 1e-6 Genauigkeit.</p>
-                  <p><strong>Ergebnis:</strong> Schnelles, eigenständiges numerisches Skript mit Wurzelvalidierung und Funktionskurven-Darstellung via <code>matplotlib</code>.</p>
-                  <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation" target="_blank">Auf GitHub ansehen</a>
+                  <p><strong>Ziel:</strong> Automatisierung der mathematischen Wurzelbestimmung für komplexe Polynome höherer Ordnung
+                  (n ≥ 2) ohne Rückgriff auf ressourcenintensive kommerzielle Frameworks.</p>
+                  <p><strong>Prozess:</strong> Implementierung eines iterativen Newton-Raphson-Lösers mit expliziter Horner-Methode
+                  zur Auswertung, eines automatisierten Ableitungsmoduls (<code>dpoly</code>) sowie einer Konvergenzsicherung mittels einer
+                  zeitbegrenzten Schleife, die eindeutige Wurzelmengen mit einer Genauigkeit von 1e-6 verfolgt.</p>
+                  <p><strong>Ergebnis:</strong> Schnelles, eigenständiges numerisches Skript, das Eingaben validiert, alle eindeutigen reellen
+                  Wurzeln ermittelt und die Zielfunktion mithilfe von <code>matplotlib</code>.</p>
+                  <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation" target="_blank">Repository anzeigen</a>
                 </div>
                 <div class="project-visuals">
-                  <span class="visual-label">Newton-Iterations-Kern</span>
+                  <span class="visual-label">Newton-Iterationskern</span>
                   <pre><code>def solver(xi, coeff):
-    maxError = 1e-6
-    error = math.inf
-    while (error > maxError):
-        df = poly(xi, dpoly(coeff))
-        if (df != 0):
-            xn = xi - poly(xi,coeff)/df
-        else:
-            xn = xi - poly(xi,coeff)/\
-                 random.uniform(-1e-12,1e-12)
-        error = abs(xn - xi)
-        xi = xn
-    return format(xn, '.4f')</code></pre>
+                  maxError = 1e-6
+                  error = math.inf
+                  while (error > maxError):
+                      df = poly(xi, dpoly(coeff))
+                      if (df != 0):
+                          xn = xi - poly(xi, coeff)/df
+                      else:
+                          xn = xi - poly(xi, coeff)/\
+                               random.uniform(-1e-12, 1e-12)
+                      error = abs(xn - xi)
+                      xi = xn
+                  return format(xn, '.4f')</code></pre>
                 </div>
               </div>
             </div>
           </div>
 
+          <!-- slide 2 -->
           <div class="carousel-slide">
-            <div class="project">
-              <h3>Automatisierte Qualitätsdokument‑Assembly</h3>
+            <div class="project" data-category="automation">
+              <h3>Automatisierte Dokumentenzusammenführung</h3>
               <div class="project-meta-grid">
                 <div class="project-details">
-                  <p><strong>Ziel:</strong> Beseitigung manueller Aufwände beim Zusammenführen von Qualitätsprüfberichten, Lieferantenzertifikaten und RCA-Unterlagen.</p>
-                  <p><strong>Vorgehen:</strong> Python-Pipeline mit dynamischer MIME-Typ-Filterung, chronologischer Sortierung nach Erstellungszeitstempel (<code>getctime</code>) und speicheroptimiertem Zusammenführen via <code>PyPDF2.PdfMerger</code>.</p>
-                  <p><strong>Ergebnis:</strong> Vollautomatische Dokumenten-Pipeline für Luft- und Raumfahrtfertigung — null manuelle Eingriffe, vollständige Rückverfolgbarkeit.</p>
-                  <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation" target="_blank">Auf GitHub ansehen</a>
+                  <p><strong>Ziel:</strong> Vermeiden Sie manuellen Aufwand und menschliche Fehler bei der Zusammenführung von verstreuten
+                  Qualitätsprüfberichten, Lieferanten-Zertifikaten und RCA-Aufzeichnungen mithilfe von Power Automate-Cloud-Aufgaben.</p>
+                  <p><strong>Prozess:</strong> Python-Pipeline, die Verzeichnispuffer mit dynamischer MIME-Typ-Filterung durchsucht,
+                  Dateien mithilfe von <code>getctime</code> chronologisch sortiert und sie mithilfe des
+                  speicheroptimierten <code>PyPDF2.PdfMerger</code> zu produktionsreifen Compliance-Dossiers zusammenführt.</p>
+                  <p><strong>Ergebnis:</strong> Vollautomatisierte, mehrstufige Dokumentenzusammenstellung für Dokumentations-
+                  Workflows – keinerlei manueller Aufwand, lückenlose chronologische Rückverfolgbarkeit für Prüfungsunterlagen.</p>
+                  <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation" target="_blank">Repository anzeigen</a>
                 </div>
                 <div class="project-visuals">
-                  <span class="visual-label">Chronologische Dokument-Pipeline</span>
+                  <span class="visual-label">Chronologische Dokumentenabwicklung</span>
                   <pre><code>pdf_files = [
-    f for f in os.listdir(pdf_folder)
-    if mimetypes.guess_type(
-        os.path.join(pdf_folder,f)
-    )[0]=='application/pdf'
-]
-pdf_files.sort(
-    key=lambda x: os.path.getctime(
-        os.path.join(pdf_folder,x)))
-merger = PdfMerger()
-for pdf in pdf_files:
-    merger.append(
-        os.path.join(pdf_folder, pdf))
-merger.write(merged_pdf_path)</code></pre>
+                  f for f in os.listdir(pdf_folder)
+                  if mimetypes.guess_type(
+                      os.path.join(pdf_folder, f)
+                  )[0] == 'application/pdf'
+                  ]
+                  pdf_files.sort(
+                      key=lambda x: os.path.getctime(
+                          os.path.join(pdf_folder, x)
+                      )
+                  )
+                  merger = PdfMerger()
+                  for pdf in pdf_files:
+                      merger.append(os.path.join(pdf_folder, pdf))
+                  merger.write(merged_pdf_path)</code></pre>
                 </div>
               </div>
             </div>
           </div>
 
+          <!-- slide 3 -->
           <div class="carousel-slide">
-            <div class="project">
-              <h3>Algorithmische Signalsynthese &amp; Sequenzierungs-Engine</h3>
+            <div class="project" data-category="automation">
+              <h3>Engine für algorithmische Signalsynthese und Sequenzierung</h3>
               <div class="project-meta-grid">
                 <div class="project-details">
-                  <p><strong>Ziel:</strong> Parsen tokenisierter Datenarrays und Synthese diskreter Wellenformen ohne externe Multimedia-Abhängigkeiten.</p>
-                  <p><strong>Vorgehen:</strong> Python-DSP-Pipeline mit Frequenz-Dictionary-Mapper, NumPy-Sinuswellen-Erzeugung, sequenziellem Array-Concatenation, 16-Bit-Skalierung und präzisen Pausen-Intervallen.</p>
-                  <p><strong>Ergebnis:</strong> Eigenständiges Audio-Rendering-Werkzeug, das Binärbuffer direkt via <code>simpleaudio</code> an Hardware streamt.</p>
-                  <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation" target="_blank">Auf GitHub ansehen</a>
+                  <p><strong>Ziel:</strong> Tokenisierte Datenarrays analysieren und diskrete Rohwellenformen
+                  in strukturierte Audiosequenzen umwandeln, ohne auf externe Multimedia-Komponenten angewiesen zu sein.</p>
+                  <p><strong>Prozess:</strong> Leichte Python-DSP-Pipeline mit einem Frequenz-Mapper auf Basis eines Dictionaries,
+                  diskreter Sinuswellen-Generierung mit NumPy, sequenzieller Array-Verkettung, Skalierung mit 16-Bit-Ganzzahlen mit Vorzeichen
+                  (2¹⁵ − 1) und präzisen Tonabständen.</p>
+                  <p><strong>Ergebnis:</strong> Ein eigenständiges Dienstprogramm zur Audio-Wiedergabe, das Binärpuffer direkt über
+                  <code>simpleaudio</code> an die Hardware streamt und damit eine tiefgreifende digitale Signalbearbeitung auf Low-Level-Ebene demonstriert.</p>
+                  <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation" target="_blank">Repository anzeigen</a>
                 </div>
                 <div class="project-visuals">
-                  <span class="visual-label">Wellenform-Synthese-Block</span>
-                  <pre><code>tv = np.linspace(0, td, int(td*fs), False)
-tone = np.sin(2 * np.pi * f1 * tv)
-
-space_tone = np.linspace(0, 0,
-                 int(sd*fs), False)
-dtone_space = np.concatenate(
-                 (tone, space_tone))
-dtone_seq = (dtone_space *
-    (2**15-1) / np.max(np.abs(dtone_space)))
-return dtone_seq.astype(np.int16)</code></pre>
+                  <span class="visual-label">Block zur Wellenformsynthese</span>
+                  <pre><code>tv = np.linspace(0, td, int(td * fs), False)
+                  tone = np.sin(2 * np.pi * f1 * tv)
+                  
+                  # Space interval & Int16 normalisation
+                  space_tone = np.linspace(0, 0,
+                                           int(sd * fs), False)
+                  dtone_space = np.concatenate((tone, space_tone))
+                  dtone_seq = (dtone_space *
+                      (2**15 - 1) / np.max(np.abs(dtone_space)))
+                  return dtone_seq.astype(np.int16)</code></pre>
                 </div>
               </div>
             </div>
           </div>
 
+          <!-- slide 4 –  -->
           <div class="carousel-slide">
-            <div class="project">
-              <h3>Automatisierung &amp; Engineering‑Produktivität – Überblick</h3>
-              <p>• Python-Hilfsskripte zur Berechnung von Wurzeln polynomialer und transzendenter Gleichungen.<br>
-              • Automatisierung von PDF-Workflows (Zusammenführen, Sortieren, Formatieren) für regulierte Umgebungen.<br>
-              • Algorithmische Erzeugung strukturierter Ausgaben aus symbolischen oder sequenziellen Daten.<br>
-              • Automatisierte Datenerfassung via Web-Scraping als Grundlage für Analyse- und Modellierungsprozesse.</p>
-              <p class="tags">Python • Automatisierung • Scripting • Datenverarbeitung • Engineering‑Produktivität</p>
-              <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation" target="_blank">Auf GitHub ansehen</a>
-            </div>
-          </div>
+            <div class="project" data-category="automation">
+              <h3>Automatisiertes Web-Scraping und Extraktion von Überschriften</h3>
+              <div class="project-meta-grid">
+                <div class="project-details">
+                  <p><strong>Ziel:</strong> Fußballnachrichten-Schlagzeilen, Untertitel und Artikel-Links
+                  von der Sportseite der Zeitung „The Sun“ automatisch und nach einem festgelegten Zeitplan erfassen und speichern, wodurch die manuelle Datenerfassung entfällt.</p>
+                  <p><strong>Prozess:</strong> Erstellung einer headless Selenium-Pipeline unter Verwendung von ChromeDriver im Modus <code>--headless=new</code>,
+                  um die Zielseite im Hintergrund ohne Browserfenster zu laden. XPath-Selektoren zielen auf
+                  <code>.teaser__copy-container</code>-Elemente ab, um Titel, Untertitel und URLs in parallele Listen zu extrahieren,
+                  die zu einem pandas-DataFrame zusammengefasst und in eine mit einem Datumsstempel versehene CSV-Datei
+                  (<code>Football_headlines_DD-MM-YYYY.csv</code>) exportiert werden, die zusammen mit der ausführbaren Datei gespeichert wird.</p>
+                  <p><strong>Ergebnis:</strong> Ein portables Skript mit minimalen Abhängigkeiten, das strukturierte, analysierfertige
+                  Überschriften-Datensätze ohne jeglichen manuellen Aufwand erstellt – einsetzbar für jede strukturierte Nachrichten- oder E-Commerce-Seite.</p>
+                  <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation" target="_blank">Repository anzeigen</a>
+                </div>
+                <div class="project-visuals">
+                  <span class="visual-label">Headless-Pipeline zum Scraping und Exportieren</span>
+                  <pre><code># Headless Chrome setup
+                  options.add_argument("--headless=new")
+                  driver = webdriver.Chrome(
+                      service=Service(path), options=options)
+                  driver.get(website)
 
-        </div>
-      </div>
+                  # XPath extraction loop
+                  containers = driver.find_elements(
+                      "xpath",
+                      '//div[@class="teaser__copy-container"]')
+                  for container in containers:
+                      Title = container.find_element(
+                          By.XPATH, './/span').text
+                      Link = container.find_element(
+                          By.XPATH, './/a').get_attribute("href")
+
+                  # Date-stamped CSV export
+                  now = datetime.now().strftime("%d-%m-%Y")
+                  df.to_csv(f"Football_headlines_{now}.csv")</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>  
+
+        </div><!-- /carousel-track -->
+      </div><!-- /carousel-wrapper -->
       <div class="carousel-controls">
-        <button class="carousel-btn" data-dir="-1" aria-label="Vorherige">&#8592;</button>
+        <button class="carousel-btn" data-dir="-1" aria-label="Previous">&#8592;</button>
         <div class="carousel-dots">
-          <button class="carousel-dot active" aria-label="Folie 1"></button>
-          <button class="carousel-dot" aria-label="Folie 2"></button>
-          <button class="carousel-dot" aria-label="Folie 3"></button>
-          <button class="carousel-dot" aria-label="Folie 4"></button>
+          <button class="carousel-dot active" aria-label="Slide 1"></button>
+          <button class="carousel-dot" aria-label="Slide 2"></button>
+          <button class="carousel-dot" aria-label="Slide 3"></button>
+          <button class="carousel-dot" aria-label="Slide 4"></button>
         </div>
-        <button class="carousel-btn" data-dir="1" aria-label="Nächste">&#8594;</button>
+        <button class="carousel-btn" data-dir="1" aria-label="Next">&#8594;</button>
         <span class="carousel-counter">1 / 4</span>
       </div>
-    </div>
+    </div><!-- /automation block -->
 
-    <!-- COMPUTER VISION -->
+    <!-- ── COMPUTER VISION ── -->
     <div class="carousel-block" data-category="vision">
       <div class="carousel-wrapper">
         <div class="carousel-track">
 
           <div class="carousel-slide">
-            <div class="project">
-              <h3>Klassische Bildverbesserung &amp; Rauschreduktion</h3>
-              <p>Anwendung klassischer Bildverarbeitungsverfahren (räumliche Filter, Histogramm-Equalisierung, Frequenzbereichsmethoden) zur Verbesserung der Bildqualität in verrauschten oder kontrastarmen Industriebildern.</p>
-              <p class="tags">OpenCV • NumPy • Bildverarbeitung • Qualitätsprüfung</p>
-              <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision" target="_blank">Auf GitHub ansehen</a>
+            <div class="project" data-category="vision">
+              <h3>Histogramm-Spezifikation zur Bildverbesserung</h3>
+              <div class="project-meta-grid">
+                <div class="project-details">
+                  <p><strong>Ziel:</strong> Verbessern Sie die Bildqualität eines kontrastarmen Bildes, indem Sie die Tonwertverteilung
+                  eines kontrastreichen Referenzbildes übertragen – ganz ohne manuelle Anpassung von Helligkeit oder Kontrast.</p>
+                  <p><strong>Prozess:</strong> Beide Bilder wurden mit OpenCV geladen und die Quelle von BGR in RGB konvertiert.
+                  Es wurde <code>skimage.exposure.match_histograms()</code> angewendet, um die Pixelintensitätsverteilung des dunklen Bildes
+                  Kanal für Kanal neu zu verteilen, sodass sie mit der Referenz übereinstimmt. Das Vorher-Nachher-Ergebnis wurde als
+                  3-teiliger Bildvergleich visualisiert; anschließend wurden kanalweise Histogramme und kumulative Verteilungsfunktionen (CDFs)
+                  für alle drei Bilder in einem 3×3-Subplot-Raster dargestellt, um die Tonwertübertragung zu bestätigen.</p>
+                  <p><strong>ERgebnis:</strong> Eine übersichtliche, nachvollziehbare Pipeline, die die Histogrammspezifikation als
+                  fundierte Bildvorverarbeitungstechnik demonstriert – direkt anwendbar in industriellen Inspektionsszenarien, in denen
+                  Uneinheitlichkeiten in der Beleuchtung die Genauigkeit der automatisierten Fehlererkennung beeinträchtigen.</p>
+                  <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision" target="_blank">Repository anzeigen</a>
+                </div>
+                <div class="project-visuals">
+                  <span class="visual-label">Pipeline zum Abgleich von Histogrammen</span>
+                  <pre><code># Convert source from BGR → RGB
+                  image = cv2.cvtColor(img_dark,
+                                      cv2.COLOR_BGR2RGB)
+
+                  # Match histogram of source to reference
+                  matched = match_histograms(image, reference)
+                  matched = matched.astype(np.uint8)
+
+                  # Per-channel histogram + CDF verification
+                  for j, col in enumerate(('red','green','blue')):
+                      img_hist, bins = exposure.histogram(
+                          img[:, :, j], nbins=256)
+                      axes[j, i].plot(
+                          bins, img_hist / img_hist.max(),
+                          color=col)
+                      img_cdf, bins = \
+                          exposure.cumulative_distribution(
+                              img[:, :, j], nbins=256)
+                      axes[j, i].plot(
+                          bins, img_cdf,
+                          color=col, linestyle='--')</code></pre>
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="carousel-slide">
-            <div class="project">
-              <h3>Merkmalsextraktion &amp; Ähnlichkeitsanalyse</h3>
-              <p>Pipelines zur Merkmalsextraktion und Ähnlichkeitsanalyse für den Vergleich von Produktionsbildern und die Erkennung von Abweichungen oder wiederkehrenden Mustern.</p>
-              <p class="tags">OpenCV • scikit-image • Feature Deskriptoren • Anomalieerkennung</p>
-              <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision" target="_blank">Auf GitHub ansehen</a>
+            <div class="project" data-category="vision">
+            <h3>Histogrammabgleich von Grund auf: Der arithmetische Ansatz</h3>
+            <div class="project-meta-grid">
+              <div class="project-details">
+                <p><strong>Ziel:</strong> Die Histogramm-Spezifikation nachbilden, ohne auf Funktionen aus übergeordneten Bibliotheken
+                zurückzugreifen – die gesamte entsprechende Pipeline manuell ausschließlich mit NumPy erstellen, um ein tiefgreifendes Verständnis
+                der zugrunde liegenden Mathematik zu demonstrieren.</p>
+                <p><strong>Prozess:</strong> Berechnung von Pixelintensitätshistogrammen sowohl für die dunkle Quelle als auch für die kontrastreiche
+                Referenz unter Verwendung von <code>np.bincount()</code>. Diese wurden jeweils auf eine Wahrscheinlichkeitsdichtefunktion (PDF) normiert und
+                zu einer kumulativen Verteilungsfunktion (CDF) akkumuliert. Erstellung einer Lookup-Tabelle mit 256 Einträgen durch Ermittlung der
+                jeweiligen Referenzintensität für jeden Intensitätspegel der Quelle, deren CDF-Wert am nächsten liegt – unter Minimierung von
+                <code>|CDF_source(i) − CDF_reference(j)|</code> mittels <code>np.argmin()</code>. Die Abbildung erfolgte über
+                direkte Array-Indizierung (<code>mapping[image]</code>) für eine vollständig vektorisierte Transformation. Die Ergebnisse wurden
+                als 2×3-Raster aus Bildvorschauen und den dazugehörigen Histogrammen visualisiert.</p>
+                <p><strong>Ergebnis:</strong> Eine transparente, auf ein Minimum an Abhängigkeiten beschränkte Implementierung, die die statistische
+                Mechanik der Histogramm-Spezifikation explizit macht – und damit dasselbe Ergebnis bestätigt, das über
+                <code>match_histograms()</code> erzielt wurde, jedoch mit vollständiger Nachvollziehbarkeit jedes einzelnen Rechenschritts.</p>
+                <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision" target="_blank">Repository anzeigen</a>
+              </div>
+              <div class="project-visuals">
+                <span class="visual-label">Manuelle Erstellung einer CDF-Nachschlagetabelle</span>
+                <pre><code># PDF & CDF for source and reference
+                hist_a = np.bincount(image.ravel(),
+                                    minlength=256)
+                cdf_a  = np.cumsum(hist_a / hist_a.sum())
+
+                hist_b = np.bincount(reference.ravel(),
+                                    minlength=256)
+                cdf_b  = np.cumsum(hist_b / hist_b.sum())
+
+                # Build intensity mapping via CDF matching
+                mapping = np.zeros(256, dtype=np.uint8)
+                for i in range(256):
+                    diff = np.abs(cdf_a[i] - cdf_b)
+                    mapping[i] = np.argmin(diff)
+
+                # Vectorised transform — no loops needed
+                matched_image = mapping[image]</code></pre>
+              </div>
             </div>
           </div>
+        </div>
 
           <div class="carousel-slide">
-            <div class="project">
-              <h3>Überwachte Objekt- &amp; Mustererkennung</h3>
-              <p>Überwachte ML-Modelle für Objekt- und Mustererkennung in annotierten Bilddatensätzen, einschließlich CNN-Architekturen für domänenspezifische Inspektionsdaten.</p>
-              <p class="tags">TensorFlow • CNNs • CVAT • Deep Learning • Qualitätsprüfung</p>
-              <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision" target="_blank">Auf GitHub ansehen</a>
+            <div class="project" data-category="vision">
+            <h3>Bildklassifikator für Schuhe: Transferlernen mit EfficientNetV2</h3>
+            <div class="project-meta-grid">
+              <div class="project-details">
+                <p><strong>Ziel:</strong> Entwickeln Sie einen Bildklassifikator mit drei Klassen, der zwischen Schuhen, Sandalen und Stiefeln unterscheidet,
+                unter Verwendung eines vortrainierten Deep-Learning-Backbones – und demonstrieren Sie dabei eine durchgängige, überwachte Bildverarbeitungspipeline vom
+                Rohdatensatz bis zum einsatzfähigen Modell.</p>
+                <p><strong>Prozess:</strong> Ein beschrifteter Datensatz zu Schuhen wurde in Google Colab hochgeladen und extrahiert, anschließend
+                wurde er mithilfe von <code>splitfolders</code> im Verhältnis 70/15/15 in Trainings-, Validierungs- und Testdatensätze aufgeteilt. Die Bilder wurden
+                mit <code>tf.keras.utils.image_dataset_from_directory()</code> unter Verwendung von One-Hot-Kategorielabels geladen und
+                zur Steigerung der Pipeline-Effizienz mit <code>AUTOTUNE</code> im Prefetching-Verfahren zwischengespeichert. Ein Kopf zur Datenaugmentierung
+                (zufälliges Spiegeln, Drehen, Zoomen) wurde dem Modell vorangestellt, um die Generalisierungsfähigkeit zu verbessern. Das Backbone,
+                <code>EfficientNetV2B0</code>, das auf ImageNet vortrainiert wurde, wurde ohne seine obersten Schichten geladen und auf die
+                letzten 20 Schichten feinabgestimmt. Ein benutzerdefinierter Klassifikator-Kopf (Dense 256 → Dropout 0,3 → Softmax 3) wurde angehängt und das
+                vollständige Modell mit Adam und kategorialer Kreuzentropie kompiliert. Beim Training wurde Early Stopping auf
+                <code>val_loss</code> mit einer Geduld von 5 angewendet. Die Auswertung nach dem Training umfasste Verlust-/Genauigkeitskurven,
+                eine Verwechslungsmatrix und einen <code>classification_report</code> pro Klasse. Das endgültige Modell wurde
+                im <code>.keras</code>-Format gespeichert und an einem live hochgeladenen Bild getestet.</p>
+                <p><strong>Ergebnis:</strong> Eine produktionsreife Pipeline zur Bildklassifizierung, die eine hohe Testgenauigkeit
+                bei einem Schuh-Datensatz mit drei Klassen erzielt – Architektur, Gewichte und Vorverarbeitungsschichten wurden
+                zur Wiederverwendung und Bereitstellung beibehalten.</p>
+                <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision" target="_blank">Repository anzeigen</a>
+              </div>
+              <div class="project-visuals">
+                <span class="visual-label">Feingestimmter EfficientNetV2-Klassifikator-Head</span>
+                <pre><code># Freeze all but last 20 layers
+                base_model = EfficientNetV2B0(
+                    input_shape=(224, 224, 3),
+                    include_top=False,
+                    weights="imagenet",
+                    pooling="avg")
+                for layer in base_model.layers[:-20]:
+                    layer.trainable = False
+
+                # Custom classifier head
+                model = models.Sequential([
+                    data_augmentation,
+                    layers.Lambda(preprocess_input),
+                    base_model,
+                    layers.Dense(256, activation="relu"),
+                    layers.Dropout(0.3),
+                    layers.Dense(3, activation="softmax")
+                ])
+
+                # Early stopping on val_loss
+                early_stop = EarlyStopping(
+                    monitor="val_loss",
+                    patience=5,
+                    restore_best_weights=True)</code></pre>
+              </div>
             </div>
           </div>
+        </div>
 
           <div class="carousel-slide">
-            <div class="project">
-              <h3>Low-Altitude-Objekt-Detection</h3>
-              <p>Angewandter Computer-Vision-Anwendungsfall für Inspektions- und Überwachungsszenarien — Training und Evaluierung von Objekterkennungsmodellen auf Luftaufnahmen aus geringer Höhe.</p>
-              <p class="tags">Objekt-Detection • Luftbildauswertung • TensorFlow • Computer Vision</p>
-              <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision" target="_blank">Auf GitHub ansehen</a>
+            <div class="project" data-category="vision">
+            <h3>Fahrzeugbildklassifikator – Zweistufiges Fine-Tuning mit ResNet50</h3>
+            <div class="project-meta-grid">
+              <div class="project-details">
+                <p><strong>Ziel:</strong> Entwickeln Sie einen Fahrzeugbildklassifikator für mehrere Klassen unter Verwendung einer benutzerdefinierten Pipeline zur Datensatzaufteilung
+                und einer zweistufigen Transfer-Learning-Strategie – „Frozen Backbone Warm-up“, gefolgt von selektivem
+                Fine-Tuning –, um die Genauigkeit zu maximieren und gleichzeitig das Überlernen zu kontrollieren.</p>
+                <p><strong>Prozess:</strong> Es wurde ein benutzerdefinierter 70/15/15-Datensatz-Splitter unter Verwendung von <code>pathlib</code>
+                und <code>shutil</code> implementiert, um die Rohbilder nach Klassen in die Ordnerstrukturen „train“, „val“ und „test“ zu organisieren. Die
+                Aufteilungen wurden über <code>image_dataset_from_directory()</code> mit ganzzahligen Labels geladen und es wurde eine umfangreiche Augmentations-
+                Pipeline (Spiegelung, Drehung, Zoom, Helligkeit, Kontrast) sowie die ImageNet-Standard-Normalisierung nach Mittelwert und Varianz
+                inline über <code>tf.data.map()</code> angewendet. Es wurde eine Factory für austauschbare Backbones erstellt (<code>build_model()</code>)
+                , die ResNet50 oder EfficientNetB0 unterstützt, mit einem Global Average Pooling → Dense 512 → Dropout 0,4 →
+                Softmax-Head. Das Training erfolgte in zwei Phasen: In Phase 1 wurde das gesamte Backbone eingefroren und der Head für
+                5 Epochen bei <code>1e-3</code> trainiert; in Phase 2 wurden die letzten 30 ResNet-Schichten entfroren und für bis zu
+                30 Epochen bei <code>1e-4</code> mit Early Stopping und <code>ReduceLROnPlateau</code> feinabgestimmt. Zur Auswertung
+                wurden eine Seaborn-Heatmap der Verwechslungsmatrix sowie ein <code>classification_report</code> pro Klasse verwendet. Das Modell wurde
+                im <code>.keras</code>-Format mit einer wiederverwendbaren <code>predict()</code>-Inferenzfunktion gespeichert.</p>
+                <p><strong>Ergebnis:</strong> Eine flexible, produktionsorientierte Klassifizierungspipeline mit austauschbaren
+                Backbones, Inline-Vorverarbeitung und einem zweistufigen Trainingsverfahren – direkt übertragbar auf industrielle
+                visuelle Inspektionsaufgaben wie die Erkennung von Bauteiltypen oder die Sortierung nach Fehlerklassen.</p>
+                <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision" target="_blank">Repository anzeigen</a>
+              </div>
+              <div class="project-visuals">
+                <span class="visual-label">Zweistufige Strategie zur Feinabstimmung</span>
+                <pre><code># Stage 1 — frozen backbone, train head
+                base_model.trainable = False
+                model.compile(
+                    optimizer=Adam(1e-3),
+                    loss="sparse_categorical_crossentropy")
+                model.fit(train_ds, epochs=5,
+                    callbacks=[EarlyStopping(patience=3)])
+
+                # Stage 2 — unfreeze last 30 layers
+                base_model.trainable = True
+                for layer in base_model.layers[:-30]:
+                    layer.trainable = False
+
+                model.compile(optimizer=Adam(1e-4), ...)
+                model.fit(train_ds, epochs=30,
+                    callbacks=[
+                        EarlyStopping(patience=4),
+                        ReduceLROnPlateau(
+                            factor=0.5, patience=2)])</code></pre>
+              </div>
             </div>
           </div>
+        </div>
 
         </div>
       </div>
       <div class="carousel-controls">
-        <button class="carousel-btn" data-dir="-1" aria-label="Vorherige">&#8592;</button>
+        <button class="carousel-btn" data-dir="-1" aria-label="Previous">&#8592;</button>
         <div class="carousel-dots">
-          <button class="carousel-dot active"></button>
-          <button class="carousel-dot"></button>
-          <button class="carousel-dot"></button>
-          <button class="carousel-dot"></button>
+          <button class="carousel-dot active" aria-label="Slide 1"></button>
+          <button class="carousel-dot" aria-label="Slide 2"></button>
+          <button class="carousel-dot" aria-label="Slide 3"></button>
+          <button class="carousel-dot" aria-label="Slide 4"></button>
         </div>
-        <button class="carousel-btn" data-dir="1" aria-label="Nächste">&#8594;</button>
+        <button class="carousel-btn" data-dir="1" aria-label="Next">&#8594;</button>
         <span class="carousel-counter">1 / 4</span>
       </div>
-    </div>
+    </div><!-- /vision block -->
 
-    <!-- INDUSTRIAL ML -->
+    <!-- ── INDUSTRIAL ML ── -->
     <div class="carousel-block" data-category="ml">
       <div class="carousel-wrapper">
         <div class="carousel-track">
 
           <div class="carousel-slide">
-            <div class="project">
-              <h3>End‑to‑End‑ML‑Pipelines für Anomalieerkennung</h3>
-              <p>Vollständige Machine-Learning-Pipelines zur Identifikation von Fehler- und Abweichungsmustern in multivariaten Sensordaten aus Produktionsprozessen — von der Rohdatenaufnahme bis zum deployment-fähigen Modellexport.</p>
-              <p class="tags">scikit-learn • pandas • ETL • Anomalieerkennung • Sensordaten</p>
-              <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering" target="_blank">Auf GitHub ansehen</a>
+            <div class="project" data-category="ml">
+              <h3>End-to-End-Pipeline für die Analyse von Industrieeinkommen und demografischen Daten</h3>
+              <div class="project-meta-grid">
+                <div class="project-details">
+                  <p><strong>Ziel:</strong> Erstellen Sie eine automatisierte Pipeline zur prädiktiven Modellierung, um binäre demografische Einkommensschwellenwerte ($>50K$ vs. $\leq50K$) anhand stark unausgewogener, vielschichtiger Datensätze zu klassifizieren, die komplexe kategoriale und kontinuierliche Merkmale enthalten.</p>
+                  <p><strong>Prozess:</strong> Entwicklung einer robusten Verarbeitungs-Pipeline in Python unter Verwendung von `scikit-learn` und `imbalanced-learn`. Automatisierte Datenbereinigung mit benutzerdefinierten Vektorkorrelationen zum Filtern stark kollinearer Spalten, Implementierung der Teilsysteme `OneHotEncoder` und `ColumnTransformer` sowie dynamische Behebung eines starken Klassenungleichgewichts mittels Synthetic Minority Over-sampling (`SMOTE`). Optimierte Merkmalsauswahl mithilfe von Metriken der gegenseitigen Information (`SelectKBest`), wobei vergleichende Trainings-Benchmarks über ein Ensemble aus `RandomForestClassifier` sowie Gauß- und multinomiale Naive-Bayes-Modelle (`GaussianNB` / `MultinomialNB`) durchgeführt wurden.</p>
+                  <p><strong>Ergebnis:</strong> Es wurde eine fehlerfreie Verarbeitungsklasse für mehrere Modelle implementiert, bei der das Ensemble-Random-Forest-Modell nachweislich besser abschnitt als bayessche Klassifikatoren und präzise Klassifikationsmatrizen, Leistungsberichte sowie diagnostische Matrixprofile lieferte.</p>
+                  <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering" target="_blank">Repository anzeigen</a>
+                </div>
+                <div class="project-visuals">
+                  <span class="visual-label">Multi-Modell-Pipeline-Stack</span>
+                  <pre><code># Data Balance & Feature Selection Pipeline
+                  pipe = Pipeline([
+                      ('preprocessor', preprocessor),
+                      ('kbest', SelectKBest(
+                          score_func=mutual_info_classif, k=15)),
+                      ('smote', SMOTE(
+                          random_state=42, sampling_strategy=0.5)),
+                      ('classifier', model)
+                  ])
+
+                  # Fit, Evaluated & Plotted Consistently
+                  pipe.fit(X_train, y_train)
+                  y_pred = pipe.predict(X_test)</code></pre>
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="carousel-slide">
-            <div class="project">
-              <h3>Klassifikationsmodelle zur Qualitätszustandsvorhersage</h3>
-              <p>Überwachte Klassifikationsmodelle zur Vorhersage von Qualitätszuständen oder Prozessbedingungen auf Basis industrieller Produktionsdaten, einschließlich Schwellenwertoptimierung für unausgewogene Fehlerdatensätze.</p>
-              <p class="tags">scikit-learn • XGBoost • SVM • Qualitätsengineering • Produktionsdaten</p>
-              <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering" target="_blank">Auf GitHub ansehen</a>
+            <div class="project" data-category="ml">
+              <h3>Pipeline für chronologische Prognosen und Zeitreihenregression</h3>
+              <div class="project-meta-grid">
+                <div class="project-details">
+                  <p><strong>Ziel:</strong> Analysieren Sie zeitliche Nutzungstrends und entwickeln Sie ein robustes Vorhersagemodell zur Prognose zeitabhängiger Nachfragzyklen auf der Grundlage von Wettervariablen und Umweltmerkmalen, wobei chronologische Datenabhängigkeiten zu berücksichtigen sind, um Datenlecks zu vermeiden.</p>
+                  <p><strong>Prozess:</strong> Durchführung einer explorativen Datenanalyse (EDA) durch Abbildung zyklischer Nachfrageschwankungen über unterteilte Intra-Day-Zeiträume (Vormittag, Nachmittag, Abend, Nacht). Aufbau einer chronologischen Vorverarbeitungsarchitektur unter Verwendung einer `ColumnTransformer`-Pipeline, die die kategoriale Verarbeitung mit `OneHotEncoder` mit numerischen Arrays kombiniert. Die Integrität des historischen Trainings wurde durch die chronologische Sortierung der Merkmale (`Date`) und die Validierung der Modellkonvergenz mithilfe einer 10-fachen rollierenden `TimeSeriesSplit`-Kreuzvalidierung mit einem Ensemble aus `RandomForestRegressor` sichergestellt.</p>
+                  <p><strong>Ergebnis:</strong> Es wurde ein datenschutzkonformes Prognose-Framework implementiert, das sich verändernde Trends über gleitende 24-Stunden-Fenster berechnet. Das System erfasst die strukturelle Nachfrage mit hoher zeitlicher Präzision und liefert stabile Prognose-Basiswerte über konjunkturelle Schwankungen und Feiertagsausreißer hinweg.</p>
+                  <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering" target="_blank">Repository anzeigen</a>
+                </div>
+                <div class="project-visuals">
+                  <span class="visual-label">Kreuzvalidierung von Zeitreihen</span>
+                  <pre><code># Enforced Chronological Split Setup
+                  tscv = TimeSeriesSplit(n_splits=10)
+                  maes = []
+
+                  for train_idx, test_idx in tscv.split(A):
+                      A_train, A_test = A.iloc[train_idx], A.iloc[test_idx]
+                      B_train, B_test = B.iloc[train_idx], B.iloc[test_idx]
+                      
+                      model.fit(A_train, B_train)
+                      B_pred = model.predict(A_test)
+                      maes.append(mean_absolute_error(B_test, B_pred))</code></pre>
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="carousel-slide">
-            <div class="project">
-              <h3>Zeitreihenmodelle für die Produktionsplanung</h3>
-              <p>Bedarfsprognose- und Materialbedarfsplanungsmodelle mit Zeitreihenverfahren (ARIMA, Prophet, LSTM) zur Unterstützung der Produktionsplanung mit vorlaufzeitbewussten Prognoseintervallen.</p>
-              <p class="tags">ARIMA • Prophet • LSTM • Prognose • Produktionsplanung</p>
-              <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering" target="_blank">Auf GitHub ansehen</a>
+            <div class="project" data-category="ml">
+              <h3>Automatisierte statistische Prozesskontrolle (SPC) und Qualitätsfähigkeits-Engine</h3>
+              <div class="project-meta-grid">
+                <div class="project-details">
+                  <p><strong>Ziel:</strong> Automatisieren Sie die Live-Überwachung von Anomalien, Abweichungen und Prozessschwankungen in kontinuierlichen Mehrkanal-Fabrikdatenströmen und ersetzen Sie die manuelle Datendarstellung durch systematische statistische Kontrollgrenzen ($UCL$, $LCL$) sowie Berichte zur Prozessfähigkeit.</p>
+                  <p><strong>Prozess:</strong> Entwicklung einer durchgängigen mathematischen SPC-Engine in Python unter Verwendung von `NumPy` und `Pandas`. Erstellung dynamischer Vektoren zur Matrixuntergruppierung zur Berechnung von laufenden Stichprobenmittelwerten ($\bar{X}$) und Varianzbereichen ($R$) auf der Grundlage statistischer Standardkontrollkonstanten ($A_2, D_3, D_4$). Ich habe alle 8 Nelson-Laufregeln programmiert, um subtile Muster außerhalb der Kontrolle zu erkennen, Page-Hinkley- und Cumulative-Sum-Tracker (CUSUM) zur Driftdetektion zur Identifizierung von Mikroverschiebungen implementiert und kurz- sowie langfristige Prozessfähigkeitsindizes ($C_p$, $C_{pk}$, $P_p$, $P_{pk}$) berechnet.</p>
+                  <p><strong>Ergebnis:</strong> Ein umfassendes Diagnosekonzept, das über Tausende von Knoten mit Streaming-Sensordaten läuft, automatisch ein Master-Dashboard zur Qualitätskontrolle generiert, Regelverstöße kennzeichnet und exakte Leistungsmetriken berechnet, um Fehler zu verhindern, bevor sie auftreten.</p>
+                  <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering" target="_blank">Repository anzeigen</a>
+                </div>
+                <div class="project-visuals">
+                  <span class="visual-label">Formulierungen zu Fähigkeiten und Grenzen</span>
+                  <pre><code># Process Variance Subgroup Logic
+                  def subgroup_stats(subgroups: np.ndarray):
+                      xbar = subgroups.mean(axis=1)
+                      R = subgroups.max(axis=1) - subgroups.min(axis=1)
+                      return xbar, R, float(xbar.mean()), float(R.mean())
+
+                  # Multi-Tier Drift Inversion Tracking
+                  Cpos = max(0.0, Cpos + zi - k)
+                  Cneg = min(0.0, Cneg + zi + k)
+                  if Cpos > h: ap.append(i); Cpos = 0.0</code></pre>
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="carousel-slide">
-            <div class="project">
-              <h3>Bayessche Entscheidungsmodelle &amp; Prozessfähigkeitsanalyse</h3>
-              <p>Probabilistische Mustererkennung auf Basis bayesscher Entscheidungstheorie zur unsicherheitsbewussten Klassifikation sowie automatisierte Prozessfähigkeitsanalysen (SPC) und CDC-Reporting.</p>
-              <p class="tags">Bayessche Methoden • SPC • Statistische Modellierung • CDC-Reporting • Qualitätsanalytik</p>
-              <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering" target="_blank">Auf GitHub ansehen</a>
+            <div class="project" data-category="ml">
+              <h3>Benutzerdefinierter probabilistischer Naive-Bayes-Sortieralgorithmus</h3>
+              <div class="project-meta-grid">
+                <div class="project-details">
+                  <p><strong>Ziel:</strong> Entwickeln Sie von Grund auf ein Naive-Bayes-Klassifizierungsskript mit geringem Overhead, um komplexe kategoriale Arrays mit mehreren Merkmalen auszuwerten und Zielentscheidungen auszugeben, ohne dabei auf externe Machine-Learning-Frameworks angewiesen zu sein.</p>
+                  <p><strong>Prozess:</strong> Formulierung einer reinen bedingten Wahrscheinlichkeitslogik in Python mithilfe von `Pandas`. Berechnung der Basis-A-priori-Wahrscheinlichkeiten für Systemzustände ($P(\text{Ja})$, $P(\text{Nein})$) direkt anhand von Häufigkeitsnachschlägen, Abbildung kategorialer Merkmalsströme über benutzerdefinierte Teilmengen zur Ermittlung von Wahrscheinlichkeitsvektoren ($P(X_i | Y)$), iterative Anwendung des Bayes-Theorems auf neue Testvektoren zur Ermittlung gemeinsamer A-posteriori-Werte sowie Normalisierung der Endergebnisse zur Berechnung präziser statistischer Konfidenzintervalle.</p>
+                  <p><strong>Ergenis:</strong> Es wurde eine schnelle, framework-unabhängige Klassifizierungs-Engine implementiert, die mehrdimensionale Merkmalsbeschränkungen erfolgreich auswertet, um Betriebsbedingungen mit absoluter mathematischer Transparenz zu ermitteln.</p>
+                  <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering" target="_blank">Repository anzeigen</a>
+                </div>
+                <div class="project-visuals">
+                  <span class="visual-label">Bayessche Regel-Logik</span>
+                  <pre><code># Joint Posterior & Conditional Mapping
+                  def conditional_probability(feature, value, target):
+                      subset = df[y == target]
+                      count = len(subset[subset[feature] == value])
+                      return count / len(subset)
+
+                  for feature, value in test_instance.items():
+                      p_yes *= conditional_probability(feature, value, "Yes")
+                      p_no *= conditional_probability(feature, value, "No")</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div class="project" data-category="ml">
+              <h3>Fortgeschrittene Pipeline zur Reduzierung industrieller Fehler</h3>
+              <div class="project-meta-grid">
+                <div class="project-details">
+                  <p><strong>Ziel:</strong> Entwickeln Sie eine leistungsstarke Klassifizierungspipeline zur Diagnose von Fehlerarten an Baumaschinen anhand mehrdimensionaler Rohsignale, wobei Sie gravierende Ungleichgewichte in der Klassenverteilung und das Problem der Dimensionalität, das bei hochfrequenten spektralen Merkmalsmengen auftritt, beheben.</p>
+                  <p><strong>Prozess:</strong> Ich habe ein durchgängiges Klassifizierungssystem in Python unter Verwendung von `scikit-learn` und `LightGBM` programmiert. Die Merkmale wurden mit `StandardScaler` stabilisiert und es wurde Synthetic Minority Over-sampling (`SMOTE`) angewendet, um Minderheitsfehlerklassen auszugleichen. Hochfrequente Fast-Fourier-Transformations-Spalten (FFT) wurden isoliert, um eine gezielte Hauptkomponentenanalyse (PCA) durchzuführen, wodurch das Spektralrauschen vor der horizontalen Vektorstapelzusammenführung (np.hstack) auf 10 hochdichte orthogonale Varianzkomponenten reduziert wurde. Nichtlineare Mehrklassen-Grenzen wurden durch die Ausführung einer 5-fach kreuzvalidierten „RandomizedSearchCV“-Hyperparameteroptimierung zur Feinabstimmung der „LGBMClassifier“-Konfigurationen optimiert.</p>
+                  <p><strong>Ergebnis:</strong> Es wurde ein optimiertes Framework für die prädiktive Diagnose implementiert, das detaillierte Verwechslungsmatrizen und Berichte zur Mehrklassenklassifizierung liefert und so eine Anomalieerkennung im Submillisekundenbereich für Arbeitsabläufe in der prädiktiven Instandhaltung in der Fertigung gewährleistet.</p>
+                  <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering" target="_blank">View Repository</a>
+                </div>
+                <div class="project-visuals">
+                  <span class="visual-label">Spektrale PCA und Ensemble-Ausführung</span>
+                  <pre><code># Isolated Spectral Decomposition
+                  pca = PCA(n_components=10)
+                  X_train_fft = pca.fit_transform(
+                      X_train_bal[:, [X.columns.get_loc(c) for c in fft_cols]]
+                  )
+
+                  # Feature Merging & Tuned Search Routing
+                  X_train_final = np.hstack([X_train_nonfft, X_train_fft])
+                  search = RandomizedSearchCV(
+                      model, param_dist, n_iter=20, scoring='f1_macro', cv=5
+                  )
+                  search.fit(X_train_final, y_train_bal)</code></pre>
+                </div>
+              </div>
             </div>
           </div>
 
         </div>
       </div>
       <div class="carousel-controls">
-        <button class="carousel-btn" data-dir="-1" aria-label="Vorherige">&#8592;</button>
+        <button class="carousel-btn" data-dir="-1" aria-label="Previous">&#8592;</button>
         <div class="carousel-dots">
-          <button class="carousel-dot active"></button>
-          <button class="carousel-dot"></button>
-          <button class="carousel-dot"></button>
-          <button class="carousel-dot"></button>
+          <button class="carousel-dot active" aria-label="Slide 1"></button>
+          <button class="carousel-dot" aria-label="Slide 2"></button>
+          <button class="carousel-dot" aria-label="Slide 3"></button>
+          <button class="carousel-dot" aria-label="Slide 4"></button>
+          <button class="carousel-dot" aria-label="Slide 5"></button>
         </div>
-        <button class="carousel-btn" data-dir="1" aria-label="Nächste">&#8594;</button>
-        <span class="carousel-counter">1 / 4</span>
+        <button class="carousel-btn" data-dir="1" aria-label="Next">&#8594;</button>
+        <span class="carousel-counter">1 / 5</span>
       </div>
-    </div>
+    </div><!-- /ml block -->
 
-    <!-- SIMULATION -->
+    <!-- ── SIMULATION ── -->
     <div class="carousel-block" data-category="simulation">
       <div class="carousel-wrapper">
         <div class="carousel-track">
 
           <div class="carousel-slide">
-            <div class="project">
-              <h3>Diskreter Ereignis-Digitaler Zwilling – Mehrstufige Produktionslinie</h3>
-              <p>AnyLogic-basierte Diskrete-Ereignis-Simulation eines Sequenzierungspuffers zwischen Karosseriebau und Lackiererei in der Automobilfertigung. Enthält Parametervariation zur Lagerkapazitätsoptimierung und Engpassanalyse.</p>
-              <p class="tags">AnyLogic • Diskrete‑Ereignis-Simulation • Digitaler Zwilling • Automotive • Engpassanalyse</p>
-              <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0" target="_blank">Auf GitHub ansehen</a>
+            <div class="project" data-category="simulation">
+              <h3>Digitaler Zwilling mit diskreten Ereignissen für den Abgleich von Fertigungslinien und die OEE-Optimierung</h3>
+              <div class="project-meta-grid">
+                <div class="project-details">
+                  <p><strong>Ziel:</strong> Entwicklung einer Plattform für stochastische Diskret-Ereignis-Simulationen (DES), die als digitaler Zwilling der Fabrik fungiert, um Durchsatzengpässe zu analysieren, Engpässe in der Fertigung zu lokalisieren und die Gesamtanlageneffektivität (OEE) unter Berücksichtigung unvorhersehbarer Maschinenausfallzeiten und Messrauschen bei Prüfungen zu schätzen.</p>
+                  <p><strong>Prozess:</strong> Programmierung einer mehrstufigen Fertigungslinie (Zuschnitt, Montage, Prüfung) in Python unter Verwendung von `SimPy`. Simulation nichtlinearer Maschinenausfälle unter Verwendung exponentieller Verteilungsmodelle für die mittlere Ausfallzeit (MTBF) und die mittlere Reparaturzeit (MTTR). Entwicklung eines Subsystems zur Qualitätskontrolle im geschlossenen Regelkreis, das Bauteile anhand strenger oberer und unterer Spezifikationsgrenzen ($USL$ / $LSL$) bewertet, die mit gaußverteilten Messrauschen ($\sigma$) behaftet sind, sowie Erstellung eines bedingten Produktrouting-Layouts mit adaptiven Nacharbeitsschwellenwerten.</p>
+                  <p><strong>Ergebnis:</strong> Es wurde ein funktionsfähiger Fertigungssimulator implementiert, der wichtige Leistungskennzahlen generiert – First-Pass-Yield (FPY), Ausschussquoten, stündlichen Durchsatz und OEE-Prozentsätze der einzelnen Stationen –, wodurch eine schnelle und risikofreie virtuelle Prüfung von Konfigurationen zur Linienauslastung ermöglicht wird.</p>
+                  <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation" target="_blank">Repository anzeigen</a>
+                </div>
+                <div class="project-visuals">
+                  <span class="visual-label">Stochastische Logik für Maschinenausfälle</span>
+                  <pre><code># Continuous Exponential MTBF/MTTR Process
+                  def breakdown_process(env, station_name):
+                      mtbf = STATIONS[station_name]["mtbf"]
+                      mttr = STATIONS[station_name]["mttr"]
+                      if mtbf >= 9999: return
+
+                      while True:
+                          time_to_failure = random.expovariate(1.0 / mtbf)
+                          yield env.timeout(time_to_failure)
+                          DOWN[station_name] = True
+                          yield env.timeout(mttr)
+                          DOWN[station_name] = False</code></pre>
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="carousel-slide">
-            <div class="project">
-              <h3>Simulationsgestützte Hochregallagerdimensionierung</h3>
-              <p>Kapazitäts- und Layout-Auslegungsstudien für Hochregallagersysteme zur Logistikplanung — Modellierung von Kranzyklen, Lagerstrategien und Durchsatz unter variierenden Bedarfsszenarien via AnyLogic.</p>
-              <p class="tags">AnyLogic • Logistiksimulation • Lagersysteme • Kapazitätsplanung • Industrie 4.0</p>
-              <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0" target="_blank">Auf GitHub ansehen</a>
+            <div class="project" data-category="simulation">
+              <h3>LTspice-Simulation für präzise Signalaufbereitung und Messverstärker</h3>
+              <div class="project-meta-grid">
+                <div class="project-details">
+                  <p><strong>Ziel:</strong> Entwerfen, simulieren und validieren Sie eine hochpräzise industrielle Analog-Frontend-Schaltung – mit einem mehrstufigen Messverstärker und einem aktiven Filternetzwerk –, um schwache Sensorsignale mit geringer Amplitude vor der digitalen Wandlung zu bereinigen und aufzubereiten.</p>
+                  <p><strong>Prozess:</strong> Entwicklung einer Mehrverstärker-Topologie in LTspice unter Verwendung von Operationsverstärkermodellen (`U1`, `U2`, `U5`, `U6`). Ausgleich der Differenzverstärkung der Eingangsstufe durch präzise Widerstandskonfigurationen ($R_1, R_4 = 10\text{k}\Omega$ und $R_2, R_3 = 150\text{k}\Omega$). Ein sekundäres aktives Tiefpass-/Bandpass-Filternetzwerk unter Verwendung berechneter RC-Paare ($R_5 = 47\text{k}\Omega, R_6 = 2,2\text{k}\Omega, C_1 = 22\text{nF}, C_2 = 440\text{nF}$) wurde integriert, um hochfrequentes Betriebsrauschen und thermische Transienten zu unterdrücken. Es wurde ein symmetrisches Zweischienen-Stromversorgungssystem mit $\pm14\text{V}$ konfiguriert und eine 10-ms-Transientenanalyse (`.tran 10m`) durchgeführt, um das Schaltungsverhalten bei einem schnell schaltenden 50-mV-Impuls-Eingangsspannungsfenster zu bewerten.</p>
+                  <p><strong>Ergebnis:</strong> Es wurde ein robuster, störungsunempfindlicher Hardware-Entwurf mit stabilen Transientenwiederherstellungsprofilen und hochoptimierten Signal-Rausch-Verhältnissen (SNR) validiert, der für den Einsatz in physischen industriellen Datenerfassungsknoten bereit ist.</p>
+                  <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0" target="_blank">Repository anzeigen</a>
+                </div>
+                <div class="project-visuals">
+                  <span class="visual-label">SPICE-Netzliste und Simulationsbedingungen</span>
+                  <pre><code>* Sensor Pulse Source & Simulation Setup
+                  V1 -288 448 R0 PULSE(0 50m 0 1n 1n 5m 10m) Rser=50
+                  V2 400 464 R0 14
+                  V3 528 464 R0 -14
+
+                  * Active Component Network Configuration
+                  SYMATTR InstName R2 / Value 150K
+                  SYMATTR InstName R6 / Value 2.2K
+                  SYMATTR InstName C1 / Value 22n
+                  .tran 10m</code></pre>
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="carousel-slide">
-            <div class="project">
-              <h3>Elektronische Schaltungsmodellierung &amp; Simulation</h3>
-              <p>Modellierung und Simulation elektronischer Schaltungen (Instrumentenverstärker, aktive Filter) mit LTSpice und SciPy zur Analyse von Systemverhalten, Frequenzgang und Leistungsparametern unter Nominal- und Fehlerbedingungen.</p>
-              <p class="tags">LTSpice • SciPy • Schaltungssimulation • Signalverarbeitung • MATLAB</p>
-              <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0" target="_blank">Auf GitHub ansehen</a>
+            <div class="project" data-category="automation">
+              <h3>Aktive Tiefpassfilterung und SPICE-Analyse des Frequenzgangs</h3>
+              <div class="project-meta-grid">
+                <div class="project-details">
+                  <p><strong>Ziel:</strong> Führen Sie eine Charakterisierung des Frequenzgangs und eine Stabilitätsanalyse eines aktiven Filternetzwerks durch, um ein präzises Dämpfungsverhalten über den gesamten Hochfrequenzbereich hinweg zu gewährleisten.</p>
+                  <p><strong>Prozess:</strong> Konfiguration einer aktiven Operationsverstärker-Topologie (`U2`) in LTspice unter Verwendung eines automatisierten dekadischen Wechselstrom-Frequenzdurchlaufs (`.ac dec 10 1 500k`). Anpassung der Werte für die Eingangsanpassung und die Leitungsimpedanz ($R_3 = 50\Omega$) sowie Aufbau einer dichten RC-Rückkopplungsschleife unter Verwendung spezifischer Bauteil-Toleranzen ($R_1 = 47\text{k}\Omega$, $R_2 = 2,2\text{k}\Omega$, $C_1 = 440\text{nF}$ und $C_2 = 22\text{nF}$). Die Phasenreserven und Roll-off-Charakteristiken wurden von 1 Hz bis 500 kHz unter einer idealen 1-V-Wechselspannungsanregung ausgewertet.</p>
+                  <p><strong>Ergebnis:</strong> Es wurden exakte Bode-Diagramme erstellt, um Grenzfrequenzen, Dämpfungsraten und die Signalintegrität zu überprüfen und so die vollständige Einhaltung der Filteranforderungen vor der Integration in die Hardware-Platine sicherzustellen.</p>
+                  <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0" target="_blank">Repository anzeigen</a>
+                </div>
+                <div class="project-visuals">
+                  <span class="visual-label">AC-Dekadisches Sweeping-Netzwerk</span>
+                  <pre><code>* Signal Input & Decadic Analysis Loop
+                  V1 -224 288 R0 AC 1
+                  .ac dec 10 1 500k
+
+                  * Filter Passive RC Loop Specification
+                  SYMATTR InstName R1 / Value 47K
+                  SYMATTR InstName C1 / Value 440n
+                  SYMATTR InstName C2 / Value 22n</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div class="project" data-category="automation">
+              <h3>AnyLogic Digital Twin für intelligente Lagerabläufe und die Minimierung von Ausfallzeiten</h3>
+              <div class="project-meta-grid">
+                <div class="project-details">
+                  <p><strong>Ziel:</strong> Entwickeln Sie ein hochpräzises Logistik-Simulationsmodell, um die Regeln für die Materialabfolge zu optimieren, die Pufferdynamik zwischen einem Hochregallager und der nachgelagerten Karosseriewerkstatt zu steuern und die durch ungeplante Produktionsausfälle verursachten Kostenauswirkungen zu minimieren.</p>
+                  <p><strong>Prozess:</strong> Entwicklung eines multimethodischen, diskreten Ereignis- und agentenbasierten Logistikmodells in AnyLogic. Implementierung automatisierter Java-Algorithmen zur dynamischen Extraktion geplanter Produktionspläne in speicherabgebildete Sequenzstrukturen (`plannedSequenceMap`). Entwicklung einer maßgeschneiderten Logik zur Überwachung aktiver Lagerkapazitäten, zur Berechnung von Lager- und Umschlagskosten, zur Verfolgung kritischer Variablen (`totalDowntimeHours`, `totalStorageCost`) sowie zum dynamischen Anhalten bzw. Fortsetzen von Materialrouting-Regeln genau in dem Moment, in dem ein nachgelagerter Engpass oder eine Störung auftritt.</p>
+                  <p><strong>Ergebnis:</strong> Entwicklung eines interaktiven operativen digitalen Zwillings, mit dem verschiedene Strategien zur Neuanordnung von Lagervorgängen einem Stresstest unterzogen werden können und der einen analytischen Rahmen bietet, um die Größe der Lagerpuffer gegen das Risiko von Produktionsausfällen abzuwägen.</p>
+                  <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0" target="_blank">Repository anzeigen</a>
+                </div>
+                <div class="project-visuals">
+                  <span class="visual-label">Simulationsmodell und Logikarchitektur</span>
+                  <div class="model-screenshot-container" style="margin-top: 10px; margin-bottom: 15px; text-align: center;">
+                    <img src="images/warehouse_simulation_model.jpg" alt="AnyLogic Warehouse Simulation Flow and 2D/3D Layout View" style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                  </div>
+                  <pre><code>// Live Downtime & Storage Cost Tracker
+                  totalDowntimeHours = 0;
+                  totalDowntimeCost  = 0;
+                  totalStorageCost   = 0;
+                  bodyShopStopped    = false;
+
+                  // Sequential Map Ingestion Engine
+                  plannedSequenceMap.clear();
+                  List&lt;Tuple&gt; planned = select(planned_sequence).list();</code></pre>
+                </div>
+              </div>
             </div>
           </div>
 
         </div>
       </div>
       <div class="carousel-controls">
-        <button class="carousel-btn" data-dir="-1" aria-label="Vorherige">&#8592;</button>
+        <button class="carousel-btn" data-dir="-1" aria-label="Previous">&#8592;</button>
         <div class="carousel-dots">
-          <button class="carousel-dot active"></button>
-          <button class="carousel-dot"></button>
-          <button class="carousel-dot"></button>
+          <button class="carousel-dot active" aria-label="Slide 1"></button>
+          <button class="carousel-dot" aria-label="Slide 2"></button>
+          <button class="carousel-dot" aria-label="Slide 3"></button>
+          <button class="carousel-dot" aria-label="Slide 4"></button>
         </div>
-        <button class="carousel-btn" data-dir="1" aria-label="Nächste">&#8594;</button>
-        <span class="carousel-counter">1 / 3</span>
+        <button class="carousel-btn" data-dir="1" aria-label="Next">&#8594;</button>
+        <span class="carousel-counter">1 / 4</span>
       </div>
-    </div>
+    </div><!-- /simulation block -->
 
   </section>
 
