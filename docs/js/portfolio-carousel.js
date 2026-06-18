@@ -7,14 +7,23 @@
 
   /* ── helper: initialise one carousel block ── */
   function initCarousel(block) {
-    const track  = block.querySelector('.carousel-track');
+    const track   = block.querySelector('.carousel-track');
     const slides = Array.from(block.querySelectorAll('.carousel-slide'));
     const prev   = block.querySelector('.carousel-btn[data-dir="-1"]');
     const next   = block.querySelector('.carousel-btn[data-dir="1"]');
     const dots   = Array.from(block.querySelectorAll('.carousel-dot'));
     const counter= block.querySelector('.carousel-counter');
+    const wrapper = block.querySelector('.carousel-wrapper'); // Grabbed the wrapper
     const total  = slides.length;
     let   current = 0;
+
+    function updateHeight() {
+      if (wrapper && slides[current]) {
+        // Calculate the height of the current active slide
+        const activeHeight = slides[current].offsetHeight;
+        wrapper.style.height = `${activeHeight}px`;
+      }
+    }
 
     function go(index) {
       current = Math.max(0, Math.min(index, total - 1));
@@ -23,6 +32,9 @@
       if (counter) counter.textContent = `${current + 1} / ${total}`;
       if (prev) prev.disabled = current === 0;
       if (next) next.disabled = current === total - 1;
+
+      // Force height adjustment on slide change
+      updateHeight();
     }
 
     if (prev) prev.addEventListener('click', () => go(current - 1));
@@ -39,6 +51,12 @@
       startX = null;
     });
 
+    // Make sure it exposes its height update for the tab click script
+    block.updateCarouselHeight = updateHeight;
+
+    // Recalculate heights if the user resizes their browser window
+    window.addEventListener('resize', updateHeight);
+
     go(0); // initialise to first slide
   }
 
@@ -49,7 +67,17 @@
 
     function showBlock(id) {
       tabs.forEach(t   => t.classList.toggle('active', t.dataset.category === id));
-      blocks.forEach(b => b.classList.toggle('active', b.dataset.category === id));
+      blocks.forEach(b => {
+        const isActive = b.dataset.category === id;
+        b.classList.toggle('active', isActive);
+        
+        // CRUCIAL: When a hidden tab becomes visible, recalculate its height 
+        // since hidden elements have 0px height initially.
+        if (isActive && b.updateCarouselHeight) {
+          // Microtask delay allows browser to display block before calculating height
+          setTimeout(() => b.updateCarouselHeight(), 10);
+        }
+      });
     }
 
     tabs.forEach(tab => {
