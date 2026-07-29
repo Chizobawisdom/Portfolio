@@ -273,7 +273,7 @@ ul li:last-child { border-bottom: none; }
   border: 1px dashed #0078d4;
   border-radius: 8px;
   padding: 1rem;
-  display: flex;
+  /*display: flex;*/
   flex-direction: column;
   justify-content: flex-start; 
   align-self: flex-start;      
