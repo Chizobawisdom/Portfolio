@@ -744,6 +744,9 @@
             <div class="project" data-category="simulation">
               <h3>AnyLogic Digital Twin for Smart Warehouse Sequencing & Downtime Minimization</h3>
               <div class="project-meta-grid">
+                <div class="model-screenshot-container" style="margin-top: 10px; margin-bottom: 15px; text-align: center;">
+                  <img src="images/warehouse_simulation_model.png" alt="AnyLogic Warehouse Simulation Flow and 2D/3D Layout View" style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                </div>
                 <div class="project-details">
                   <p><strong>Objective:</strong> Build a high-fidelity logistics simulation model to optimize material sequencing rules, manage buffering dynamics between a high-bay storage facility and a downstream Body Shop, and minimize cost impacts caused by unplanned production line stoppages.</p>
                   <p><strong>Process:</strong> Developed a multi-method discrete-event and agent-based logistics model within AnyLogic. Implemented automated Java algorithms to dynamically extract planned production schedules into memory-mapped sequence structures (`plannedSequenceMap`). Engineered custom logic to monitor active storage capacities, compute holding/handling costs, track critical variables (`totalDowntimeHours`, `totalStorageCost`), and dynamically stop/resume material routing rules the exact moment a downstream bottleneck or breakdown occurs.</p>
@@ -752,9 +755,6 @@
                 </div>
                 <div class="project-visuals">
                   <span class="visual-label">Simulation Model & Logic Architecture</span>
-                  <div class="model-screenshot-container" style="margin-top: 10px; margin-bottom: 15px; text-align: center;">
-                    <img src="images/warehouse_simulation_model.png" alt="AnyLogic Warehouse Simulation Flow and 2D/3D Layout View" style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                  </div>
                   <pre><code>// Live Downtime & Storage Cost Tracker
                   totalDowntimeHours = 0;
                   totalDowntimeCost  = 0;
@@ -773,6 +773,9 @@
             <div class="project" data-category="simulation">
               <h3>AnyLogic Discrete Event Simulation for Industrial Quality Gate Capacity Optimization</h3>
               <div class="project-meta-grid">
+                <div class="model-screenshot-container" style="margin-top: 10px; margin-bottom: 15px; text-align: center;">
+                  <img src="images/inspection_bottleneck_station.png" alt="AnyLogic Quality Inspection Process Flowchart and Analytics Dashboard" style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                </div>
                 <div class="project-details">
                   <p><strong>Objective:</strong> Design and build a stochastic discrete event simulation model to evaluate operational trade-offs and capacity investment strategies (headcount expansion vs. hardware capability upgrade) at a bottlenecked manual inspection gate.</p>
                   <p><strong>Process:</strong> Developed a process flow architecture in AnyLogic using the Process Modeling Library (Source, Queue, Service, SelectOutput, and Sinks). Programmed stochastic behavioral rules including exponential interarrival distributions ($\lambda = 0.2/\text{min}$) and Triangular inspection durations. Configured quality pass/scrap routing using customized Bernoulli decision logic (`randomTrue`). Executed automated Parameter Variation experiments across multiple scenarios, aggregating performance metrics across independent replications to compute tight 95% confidence intervals.</p>
@@ -782,9 +785,6 @@
                 </div>
                 <div class="project-visuals">
                   <span class="visual-label">Simulation Model & Logic Architecture</span>
-                  <div class="model-screenshot-container" style="margin-top: 10px; margin-bottom: 15px; text-align: center;">
-                    <img src="images/inspection_bottleneck_station.png" alt="AnyLogic Quality Inspection Process Flowchart and Analytics Dashboard" style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                  </div>
                   <pre><code>// Dynamic Quality Inspection Routing Logic
                   if ( randomTrue(defectProbability) ) {
                       // Entity routes to scrap block
