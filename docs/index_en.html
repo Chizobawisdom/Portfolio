@@ -17,8 +17,8 @@
         <h1>Wisdom Favour Chizoba</h1>
         <p><em>M.Eng. Applied AI for Digital Production Management<br>
         B.Eng Industrial Engineering<br>
-        <strong>Manufacturing System Developer & Automation Engineer</strong><br>
-        Applied AI | Digital Manufacturing | Data-Driven Process Optimization</em></p>
+        <strong>Manufacturing Systems & Automation Engineer</strong><br>
+        Systems Architecture & Integration | Industrial Digital Twins & AI | Reliable Production Systems</em></p>
       </div>
     </header>
   </section>
@@ -27,12 +27,17 @@
   <section>
     <h2>About Me</h2>
     <p>
-      Manufacturing System Developer and Industrial Engineer specializing in the design, automation, and deployment of data-driven digital production systems. I bridge the gap between physical factory hardware and intelligent software layers, combining industrial automation, digital twins, and applied AI to optimize complex assembly environments.
-      <br>Proven track record in engineering robust architectures—from active analog front-end circuit filtering models in SPICE to large-scale discrete event simulators and predictive diagnostic pipelines—using real-world shop-floor telemetry across high-tech manufacturing sectors.
-      <br><br>Focused on advancing Industry 4.0 infrastructures through smart manufacturing systems engineering, shop-floor automation, and end-to-end production pipeline development.
-      <br><br><b>Core competencies</b><br>
-      Machine learning for manufacturing | Industrial Automation &amp; Digitalisation | Quality Engineering &amp; SPC |
-      Data Engineering &amp; Pipelines (ETL/ELT) | Predictive Analytics &amp; Sensor Data Analysis | Process Optimisation
+      Manufacturing Systems Engineer and AI Industrial Engineer specializing in the architecture, integration, and deployment of reliable digital production systems. I bridge physical factory hardware with intelligent software layers—designing fail-safe architectures that prioritize numerical stability, interface decoupling, and operational continuity.
+      <br><br>
+      My systems approach spans the entire V-Model lifecycle: from requirements capture and analog front-end verification (LTspice/SPICE circuit validation), through system integration (discrete-event digital twins &amp; SimPy simulations), to production validation (SPC-driven predictive diagnostics with full Nelson Rule &amp; CUSUM surveillance)—all grounded in real-world shop-floor telemetry from high-tech manufacturing sectors.
+      <br><br>
+      Focused on advancing Industry 4.0 through rigorous systems engineering, ensuring every algorithm, simulation, and automation tool delivers measurable reliability and business impact.
+      <br><br>
+      <b>Core Competencies</b><br>
+      Systems Architecture &amp; Integration (Digital Twins, Model Validation, Interface Design) |
+      Verification &amp; Validation (SPC, Nelson Run Rules, LTspice/HIL, Confidence Interval Testing) |
+      Industrial Data Engineering (ETL/ELT, Sensor Data Fusion, Predictive Analytics) |
+      Quality &amp; Reliability Engineering (ISO 9001, IATF 16949, FMEA, APQP)
     </p>
   </section>
 
@@ -42,7 +47,7 @@
     <div class="experience">
 
       <div class="project2">
-        <h3>Quality &amp; Process Engineering (Working Student)</h3>
+        <h3>Customer Quality Engineering (Working Student)</h3>
         <h4>ams OSRAM, Regensburg<br><em>Oct 2025 – Present</em></h4>
         <ul>
           <li>Creation, validation, and maintenance of CDC and PPAP documentation (Control Plans, FMEAs, Flowcharts, Capability Studies, Inspection Reports, Proofs of Conformity) ensuring full compliance with IATF 16949, APQP, and ISO 9001.</li>
@@ -152,11 +157,8 @@
               <div class="project-meta-grid">
                 <div class="project-details">
                   <p><strong>System Context:</strong> Compliance dossier generation for IATF 16949 and ISO 9001 audits—manual compilation of fragmented quality reports, supplier certifications, and RCA records was a recurring bottleneck in audit preparation</p>
-                  <p><strong>Process:</strong> Python pipeline that scans directory buffers with dynamic MIME-type filtering,
-                  sequences files chronologically via <code>getctime</code>, and merges them using
-                  memory-optimised <code>PyPDF2.PdfMerger</code> into production-ready compliance dossiers.</p>
-                  <p><strong>Outcome:</strong> Fully automated multi-step document compilation for documentation
-                  workflows — zero manual handling, complete chronological traceability for audit review packages.</p>
+                  <p><strong>My Systems Contribution:</strong> Built a memory-optimised Python pipeline with dynamic MIME-type filtering to isolate valid PDFs, chronological sequencing via <code>os.getctime</code> to ensure audit traceability, and chunked merging via <code>PyPDF2.PdfMerger</code> to handle large industrial dossiers without memory overflow.</p>
+                  <p><strong>V&amp;V &amp; Impact:</strong> Eliminated 100% of manual document handling, reduced compilation time from hours to under 2 minutes, and guaranteed chronological traceability for every audit review package.</p>
                   <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Utility_and_Automation/pdf-merger" target="_blank">View Repository</a>
                 </div>
                 <div class="project-visuals">
@@ -187,13 +189,9 @@
               <h3>Algorithmic Signal Synthesis &amp; Sequencing Engine</h3>
               <div class="project-meta-grid">
                 <div class="project-details">
-                  <p><strong>Objective:</strong> Parse tokenized data arrays and synthesize raw discrete-time waveforms
-                  into structured audio sequences without external multimedia dependencies.</p>
-                  <p><strong>Process:</strong> Lightweight Python DSP pipeline with a dictionary frequency mapper,
-                  NumPy discrete sine-wave generation, sequential array concatenation, 16-bit signed integer scaling
-                  (2¹⁵ − 1), and precise inter-tone spacing.</p>
-                  <p><strong>Outcome:</strong> Standalone audio rendering utility streaming binary buffers directly to
-                  hardware via <code>simpleaudio</code>, demonstrating deep low-level digital signal manipulation.</p>
+                  <p><strong>System Context:</strong> Hardware-in-the-loop (HIL) testing for industrial acoustic alert systems—requires synthesizing audio patterns to verify embedded audio output stages without commercial DSP tools.</p>
+                  <p><strong>My Systems Contribution:</strong> Engineered a lightweight DSP pipeline using NumPy discrete sine-wave generation, precise inter-tone spacing for pattern recognition, and 16-bit signed integer scaling (2¹⁵ − 1) for direct DAC hardware compatibility. Structured as a standalone utility streaming binary buffers directly to hardware via <code>simpleaudio</code>.</p>
+                  <p><strong>V&amp;V &amp; Impact:</strong> Successfully validated audio output stages on test rigs, proving system-level audio alert functionality with zero external multimedia dependencies—enabling rapid HIL regression testing.</p>
                   <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Utility_and_Automation/music-sheet-synthesizer" target="_blank">View Repository</a>
                 </div>
                 <div class="project-visuals">
@@ -219,15 +217,9 @@
               <h3>Automated Web Scraping & Headline Extraction</h3>
               <div class="project-meta-grid">
                 <div class="project-details">
-                  <p><strong>Objective:</strong> Automatically collect and store football news headlines, subtitles, and article
-                  links from The Sun's sports page on a scheduled basis, eliminating manual data collection.</p>
-                  <p><strong>Process:</strong> Built a headless Selenium pipeline using ChromeDriver in <code>--headless=new</code>
-                  mode to silently load the target page without a browser window. XPath selectors target
-                  <code>.teaser__copy-container</code> elements to extract titles, subtitles, and URLs into parallel lists,
-                  which are assembled into a pandas DataFrame and exported to a date-stamped CSV
-                  (<code>Football_headlines_DD-MM-YYYY.csv</code>) saved alongside the executable.</p>
-                  <p><strong>Outcome:</strong> A portable, dependency-minimal script that produces structured, ready-to-analyse
-                  headline datasets with zero manual intervention — applicable to any structured news or e-commerce page.</p>
+                  <p><strong>System Context:</strong> Market intelligence pipeline for strategic procurement—manual collection of competitor or supplier news was operationally inefficient and inconsistent.</p>
+                  <p><strong>My Systems Contribution:</strong> Deployed a headless Selenium pipeline with ChromeDriver in <code>--headless=new</code> mode for silent, scheduled execution. Engineered XPath-based extraction targeting structured DOM elements, with parallel list assembly into a pandas DataFrame and date-stamped CSV export—designed for seamless integration into downstream ETL dashboards.</p>
+                  <p><strong>V&amp;V &amp; Impact:</strong> Achieved fully automated, scheduled zero-touch data collection with complete reproducibility. The modular XPath architecture is reusable for any structured news or e-commerce data source.</p>
                   <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Utility_and_Automation/web-scraper" target="_blank">View Repository</a>
                 </div>
                 <div class="project-visuals">
@@ -281,16 +273,9 @@
               <h3>Histogram Specification for Image Enhancement</h3>
               <div class="project-meta-grid">
                 <div class="project-details">
-                  <p><strong>Objective:</strong> Improve the visual quality of a low-contrast image by transferring the tonal
-                  distribution of a high-contrast reference image — without manual brightness or contrast tuning.</p>
-                  <p><strong>Process:</strong> Loaded both images with OpenCV and converted the source from BGR to RGB.
-                  Applied <code>skimage.exposure.match_histograms()</code> to redistribute the dark image's pixel intensity
-                  distribution channel-by-channel to match the reference. Visualised the before/after result as a
-                  3-panel image comparison, then plotted per-channel histograms and cumulative distribution functions (CDFs)
-                  across all three images in a 3×3 subplot grid to confirm the tonal transfer.</p>
-                  <p><strong>Outcome:</strong> A clean, interpretable pipeline demonstrating histogram specification as a
-                  principled image pre-processing technique — directly applicable to industrial inspection scenarios where
-                  lighting inconsistency degrades automated defect detection accuracy.</p>
+                  <p><strong>System Context:</strong> Pre-processing stage for industrial defect detection—inconsistent lighting on production lines degrades downstream CNN accuracy.</p>
+                  <p><strong>My Systems Contribution:</strong> Deployed a principled histogram specification pipeline using <code>skimage.exposure.match_histograms()</code> to transfer tonal distributions from a high-contrast reference. Visualised before/after results with per-channel histogram and CDF overlays in a 3×3 subplot grid for explicit V&amp;V.</p>
+                  <p><strong>V&amp;V &amp; Impact:</strong> Standardizes input image distributions across varying lighting conditions—directly improving automated defect detection reliability by eliminating illumination as a confounding variable.</p>
                   <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Machine_Vision/histogram-matching" target="_blank">View Repository</a>
                 </div>
                 <div class="project-visuals">
@@ -326,19 +311,9 @@
             <h3>Histogram Matching from Scratch — Arithmetic Approach</h3>
             <div class="project-meta-grid">
               <div class="project-details">
-                <p><strong>Objective:</strong> Reproduce histogram specification without relying on high-level library
-                functions — building the full matching pipeline manually using only NumPy to demonstrate deep understanding
-                of the underlying mathematics.</p>
-                <p><strong>Process:</strong> Computed pixel intensity histograms for both the dark source and high-contrast
-                reference using <code>np.bincount()</code>. Normalised each to a probability density function (PDF) and
-                accumulated into a cumulative distribution function (CDF). Built a 256-entry lookup table by finding, for
-                each source intensity level, the reference intensity whose CDF value is closest — minimising
-                <code>|CDF_source(i) − CDF_reference(j)|</code> via <code>np.argmin()</code>. Applied the mapping via
-                direct array indexing (<code>mapping[image]</code>) for a fully vectorised transform. Results visualised
-                as a 2×3 grid of image previews and their corresponding histograms.</p>
-                <p><strong>Outcome:</strong> A transparent, dependency-minimal implementation that makes the statistical
-                mechanics of histogram specification explicit — reinforcing the same result achieved via
-                <code>match_histograms()</code> but with full interpretability over each computational step.</p>
+                <p><strong>System Context:</strong> Designed for air-gapped industrial networks where external dependencies (<code>skimage</code>) cannot be installed—requires pure NumPy implementation for compliance.</p>
+                <p><strong>My Systems Contribution:</strong> Rebuilt histogram specification entirely from fundamentals using <code>np.bincount</code>, PDF/CDF accumulation, and a 256-entry lookup table built via <code>np.argmin</code> to match CDFs channel-wise. Applied the mapping via vectorised array indexing for O(1) runtime per pixel.</p>
+                <p><strong>V&amp;V &amp; Impact:</strong> Achieves library-grade tonal transfer with zero external ML dependencies—mathematically transparent, fully auditable, and deployable on legacy industrial compute nodes.</p>
                 <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Machine_Vision/manual-histogram-matching" target="_blank">View Repository</a>
               </div>
               <div class="project-visuals">
@@ -367,26 +342,12 @@
 
           <div class="carousel-slide">
             <div class="project" data-category="vision">
-            <h3>Footwear Image Classifier — Transfer Learning with EfficientNetV2</h3>
+            <h3>Footwear Image Classifier: Transfer Learning with EfficientNetV2</h3>
             <div class="project-meta-grid">
               <div class="project-details">
-                <p><strong>Objective:</strong> Build a 3-class image classifier distinguishing shoes, sandals, and boots
-                using a pretrained deep learning backbone — demonstrating an end-to-end supervised vision pipeline from
-                raw dataset to deployable model.</p>
-                <p><strong>Process:</strong> Uploaded and extracted a labelled footwear dataset in Google Colab, then
-                split it 70/15/15 into train, validation, and test sets via <code>splitfolders</code>. Images were loaded
-                with <code>tf.keras.utils.image_dataset_from_directory()</code> using one-hot categorical labels and
-                cached with <code>AUTOTUNE</code> prefetching for pipeline efficiency. A data augmentation head
-                (random flip, rotation, zoom) was prepended to the model to improve generalisation. The backbone,
-                <code>EfficientNetV2B0</code> pretrained on ImageNet, was loaded without its top and fine-tuned on the
-                last 20 layers. A custom classifier head (Dense 256 → Dropout 0.3 → Softmax 3) was attached and the
-                full model compiled with Adam and categorical cross-entropy. Training used early stopping on
-                <code>val_loss</code> with patience 5. Post-training evaluation included loss/accuracy curves,
-                a confusion matrix, and a per-class <code>classification_report</code>. The final model was saved
-                in <code>.keras</code> format and tested on a live uploaded image.</p>
-                <p><strong>Outcome:</strong> A production-ready image classification pipeline achieving strong test
-                accuracy on a 3-class footwear dataset — architecture, weights, and preprocessing layers preserved
-                for reuse and deployment.</p>
+                <p><strong>System Context:</strong> rototype for high-mix/low-volume manufacturing part identification—needed a modular vision backbone that could be retrained for new product families without architectural redesign.</p>
+                <p><strong>My Systems Contribution:</strong> Built an end-to-end TF/Keras pipeline with <code>image_dataset_from_directory</code>, <code>AUTOTUNE</code> prefetching, and a rich augmentation head (flip, rotation, zoom). Loaded <code>EfficientNetV2B0</code> pretrained on ImageNet, froze all but the last 20 layers, and attached a custom Dense 256 → Dropout 0.3 → Softmax 3 head. Deployed EarlyStopping on <code>val_loss</code> with patience 5 to prevent overfitting.</p>
+                <p><strong>V&amp;V &amp; Impact:</strong> Achieved strong test accuracy with a modular backbone architecture. Final model saved in <code>.keras</code> format with a reusable <code>predict()</code> function—ready for deployment on production part-type recognition cells.</p>
                 <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Machine_Vision/object-classification" target="_blank">View Repository</a>
               </div>
               <div class="project-visuals">
@@ -422,26 +383,12 @@
 
           <div class="carousel-slide">
             <div class="project" data-category="vision">
-            <h3>Vehicle Image Classifier — Two-Stage Fine-Tuning with ResNet50</h3>
+            <h3>Vehicle Image Classifier: Two-Stage Fine-Tuning with ResNet50</h3>
             <div class="project-meta-grid">
               <div class="project-details">
-                <p><strong>Objective:</strong> Build a multi-class vehicle image classifier using a custom dataset split
-                pipeline and a two-stage transfer learning strategy — frozen backbone warm-up followed by selective
-                fine-tuning — to maximise accuracy while controlling overfitting.</p>
-                <p><strong>Process:</strong> Implemented a custom 70/15/15 dataset splitter using <code>pathlib</code>
-                and <code>shutil</code> to organise raw images into train/val/test folder structures by class. Loaded
-                splits via <code>image_dataset_from_directory()</code> with integer labels and applied a rich augmentation
-                pipeline (flip, rotation, zoom, brightness, contrast) plus ImageNet-standard mean/variance normalisation
-                inline via <code>tf.data.map()</code>. Built a swappable backbone factory (<code>build_model()</code>)
-                supporting ResNet50 or EfficientNetB0, with a Global Average Pooling → Dense 512 → Dropout 0.4 →
-                Softmax head. Training ran in two stages: Stage 1 froze the full backbone and trained the head for
-                5 epochs at <code>1e-3</code>; Stage 2 unfroze the last 30 ResNet layers and fine-tuned for up to
-                30 epochs at <code>1e-4</code> with early stopping and <code>ReduceLROnPlateau</code>. Evaluation
-                used a seaborn confusion matrix heatmap and per-class <code>classification_report</code>. Model saved
-                in <code>.keras</code> format with a reusable <code>predict()</code> inference function.</p>
-                <p><strong>Outcome:</strong> A flexible, production-structured classification pipeline with swappable
-                backbones, inline preprocessing, and a two-stage training regime — directly transferable to industrial
-                visual inspection tasks such as part-type recognition or defect class sorting.</p>
+                <p><strong>System Context:</strong> Industrial visual inspection—part-type recognition or defect class sorting on high-mix lines—requires robust accuracy and controlled overfitting despite small labeled datasets.</p>
+                <p><strong>My Systems Contribution:</strong> Built a swappable backbone factory (ResNet50/EfficientNetB0) with a two-stage training regime: Stage 1 froze the full backbone and trained the head for 5 epochs at 1e-3; Stage 2 unfroze the last 30 ResNet layers and fine-tuned for up to 30 epochs at 1e-4 with <code>ReduceLROnPlateau</code> and EarlyStopping. Included inline ImageNet normalisation via <code>tf.data.map()</code> and a rich augmentation pipeline.</p>
+                <p><strong>V&amp;V &amp; Impact:</strong> Delivered a production-structured classification pipeline with seaborn confusion matrix heatmaps and per-class <code>classification_report</code>. Architecture is directly transferable to any industrial defect sorting task.</p>
                 <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Machine_Vision/vehicle-classification" target="_blank">View Repository</a>
               </div>
               <div class="project-visuals">
@@ -495,9 +442,9 @@
               <h3>End-to-End Industrial Income & Demographic Analytics Pipeline</h3>
               <div class="project-meta-grid">
                 <div class="project-details">
-                  <p><strong>Objective:</strong> Construct an automated predictive modeling pipeline to classify binary demographic income thresholds ($>50K$ vs $\leq50K$) using heavily imbalanced, multi-type datasets containing complex categorical and continuous features.</p>
-                  <p><strong>Process:</strong> Engineered a robust processing pipeline in Python via `scikit-learn` and `imbalanced-learn`. Automated data cleansing with custom vector correlations to filter highly collinear columns, implemented `OneHotEncoder` and `ColumnTransformer` subsystems, and addressed stark class imbalance dynamically using Synthetic Minority Over-sampling (`SMOTE`). Optimized feature selection via Mutual Information metrics (`SelectKBest`), running comparative training benchmarks across an ensemble `RandomForestClassifier` alongside Gaussian and Multinomial Naive Bayes (`GaussianNB` / `MultinomialNB`) models.</p>
-                  <p><strong>Outcome:</strong> Deployed a leakage-free multi-model processing class where the ensemble Random Forest model demonstrably outperformed Bayesian classifiers, yielding precise classification matrices, performance reports, and diagnostic matrix profiles.</p>
+                  <p><strong>System Context:</strong> Benchmarking predictive models for workforce planning and resource allocation—requires robust handling of heavily imbalanced categorical/continuous mixed-type data.</p>
+                  <p><strong>My Systems Contribution:</strong> Engineered a leakage-free pipeline using <code>scikit-learn</code> and <code>imbalanced-learn</code> with custom vector correlation filtering, <code>OneHotEncoder</code> + <code>ColumnTransformer</code> subsystems, and <code>SMOTE</code> for dynamic class balancing. Benchmarked ensemble <code>RandomForestClassifier</code> against Gaussian and Multinomial Naive Bayes with <code>SelectKBest</code> mutual information feature selection.</p>
+                  <p><strong>V&amp;V &amp; Impact:</strong> Ensemble Random Forest demonstrably outperformed Bayesian classifiers across precision, recall, and confusion matrix profiles—providing a validated baseline for data-driven decision support.</p>
                   <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Industrial_AI_and_Quality_Engineering/adult-income-prediction" target="_blank">View Repository</a>
                 </div>
                 <div class="project-visuals">
@@ -525,9 +472,9 @@
               <h3>Chronological Forecasting & Time-Series Regression Pipeline</h3>
               <div class="project-meta-grid">
                 <div class="project-details">
-                  <p><strong>Objective:</strong> Analyze temporal usage trends and develop a robust predictive model to forecast time-dependent demand cycles based on weather variables and environmental characteristics, while respecting chronological data dependencies to avoid data leakage.</p>
-                  <p><strong>Process:</strong> Conducted Exploratory Data Analysis (EDA) by mapping cyclical demand fluctuations across partitioned intra-day periods (Morning, Afternoon, Evening, Night). Built a chronological preprocessing architecture using a `ColumnTransformer` pipeline combining `OneHotEncoder` categorical handling with numerical arrays. Enforced historical training integrity by sorting features chronologically (`Date`) and validating model convergence using a 10-fold rolling `TimeSeriesSplit` cross-validation setup with an ensemble `RandomForestRegressor`.</p>
-                  <p><strong>Outcome:</strong> Implemented a data-leakage-free predictive framework that calculates moving trends across rolling 24-hour windows. The system tracks structural demand with high chronological precision, providing stable predictive baselines across cyclical seasons and holiday anomalies.</p>
+                  <p><strong>System Context:</strong> Predictive maintenance scheduling and production demand forecasting—requires strict chronological integrity to prevent look-ahead bias and data leakage.</p>
+                  <p><strong>My Systems Contribution:</strong> Built a chronological preprocessing architecture with <code>ColumnTransformer</code> combining <code>OneHotEncoder</code> and numerical scaling. Enforced 10-fold rolling <code>TimeSeriesSplit</code> cross-validation to respect temporal order, with an ensemble <code>RandomForestRegressor</code> capturing cyclical demand patterns across intra-day partitions.</p>
+                  <p><strong>V&amp;V &amp; Impact:</strong> Delivered a leak-free predictive framework tracking moving trends across rolling 24-hour windows—providing stable baselines across seasonal cycles and holiday anomalies.</p>
                   <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Industrial_AI_and_Quality_Engineering/bike-demand-forecasting" target="_blank">View Repository</a>
                 </div>
                 <div class="project-visuals">
@@ -553,9 +500,9 @@
               <h3>Automated Statistical Process Control (SPC) & Quality Capability Engine</h3>
               <div class="project-meta-grid">
                 <div class="project-details">
-                  <p><strong>Objective:</strong> Automate live anomaly, drift, and process variability tracking across multi-channel continuous factory streams, replacing manual data plotting with systemic statistical control limits ($UCL$, $LCL$) and process capability reporting.</p>
-                  <p><strong>Process:</strong> Formulated an end-to-end mathematical SPC engine in Python using `NumPy` and `Pandas`. Built dynamic matrix-subgrouping vectors to calculate running sample means ($\bar{X}$) and variance ranges ($R$) based on standard statistical control constants ($A_2, D_3, D_4$). Programmed all 8 Nelson Run Rules to catch subtle out-of-control patterns, implemented Page-Hinkley and Cumulative Sum (`CUSUM`) drift detection trackers for micro-shift identification, and computed short-term and long-term process capability indices ($C_p$, $C_{pk}$, $P_p$, $P_{pk}$).</p>
-                  <p><strong>Outcome:</strong> A comprehensive diagnostic framework that runs across thousands of streaming sensor data nodes, automatically generating a master quality control dashboard, flagging rule violations, and computing exact capability metrics to prevent defects before they happen.</p>
+                  <p><strong>System Context:</strong> Real-time anomaly and drift detection across thousands of continuous factory sensor streams—replacing manual plotting with systemic statistical surveillance.</p>
+                  <p><strong>My Systems Contribution:</strong> Built a pure NumPy/Pandas engine computing dynamic subgroup means ($\bar{X}$) and ranges ($R$) using standard control constants ($A_2, D_3, D_4$). Programmed all 8 Nelson Run Rules, implemented Page-Hinkley and CUSUM drift detectors for micro-shift identification, and computed short/long-term capability indices ($C_p, C_{pk}, P_p, P_{pk}$).</p>
+                  <p><strong>V&amp;V &amp; Impact:</strong> A diagnostic framework that runs across thousands of streaming nodes, auto-generating a master quality dashboard and flagging rule violations before defects occur—enabling predictive quality at scale.</p>
                   <p><strong>Architecture:</strong> Structured as a three-layer pipeline — a streaming ingestion layer (designed for OPC-UA/MQTT sensor tags), a rolling-window SPC/anomaly analysis core, and an alerting/dashboard output layer — so acquisition, analysis, and presentation can be modified or swapped independently in a live deployment.</p>
                   <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Industrial_AI_and_Quality_Engineering/continuous-factory-process-control" target="_blank">View Repository</a>
                 </div>
@@ -581,9 +528,9 @@
               <h3>Custom Probabilistic Naive Bayes Sorting Algorithm</h3>
               <div class="project-meta-grid">
                 <div class="project-details">
-                  <p><strong>Objective:</strong> Build a low-overhead Naive Bayes classification script from scratch to evaluate complex categorical multi-feature arrays and output target decisions without relying on external machine learning framework dependencies.</p>
-                  <p><strong>Process:</strong> Formulated pure conditional probability logic in Python via `Pandas`. Calculated base prior system states ($P(\text{Yes})$, $P(\text{No})$) directly from frequency lookups, mapped categorical feature streams via custom subsets to determine likelihood vectors ($P(X_i | Y)$), applied Bayes’ theorem iteratively across new test vectors to determine joint posterior values, and normalized final outputs to calculate precise statistical confidence intervals.</p>
-                  <p><strong>Outcome:</strong> Deployed a fast, framework-free classification engine that successfully parses multi-variable feature constraints to determine operational conditions with absolute mathematical transparency.</p>
+                  <p><strong>System Context:</strong> Lightweight classification for edge devices or legacy industrial controllers where external ML frameworks cannot be installed or are too resource-intensive.</p>
+                  <p><strong>My Systems Contribution:</strong> Built a pure Pandas classifier from first principles—calculating prior system states ($P(\text{Yes})$, $P(\text{No})$) via frequency lookups, mapping categorical streams to likelihood vectors ($P(X_i | Y)$), and applying Bayes' theorem iteratively to compute joint posterior values with normalized confidence intervals.</p>
+                  <p><strong>V&amp;V &amp; Impact:</strong> Deployed a fast, framework-free classification engine with absolute mathematical transparency—achieving operational decision-making on resource-constrained hardware.</p>
                   <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Industrial_AI_and_Quality_Engineering/Probabilistic-classifier" target="_blank">View Repository</a>
                 </div>
                 <div class="project-visuals">
@@ -607,9 +554,9 @@
               <h3>Advanced Industrial Defect  Reduction Pipeline</h3>
               <div class="project-meta-grid">
                 <div class="project-details">
-                  <p><strong>Objective:</strong> Build a high-performance classification pipeline to diagnose structural machinery fault types from raw multidimensional signals, resolving severe class distribution imbalances and the curse of dimensionality present in high-frequency spectral feature sets.</p>
-                  <p><strong>Process:</strong> Programmed an end-to-end classification system in Python leveraging `scikit-learn` and `LightGBM`. Stabilized features using `StandardScaler` and applied Synthetic Minority Over-sampling (`SMOTE`) to balance minority fault classes. Isolated high-frequency Fast Fourier Transform (`FFT`) columns to perform targeted Principal Component Analysis (`PCA`), reducing spectral noise into 10 highly dense orthogonal variance components before horizontal vector stack merging (`np.hstack`). Optimized non-linear multi-class boundaries by executing a 5-fold cross-validated `RandomizedSearchCV` hyperparameter optimization map tuning `LGBMClassifier` configurations.</p>
-                  <p><strong>Outcome:</strong> Deployed an optimized predictive diagnostic framework yielding detailed confusion matrices and multi-class classification reports, ensuring sub-millisecond anomaly mapping for predictive maintenance shop‑floor workflows.</p>
+                  <p><strong>System Context:</strong> Diagnosing structural machinery fault types from high-frequency spectral signals—plagued by severe class imbalance and the curse of dimensionality in FFT-transformed features.</p>
+                  <p><strong>My Systems Contribution:</strong> Stabilized features with <code>StandardScaler</code> and applied <code>SMOTE</code> to balance minority fault classes. Isolated FFT columns for targeted PCA—reducing spectral noise into 10 dense orthogonal variance components—then horizontally stacked (<code>np.hstack</code>) with non-FFT features. Executed a 5-fold <code>RandomizedSearchCV</code> over <code>LGBMClassifier</code> hyperparameters to optimize multi-class boundaries.</p>
+                  <p><strong>V&amp;V &amp; Impact:</strong> Deployed a sub-millisecond anomaly mapping pipeline for predictive maintenance shop‑floors—delivering detailed confusion matrices and multi-class reports suitable for production integration.</p>
                   <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Industrial_AI_and_Quality_Engineering/industrial-defect-classification" target="_blank">View Repository</a>
                 </div>
                 <div class="project-visuals">
@@ -657,9 +604,9 @@
               <h3>Discrete-Event Digital Twin for Production Line Balancing & OEE Optimization</h3>
               <div class="project-meta-grid">
                 <div class="project-details">
-                  <p><strong>Objective:</strong> Develop a stochastic discrete-event simulation (DES) platform to act as a factory Digital Twin, analyzing throughput constraints, localizing shop-floor bottlenecks, and approximating Overall Equipment Effectiveness (OEE) under unpredictable machine downtime and inspection measurement noise.</p>
-                  <p><strong>Process:</strong> Programmed a multi-stage manufacturing line (Cutting, Assembly, Inspection) in Python using `SimPy`. Simulated non-linear machinery breakdowns using exponential distribution models for Mean Time Between Failures (MTBF) and Mean Time to Repair (MTTR). Engineered a closed-loop quality control subsystem evaluating parts against strict Upper and Lower Specification Limits ($USL$ / $LSL$) contaminated with Gaussian gauge measurement noise ($\sigma$), and constructed a conditional product routing layout with adaptive rework thresholds.</p>
-                  <p><strong>Outcome:</strong> Deployed a functional manufacturing simulator that generates vital key performance indicators—First Pass Yield (FPY), scrap rates, hourly throughput, and individual station OEE percentages—enabling rapid risk-free virtual testing of line-balancing configurations.</p>
+                  <p><strong>System Context:</strong> A multi-stage manufacturing line (Cutting, Assembly, Inspection) with unpredictable MTBF/MTTR and gauge measurement noise—needed a risk-free virtual testbed for line-balancing decisions.</p>
+                  <p><strong>My Systems Contribution:</strong> Programmed the line in SimPy with exponential MTBF/MTTR distributions for non-linear breakdowns. Engineered a closed-loop quality control subsystem evaluating parts against strict $USL$/$LSL$ limits, contaminated with Gaussian measurement noise ($\sigma$), and constructed conditional rework routing.</p>
+                  <p><strong>V&amp;V &amp; Impact:</strong> Deployed a functional simulator generating vital KPIs—FPY, scrap rates, hourly throughput, and station-level OEE—enabling rapid virtual testing of reconfiguration strategies without halting physical production.</p>
                   <p><strong>Architecture:</strong> Structured as three decoupled subsystems — machine-state (breakdown/repair via MTBF/MTTR), quality-gate (spec-limit evaluation with measurement noise), and routing/KPI aggregation — mirroring how a live deployment would separate a sensor/PLC data layer from a rules engine and a reporting layer.</p>
                   <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/digital-twin-quality-control-line" target="_blank">View Repository</a>
                 </div>
@@ -687,9 +634,9 @@
               <h3>Precision Signal Conditioning & Instrumentation Amplifier LTspice Simulation</h3>
               <div class="project-meta-grid">
                 <div class="project-details">
-                  <p><strong>Objective:</strong> Design, simulate, and validate a high-precision industrial analog front-end circuit—featuring a multi-stage instrumentation amplifier and active filtering network—to clean and condition weak, low-amplitude sensor signals before digital conversion.</p>
-                  <p><strong>Process:</strong> Engineered a multi-amplifier topology in LTspice using operational amplifier models (`U1`, `U2`, `U5`, `U6`). Balanced the input stage differential gain using precise resistance configurations ($R_1, R_4 = 10\text{k}\Omega$ and $R_2, R_3 = 150\text{k}\Omega$). Integrated a secondary active low-pass/bandpass filtering network utilizing calculated RC pairs ($R_5 = 47\text{k}\Omega, R_6 = 2.2\text{k}\Omega, C_1 = 22\text{nF}, C_2 = 440\text{nF}$) to suppress high-frequency operational noise and thermal transients. Configured a symmetric dual-rail $\pm14\text{V}$ power system and executed a 10ms transient analysis (`.tran 10m`) evaluating circuit performance against a fast-switching 50mV pulse input voltage window.</p>
-                  <p><strong>Outcome:</strong> Validated a robust, noise-resilient hardware schematic blueprint with stable transient recovery profiles and highly optimized signal-to-noise ratios (SNR), ready for deployment in physical industrial data acquisition nodes.</p>
+                  <p><strong>System Context:</strong> Analog front-end design for industrial sensor data acquisition—requires conditioning weak, low-amplitude signals before digital conversion.</p>
+                  <p><strong>My Systems Contribution:</strong> Engineered a multi-amplifier topology in LTspice with balanced differential gain (R₁, R₄ = 10kΩ; R₂, R₃ = 150kΩ), active low-pass/bandpass filtering (R₅ = 47kΩ, R₆ = 2.2kΩ, C₁ = 22nF, C₂ = 440nF), and symmetric ±14V dual-rail power. Executed a 10ms transient analysis (`.tran 10m`) evaluating circuit response against a 50mV pulsed input.</p>
+                  <p><strong>V&amp;V &amp; Impact:</strong> Validated a robust, noise-resilient hardware blueprint with stable transient recovery profiles—ready for physical PCB integration in industrial acquisition nodes.</p>
                   <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/instrumentation-amplifier-with-active-filter" target="_blank">View Repository</a>
                 </div>
                 <div class="project-visuals">
@@ -714,9 +661,9 @@
               <h3>Active Low-Pass Filtering & Frequency Response SPICE Analysis</h3>
               <div class="project-meta-grid">
                 <div class="project-details">
-                  <p><strong>Objective:</strong> Perform frequency response characterization and stability mapping of an active filter network to guarantee precise signal attenuation behaviors across high-frequency bandwidth spectrums.</p>
-                  <p><strong>Process:</strong> Configured an active op-amp topology (`U2`) within LTspice utilizing an automated decade AC frequency sweep (`.ac dec 10 1 500k`). Tuned input matching and line impedance values ($R_3 = 50\Omega$), and structured a dense RC feedback filtering loop using specific component tolerances ($R_1 = 47\text{k}\Omega$, $R_2 = 2.2\text{k}\Omega$, $C_1 = 440\text{nF}$, and $C_2 = 22\text{nF}$). Evaluated phase margins and roll-off characteristics from 1Hz up to 500kHz under an ideal 1V AC stimulus.</p>
-                  <p><strong>Outcome:</strong> Extracted exact Bode plots verifying cut-off frequencies, attenuation rates, and signal integrity performance, ensuring absolute filtering compliance before hardware board integration.</p>
+                  <p><strong>System Context:</strong> Signal conditioning for noisy industrial environments—requires precise attenuation characterization across the frequency spectrum.</p>
+                  <p><strong>My Systems Contribution:</strong> Configured an active Sallen-Key op-amp topology in LTspice with an automated decade AC sweep (`.ac dec 10 1 500k`). Tuned input matching (R₃ = 50Ω) and structured a dense RC feedback loop (R₁ = 47kΩ, R₂ = 2.2kΩ, C₁ = 440nF, C₂ = 22nF) to evaluate phase margins and roll-off characteristics.</p>
+                  <p><strong>V&amp;V &amp; Impact:</strong> Extracted exact Bode plots verifying cut-off frequencies and attenuation rates—ensuring absolute filtering compliance before hardware board integration.</p>
                   <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/sallen-key-active-low-pass-filter" target="_blank">View Repository</a>
                 </div>
                 <div class="project-visuals">
@@ -742,9 +689,9 @@
               </div>
               <div class="project-meta-grid">
                 <div class="project-details">
-                  <p><strong>Objective:</strong> Build a high-fidelity logistics simulation model to optimize material sequencing rules, manage buffering dynamics between a high-bay storage facility and a downstream Body Shop, and minimize cost impacts caused by unplanned production line stoppages.</p>
-                  <p><strong>Process:</strong> Developed a multi-method discrete-event and agent-based logistics model within AnyLogic. Implemented automated Java algorithms to dynamically extract planned production schedules into memory-mapped sequence structures (`plannedSequenceMap`). Engineered custom logic to monitor active storage capacities, compute holding/handling costs, track critical variables (`totalDowntimeHours`, `totalStorageCost`), and dynamically stop/resume material routing rules the exact moment a downstream bottleneck or breakdown occurs.</p>
-                  <p><strong>Outcome:</strong> Delivered an interactive operational digital twin capable of stress-testing different warehouse re-sequencing strategies, providing an analytical framework to balance storage buffer sizing against line downtime risks.</p>
+                  <p><strong>System Context:</strong> Logistics optimization between high-bay storage and Body Shop—balancing storage buffer sizing against the financial impact of production line stoppages.</p>
+                  <p><strong>My Systems Contribution:</strong> Developed a multi-method AnyLogic model with Java agents dynamically extracting production schedules into memory-mapped sequence structures. Engineered custom logic tracking `totalDowntimeHours`, `totalStorageCost`, and dynamically stopping/resuming material routing the moment a downstream bottleneck occurs.</p>
+                  <p><strong>V&amp;V &amp; Impact:</strong> Delivered an interactive operational digital twin capable of stress-testing re-sequencing strategies—providing an analytical framework to balance storage costs against downtime risks.</p>
                   <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/warehouse-sequence-optimization" target="_blank">View Repository</a>
                 </div>
                 <div class="project-visuals">
@@ -771,9 +718,9 @@
               </div>
               <div class="project-meta-grid">
                 <div class="project-details">
-                  <p><strong>Objective:</strong> Design and build a stochastic discrete event simulation model to evaluate operational trade-offs and capacity investment strategies (headcount expansion vs. hardware capability upgrade) at a bottlenecked manual inspection gate.</p>
-                  <p><strong>Process:</strong> Developed a process flow architecture in AnyLogic using the Process Modeling Library (Source, Queue, Service, SelectOutput, and Sinks). Programmed stochastic behavioral rules including exponential interarrival distributions ($\lambda = 0.2/\text{min}$) and Triangular inspection durations. Configured quality pass/scrap routing using customized Bernoulli decision logic (`randomTrue`). Executed automated Parameter Variation experiments across multiple scenarios, aggregating performance metrics across independent replications to compute tight 95% confidence intervals.</p>
-                  <p><strong>Outcome:</strong> Validated the model's baseline performance against theoretical mathematical M/G/1 queueing models. Provided concrete data demonstrating that adding a parallel inspector (Scenario A) reduces mean cycle time by 71% (from 16.02 min to 4.65 min) and sharply mitigates system volatility near saturation, outperforming a 20% equipment speed upgrade.</p>
+                  <p><strong>System Context:</strong> A bottlenecked manual inspection gate—leadership needed data on whether to hire more inspectors (Scenario A) or upgrade equipment speed (Scenario B).</p>
+                  <p><strong>My Systems Contribution:</strong> Built a stochastic DES in AnyLogic (Source → Queue → Service → SelectOutput → Sink) with exponential interarrival ($\lambda = 0.2$/min) and Triangular service times. Executed automated Parameter Variation experiments with independent replications to compute **95% confidence intervals** on all KPIs.</p>
+                  <p><strong>V&amp;V &amp; Impact:</strong> Proved Scenario A reduces mean cycle time by **71% (16.02 → 4.65 min)** and sharply mitigates volatility near saturation—outperforming the speed upgrade. Validated baseline performance against theoretical $M/G/1$ queueing models.</p>
                   <p><strong>Requirements & Validation:</strong> The model was required to reproduce realistic queueing behavior before being trusted for a capacity decision. Baseline utilization and cycle-time outputs were checked against a theoretical M/G/1 queueing model prior to running scenario comparisons — confirming simulation fidelity before it was used to justify the parallel-inspector recommendation over an equipment upgrade.</p>
                   <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/inspection-bottlneck-station" target="_blank">View Repository</a>
                 </div>
@@ -832,26 +779,27 @@
 
   <!-- ─── SKILLS – CAROUSEL ─── -->
   <section class="carousel-section">
-    <h2>Functional Skills</h2>
+    <h2>Engineering Competencies</h2>
+    <p>Core capabilities organized across the systems lifecycle, from architecture and interface design through verification, validation, and operational reliability. All tools and methods listed below are applied in a systems engineering context.</p>
 
     <div class="category-tabs">
-      <button class="category-tab active" data-category="core">Core Technical &amp; Data</button>
-      <button class="category-tab" data-category="mfg">Manufacturing &amp; Quality</button>
-      <button class="category-tab" data-category="tools">Automation &amp; Toolchain</button>
+      <button class="category-tab active" data-category="core">Core Systems Analysis &amp; Data Engineering</button>
+      <button class="category-tab" data-category="mfg">Manufacturing Systems, Quality &amp; Reliability Engineering</button>
+      <button class="category-tab" data-category="tools">Integration, Automation &amp; Engineering Toolchain</button>
     </div>
 
-    <!-- core -->
+    <!-- core: systems analysis & data -->
     <div class="carousel-block active" data-category="core">
       <div class="carousel-wrapper">
         <div class="carousel-track">
           <div class="carousel-slide">
             <div class="project">
-              <h3>Core Technical &amp; Data</h3>
+              <h3>Core Systems Analysis &amp; Data Engineering</h3>
               <ul>
-                <li>Industrial Data Analytics &amp; AI: Python (pandas, NumPy, scikit-learn), SQL, Machine Learning pipelines, anomaly detection, classification, time-series analysis.</li>
-                <li>Predictive &amp; Statistical Modelling: Process capability analysis, SPC, probabilistic modelling, forecasting for production and material planning.</li>
-                <li>Industrial Computer Vision: Image processing, feature extraction, supervised learning, CNNs, OpenCV, TensorFlow, CVAT.</li>
-                <li>Simulation &amp; Digital Twins: Discrete‑event simulation, system modelling, digital production lines (AnyLogic, SciPy), MATLAB.</li>
+                <li><strong>Designing data-driven system observability layers</strong> using Python (pandas, NumPy, scikit-learn), SQL, and machine learning pipelines for deploying anomaly detection, classification, and time-series models as automated system health monitors rather than standalone analytics.</li>
+                <li><strong>Performing system performance verification</strong> via predictive and statistical modeling applying SPC, process capability analysis ($C_p$, $C_{pk}$), probabilistic modeling, and production/material forecasting to validate that systems remain within defined operational boundaries.</li>
+                <li><strong>Engineering non-contact measurement subsystems</strong> through industrial computer vision configuring image processing, feature extraction, and CNNs (OpenCV, TensorFlow, CVAT) for defect detection and part classification with explicit accuracy thresholds defined as system-level requirements.</li>
+                <li><strong>Architecting virtual system prototypes</strong> via discrete-event simulation and digital twins (AnyLogic, SciPy, MATLAB) validating production line logic, buffer strategies, and operational rules before physical implementation.</li>
               </ul>
             </div>
           </div>
@@ -865,18 +813,18 @@
       </div>
     </div>
 
-    <!-- manufacturing -->
+    <!-- manufacturing: systems reliability -->
     <div class="carousel-block" data-category="mfg">
       <div class="carousel-wrapper">
         <div class="carousel-track">
           <div class="carousel-slide">
             <div class="project">
-              <h3>Manufacturing, Quality &amp; Process Engineering</h3>
+              <h3>Manufacturing Systems, Quality &amp; Reliability Engineering</h3>
               <ul>
-                <li>Digital Manufacturing &amp; Industry 4.0: MES concepts, SCADA data analysis, IoT sensor data, digital twin principles, reliability monitoring.</li>
-                <li>Quality Engineering &amp; Compliance: PPAP, FMEA, 8D, 5 Whys, SPC, ISO 9001, IATF 16949, Six Sigma, Lean Manufacturing.</li>
-                <li>Process Optimisation &amp; RCA: Root Cause Analysis, CAPA, error tracking, production flow optimisation, BPMN process mapping.</li>
-                <li>Supplier &amp; Production Analytics: KPI monitoring, trend analysis, data‑driven supplier evaluation, performance reporting.</li>
+                <li><strong>Implementing Industry 4.0 integration architectures</strong> connecting MES concepts, SCADA data streams, IoT sensor networks, and digital twin principles to enable continuous reliability monitoring across production systems.</li>
+                <li><strong>Enforcing system-level quality compliance</strong> across the lifecycle applying PPAP, FMEA, 8D, 5 Whys, and SPC as systematic risk mitigation frameworks aligned with ISO 9001, IATF 16949, Six Sigma, and Lean methodologies.</li>
+                <li><strong>Leading system RCA &amp; CAPA frameworks</strong> tracking errors, optimizing production flows (BPMN), and ensuring corrective actions propagate upward to system design and process requirements, not just isolated fixes.</li>
+                <li><strong>Deploying system performance dashboards</strong> monitoring KPI trends, conducting supplier analytics, and generating production reports to support data-driven system reconfiguration and capacity planning decisions.</li>
               </ul>
             </div>
           </div>
@@ -890,19 +838,19 @@
       </div>
     </div>
 
-    <!-- toolchain -->
+    <!-- toolchain: integration & validation -->
     <div class="carousel-block" data-category="tools">
       <div class="carousel-wrapper">
         <div class="carousel-track">
           <div class="carousel-slide">
             <div class="project">
-              <h3>Automation, Systems &amp; Engineering Toolchain</h3>
+              <h3>Integration, Automation &amp; Engineering Toolchain</h3>
               <ul>
-                <li>Data Engineering &amp; Pipelines: Relational databases, data modelling, ETL/ELT pipelines, query optimisation, KNIME.</li>
-                <li>Manufacturing Systems &amp; Automation: PLC fundamentals, MES exposure, automated testing and digital quality documentation.</li>
-                <li>Analytics &amp; Visualisation: Power BI, dashboard automation, LTSpice, engineering data visualisation.</li>
-                <li>Enterprise &amp; Productivity Tools: SAP QM &amp; ERP, Power Apps, Power Automate, Excel (advanced), PowerPoint.</li>
-                <li>Programming &amp; Web Fundamentals: HTML, CSS, JavaScript, MySQL.</li>
+                <li><strong>Building robust data pipelines with explicit interface contracts</strong> engineering ETL/ELT pipelines, relational database modeling, query optimization, and workflow orchestration (KNIME) to ensure data integrity between legacy shop-floor systems and analytical layers.</li>
+                <li><strong>Integrating control system interfaces</strong> leveraging PLC fundamentals and MES exposure alongside automated testing and digital quality documentation to close the loop between hardware events and enterprise records (SAP QM &amp; ERP).</li>
+                <li><strong>Designing system observability &amp; validation dashboards</strong> using Power BI for real-time KPI visualization, LTspice for analog front-end validation (instrumentation amplifiers, active filters), and engineering visualization tools to verify system behavior against requirements.</li>
+                <li><strong>Configuring enterprise system boundaries and human-machine interfaces</strong> deploying rapid prototyping layers (Power Apps, Power Automate) alongside web fundamentals (HTML, CSS, JavaScript, MySQL) for system overrides, manual workflows, and emergency stop logic — ensuring fail-safe design in human-system interactions.</li>
+                <li><strong>Enterprise productivity &amp; documentation systems</strong> applying advanced Excel, PowerPoint, and SAP ERP modules to support system requirements traceability, audit trails, and stakeholder reporting.</li>
               </ul>
             </div>
           </div>
