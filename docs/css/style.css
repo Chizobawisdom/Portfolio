@@ -638,6 +638,9 @@ section a:hover {
 .project-category {
   margin-bottom: 3rem;
 }
+.carousel-slide {
+  margin-bottom: 1.5rem;
+}
 
 .category-title {
   font-size: 1.75rem;
