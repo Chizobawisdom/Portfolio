@@ -1,97 +1,81 @@
-/**
- * portfolio-carousel.js
- * Drives all category-tab + carousel-block + carousel-track groups on the page.
- */
-(function () {
-  'use strict';
+document.addEventListener("DOMContentLoaded", () => {
+  // ─── CATEGORY TAB SWITCHING ───
+  const categoryTabs = document.querySelectorAll(".category-tab");
+  const carouselBlocks = document.querySelectorAll(".carousel-block");
 
-  /* ── helper: initialise one carousel block ── */
-  function initCarousel(block) {
-    const track   = block.querySelector('.carousel-track');
-    const slides = Array.from(block.querySelectorAll('.carousel-slide'));
-    const prev   = block.querySelector('.carousel-btn[data-dir="-1"]');
-    const next   = block.querySelector('.carousel-btn[data-dir="1"]');
-    const dots   = Array.from(block.querySelectorAll('.carousel-dot'));
-    const counter= block.querySelector('.carousel-counter');
-    const wrapper = block.querySelector('.carousel-wrapper'); // Grabbed the wrapper
-    const total  = slides.length;
-    let   current = 0;
+  categoryTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const selectedCategory = tab.getAttribute("data-category");
 
-    function updateHeight() {
-      if (wrapper && slides[current]) {
-        // Calculate the height of the current active slide
-        const activeHeight = slides[current].offsetHeight;
-        wrapper.style.height = `${activeHeight}px`;
+      // Update active tab button
+      categoryTabs.forEach((t) => t.classList.remove("active"));
+      tab.classList.add("active");
+
+      // Show matching category block, hide others
+      carouselBlocks.forEach((block) => {
+        if (block.getAttribute("data-category") === selectedCategory) {
+          block.classList.add("active");
+        } else {
+          block.classList.remove("active");
+        }
+      });
+    });
+  });
+
+  // ─── CAROUSEL SLIDER LOGIC ───
+  carouselBlocks.forEach((block) => {
+    const track = block.querySelector(".carousel-track");
+    const slides = block.querySelectorAll(".carousel-slide");
+    const prevBtn = block.querySelector('.carousel-btn[data-dir="-1"]');
+    const nextBtn = block.querySelector('.carousel-btn[data-dir="1"]');
+    const dots = block.querySelectorAll(".carousel-dot");
+    const counter = block.querySelector(".carousel-counter");
+
+    // Skip initializing carousels with single or zero slides
+    if (!slides.length || slides.length <= 1) return;
+
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+
+    function updateCarousel(index) {
+      currentIndex = index;
+
+      // Translate track to slide position
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+      track.style.transition = "transform 0.3s ease-in-out";
+
+      // Update active dot indicator
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle("active", idx === currentIndex);
+      });
+
+      // Update text counter (e.g., "1 / 4")
+      if (counter) {
+        counter.textContent = `${currentIndex + 1} / ${totalSlides}`;
       }
     }
 
-    function go(index) {
-      current = Math.max(0, Math.min(index, total - 1));
-      track.style.transform = `translateX(-${current * 100}%)`;
-      dots.forEach((d, i) => d.classList.toggle('active', i === current));
-      if (counter) counter.textContent = `${current + 1} / ${total}`;
-      if (prev) prev.disabled = current === 0;
-      if (next) next.disabled = current === total - 1;
-
-      // Force height adjustment on slide change
-      updateHeight();
-    }
-
-    if (prev) prev.addEventListener('click', () => go(current - 1));
-    if (next) next.addEventListener('click', () => go(current + 1));
-    dots.forEach((d, i) => d.addEventListener('click', () => go(i)));
-
-    /* swipe / drag support */
-    let startX = null;
-    track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
-    track.addEventListener('touchend',   e => {
-      if (startX === null) return;
-      const dx = e.changedTouches[0].clientX - startX;
-      if (Math.abs(dx) > 40) go(current + (dx < 0 ? 1 : -1));
-      startX = null;
-    });
-
-    // Make sure it exposes its height update for the tab click script
-    block.updateCarouselHeight = updateHeight;
-
-    // Recalculate heights if the user resizes their browser window
-    window.addEventListener('resize', updateHeight);
-
-    go(0); // initialise to first slide
-  }
-
-  /* ── wire category tabs to carousel blocks ── */
-  function initSection(section) {
-    const tabs   = Array.from(section.querySelectorAll('.category-tab'));
-    const blocks = Array.from(section.querySelectorAll('.carousel-block'));
-
-    function showBlock(id) {
-      tabs.forEach(t   => t.classList.toggle('active', t.dataset.category === id));
-      blocks.forEach(b => {
-        const isActive = b.dataset.category === id;
-        b.classList.toggle('active', isActive);
-        
-        // CRUCIAL: When a hidden tab becomes visible, recalculate its height 
-        // since hidden elements have 0px height initially.
-        if (isActive && b.updateCarouselHeight) {
-          // Microtask delay allows browser to display block before calculating height
-          setTimeout(() => b.updateCarouselHeight(), 10);
-        }
+    // Previous Button Click
+    if (prevBtn) {
+      prevBtn.addEventListener("click", () => {
+        const newIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateCarousel(newIndex);
       });
     }
 
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => showBlock(tab.dataset.category));
+    // Next Button Click
+    if (nextBtn) {
+      nextBtn.addEventListener("click", () => {
+        const newIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel(newIndex);
+      });
+    }
+
+    // Dot Navigation Clicks
+    dots.forEach((dot, idx) => {
+      dot.addEventListener("click", () => {
+        updateCarousel(idx);
+      });
     });
-
-    /* show first category on load */
-    if (tabs.length) showBlock(tabs[0].dataset.category);
-
-    /* initialise every carousel inside this section */
-    blocks.forEach(initCarousel);
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.carousel-section').forEach(initSection);
   });
-})();
+});
