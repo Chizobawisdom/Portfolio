@@ -43,8 +43,8 @@
                     <!-- Slide 1: Root Finder -->
                     <div class="carousel-slide">
                     <div class="project-grid" data-category="automation">
-                        <div class="project-details">
                         <h3>Algorithmic Roots &amp; Polynomial Solvers</h3>
+                        <div class="project-details">
                         <p><strong>System Context:</strong> Numerical kernel designed for suspension digital twins, replacing manual calibration steps that caused simulation bottlenecks.</p>
                         <p><strong>Systems Contribution:</strong> Architected a hybrid Newton-Raphson kernel with Horner evaluation and a fail-safe fallback when derivatives approach zero.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Validated against 10,000+ random polynomials vs. MATLAB benchmarks (&lt;1e-6 precision). Reduced calibration setup from 3 days to 15 minutes.</p>
@@ -79,9 +79,9 @@
                     <!-- Slide 2: PDF Merger -->
                     <div class="carousel-slide">
                     <div class="project-grid" data-category="automation">
-                        <div class="project-details">
                         <h3>Automated Document Merging Pipeline</h3>
-                        <p><strong>System Context:</strong> Compliance dossier generation for IATF 16949 &amp; ISO 9001 audits. Manual assembly was slow and error-prone.</p>
+                        <div class="project-details">
+                        <p><strong>System Context:</strong> Dossier generation prototype for IATF 16949 &amp; ISO 9001 audits. Manual assembly was slow and error-prone.</p>
                         <p><strong>Systems Contribution:</strong> Built a memory-optimised Python pipeline with dynamic MIME-type filtering, creation-time sorting, and chunked merging.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Reduced dossier generation time from hours to under 2 minutes with complete chronological audit traceability.</p>
                         <p class="tags">Technologies: Python • PyPDF2 • OS Automation • Data Pipelines</p>
@@ -117,8 +117,8 @@
                     <!-- Slide 3: Signal Synthesizer -->
                     <div class="carousel-slide">
                     <div class="project-grid" data-category="automation">
-                        <div class="project-details">
                         <h3>Algorithmic Signal Synthesis &amp; Sequencing Engine</h3>
+                        <div class="project-details">
                         <p><strong>System Context:</strong> Hardware-in-the-loop (HIL) testing for industrial acoustic alert systems requiring custom waveform generation.</p>
                         <p><strong>Systems Contribution:</strong> Engineered a DSP pipeline using discrete sine generation, precise inter-tone spacing, and Int16 scaling for DAC compatibility.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Validated audio output hardware stages with zero external DSP dependencies, enabling automated regression testing.</p>
@@ -148,8 +148,8 @@
                     <!-- Slide 4: Web Scraper -->
                     <div class="carousel-slide">
                     <div class="project-grid" data-category="automation">
-                        <div class="project-details">
                         <h3>Automated Web Scraping &amp; Headline Extraction</h3>
+                        <div class="project-details">                        
                         <p><strong>System Context:</strong> Automated procurement intelligence gathering to track component availability and market trends.</p>
                         <p><strong>Systems Contribution:</strong> Deployed a headless Selenium Chrome pipeline with structured XPath query execution and date-stamped CSV exporting.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Replaced manual daily web tracking with scheduled zero-touch data extraction feeding into analytical dashboards.</p>
@@ -206,8 +206,8 @@
                     <!-- Slide 1: Histogram Specification -->
                     <div class="carousel-slide">
                     <div class="project-grid" data-category="vision">
-                        <div class="project-details">
                         <h3>Histogram Specification for Image Enhancement</h3>
+                        <div class="project-details">                        
                         <p><strong>System Context:</strong> Image pre-processing stage for inline visual quality control under variable plant lighting conditions.</p>
                         <p><strong>Systems Contribution:</strong> Applied `skimage.exposure.match_histograms` to align tonal distributions against high-contrast reference profiles.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Eliminated lighting variations, significantly raising downstream CNN defect classification robustness.</p>
@@ -238,8 +238,8 @@
                     <!-- Slide 2: Manual Histogram Matching -->
                     <div class="carousel-slide">
                     <div class="project-grid" data-category="vision">
-                        <div class="project-details">
                         <h3>Histogram Matching from Scratch — Arithmetic Approach</h3>
+                        <div class="project-details">                        
                         <p><strong>System Context:</strong> Designed for air-gapped embedded vision devices where third-party libraries like `skimage` cannot be installed.</p>
                         <p><strong>Systems Contribution:</strong> Built histogram specification from raw NumPy using `np.bincount`, cumulative distribution matching, and lookup table indexing.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Achieved library-grade tonal matching with O(1) pixel transformation speed and zero external framework dependencies.</p>
@@ -273,8 +273,8 @@
                     <!-- Slide 3: EfficientNet Classifier -->
                     <div class="carousel-slide">
                     <div class="project-grid" data-category="vision">
-                        <div class="project-details">
                         <h3>Part Classifier: Transfer Learning via EfficientNetV2</h3>
+                        <div class="project-details">                        
                         <p><strong>System Context:</strong> Automated part recognition for high-mix production cells to ensure proper work-cell routing.</p>
                         <p><strong>Systems Contribution:</strong> Developed a TensorFlow/Keras pipeline utilizing EfficientNetV2B0, partial layer unfreezing, data augmentation, and early stopping.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Delivered reliable part classification with high accuracy, packaged into a `.keras` deployment format.</p>
@@ -309,8 +309,8 @@
                     <!-- Slide 4: ResNet Vehicle Classifier -->
                     <div class="carousel-slide">
                     <div class="project-grid" data-category="vision">
-                        <div class="project-details">
                         <h3>Vehicle Image Classifier: Two-Stage Fine-Tuning with ResNet50</h3>
+                        <div class="project-details">                        
                         <p><strong>System Context:</strong> Automated vehicle class tagging for logistical inspection points and quality tracking.</p>
                         <p><strong>Systems Contribution:</strong> Implemented a 2-stage training strategy using ResNet50: initial head training at `1e-3` followed by partial backbone unfreezing at `1e-4` with learning rate reduction.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Achieved high precision across vehicle categories while minimizing overfitting on small datasets.</p>
@@ -367,8 +367,8 @@
                     <!-- Slide 1: Income Analytics -->
                     <div class="carousel-slide">
                     <div class="project-grid" data-category="ml">
-                        <div class="project-details">
                         <h3>Industrial Income &amp; Demographic Analytics Pipeline</h3>
+                        <div class="project-details">                        
                         <p><strong>System Context:</strong> Predictive demographic modeling pipeline designed for workforce and resource allocation decisions.</p>
                         <p><strong>Systems Contribution:</strong> Built a leak-free pipeline using ColumnTransformer, Mutual Information feature selection (`SelectKBest`), SMOTE oversampling, and RandomForest ensemble classification.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Outperformed Naive Bayes baselines in precision and recall across imbalanced dataset profiles.</p>
@@ -401,8 +401,8 @@
                     <!-- Slide 2: Time Series Forecasting -->
                     <div class="carousel-slide">
                     <div class="project-grid" data-category="ml">
-                        <div class="project-details">
                         <h3>Chronological Forecasting &amp; Time-Series Regression</h3>
+                        <div class="project-details">                        
                         <p><strong>System Context:</strong> Demand and load forecasting model to support maintenance and operational planning.</p>
                         <p><strong>Systems Contribution:</strong> Enforced rolling `TimeSeriesSplit` cross-validation to maintain chronological ordering and eliminate temporal data leakage.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Generated consistent 24-hour demand forecasts that effectively tracked seasonal peaks and operational cycles.</p>
@@ -431,8 +431,8 @@
                     <!-- Slide 3: Time Series Forecasting -->
                     <div class="carousel-slide">
                     <div class="project-grid" data-category="ml">
-                        <div class="project-details">
                         <h3>Automated Statistical Process Control (SPC) & Quality Capability Engine</h3>
+                        <div class="project-details">                        
                         <p><strong>System Context:</strong> Real-time anomaly and drift detection across thousands of continuous factory sensor streams—replacing manual plotting with systemic statistical surveillance.</p>
                         <p><strong>My Systems Contribution:</strong> Built a pure NumPy/Pandas engine computing dynamic subgroup means ($\bar{X}$) and ranges ($R$) using standard control constants ($A_2, D_3, D_4$). Programmed all 8 Nelson Run Rules, implemented Page-Hinkley and CUSUM drift detectors for micro-shift identification, and computed short/long-term capability indices ($C_p, C_{pk}, P_p, P_{pk}$).</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> A diagnostic framework that runs across thousands of streaming nodes, auto-generating a master quality dashboard and flagging rule violations before defects occur—enabling predictive quality at scale.</p>
@@ -464,8 +464,8 @@
                     <!-- Slide 4: Time Series Forecasting -->
                     <div class="carousel-slide">
                     <div class="project-grid" data-category="ml">
-                        <div class="project-details">
                         <h3>Custom Probabilistic Naive Bayes Sorting Algorithm</h3>
+                        <div class="project-details">                        
                         <p><strong>System Context:</strong> Lightweight classification for edge devices or legacy industrial controllers where external ML frameworks cannot be installed or are too resource-intensive.</p>
                         <p><strong>My Systems Contribution:</strong> Built a pure Pandas classifier from first principles—calculating prior system states ($P(\text{Yes})$, $P(\text{No})$) via frequency lookups, mapping categorical streams to likelihood vectors ($P(X_i | Y)$), and applying Bayes' theorem iteratively to compute joint posterior values with normalized confidence intervals.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Deployed a fast, framework-free classification engine with absolute mathematical transparency—achieving operational decision-making on resource-constrained hardware.</p>
@@ -495,8 +495,8 @@
                     <!-- Slide 5: Time Series Forecasting -->
                     <div class="carousel-slide">
                     <div class="project-grid" data-category="ml">
-                        <div class="project-details">
                         <h3>Advanced Industrial Defect Reduction Pipeline</h3>
+                        <div class="project-details">                        
                         <p><strong>System Context:</strong> Diagnosing structural machinery fault types from high-frequency spectral signals—plagued by severe class imbalance and the curse of dimensionality in FFT-transformed features.</p>
                         <p><strong>My Systems Contribution:</strong> Stabilized features with <code>StandardScaler</code> and applied <code>SMOTE</code> to balance minority fault classes. Isolated FFT columns for targeted PCA—reducing spectral noise into 10 dense orthogonal variance components—then horizontally stacked (<code>np.hstack</code>) with non-FFT features. Executed a 5-fold <code>RandomizedSearchCV</code> over <code>LGBMClassifier</code> hyperparameters to optimize multi-class boundaries.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Deployed a sub-millisecond anomaly mapping pipeline for predictive maintenance shop-floors—delivering detailed confusion matrices and multi-class reports suitable for production integration.</p>
@@ -553,8 +553,8 @@
                     <!-- Slide 1: SimPy Digital Twin -->
                     <div class="carousel-slide">
                     <div class="project-grid" data-category="simulation">
-                        <div class="project-details">
                         <h3>Discrete-Event Digital Twin for Production Line Balancing & OEE Optimization</h3>
+                        <div class="project-details">                        
                         <p><strong>System Context:</strong> A multi-stage manufacturing line (Cutting, Assembly, Inspection) with unpredictable MTBF/MTTR and gauge measurement noise—needed a risk-free virtual testbed for line-balancing decisions.</p>
                         <p><strong>My Systems Contribution:</strong> Programmed the line in SimPy with exponential MTBF/MTTR distributions for non-linear breakdowns. Engineered a closed-loop quality control subsystem evaluating parts against strict $USL$/$LSL$ limits, contaminated with Gaussian measurement noise ($\sigma$), and constructed conditional rework routing.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Deployed a functional simulator generating vital KPIs—FPY, scrap rates, hourly throughput, and station-level OEE—enabling rapid virtual testing of reconfiguration strategies without halting physical production.</p>
@@ -588,8 +588,8 @@
                     <!-- Slide 2: SimPy Digital Twin -->
                     <div class="carousel-slide">
                     <div class="project-grid" data-category="simulation">
-                        <div class="project-details">
                         <h3>Precision Signal Conditioning & Instrumentation Amplifier LTspice Simulation</h3>
+                        <div class="project-details">                        
                         <p><strong>System Context:</strong> Analog front-end design for industrial sensor data acquisition—requires conditioning weak, low-amplitude signals before digital conversion.</p>
                         <p><strong>My Systems Contribution:</strong> Engineered a multi-amplifier topology in LTspice with balanced differential gain (R₁, R₄ = 10kΩ; R₂, R₃ = 150kΩ), active low-pass/bandpass filtering (R₅ = 47kΩ, R₆ = 2.2kΩ, C₁ = 22nF, C₂ = 440nF), and symmetric ±14V dual-rail power. Executed a 10ms transient analysis (<code>.tran 10m</code>) evaluating circuit response against a 50mV pulsed input.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Validated a robust, noise-resilient hardware blueprint with stable transient recovery profiles—ready for physical PCB integration in industrial acquisition nodes.</p>
@@ -620,8 +620,8 @@
                     <!-- Slide 3: SimPy Digital Twin -->
                     <div class="carousel-slide">
                     <div class="project-grid" data-category="simulation">
-                        <div class="project-details">
                         <h3>Active Low-Pass Filtering & Frequency Response SPICE Analysis</h3>
+                        <div class="project-details">                        
                         <p><strong>System Context:</strong> Signal conditioning for noisy industrial environments—requires precise attenuation characterization across the frequency spectrum.</p>
                         <p><strong>My Systems Contribution:</strong> Configured an active Sallen-Key op-amp topology in LTspice with an automated decade AC sweep (<code>.ac dec 10 1 500k</code>). Tuned input matching (R₃ = 50Ω) and structured a dense RC feedback loop (R₁ = 47kΩ, R₂ = 2.2kΩ, C₁ = 440nF, C₂ = 22nF) to evaluate phase margins and roll-off characteristics.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Extracted exact Bode plots verifying cut-off frequencies and attenuation rates—ensuring absolute filtering compliance before hardware board integration.</p>
@@ -649,12 +649,12 @@
 
                     <!-- Slide 4: SimPy Digital Twin -->
                     <div class="carousel-slide">
-                    <div class="project-grid" data-category="simulation">
-                        <div class="project-details">
                         <h3>AnyLogic Digital Twin for Smart Warehouse Sequencing & Downtime Minimization</h3>
                         <div class="model-screenshot-container">
                             <img src="images/warehouse_simulation_model.png" alt="AnyLogic Warehouse Simulation Flow and 2D/3D Layout View" loading="lazy">
                         </div>
+                    <div class="project-grid" data-category="simulation">                        
+                        <div class="project-details">                        
                         <p><strong>System Context:</strong> Logistics optimization between high-bay storage and Body Shop—balancing storage buffer sizing against the financial impact of production line stoppages.</p>
                         <p><strong>My Systems Contribution:</strong> Developed a multi-method AnyLogic model with Java agents dynamically extracting production schedules into memory-mapped sequence structures. Engineered custom logic tracking <code>totalDowntimeHours</code>, <code>totalStorageCost</code>, and dynamically stopping/resuming material routing the moment a downstream bottleneck occurs.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Delivered an interactive operational digital twin capable of stress-testing re-sequencing strategies—providing an analytical framework to balance storage costs against downtime risks.</p>
@@ -683,12 +683,12 @@
 
                     <!-- Slide 5: SimPy Digital Twin -->
                     <div class="carousel-slide">
-                    <div class="project-grid" data-category="simulation">
-                        <div class="project-details">
                         <h3>AnyLogic Discrete Event Simulation for Industrial Quality Gate Capacity Optimization</h3>
                         <div class="model-screenshot-container">
                             <img src="images/inspection_bottleneck_station.png" alt="AnyLogic Quality Inspection Process Flowchart and Analytics Dashboard" loading="lazy">
                         </div>
+                    <div class="project-grid" data-category="simulation">                        
+                        <div class="project-details">                        
                         <p><strong>System Context:</strong> A bottlenecked manual inspection gate—leadership needed data on whether to hire more inspectors (Scenario A) or upgrade equipment speed (Scenario B).</p>
                         <p><strong>My Systems Contribution:</strong> Built a stochastic DES in AnyLogic (Source → Queue → Service → SelectOutput → Sink) with exponential interarrival ($\lambda = 0.2$/min) and Triangular service times. Executed automated Parameter Variation experiments with independent replications to compute **95% confidence intervals** on all KPIs.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Proved Scenario A reduces mean cycle time by **71% (16.02 → 4.65 min)** and sharply mitigates volatility near saturation—outperforming the speed upgrade. Validated baseline performance against theoretical $M/G/1$ queueing models.</p>
