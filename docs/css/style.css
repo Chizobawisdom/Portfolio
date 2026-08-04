@@ -126,7 +126,6 @@ nav a.active {
   font-weight: 400;
   letter-spacing: -0.01em;
   display: inline-block;
-  background-color: var(--card-bg);
   padding: 0.4rem 0.9rem;
 }
 
