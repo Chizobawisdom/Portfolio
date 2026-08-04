@@ -127,8 +127,6 @@ nav a.active {
   display: inline-block;
   background-color: var(--card-bg);
   padding: 0.4rem 0.9rem;
-  border-radius: 6px;
-  border: 1px solid var(--border-color);
 }
 
 /* 5. About Section */
