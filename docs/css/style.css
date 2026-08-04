@@ -433,10 +433,21 @@ section a:hover {
 
 .carousel-wrapper {
   overflow: hidden;
+  width: 100%;
   border-radius: 8px;
   background-color: #141418;
   border: 1px solid #2d2d35;
   padding: 1.5rem;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.3s ease-in-out; /* Smooth sliding animation */
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  max-width: 100%;
 }
 
 .carousel-slide .project {
