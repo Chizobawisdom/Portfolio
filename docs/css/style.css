@@ -50,14 +50,13 @@ body {
 
 /* 3. Navigation Bar */
 .language-switch {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  z-index: 1000;
+  position: absolute;
+  top: 3.25rem;
+  right: 0;
+  z-index: 10;
 }
 
 nav:not(.language-switch) {
-  position: fixed;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -262,7 +261,7 @@ footer {
 /* --- General Section Styling --- */
 section {
   background-color: #1e1e24; /* Soft dark charcoal */
-  border-radius: 12px;
+  border-radius: 7px;
   padding: 2rem;
   margin-bottom: 2rem;
   border: 1px solid #2d2d35; /* Neutral gray border */
@@ -324,7 +323,7 @@ section a:hover {
 .project2 {
   background-color: #141418; /* Deep gray background */
   border: 1px solid #2d2d35;
-  border-radius: 8px;
+  border-radius: 7px;
   padding: 1.5rem;
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
