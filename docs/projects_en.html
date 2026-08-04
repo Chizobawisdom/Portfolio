@@ -27,16 +27,17 @@
 
             <!-- CATEGORY TABS -->
             <div class="category-tabs">
-                <button class="category-tab active" data-category="automation">Automation &amp; Tooling</button>
+                <button class="category-tab active" data-category="simulation">Digital Twins &amp; Simulation</button>
                 <button class="category-tab" data-category="vision">Computer Vision</button>
                 <button class="category-tab" data-category="ml">Industrial ML &amp; Analytics</button>
-                <button class="category-tab" data-category="simulation">Digital Twins &amp; Simulation</button>
+                <button class="category-tab" data-category="automation">Automation &amp; Tooling</button>
+                
             </div>
 
             <!-- ==========================================
-                1. AUTOMATION & TOOLING
+                1. DIGITAL TWINS & SIMULATION
                 ========================================== -->
-            <div class="carousel-block active" data-category="automation">
+            <div class="carousel-block" data-category="simulation">
                 <div class="carousel-controls">
                 <button class="carousel-btn" data-dir="-1" aria-label="Previous">&#8592;</button>
                 <div class="carousel-dots">
@@ -44,148 +45,178 @@
                     <button class="carousel-dot" aria-label="Slide 2"></button>
                     <button class="carousel-dot" aria-label="Slide 3"></button>
                     <button class="carousel-dot" aria-label="Slide 4"></button>
+                    <button class="carousel-dot" aria-label="Slide 5"></button>
                 </div>
                 <button class="carousel-btn" data-dir="1" aria-label="Next">&#8594;</button>
-                <span class="carousel-counter">1 / 4</span>
+                <span class="carousel-counter">1 / 5</span>
                 </div>
                 <div class="carousel-wrapper">
                 <div class="carousel-track">
 
-                    <!-- Slide 1: Root Finder -->
+                    <!-- Slide 1: SimPy Digital Twin -->
                     <div class="carousel-slide">
-                        <h3>Algorithmic Roots &amp; Polynomial Solvers</h3>
-                    <div class="project-grid" data-category="automation">                        
-                        <div class="project-details">
-                        <p><strong>System Context:</strong> Numerical kernel designed for suspension digital twins, replacing manual calibration steps that caused simulation bottlenecks.</p>
-                        <p><strong>Systems Contribution:</strong> Architected a hybrid Newton-Raphson kernel with Horner evaluation and a fail-safe fallback when derivatives approach zero.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Validated against 10,000+ random polynomials vs. MATLAB benchmarks (&lt;1e-6 precision). Reduced calibration setup from 3 days to 15 minutes.</p>
-                        <p class="tags">Technologies: Python • NumPy • SciPy • Numerical Methods</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Utility_and_Automation/polynomial-root-finder" target="_blank" rel="noopener">View Repository</a>
-                        </div>
-                        <div class="project-media">
-                        <div class="code-box">
-                            <span class="visual-label">Newton Iteration Core</span>
-                            <pre><code>def solver(xi, coeff):
-                                maxError = 1e-6
-                                error = math.inf
-                                while (error > maxError):
-                                    df = poly(xi, dpoly(coeff))
-                                    if (df != 0):
-                                        xn = xi - poly(xi, coeff)/df
-                                    else:
-                                        xn = xi - poly(xi, coeff)/\
-                                            random.uniform(-1e-12, 1e-12)
-                                    error = abs(xn - xi)
-                                    xi = xn
-                                return format(xn, '.4f')</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/projects/polynomial-solver.jpg" alt="Polynomial Solver Visualization" class="project-img">
-                            <span class="image-caption">Convergence Analysis Plot</span>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-
-                    <!-- Slide 2: PDF Merger -->
-                    <div class="carousel-slide">
-                        <h3>Automated Document Merging Pipeline</h3>
-                    <div class="project-grid" data-category="automation">                        
-                        <div class="project-details">
-                        <p><strong>System Context:</strong> Dossier generation prototype for IATF 16949 &amp; ISO 9001 audits. Manual assembly was slow and error-prone.</p>
-                        <p><strong>Systems Contribution:</strong> Built a memory-optimised Python pipeline with dynamic MIME-type filtering, creation-time sorting, and chunked merging.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Reduced dossier generation time from hours to under 2 minutes with complete chronological audit traceability.</p>
-                        <p class="tags">Technologies: Python • PyPDF2 • OS Automation • Data Pipelines</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Utility_and_Automation/pdf-merger" target="_blank" rel="noopener">View Repository</a>
-                        </div>
-                        <div class="project-media">
-                        <div class="code-box">
-                            <span class="visual-label">Chronological Document Pipeline</span>
-                            <pre><code>pdf_files = [
-                                f for f in os.listdir(pdf_folder)
-                                if mimetypes.guess_type(
-                                    os.path.join(pdf_folder, f)
-                                )[0] == 'application/pdf'
-                            ]
-                            pdf_files.sort(
-                                key=lambda x: os.path.getctime(
-                                    os.path.join(pdf_folder, x)
-                                )
-                            )
-                            merger = PdfMerger()
-                            for pdf in pdf_files:
-                                merger.append(os.path.join(pdf_folder, pdf))
-                            merger.write(merged_pdf_path)</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/projects/pdf-merger.jpg" alt="PDF Merger Architecture" class="project-img">
-                            <span class="image-caption">Pipeline Execution &amp; Merged Output</span>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-
-                    <!-- Slide 3: Signal Synthesizer -->
-                    <div class="carousel-slide">
-                        <h3>Algorithmic Signal Synthesis &amp; Sequencing Engine</h3>
-                    <div class="project-grid" data-category="automation">                        
-                        <div class="project-details">
-                        <p><strong>System Context:</strong> Hardware-in-the-loop (HIL) testing for industrial acoustic alert systems requiring custom waveform generation.</p>
-                        <p><strong>Systems Contribution:</strong> Engineered a DSP pipeline using discrete sine generation, precise inter-tone spacing, and Int16 scaling for DAC compatibility.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Validated audio output hardware stages with zero external DSP dependencies, enabling automated regression testing.</p>
-                        <p class="tags">Technologies: Python • NumPy • DSP • Signal Processing</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Utility_and_Automation/music-sheet-synthesizer" target="_blank" rel="noopener">View Repository</a>
-                        </div>
-                        <div class="project-media">
-                        <div class="code-box">
-                            <span class="visual-label">Waveform Synthesis Block</span>
-                            <pre><code>tv = np.linspace(0, td, int(td * fs), False)
-                                tone = np.sin(2 * np.pi * f1 * tv)
-
-                                space_tone = np.linspace(0, 0, int(sd * fs), False)
-                                dtone_space = np.concatenate((tone, space_tone))
-                                dtone_seq = (dtone_space *
-                                    (2**15 - 1) / np.max(np.abs(dtone_space)))
-                                return dtone_seq.astype(np.int16)</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/projects/signal-synthesizer.jpg" alt="Synthesized Waveform Visual" class="project-img">
-                            <span class="image-caption">Oscilloscope Verification Output</span>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-
-                    <!-- Slide 4: Web Scraper -->
-                    <div class="carousel-slide">
-                        <h3>Automated Web Scraping &amp; Headline Extraction</h3>
-                    <div class="project-grid" data-category="automation">                        
+                        <h3>Discrete-Event Digital Twin for Production Line Balancing & OEE Optimization</h3>
+                    <div class="project-grid" data-category="simulation">                        
                         <div class="project-details">                        
-                        <p><strong>System Context:</strong> Automated procurement intelligence gathering to track component availability and market trends.</p>
-                        <p><strong>Systems Contribution:</strong> Deployed a headless Selenium Chrome pipeline with structured XPath query execution and date-stamped CSV exporting.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Replaced manual daily web tracking with scheduled zero-touch data extraction feeding into analytical dashboards.</p>
-                        <p class="tags">Technologies: Python • Selenium • Pandas • XPath</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Utility_and_Automation/web-scraper" target="_blank" rel="noopener">View Repository</a>
+                        <p><strong>System Context:</strong> A multi-stage manufacturing line (Cutting, Assembly, Inspection) with unpredictable MTBF/MTTR and gauge measurement noise—needed a risk-free virtual testbed for line-balancing decisions.</p>
+                        <p><strong>My Systems Contribution:</strong> Programmed the line in SimPy with exponential MTBF/MTTR distributions for non-linear breakdowns. Engineered a closed-loop quality control subsystem evaluating parts against strict $USL$/$LSL$ limits, contaminated with Gaussian measurement noise ($\sigma$), and constructed conditional rework routing.</p>
+                        <p><strong>V&amp;V &amp; Impact:</strong> Deployed a functional simulator generating vital KPIs—FPY, scrap rates, hourly throughput, and station-level OEE—enabling rapid virtual testing of reconfiguration strategies without halting physical production.</p>
+                        <p><strong>Architecture:</strong> Structured as three decoupled subsystems — machine-state (breakdown/repair via MTBF/MTTR), quality-gate (spec-limit evaluation with measurement noise), and routing/KPI aggregation — mirroring how a live deployment would separate a sensor/PLC data layer from a rules engine and a reporting layer.</p>
+                        <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/digital-twin-quality-control-line" target="_blank" rel="noopener">View Repository</a>
                         </div>
                         <div class="project-media">
                         <div class="code-box">
-                            <span class="visual-label">Headless Pipeline Engine</span>
-                            <pre><code>options.add_argument("--headless=new")
-                                driver = webdriver.Chrome(service=Service(path), options=options)
-                                driver.get(website)
+                        <span class="visual-label">Stochastic Machine Breakdown Logic</span>
+                        <pre><code># Continuous Exponential MTBF/MTTR Process
+                            def breakdown_process(env, station_name):
+                                mtbf = STATIONS[station_name]["mtbf"]
+                                mttr = STATIONS[station_name]["mttr"]
+                                if mtbf >= 9999: return
 
-                                containers = driver.find_elements(
-                                    "xpath", '//div[@class="teaser__copy-container"]')
-                                for container in containers:
-                                    Title = container.find_element(By.XPATH, './/span').text
-                                    Link = container.find_element(By.XPATH, './/a').get_attribute("href")
-
-                                now = datetime.now().strftime("%d-%m-%Y")
-                                df.to_csv(f"headlines_{now}.csv")</code></pre>
+                                while True:
+                                    time_to_failure = random.expovariate(1.0 / mtbf)
+                                    yield env.timeout(time_to_failure)
+                                    DOWN[station_name] = True
+                                    yield env.timeout(mttr)
+                                    DOWN[station_name] = False</code></pre>
                         </div>
                         <div class="image-wrapper">
-                            <img src="images/projects/web-scraper.jpg" alt="Data Pipeline Output" class="project-img">
-                            <span class="image-caption">Headless Pipeline &amp; Data Schema</span>
+                            <img src="images/projects/simpy-digital-twin.jpg" alt="Simulation Graph" class="project-img">
+                            <span class="image-caption">Queue Dynamics &amp; Bottleneck Plot</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Slide 2: SimPy Digital Twin -->
+                    <div class="carousel-slide">
+                        <h3>Precision Signal Conditioning & Instrumentation Amplifier LTspice Simulation</h3>
+                    <div class="project-grid" data-category="simulation">                        
+                        <div class="project-details">                        
+                        <p><strong>System Context:</strong> Analog front-end design for industrial sensor data acquisition—requires conditioning weak, low-amplitude signals before digital conversion.</p>
+                        <p><strong>My Systems Contribution:</strong> Engineered a multi-amplifier topology in LTspice with balanced differential gain (R₁, R₄ = 10kΩ; R₂, R₃ = 150kΩ), active low-pass/bandpass filtering (R₅ = 47kΩ, R₆ = 2.2kΩ, C₁ = 22nF, C₂ = 440nF), and symmetric ±14V dual-rail power. Executed a 10ms transient analysis (<code>.tran 10m</code>) evaluating circuit response against a 50mV pulsed input.</p>
+                        <p><strong>V&amp;V &amp; Impact:</strong> Validated a robust, noise-resilient hardware blueprint with stable transient recovery profiles—ready for physical PCB integration in industrial acquisition nodes.</p>
+                        <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/instrumentation-amplifier-with-active-filter" target="_blank" rel="noopener">View Repository</a>
+                        </div>
+                        <div class="project-media">
+                        <div class="code-box">
+                        <span class="visual-label">SPICE Netlist & Simulation Constraints</span>
+                        <pre><code>* Sensor Pulse Source & Simulation Setup
+                                V1 -288 448 R0 PULSE(0 50m 0 1n 1n 5m 10m) Rser=50
+                                V2 400 464 R0 14
+                                V3 528 464 R0 -14
+
+                                * Active Component Network Configuration
+                                SYMATTR InstName R2 / Value 150K
+                                SYMATTR InstName R6 / Value 2.2K
+                                SYMATTR InstName C1 / Value 22n
+                                .tran 10m</code></pre>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="images/Screenshot 2026-08-05 003942.png" alt="Simulation Graph" class="project-img">
+                            <span class="image-caption">Queue Dynamics &amp; Bottleneck Plot</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Slide 3: SimPy Digital Twin -->
+                    <div class="carousel-slide">
+                        <h3>Active Low-Pass Filtering & Frequency Response SPICE Analysis</h3>
+                    <div class="project-grid" data-category="simulation">                        
+                        <div class="project-details">                        
+                        <p><strong>System Context:</strong> Signal conditioning for noisy industrial environments—requires precise attenuation characterization across the frequency spectrum.</p>
+                        <p><strong>My Systems Contribution:</strong> Configured an active Sallen-Key op-amp topology in LTspice with an automated decade AC sweep (<code>.ac dec 10 1 500k</code>). Tuned input matching (R₃ = 50Ω) and structured a dense RC feedback loop (R₁ = 47kΩ, R₂ = 2.2kΩ, C₁ = 440nF, C₂ = 22nF) to evaluate phase margins and roll-off characteristics.</p>
+                        <p><strong>V&amp;V &amp; Impact:</strong> Extracted exact Bode plots verifying cut-off frequencies and attenuation rates—ensuring absolute filtering compliance before hardware board integration.</p>
+                        <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/sallen-key-active-low-pass-filter" target="_blank" rel="noopener">View Repository</a>
+                        </div>
+                        <div class="project-media">
+                        <div class="code-box">
+                        <span class="visual-label">AC Decadic Sweeping Network</span>
+                        <pre><code>* Signal Input & Decadic Analysis Loop
+                                V1 -224 288 R0 AC 1
+                                .ac dec 10 1 500k
+
+                                * Filter Passive RC Loop Specification
+                                SYMATTR InstName R1 / Value 47K
+                                SYMATTR InstName C1 / Value 440n
+                                SYMATTR InstName C2 / Value 22n</code></pre>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="images/Screenshot 2026-08-05 004029.png" alt="Simulation Graph" class="project-img">
+                            <span class="image-caption">Queue Dynamics &amp; Bottleneck Plot</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Slide 4: SimPy Digital Twin -->
+                    <div class="carousel-slide">
+                        <h3>AnyLogic Digital Twin for Smart Warehouse Sequencing & Downtime Minimization</h3>
+                        <div class="model-screenshot-container">
+                            <img src="images/warehouse_simulation_model.png" alt="AnyLogic Warehouse Simulation Flow and 2D/3D Layout View" loading="lazy">
+                        </div>
+                    <div class="project-grid" data-category="simulation">                        
+                        <div class="project-details">                        
+                        <p><strong>System Context:</strong> Logistics optimization between high-bay storage and Body Shop—balancing storage buffer sizing against the financial impact of production line stoppages.</p>
+                        <p><strong>My Systems Contribution:</strong> Developed a multi-method AnyLogic model with Java agents dynamically extracting production schedules into memory-mapped sequence structures. Engineered custom logic tracking <code>totalDowntimeHours</code>, <code>totalStorageCost</code>, and dynamically stopping/resuming material routing the moment a downstream bottleneck occurs.</p>
+                        <p><strong>V&amp;V &amp; Impact:</strong> Delivered an interactive operational digital twin capable of stress-testing re-sequencing strategies—providing an analytical framework to balance storage costs against downtime risks.</p>
+                        <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/warehouse-sequence-optimization" target="_blank" rel="noopener">View Repository</a>
+                        </div>
+                        <div class="project-media">
+                        <div class="code-box">
+                        <span class="visual-label">Simulation Model & Logic Architecture</span>
+                        <pre><code>// Downtime & Storage Cost Tracker
+                                totalDowntimeHours = 13.46 hours;
+                                totalDowntimeCost  = €5,383,184;
+                                totalStorageCost   = €750,000;
+                                bodyShopStopped    = false;
+
+                                // Sequential Map Ingestion Engine
+                                plannedSequenceMap.clear();
+                                List&lt;Tuple&gt; planned = select(planned_sequence).list();</code></pre>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="images/Screenshot 2026-08-05 002709.png" alt="AnyLogic Warehouse Simulation Flow" class="project-img">
+                            <span class="image-caption">Queue Dynamics &amp; Bottleneck Plot</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Slide 5: SimPy Digital Twin -->
+                    <div class="carousel-slide">
+                        <h3>AnyLogic Discrete Event Simulation for Industrial Quality Gate Capacity Optimization</h3>
+                        <div class="model-screenshot-container">
+                            <img src="images/inspection_bottleneck_station.png" alt="AnyLogic Quality Inspection Process Flowchart and Analytics Dashboard" loading="lazy">
+                        </div>
+                    <div class="project-grid" data-category="simulation">                        
+                        <div class="project-details">                        
+                        <p><strong>System Context:</strong> A bottlenecked manual inspection gate—leadership needed data on whether to hire more inspectors (Scenario A) or upgrade equipment speed (Scenario B).</p>
+                        <p><strong>My Systems Contribution:</strong> Built a stochastic DES in AnyLogic (Source → Queue → Service → SelectOutput → Sink) with exponential interarrival ($\lambda = 0.2$/min) and Triangular service times. Executed automated Parameter Variation experiments with independent replications to compute **95% confidence intervals** on all KPIs.</p>
+                        <p><strong>V&amp;V &amp; Impact:</strong> Proved Scenario A reduces mean cycle time by **71% (16.02 → 4.65 min)** and sharply mitigates volatility near saturation—outperforming the speed upgrade. Validated baseline performance against theoretical $M/G/1$ queueing models.</p>
+                        <p><strong>Requirements & Validation:</strong> The model was required to reproduce realistic queueing behavior before being trusted for a capacity decision. Baseline utilization and cycle-time outputs were checked against a theoretical M/G/1 queueing model prior to running scenario comparisons — confirming simulation fidelity before it was used to justify the parallel-inspector recommendation over an equipment upgrade.</p>
+                        <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/inspection-bottlneck-station" target="_blank" rel="noopener">View Repository</a>
+                        </div>
+                        <div class="project-media">
+                        <div class="code-box">
+                        <span class="visual-label">Simulation Model & Logic Architecture</span>
+                        <pre><code>// Dynamic Quality Inspection Routing Logic
+                                if ( randomTrue(defectProbability) ) {
+                                    // Entity routes to scrap block
+                                    trgScrapEvent.add(time() - agent.entryTime);
+                                } else {
+                                    // Entity successfully passes inspection
+                                    trgPassEvent.add(time() - agent.entryTime);
+                                }
+
+                                // Parameter Variation Multi-Run Callback
+                                statUtilization.add( root.inspectorPool.utilization() );
+                                statCycleTime.add( root.systemTimeMeasure.mean() );</code></pre>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="images/Screenshot 2026-08-05 002111.png" alt="AnyLogic Warehouse Simulation Flow" class="project-img">
+                            <span class="image-caption">Queue Dynamics &amp; Bottleneck Plot</span>
                         </div>
                         </div>
                     </div>
@@ -193,8 +224,11 @@
 
                 </div>
                 </div>
+
                 
             </div>
+
+            
 
             <!-- ==========================================
                 2. COMPUTER VISION
@@ -546,9 +580,9 @@
             </div>
 
             <!-- ==========================================
-                4. DIGITAL TWINS & SIMULATION
+                4. AUTOMATION & TOOLING
                 ========================================== -->
-            <div class="carousel-block" data-category="simulation">
+            <div class="carousel-block active" data-category="automation">
                 <div class="carousel-controls">
                 <button class="carousel-btn" data-dir="-1" aria-label="Previous">&#8592;</button>
                 <div class="carousel-dots">
@@ -556,178 +590,148 @@
                     <button class="carousel-dot" aria-label="Slide 2"></button>
                     <button class="carousel-dot" aria-label="Slide 3"></button>
                     <button class="carousel-dot" aria-label="Slide 4"></button>
-                    <button class="carousel-dot" aria-label="Slide 5"></button>
                 </div>
                 <button class="carousel-btn" data-dir="1" aria-label="Next">&#8594;</button>
-                <span class="carousel-counter">1 / 5</span>
+                <span class="carousel-counter">1 / 4</span>
                 </div>
                 <div class="carousel-wrapper">
                 <div class="carousel-track">
 
-                    <!-- Slide 1: SimPy Digital Twin -->
+                    <!-- Slide 1: Root Finder -->
                     <div class="carousel-slide">
-                        <h3>Discrete-Event Digital Twin for Production Line Balancing & OEE Optimization</h3>
-                    <div class="project-grid" data-category="simulation">                        
-                        <div class="project-details">                        
-                        <p><strong>System Context:</strong> A multi-stage manufacturing line (Cutting, Assembly, Inspection) with unpredictable MTBF/MTTR and gauge measurement noise—needed a risk-free virtual testbed for line-balancing decisions.</p>
-                        <p><strong>My Systems Contribution:</strong> Programmed the line in SimPy with exponential MTBF/MTTR distributions for non-linear breakdowns. Engineered a closed-loop quality control subsystem evaluating parts against strict $USL$/$LSL$ limits, contaminated with Gaussian measurement noise ($\sigma$), and constructed conditional rework routing.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Deployed a functional simulator generating vital KPIs—FPY, scrap rates, hourly throughput, and station-level OEE—enabling rapid virtual testing of reconfiguration strategies without halting physical production.</p>
-                        <p><strong>Architecture:</strong> Structured as three decoupled subsystems — machine-state (breakdown/repair via MTBF/MTTR), quality-gate (spec-limit evaluation with measurement noise), and routing/KPI aggregation — mirroring how a live deployment would separate a sensor/PLC data layer from a rules engine and a reporting layer.</p>
-                        <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/digital-twin-quality-control-line" target="_blank" rel="noopener">View Repository</a>
+                        <h3>Algorithmic Roots &amp; Polynomial Solvers</h3>
+                    <div class="project-grid" data-category="automation">                        
+                        <div class="project-details">
+                        <p><strong>System Context:</strong> Numerical kernel designed for suspension digital twins, replacing manual calibration steps that caused simulation bottlenecks.</p>
+                        <p><strong>Systems Contribution:</strong> Architected a hybrid Newton-Raphson kernel with Horner evaluation and a fail-safe fallback when derivatives approach zero.</p>
+                        <p><strong>V&amp;V &amp; Impact:</strong> Validated against 10,000+ random polynomials vs. MATLAB benchmarks (&lt;1e-6 precision). Reduced calibration setup from 3 days to 15 minutes.</p>
+                        <p class="tags">Technologies: Python • NumPy • SciPy • Numerical Methods</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Utility_and_Automation/polynomial-root-finder" target="_blank" rel="noopener">View Repository</a>
                         </div>
                         <div class="project-media">
                         <div class="code-box">
-                        <span class="visual-label">Stochastic Machine Breakdown Logic</span>
-                        <pre><code># Continuous Exponential MTBF/MTTR Process
-                            def breakdown_process(env, station_name):
-                                mtbf = STATIONS[station_name]["mtbf"]
-                                mttr = STATIONS[station_name]["mttr"]
-                                if mtbf >= 9999: return
-
-                                while True:
-                                    time_to_failure = random.expovariate(1.0 / mtbf)
-                                    yield env.timeout(time_to_failure)
-                                    DOWN[station_name] = True
-                                    yield env.timeout(mttr)
-                                    DOWN[station_name] = False</code></pre>
+                            <span class="visual-label">Newton Iteration Core</span>
+                            <pre><code>def solver(xi, coeff):
+                                maxError = 1e-6
+                                error = math.inf
+                                while (error > maxError):
+                                    df = poly(xi, dpoly(coeff))
+                                    if (df != 0):
+                                        xn = xi - poly(xi, coeff)/df
+                                    else:
+                                        xn = xi - poly(xi, coeff)/\
+                                            random.uniform(-1e-12, 1e-12)
+                                    error = abs(xn - xi)
+                                    xi = xn
+                                return format(xn, '.4f')</code></pre>
                         </div>
                         <div class="image-wrapper">
-                            <img src="images/projects/simpy-digital-twin.jpg" alt="Simulation Graph" class="project-img">
-                            <span class="image-caption">Queue Dynamics &amp; Bottleneck Plot</span>
+                            <img src="images/projects/polynomial-solver.jpg" alt="Polynomial Solver Visualization" class="project-img">
+                            <span class="image-caption">Convergence Analysis Plot</span>
                         </div>
                         </div>
                     </div>
                     </div>
 
-                    <!-- Slide 2: SimPy Digital Twin -->
+                    <!-- Slide 2: PDF Merger -->
                     <div class="carousel-slide">
-                        <h3>Precision Signal Conditioning & Instrumentation Amplifier LTspice Simulation</h3>
-                    <div class="project-grid" data-category="simulation">                        
-                        <div class="project-details">                        
-                        <p><strong>System Context:</strong> Analog front-end design for industrial sensor data acquisition—requires conditioning weak, low-amplitude signals before digital conversion.</p>
-                        <p><strong>My Systems Contribution:</strong> Engineered a multi-amplifier topology in LTspice with balanced differential gain (R₁, R₄ = 10kΩ; R₂, R₃ = 150kΩ), active low-pass/bandpass filtering (R₅ = 47kΩ, R₆ = 2.2kΩ, C₁ = 22nF, C₂ = 440nF), and symmetric ±14V dual-rail power. Executed a 10ms transient analysis (<code>.tran 10m</code>) evaluating circuit response against a 50mV pulsed input.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Validated a robust, noise-resilient hardware blueprint with stable transient recovery profiles—ready for physical PCB integration in industrial acquisition nodes.</p>
-                        <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/instrumentation-amplifier-with-active-filter" target="_blank" rel="noopener">View Repository</a>
+                        <h3>Automated Document Merging Pipeline</h3>
+                    <div class="project-grid" data-category="automation">                        
+                        <div class="project-details">
+                        <p><strong>System Context:</strong> Dossier generation prototype for IATF 16949 &amp; ISO 9001 audits. Manual assembly was slow and error-prone.</p>
+                        <p><strong>Systems Contribution:</strong> Built a memory-optimised Python pipeline with dynamic MIME-type filtering, creation-time sorting, and chunked merging.</p>
+                        <p><strong>V&amp;V &amp; Impact:</strong> Reduced dossier generation time from hours to under 2 minutes with complete chronological audit traceability.</p>
+                        <p class="tags">Technologies: Python • PyPDF2 • OS Automation • Data Pipelines</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Utility_and_Automation/pdf-merger" target="_blank" rel="noopener">View Repository</a>
                         </div>
                         <div class="project-media">
                         <div class="code-box">
-                        <span class="visual-label">SPICE Netlist & Simulation Constraints</span>
-                        <pre><code>* Sensor Pulse Source & Simulation Setup
-                                V1 -288 448 R0 PULSE(0 50m 0 1n 1n 5m 10m) Rser=50
-                                V2 400 464 R0 14
-                                V3 528 464 R0 -14
-
-                                * Active Component Network Configuration
-                                SYMATTR InstName R2 / Value 150K
-                                SYMATTR InstName R6 / Value 2.2K
-                                SYMATTR InstName C1 / Value 22n
-                                .tran 10m</code></pre>
+                            <span class="visual-label">Chronological Document Pipeline</span>
+                            <pre><code>pdf_files = [
+                                f for f in os.listdir(pdf_folder)
+                                if mimetypes.guess_type(
+                                    os.path.join(pdf_folder, f)
+                                )[0] == 'application/pdf'
+                            ]
+                            pdf_files.sort(
+                                key=lambda x: os.path.getctime(
+                                    os.path.join(pdf_folder, x)
+                                )
+                            )
+                            merger = PdfMerger()
+                            for pdf in pdf_files:
+                                merger.append(os.path.join(pdf_folder, pdf))
+                            merger.write(merged_pdf_path)</code></pre>
                         </div>
                         <div class="image-wrapper">
-                            <img src="images/Screenshot 2026-08-05 003942.png" alt="Simulation Graph" class="project-img">
-                            <span class="image-caption">Queue Dynamics &amp; Bottleneck Plot</span>
+                            <img src="images/projects/pdf-merger.jpg" alt="PDF Merger Architecture" class="project-img">
+                            <span class="image-caption">Pipeline Execution &amp; Merged Output</span>
                         </div>
                         </div>
                     </div>
                     </div>
 
-                    <!-- Slide 3: SimPy Digital Twin -->
+                    <!-- Slide 3: Signal Synthesizer -->
                     <div class="carousel-slide">
-                        <h3>Active Low-Pass Filtering & Frequency Response SPICE Analysis</h3>
-                    <div class="project-grid" data-category="simulation">                        
-                        <div class="project-details">                        
-                        <p><strong>System Context:</strong> Signal conditioning for noisy industrial environments—requires precise attenuation characterization across the frequency spectrum.</p>
-                        <p><strong>My Systems Contribution:</strong> Configured an active Sallen-Key op-amp topology in LTspice with an automated decade AC sweep (<code>.ac dec 10 1 500k</code>). Tuned input matching (R₃ = 50Ω) and structured a dense RC feedback loop (R₁ = 47kΩ, R₂ = 2.2kΩ, C₁ = 440nF, C₂ = 22nF) to evaluate phase margins and roll-off characteristics.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Extracted exact Bode plots verifying cut-off frequencies and attenuation rates—ensuring absolute filtering compliance before hardware board integration.</p>
-                        <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/sallen-key-active-low-pass-filter" target="_blank" rel="noopener">View Repository</a>
+                        <h3>Algorithmic Signal Synthesis &amp; Sequencing Engine</h3>
+                    <div class="project-grid" data-category="automation">                        
+                        <div class="project-details">
+                        <p><strong>System Context:</strong> Hardware-in-the-loop (HIL) testing for industrial acoustic alert systems requiring custom waveform generation.</p>
+                        <p><strong>Systems Contribution:</strong> Engineered a DSP pipeline using discrete sine generation, precise inter-tone spacing, and Int16 scaling for DAC compatibility.</p>
+                        <p><strong>V&amp;V &amp; Impact:</strong> Validated audio output hardware stages with zero external DSP dependencies, enabling automated regression testing.</p>
+                        <p class="tags">Technologies: Python • NumPy • DSP • Signal Processing</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Utility_and_Automation/music-sheet-synthesizer" target="_blank" rel="noopener">View Repository</a>
                         </div>
                         <div class="project-media">
                         <div class="code-box">
-                        <span class="visual-label">AC Decadic Sweeping Network</span>
-                        <pre><code>* Signal Input & Decadic Analysis Loop
-                                V1 -224 288 R0 AC 1
-                                .ac dec 10 1 500k
+                            <span class="visual-label">Waveform Synthesis Block</span>
+                            <pre><code>tv = np.linspace(0, td, int(td * fs), False)
+                                tone = np.sin(2 * np.pi * f1 * tv)
 
-                                * Filter Passive RC Loop Specification
-                                SYMATTR InstName R1 / Value 47K
-                                SYMATTR InstName C1 / Value 440n
-                                SYMATTR InstName C2 / Value 22n</code></pre>
+                                space_tone = np.linspace(0, 0, int(sd * fs), False)
+                                dtone_space = np.concatenate((tone, space_tone))
+                                dtone_seq = (dtone_space *
+                                    (2**15 - 1) / np.max(np.abs(dtone_space)))
+                                return dtone_seq.astype(np.int16)</code></pre>
                         </div>
                         <div class="image-wrapper">
-                            <img src="images/Screenshot 2026-08-05 004029.png" alt="Simulation Graph" class="project-img">
-                            <span class="image-caption">Queue Dynamics &amp; Bottleneck Plot</span>
+                            <img src="images/projects/signal-synthesizer.jpg" alt="Synthesized Waveform Visual" class="project-img">
+                            <span class="image-caption">Oscilloscope Verification Output</span>
                         </div>
                         </div>
                     </div>
                     </div>
 
-                    <!-- Slide 4: SimPy Digital Twin -->
+                    <!-- Slide 4: Web Scraper -->
                     <div class="carousel-slide">
-                        <h3>AnyLogic Digital Twin for Smart Warehouse Sequencing & Downtime Minimization</h3>
-                        <div class="model-screenshot-container">
-                            <img src="images/warehouse_simulation_model.png" alt="AnyLogic Warehouse Simulation Flow and 2D/3D Layout View" loading="lazy">
-                        </div>
-                    <div class="project-grid" data-category="simulation">                        
+                        <h3>Automated Web Scraping &amp; Headline Extraction</h3>
+                    <div class="project-grid" data-category="automation">                        
                         <div class="project-details">                        
-                        <p><strong>System Context:</strong> Logistics optimization between high-bay storage and Body Shop—balancing storage buffer sizing against the financial impact of production line stoppages.</p>
-                        <p><strong>My Systems Contribution:</strong> Developed a multi-method AnyLogic model with Java agents dynamically extracting production schedules into memory-mapped sequence structures. Engineered custom logic tracking <code>totalDowntimeHours</code>, <code>totalStorageCost</code>, and dynamically stopping/resuming material routing the moment a downstream bottleneck occurs.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Delivered an interactive operational digital twin capable of stress-testing re-sequencing strategies—providing an analytical framework to balance storage costs against downtime risks.</p>
-                        <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/warehouse-sequence-optimization" target="_blank" rel="noopener">View Repository</a>
+                        <p><strong>System Context:</strong> Automated procurement intelligence gathering to track component availability and market trends.</p>
+                        <p><strong>Systems Contribution:</strong> Deployed a headless Selenium Chrome pipeline with structured XPath query execution and date-stamped CSV exporting.</p>
+                        <p><strong>V&amp;V &amp; Impact:</strong> Replaced manual daily web tracking with scheduled zero-touch data extraction feeding into analytical dashboards.</p>
+                        <p class="tags">Technologies: Python • Selenium • Pandas • XPath</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Utility_and_Automation/web-scraper" target="_blank" rel="noopener">View Repository</a>
                         </div>
                         <div class="project-media">
                         <div class="code-box">
-                        <span class="visual-label">Simulation Model & Logic Architecture</span>
-                        <pre><code>// Downtime & Storage Cost Tracker
-                                totalDowntimeHours = 13.46 hours;
-                                totalDowntimeCost  = €5,383,184;
-                                totalStorageCost   = €750,000;
-                                bodyShopStopped    = false;
+                            <span class="visual-label">Headless Pipeline Engine</span>
+                            <pre><code>options.add_argument("--headless=new")
+                                driver = webdriver.Chrome(service=Service(path), options=options)
+                                driver.get(website)
 
-                                // Sequential Map Ingestion Engine
-                                plannedSequenceMap.clear();
-                                List&lt;Tuple&gt; planned = select(planned_sequence).list();</code></pre>
+                                containers = driver.find_elements(
+                                    "xpath", '//div[@class="teaser__copy-container"]')
+                                for container in containers:
+                                    Title = container.find_element(By.XPATH, './/span').text
+                                    Link = container.find_element(By.XPATH, './/a').get_attribute("href")
+
+                                now = datetime.now().strftime("%d-%m-%Y")
+                                df.to_csv(f"headlines_{now}.csv")</code></pre>
                         </div>
                         <div class="image-wrapper">
-                            <img src="images/Screenshot 2026-08-05 002709.png" alt="AnyLogic Warehouse Simulation Flow" class="project-img">
-                            <span class="image-caption">Queue Dynamics &amp; Bottleneck Plot</span>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-
-                    <!-- Slide 5: SimPy Digital Twin -->
-                    <div class="carousel-slide">
-                        <h3>AnyLogic Discrete Event Simulation for Industrial Quality Gate Capacity Optimization</h3>
-                        <div class="model-screenshot-container">
-                            <img src="images/inspection_bottleneck_station.png" alt="AnyLogic Quality Inspection Process Flowchart and Analytics Dashboard" loading="lazy">
-                        </div>
-                    <div class="project-grid" data-category="simulation">                        
-                        <div class="project-details">                        
-                        <p><strong>System Context:</strong> A bottlenecked manual inspection gate—leadership needed data on whether to hire more inspectors (Scenario A) or upgrade equipment speed (Scenario B).</p>
-                        <p><strong>My Systems Contribution:</strong> Built a stochastic DES in AnyLogic (Source → Queue → Service → SelectOutput → Sink) with exponential interarrival ($\lambda = 0.2$/min) and Triangular service times. Executed automated Parameter Variation experiments with independent replications to compute **95% confidence intervals** on all KPIs.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Proved Scenario A reduces mean cycle time by **71% (16.02 → 4.65 min)** and sharply mitigates volatility near saturation—outperforming the speed upgrade. Validated baseline performance against theoretical $M/G/1$ queueing models.</p>
-                        <p><strong>Requirements & Validation:</strong> The model was required to reproduce realistic queueing behavior before being trusted for a capacity decision. Baseline utilization and cycle-time outputs were checked against a theoretical M/G/1 queueing model prior to running scenario comparisons — confirming simulation fidelity before it was used to justify the parallel-inspector recommendation over an equipment upgrade.</p>
-                        <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/inspection-bottlneck-station" target="_blank" rel="noopener">View Repository</a>
-                        </div>
-                        <div class="project-media">
-                        <div class="code-box">
-                        <span class="visual-label">Simulation Model & Logic Architecture</span>
-                        <pre><code>// Dynamic Quality Inspection Routing Logic
-                                if ( randomTrue(defectProbability) ) {
-                                    // Entity routes to scrap block
-                                    trgScrapEvent.add(time() - agent.entryTime);
-                                } else {
-                                    // Entity successfully passes inspection
-                                    trgPassEvent.add(time() - agent.entryTime);
-                                }
-
-                                // Parameter Variation Multi-Run Callback
-                                statUtilization.add( root.inspectorPool.utilization() );
-                                statCycleTime.add( root.systemTimeMeasure.mean() );</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/Screenshot 2026-08-05 002111.png" alt="AnyLogic Warehouse Simulation Flow" class="project-img">
-                            <span class="image-caption">Queue Dynamics &amp; Bottleneck Plot</span>
+                            <img src="images/projects/web-scraper.jpg" alt="Data Pipeline Output" class="project-img">
+                            <span class="image-caption">Headless Pipeline &amp; Data Schema</span>
                         </div>
                         </div>
                     </div>
@@ -735,9 +739,10 @@
 
                 </div>
                 </div>
-
                 
             </div>
+
+            
 
             </section>
 
