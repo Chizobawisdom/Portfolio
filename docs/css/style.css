@@ -312,7 +312,40 @@ section a:hover {
   color: #ffffff;
   text-decoration: underline;
 }
+/* --- Download Button --- */
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #2a2a32;
+  color: #f1f1f5;
+  border: 1px solid #3f3f4a;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 1.5rem;
+}
 
+.btn-download:hover {
+  background-color: #495057;
+  border-color: #6c757d;
+  color: #ffffff;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.download-icon {
+  stroke: #ced4da;
+  transition: stroke 0.2s ease;
+}
+
+.btn-download:hover .download-icon {
+  stroke: #ffffff;
+}
 /* --- Work Experience Cards (.project2) --- */
 .experience {
   display: flex;
