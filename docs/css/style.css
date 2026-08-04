@@ -113,6 +113,7 @@ nav a.active {
   letter-spacing: -0.04em;
   color: var(--text-main);
   margin-bottom: 1.25rem;
+  margin-top: 1.25rem;
 }
 
 .name-headline h1 .surname {
