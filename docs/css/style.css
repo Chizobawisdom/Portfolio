@@ -1,172 +1,246 @@
 /* ---------- Reset & Base ---------- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+:root {
+  --bg-color: #0b0c0e;
+  --card-bg: #121417;
+  --text-main: #f0f2f5;
+  --text-muted: #949e9e;
+  --text-dim: #626c76;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.2);
+  --accent-color: #ffffff;
+  
+  --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Merriweather', Georgia, serif;
+}
+/* 2. Global Resets & Setup */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-        body {
-            background: #fcfcf7; /* warm off‑white, like paper */
-            color: #1e1e1e;
-            font-family: 'Merriweather', Georgia, 'Times New Roman', serif;
-            line-height: 1.7;
-            padding: 2rem 1.5rem;
-        }
+html {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-inter);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
 
-        .container {
-            max-width: 780px;
-            margin: 0 auto;
-        }
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 0 1.5rem;
+}
 
-        /* ---------- Navigation ---------- */
-        nav {
-            display: flex;
-            justify-content: flex-end;
-            gap: 2rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid #e6e6e0;
-            margin-bottom: 2.5rem;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 0.95rem;
-            letter-spacing: 0.02em;
-        }
+/* Layout Container */
+.container {
+  width: 100%;
+  max-width: 820px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 0;
+}
 
-        nav a {
-            text-decoration: none;
-            color: #1e1e1e;
-            font-weight: 400;
-            transition: color 0.2s;
-        }
+/* 3. Navigation Bar */
+body > .container {
+  position: relative;
+}
 
-        nav a:hover {
-            color: #8b8b8b;
-        }
+/* Flex layout for nav elements */
+.language-switch {
+  position: absolute;
+  top: 3.25rem;
+  right: 0;
+}
 
-        nav a.active {
-            font-weight: 600;
-            border-bottom: 2px solid #1e1e1e;
-        }
+nav:not(.language-switch) {
+  display: flex;
+  gap: 1.75rem;
+  padding-bottom: 2rem;
+  margin-bottom: 4rem;
+  border-bottom: 1px solid var(--border-color);
+}
 
-        /* ---------- Header / Name ---------- */
-        .name-headline {
-            margin-bottom: 2.5rem;
-        }
+nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.925rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease;
+}
 
-        .name-headline h1 {
-            font-family: 'Inter', sans-serif;
-            font-size: 2.6rem;
-            font-weight: 400;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-            color: #1e1e1e;
-        }
+nav a:hover,
+nav a.active {
+  color: var(--text-main);
+}
 
-        .name-headline h1 .surname {
-            font-weight: 600;
-            transition: color 0.25s ease;
-        }
+.language-switch a {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+}
 
-        .name-headline h1 .surname:hover {
-            color: #a0a0a0;
-        }
+.language-switch a:hover {
+  color: var(--text-main);
+  border-color: var(--border-hover);
+  background-color: rgba(255, 255, 255, 0.03);
+}
 
-        .name-headline .subhead {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 300;
-            color: #4a4a4a;
-            margin-top: 0.2rem;
-        }
+/* 4. Name & Headline Section */
+.name-headline {
+  padding-bottom: 3.5rem;
+  margin-bottom: 3.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
 
-        /* ---------- About Section ---------- */
-        .about p {
-            font-size: 1.1rem;
-            margin-bottom: 1.2rem;
-            color: #2a2a2a;
-        }
+.name-headline h1 {
+  font-family: var(--font-inter);
+  font-size: clamp(2.75rem, 6.5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--text-main);
+  margin-bottom: 1.25rem;
+}
 
-        .about p:last-of-type {
-            margin-bottom: 0;
-        }
+.name-headline h1 .surname {
+  color: var(--text-muted);
+  font-weight: 600;
+}
 
-        .about a {
-            color: #1e1e1e;
-            text-decoration: underline;
-            text-underline-offset: 3px;
-            text-decoration-thickness: 1px;
-            transition: color 0.2s;
-        }
+.subhead {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  display: inline-block;
+  background-color: var(--card-bg);
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+}
 
-        .about a:hover {
-            color: #8b8b8b;
-        }
+/* 5. About Section */
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  margin-bottom: 5rem;
+}
 
-        /* ---------- Footer ---------- */
-        footer {
-            margin-top: 3.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #e6e6e0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 0.75rem 1.5rem;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            color: #4a4a4a;
-        }
+.about p {
+  font-family: var(--font-inter);
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+  font-weight: 400;
+}
 
-        footer .footer-left {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem 1.5rem;
-        }
+/* Primary focus on the first paragraph like a lead bio */
+.about p:first-of-type {
+  font-size: 1.25rem;
+  color: var(--text-main);
+  line-height: 1.65;
+  letter-spacing: -0.015em;
+}
 
-        footer a {
-            color: #1e1e1e;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
+.about a {
+  color: var(--text-main);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--border-hover);
+  transition: text-decoration-color 0.2s ease;
+}
 
-        footer a:hover {
-            color: #8b8b8b;
-        }
+.about a:hover {
+  text-decoration-color: var(--text-main);
+}
 
-        footer .social a {
-            margin-left: 1rem;
-            font-size: 1.1rem;
-        }
+/* 6. Footer Layout */
+footer {
+  margin-top: auto;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
 
-        footer .social a:first-of-type {
-            margin-left: 0;
-        }
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-size: 0.875rem;
+  color: var(--text-dim);
+  flex-wrap: wrap;
+}
 
-        /* ---------- Responsive ---------- */
-        @media (max-width: 600px) {
-            body {
-                padding: 1.5rem 1rem;
-            }
+.footer-left a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
 
-            .name-headline h1 {
-                font-size: 2rem;
-            }
+.footer-left a:hover {
+  color: var(--text-main);
+}
 
-            nav {
-                justify-content: center;
-                gap: 1.5rem;
-                font-size: 0.9rem;
-            }
+.social {
+  display: flex;
+  gap: 1rem;
+}
 
-            .about p {
-                font-size: 1rem;
-            }
+.social a {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  text-decoration: none;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
 
-            footer {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+.social a:hover {
+  color: var(--text-main);
+  border-color: var(--border-hover);
+  background-color: var(--card-bg);
+  transform: translateY(-2px);
+}
 
-            footer .social {
-                margin-top: 0.25rem;
-            }
-        }
+/* 7. Responsive Mobile Tweaks */
+@media (max-width: 640px) {
+  .container {
+    padding: 2rem 0;
+  }
+  
+  .language-switch {
+    top: 2.1rem;
+  }
+  
+  .name-headline {
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .footer-left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+}
