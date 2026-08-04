@@ -65,7 +65,7 @@ nav:not(.language-switch) {
   gap: 1.75rem;
   width: 100%;
   padding-bottom: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   border-bottom: 1px solid var(--border-color);
 }
 
