@@ -101,7 +101,6 @@ nav a.active {
 /* 4. Name & Headline Section */
 .name-headline {
   padding-bottom: 3.5rem;
-  margin-top: 3.5rem;
   margin-bottom: 3.5rem;
   border-bottom: 1px solid var(--border-color);
 }
