@@ -90,17 +90,7 @@ nav a.active {
   color: var(--text-muted);
   transition: all 0.2s ease;
 }
-.language-switch {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  background: #0078d4;
-  color: white;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-weight: 600;
-  z-index: 1000;
-}
+
 .language-switch a:hover {
   color: var(--text-main);
   border-color: var(--border-hover);
