@@ -41,11 +41,11 @@ body {
 .container {
   width: 100%;
   max-width: 1100px;
-  margin: 0 auto;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 1rem 0;
+  padding: 2rem 1rem;
+  margin: 0 auto;
   position: relative;
 }
 
@@ -262,25 +262,25 @@ footer {
 
 /* --- General Section Styling --- */
 section {
-  background-color: #1e293b;
+  background-color: #1e1e24; /* Soft dark charcoal */
   border-radius: 12px;
   padding: 2rem;
   margin-bottom: 2rem;
-  border: 1px solid #334155;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  border: 1px solid #2d2d35; /* Neutral gray border */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
 }
 
 section h2 {
   font-size: 1.75rem;
-  color: #f8fafc;
-  border-bottom: 2px solid #3b82f6;
+  color: #f1f1f5;
+  border-bottom: 2px solid #6c757d; /* Neutral gray underline */
   padding-bottom: 0.5rem;
   margin-bottom: 1.5rem;
   font-weight: 600;
 }
 
 section p {
-  color: #cbd5e1;
+  color: #d1d1d6;
   font-size: 0.95rem;
   line-height: 1.6;
   margin-bottom: 1rem;
@@ -294,24 +294,24 @@ section ul {
 
 section li {
   margin-bottom: 0.6rem;
-  color: #cbd5e1;
+  color: #d1d1d6;
   font-size: 0.95rem;
   line-height: 1.5;
 }
 
 section li strong {
-  color: #f8fafc;
+  color: #ffffff;
 }
 
 section a {
-  color: #60a5fa;
+  color: #adb5bd; /* Cool gray link color */
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s ease;
 }
 
 section a:hover {
-  color: #93c5fd;
+  color: #ffffff;
   text-decoration: underline;
 }
 
@@ -323,45 +323,45 @@ section a:hover {
 }
 
 .project2 {
-  background-color: #0f172a;
-  border: 1px solid #334155;
+  background-color: #141418; /* Deep gray background */
+  border: 1px solid #2d2d35;
   border-radius: 8px;
   padding: 1.5rem;
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .project2:hover {
-  border-color: #60a5fa;
+  border-color: #6c757d; /* Mid-gray highlight on hover */
   transform: translateY(-2px);
 }
 
 .project2 h3 {
   font-size: 1.2rem;
-  color: #f8fafc;
+  color: #f1f1f5;
   margin-bottom: 0.25rem;
 }
 
 .project2 h4 {
   font-size: 0.95rem;
-  color: #94a3b8;
+  color: #9e9ea7;
   font-weight: normal;
   margin-bottom: 1rem;
   line-height: 1.4;
 }
 
 .project2 h4 em {
-  color: #38bdf8;
+  color: #ced4da; /* Light gray date highlight */
   font-style: normal;
 }
 
 .tags {
   display: inline-block;
   font-size: 0.85rem;
-  color: #93c5fd;
-  background-color: rgba(59, 130, 246, 0.1);
+  color: #e2e8f0;
+  background-color: #2a2a32; /* Charcoal pill background */
   padding: 0.4rem 0.8rem;
   border-radius: 6px;
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  border: 1px solid #3f3f4a;
   margin-top: 0.5rem;
 }
 
@@ -374,9 +374,9 @@ section a:hover {
 }
 
 .category-tab {
-  background-color: #0f172a;
-  color: #94a3b8;
-  border: 1px solid #334155;
+  background-color: #141418;
+  color: #9e9ea7;
+  border: 1px solid #2d2d35;
   padding: 0.6rem 1.1rem;
   border-radius: 6px;
   cursor: pointer;
@@ -387,9 +387,9 @@ section a:hover {
 
 .category-tab.active,
 .category-tab:hover {
-  background-color: #3b82f6;
+  background-color: #495057; /* Medium dark gray active state */
   color: #ffffff;
-  border-color: #3b82f6;
+  border-color: #6c757d;
 }
 
 .carousel-block {
@@ -403,8 +403,8 @@ section a:hover {
 .carousel-wrapper {
   overflow: hidden;
   border-radius: 8px;
-  background-color: #0f172a;
-  border: 1px solid #334155;
+  background-color: #141418;
+  border: 1px solid #2d2d35;
   padding: 1.5rem;
 }
 
@@ -416,7 +416,7 @@ section a:hover {
 
 .carousel-slide h3 {
   font-size: 1.2rem;
-  color: #f8fafc;
+  color: #f1f1f5;
   margin-bottom: 1rem;
 }
 
@@ -430,9 +430,9 @@ section a:hover {
 }
 
 .carousel-btn {
-  background-color: #0f172a;
-  border: 1px solid #334155;
-  color: #f8fafc;
+  background-color: #141418;
+  border: 1px solid #2d2d35;
+  color: #f1f1f5;
   padding: 0.4rem 0.85rem;
   border-radius: 6px;
   cursor: pointer;
@@ -440,8 +440,8 @@ section a:hover {
 }
 
 .carousel-btn:hover {
-  background-color: #3b82f6;
-  border-color: #3b82f6;
+  background-color: #495057;
+  border-color: #6c757d;
 }
 
 .carousel-dots {
@@ -453,18 +453,18 @@ section a:hover {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #334155;
+  background-color: #2d2d35;
   border: none;
   cursor: pointer;
 }
 
 .carousel-dot.active {
-  background-color: #3b82f6;
+  background-color: #6c757d;
 }
 
 .carousel-counter {
   font-size: 0.85rem;
-  color: #64748b;
+  color: #868e96;
 }
 
 /* --- Responsive Adjustments --- */
