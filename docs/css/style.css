@@ -437,7 +437,6 @@ section a:hover {
   border-radius: 8px;
   background-color: #141418;
   border: 1px solid #2d2d35;
-  padding: 1.5rem;
 }
 
 .carousel-track {
@@ -448,6 +447,7 @@ section a:hover {
 .carousel-slide {
   flex: 0 0 100%;
   max-width: 100%;
+  padding: 1.5rem;
 }
 
 .carousel-slide .project {
