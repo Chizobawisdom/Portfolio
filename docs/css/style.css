@@ -612,8 +612,7 @@ section a:hover {
 
 .code-box pre {
   overflow-x: auto;
-  white-space: pre-wrap;
-  overflow-wrap: break-word;
+  white-space: pre;
   margin: 0;
 }
 
