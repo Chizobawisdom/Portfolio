@@ -90,12 +90,20 @@
 
                     <!-- Slide 2: SimPy Digital Twin -->
                     <div class="carousel-slide">
-                        <h3>Precision Signal Conditioning & Instrumentation Amplifier LTspice Simulation</h3>
+                        <h3>Extended LTspice Simulation & Dynamic Response Analysis</h3>
+                        <div class="model-screenshot-container">
+                            <img src="images/Screenshot 2026-08-05 003942.png" alt="AnyLogic Warehouse Simulation Flow and 2D/3D Layout View" loading="lazy">
+                        </div>
                     <div class="project-grid" data-category="simulation">                        
                         <div class="project-details">                        
-                        <p><strong>System Context:</strong> Analog front-end design for industrial sensor data acquisition—requires conditioning weak, low-amplitude signals before digital conversion.</p>
-                        <p><strong>My Systems Contribution:</strong> Engineered a multi-amplifier topology in LTspice with balanced differential gain (R₁, R₄ = 10kΩ; R₂, R₃ = 150kΩ), active low-pass/bandpass filtering (R₅ = 47kΩ, R₆ = 2.2kΩ, C₁ = 22nF, C₂ = 440nF), and symmetric ±14V dual-rail power. Executed a 10ms transient analysis (<code>.tran 10m</code>) evaluating circuit response against a 50mV pulsed input.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Validated a robust, noise-resilient hardware blueprint with stable transient recovery profiles—ready for physical PCB integration in industrial acquisition nodes.</p>
+                        <p><strong>System Context:</strong> This project extension evaluates the dynamic response and control stability of an instrumentation amplifier front-end cascaded into a second-order active Sallen-Key low-pass filter network. By varying the feedback gain parameter (K), the system's transient overshoot, natural frequency, and damping characteristics are systematically characterized across both time-domain step inputs and frequency-domain AC sweeps.</p>
+                        <p><strong>My Systems Contribution:</strong></p>
+                        <ul>
+                            <li>Physical & Virtual Twin Development: Built a physical test rig using an oscilloscope and signal generator alongside a high-fidelity LTspice simulation model to replicate physical dynamic responses</li>
+                            <li>Control Parameter Calibration: Analyzed physical and virtual step responses across variable feedback conditions ($K = 0\ \Omega$ to $2.062\text{ k}\Omega$) to extract critical dynamic metrics, including damping ratio ($\zeta = 0.204$) and natural frequency ($\omega_n = 3683\text{ rad/s}$). </li>
+                            <li>Frequency Domain & Noise Filtering: Mapped system frequency response via Bode plots ($1\text{ Hz} - 500\text{ kHz}$) to define low-pass filter boundaries and eliminate high-frequency signal interference. </li>
+                        </ul>
+                        <p><strong>V&amp;V &amp; Impact:</strong> Validated the virtual simulation model against physical hardware test data, proving that adjusting internal loop gain ($K$) eliminates transient overshoot ($M_p = 51.94\%$ down to $0\%$). This confirmed model fidelity for predicting control loop stability and preventing mechanical/electrical overshoot in automated manufacturing hardware</p>
                         <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/instrumentation-amplifier-with-active-filter" target="_blank" rel="noopener">View Repository</a>
                         </div>
                         <div class="project-media">
@@ -113,7 +121,7 @@
                                 .tran 10m</code></pre>
                         </div>
                         <div class="image-wrapper">
-                            <img src="images/Screenshot 2026-08-05 003942.png" alt="Simulation Graph" class="project-img">
+                            <img src="images/Screenshot 2026-08-05 163252.png" alt="Simulation Graph" class="project-img">
                             <span class="image-caption">Queue Dynamics &amp; Bottleneck Plot</span>
                         </div>
                         </div>
@@ -123,11 +131,20 @@
                     <!-- Slide 3: SimPy Digital Twin -->
                     <div class="carousel-slide">
                         <h3>Active Low-Pass Filtering & Frequency Response SPICE Analysis</h3>
+                        <div class="model-screenshot-container">
+                            <img src="images/Screenshot 2026-08-05 004029.png" alt="AnyLogic Warehouse Simulation Flow and 2D/3D Layout View" loading="lazy">
+                        </div>
                     <div class="project-grid" data-category="simulation">                        
                         <div class="project-details">                        
-                        <p><strong>System Context:</strong> Signal conditioning for noisy industrial environments—requires precise attenuation characterization across the frequency spectrum.</p>
-                        <p><strong>My Systems Contribution:</strong> Configured an active Sallen-Key op-amp topology in LTspice with an automated decade AC sweep (<code>.ac dec 10 1 500k</code>). Tuned input matching (R₃ = 50Ω) and structured a dense RC feedback loop (R₁ = 47kΩ, R₂ = 2.2kΩ, C₁ = 440nF, C₂ = 22nF) to evaluate phase margins and roll-off characteristics.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Extracted exact Bode plots verifying cut-off frequencies and attenuation rates—ensuring absolute filtering compliance before hardware board integration.</p>
+                        <p><strong>System Context:</strong> Validation and hardware-in-the-loop dynamic modeling of a second-order active filter control system. The physical test rig processes incoming step and sinusoidal excitation signals via an op-amp circuit, providing a benchmark to test signal conditioning and dynamic control loops used in industrial sensor and actuator subsystems.</p>
+                        <p><strong>My Systems Contribution:</strong></p>
+                        <ul>
+                            <li>Physical Rig Setup & Test Execution: Assembled the analog operational amplifier circuit, applied step and sinusoidal signal excitation via a wave generator, and captured dual-channel oscilloscope traces using precision cursors (x_1, x_2, y_1, y_2) to measure phase shift (&Delta; x), rise time, and peak overshoot.</li>
+                            <li>Virtual Twin Simulation: Built a behavioral simulation model in LTspice incorporating .tran 30m transient analysis and .ac dec 10 1 500k frequency sweeps to replicate physical hardware execution.</li>
+                            <li>Control Parameter Extraction: Derived key dynamic performance metrics from hardware and simulation data, mathematically extracting a damping ratio of ζ = 0.54 from transient maximum overshoot (M<sub>p</sub> = 0.134 V): </li>
+                        </ul>
+                        <p>&zeta; = &minus;ln(<i>M</i><sub>p</sub>) / &radic;(&pi;<sup>2</sup> + ln<sup>2</sup>(<i>M</i><sub>p</sub>))</p>
+                        <p><strong>V&amp;V &amp; Impact:</strong> Verified LTspice netlists against circuit specifications to confirm accurate generation of transient step responses and AC Bode frequency curves across $1\text{ Hz}$ to $500\text{ kHz}$.  <br>Cross-validated the physical oscilloscope measurements against virtual LTspice outputs, proving high-fidelity model performance for predicting real-world circuit behavior, overshoot, and phase dynamics in automated system components.</p>
                         <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/sallen-key-active-low-pass-filter" target="_blank" rel="noopener">View Repository</a>
                         </div>
                         <div class="project-media">
@@ -143,7 +160,7 @@
                                 SYMATTR InstName C2 / Value 22n</code></pre>
                         </div>
                         <div class="image-wrapper">
-                            <img src="images/Screenshot 2026-08-05 004029.png" alt="Simulation Graph" class="project-img">
+                            <img src="images/Screenshot 2026-08-05 161912.png" alt="Simulation Graph" class="project-img">
                             <span class="image-caption">Queue Dynamics &amp; Bottleneck Plot</span>
                         </div>
                         </div>
