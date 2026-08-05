@@ -55,12 +55,18 @@
 
                     <!-- Slide 1: SimPy Digital Twin -->
                     <div class="carousel-slide">
-                        <h3>Discrete-Event Digital Twin for Production Line Balancing & OEE Optimization</h3>
+                        <h3>Discrete-Event Digital Twin for Quality Control & Bottleneck Analysis in Automated Assembly Lines</h3>
                     <div class="project-grid" data-category="simulation">                        
                         <div class="project-details">                        
-                        <p><strong>System Context:</strong> A multi-stage manufacturing line (Cutting, Assembly, Inspection) with unpredictable MTBF/MTTR and gauge measurement noise—needed a risk-free virtual testbed for line-balancing decisions.</p>
-                        <p><strong>My Systems Contribution:</strong> Programmed the line in SimPy with exponential MTBF/MTTR distributions for non-linear breakdowns. Engineered a closed-loop quality control subsystem evaluating parts against strict $USL$/$LSL$ limits, contaminated with Gaussian measurement noise ($\sigma$), and constructed conditional rework routing.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Deployed a functional simulator generating vital KPIs—FPY, scrap rates, hourly throughput, and station-level OEE—enabling rapid virtual testing of reconfiguration strategies without halting physical production.</p>
+                        <p><strong>System Context:</strong> This project models a multi-station automated quality control line (Cutting → Assembly → Inspection) operating under dynamic production constraints. The system simulates real-world manufacturing disturbances, including stochastic machine breakdowns (MTBF/MTTR), random process execution times, gauge measurement noise, and a closed-loop rework/scrap routing logic for defective components</p>
+                        <p><strong>My Systems Contribution:</strong> </p>
+                        <ul>
+                            <li>Discrete-Event Digital Twin Execution: Built an object-oriented Python discrete-event simulation using simpy to mirror real-time part flow across multi-station production constraints during an 8-hour operational shift.</li>
+                            <li>Disturbance & Reliability Modeling: Programmed continuous breakdown processes using exponential distributions (expovariate) for MTBF/MTTR downtime interruptions alongside Gaussian variation (gauss) for cycle times and measurement noise</li>
+                            <li>Quality & Closed-Loop Rework Logic: Implemented an automated inspection classification engine based on upper and lower specification limits (LSL = 9.9, USL = 10.1) to dynamically route parts into First Pass Yield (FPY), rework loops back to Assembly, or final scrap.</li>
+                            <li>Production KPI Analytics Pipeline: Automated calculations for station utilization, queue depth tracking, throughput (good parts/hr), Overall Equipment Effectiveness (OEE), scrap rates, and system bottleneck detection</li>
+                        </ul>
+                        <p><strong>V&amp;V &amp; Impact:</strong> Verified model stability by incorporating a 30-minute warmup phase (WARMUP_MIN) to eliminate transient startup bias, ensuring accurate steady-state metric calculations. Validated line efficiency by analyzing station utilization and queue lengths, enabling precise identification of the primary bottleneck station. The simulation quantified the impact of machine availability and rework limits on overall throughput and OEE, providing a predictive decision-support tool for optimizing shop-floor capacity without physical line disruption</p>
                         <p><strong>Architecture:</strong> Structured as three decoupled subsystems — machine-state (breakdown/repair via MTBF/MTTR), quality-gate (spec-limit evaluation with measurement noise), and routing/KPI aggregation — mirroring how a live deployment would separate a sensor/PLC data layer from a rules engine and a reporting layer.</p>
                         <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/digital-twin-quality-control-line" target="_blank" rel="noopener">View Repository</a>
                         </div>
@@ -81,7 +87,7 @@
                                     DOWN[station_name] = False</code></pre>
                         </div>
                         <div class="image-wrapper">
-                            <img src="images/projects/simpy-digital-twin.jpg" alt="Simulation Graph" class="project-img">
+                            <img src="images/Screenshot 2026-08-05 164730.png" alt="Simulation Graph" class="project-img">
                             <span class="image-caption">Queue Dynamics &amp; Bottleneck Plot</span>
                         </div>
                         </div>
