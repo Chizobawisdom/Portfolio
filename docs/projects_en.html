@@ -67,8 +67,7 @@
                             <li>Production KPI Analytics Pipeline: Automated calculations for station utilization, queue depth tracking, throughput (good parts/hr), Overall Equipment Effectiveness (OEE), scrap rates, and system bottleneck detection</li>
                         </ul>
                         <p><strong>V&amp;V &amp; Impact:</strong> Verified model stability by incorporating a 30-minute warmup phase (WARMUP_MIN) to eliminate transient startup bias, ensuring accurate steady-state metric calculations. Validated line efficiency by analyzing station utilization and queue lengths, enabling precise identification of the primary bottleneck station. The simulation quantified the impact of machine availability and rework limits on overall throughput and OEE, providing a predictive decision-support tool for optimizing shop-floor capacity without physical line disruption</p>
-                        <p><strong>Architecture:</strong> Structured as three decoupled subsystems — machine-state (breakdown/repair via MTBF/MTTR), quality-gate (spec-limit evaluation with measurement noise), and routing/KPI aggregation — mirroring how a live deployment would separate a sensor/PLC data layer from a rules engine and a reporting layer.</p>
-                        <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/digital-twin-quality-control-line" target="_blank" rel="noopener">View Repository</a>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/digital-twin-quality-control-line" target="_blank" rel="noopener">View Repository</a>
                         </div>
                         <div class="project-media">
                         <div class="code-box">
@@ -110,7 +109,7 @@
                             <li>Frequency Domain & Noise Filtering: Mapped system frequency response via Bode plots ($1\text{ Hz} - 500\text{ kHz}$) to define low-pass filter boundaries and eliminate high-frequency signal interference. </li>
                         </ul>
                         <p><strong>V&amp;V &amp; Impact:</strong> Validated the virtual simulation model against physical hardware test data, proving that adjusting internal loop gain ($K$) eliminates transient overshoot ($M_p = 51.94\%$ down to $0\%$). This confirmed model fidelity for predicting control loop stability and preventing mechanical/electrical overshoot in automated manufacturing hardware</p>
-                        <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/instrumentation-amplifier-with-active-filter" target="_blank" rel="noopener">View Repository</a>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/instrumentation-amplifier-with-active-filter" target="_blank" rel="noopener">View Repository</a>
                         </div>
                         <div class="project-media">
                         <div class="code-box">
@@ -151,7 +150,7 @@
                         </ul>
                         <p>&zeta; = &minus;ln(<i>M</i><sub>p</sub>) / &radic;(&pi;<sup>2</sup> + ln<sup>2</sup>(<i>M</i><sub>p</sub>))</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Verified LTspice netlists against circuit specifications to confirm accurate generation of transient step responses and AC Bode frequency curves across $1\text{ Hz}$ to $500\text{ kHz}$.  <br>Cross-validated the physical oscilloscope measurements against virtual LTspice outputs, proving high-fidelity model performance for predicting real-world circuit behavior, overshoot, and phase dynamics in automated system components.</p>
-                        <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/sallen-key-active-low-pass-filter" target="_blank" rel="noopener">View Repository</a>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/sallen-key-active-low-pass-filter" target="_blank" rel="noopener">View Repository</a>
                         </div>
                         <div class="project-media">
                         <div class="code-box">
@@ -184,7 +183,7 @@
                         <p><strong>System Context:</strong> Logistics optimization between high-bay storage and Body Shop—balancing storage buffer sizing against the financial impact of production line stoppages.</p>
                         <p><strong>My Systems Contribution:</strong> Developed a multi-method AnyLogic model with Java agents dynamically extracting production schedules into memory-mapped sequence structures. Engineered custom logic tracking <code>totalDowntimeHours</code>, <code>totalStorageCost</code>, and dynamically stopping/resuming material routing the moment a downstream bottleneck occurs.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Delivered an interactive operational digital twin capable of stress-testing re-sequencing strategies—providing an analytical framework to balance storage costs against downtime risks.</p>
-                        <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/warehouse-sequence-optimization" target="_blank" rel="noopener">View Repository</a>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/warehouse-sequence-optimization" target="_blank" rel="noopener">View Repository</a>
                         </div>
                         <div class="project-media">
                         <div class="code-box">
@@ -218,8 +217,7 @@
                         <p><strong>System Context:</strong> A bottlenecked manual inspection gate—leadership needed data on whether to hire more inspectors (Scenario A) or upgrade equipment speed (Scenario B).</p>
                         <p><strong>My Systems Contribution:</strong> Built a stochastic DES in AnyLogic (Source → Queue → Service → SelectOutput → Sink) with exponential interarrival ($\lambda = 0.2$/min) and Triangular service times. Executed automated Parameter Variation experiments with independent replications to compute **95% confidence intervals** on all KPIs.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Proved Scenario A reduces mean cycle time by **71% (16.02 → 4.65 min)** and sharply mitigates volatility near saturation—outperforming the speed upgrade. Validated baseline performance against theoretical $M/G/1$ queueing models.</p>
-                        <p><strong>Requirements & Validation:</strong> The model was required to reproduce realistic queueing behavior before being trusted for a capacity decision. Baseline utilization and cycle-time outputs were checked against a theoretical M/G/1 queueing model prior to running scenario comparisons — confirming simulation fidelity before it was used to justify the parallel-inspector recommendation over an equipment upgrade.</p>
-                        <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/inspection-bottlneck-station" target="_blank" rel="noopener">View Repository</a>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/inspection-bottlneck-station" target="_blank" rel="noopener">View Repository</a>
                         </div>
                         <div class="project-media">
                         <div class="code-box">
@@ -509,8 +507,7 @@
                         <p><strong>System Context:</strong> Real-time anomaly and drift detection across thousands of continuous factory sensor streams—replacing manual plotting with systemic statistical surveillance.</p>
                         <p><strong>My Systems Contribution:</strong> Built a pure NumPy/Pandas engine computing dynamic subgroup means ($\bar{X}$) and ranges ($R$) using standard control constants ($A_2, D_3, D_4$). Programmed all 8 Nelson Run Rules, implemented Page-Hinkley and CUSUM drift detectors for micro-shift identification, and computed short/long-term capability indices ($C_p, C_{pk}, P_p, P_{pk}$).</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> A diagnostic framework that runs across thousands of streaming nodes, auto-generating a master quality dashboard and flagging rule violations before defects occur—enabling predictive quality at scale.</p>
-                        <p><strong>Architecture:</strong> Structured as a three-layer pipeline — a streaming ingestion layer (designed for OPC-UA/MQTT sensor tags), a rolling-window SPC/anomaly analysis core, and an alerting/dashboard output layer — so acquisition, analysis, and presentation can be modified or swapped independently in a live deployment.</p>
-                        <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Industrial_AI_and_Quality_Engineering/continuous-factory-process-control" target="_blank" rel="noopener">View Repository</a>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Industrial_AI_and_Quality_Engineering/continuous-factory-process-control" target="_blank" rel="noopener">View Repository</a>
                         </div>
                         <div class="project-media">
                         <div class="code-box">
@@ -542,7 +539,7 @@
                         <p><strong>System Context:</strong> Lightweight classification for edge devices or legacy industrial controllers where external ML frameworks cannot be installed or are too resource-intensive.</p>
                         <p><strong>My Systems Contribution:</strong> Built a pure Pandas classifier from first principles—calculating prior system states ($P(\text{Yes})$, $P(\text{No})$) via frequency lookups, mapping categorical streams to likelihood vectors ($P(X_i | Y)$), and applying Bayes' theorem iteratively to compute joint posterior values with normalized confidence intervals.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Deployed a fast, framework-free classification engine with absolute mathematical transparency—achieving operational decision-making on resource-constrained hardware.</p>
-                        <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Industrial_AI_and_Quality_Engineering/Probabilistic-classifier" target="_blank" rel="noopener">View Repository</a>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Industrial_AI_and_Quality_Engineering/Probabilistic-classifier" target="_blank" rel="noopener">View Repository</a>
                         </div>
                         <div class="project-media">
                         <div class="code-box">
@@ -573,7 +570,7 @@
                         <p><strong>System Context:</strong> Diagnosing structural machinery fault types from high-frequency spectral signals—plagued by severe class imbalance and the curse of dimensionality in FFT-transformed features.</p>
                         <p><strong>My Systems Contribution:</strong> Stabilized features with <code>StandardScaler</code> and applied <code>SMOTE</code> to balance minority fault classes. Isolated FFT columns for targeted PCA—reducing spectral noise into 10 dense orthogonal variance components—then horizontally stacked (<code>np.hstack</code>) with non-FFT features. Executed a 5-fold <code>RandomizedSearchCV</code> over <code>LGBMClassifier</code> hyperparameters to optimize multi-class boundaries.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Deployed a sub-millisecond anomaly mapping pipeline for predictive maintenance shop-floors—delivering detailed confusion matrices and multi-class reports suitable for production integration.</p>
-                        <a class="button" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Industrial_AI_and_Quality_Engineering/industrial-defect-classification" target="_blank" rel="noopener">View Repository</a>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Industrial_AI_and_Quality_Engineering/industrial-defect-classification" target="_blank" rel="noopener">View Repository</a>
                         </div>
                         <div class="project-media">
                         <div class="code-box">
@@ -670,9 +667,9 @@
                         <h3>Automated Document Merging Pipeline</h3>
                     <div class="project-grid" data-category="automation">                        
                         <div class="project-details">
-                        <p><strong>System Context:</strong> Dossier generation prototype for IATF 16949 &amp; ISO 9001 audits. Manual assembly was slow and error-prone.</p>
-                        <p><strong>Systems Contribution:</strong> Built a memory-optimised Python pipeline with dynamic MIME-type filtering, creation-time sorting, and chunked merging.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Reduced dossier generation time from hours to under 2 minutes with complete chronological audit traceability.</p>
+                        <p><strong>System Context:</strong> In industrial and manufacturing environments, automated workflows (such as Power Automate pipelines) generate volume-heavy documentation including quality inspection reports, material certificates, and production logs. This script acts as an automated post-processing utility to inspect, sort, and consolidate batch-generated PDF documents into unified system deliverables</p>
+                        <p><strong>Systems Contribution:</strong> Integrated Python's os and mimetypes modules (mimetypes.guess_type) to dynamically inspect folder contents and isolate valid PDF documents from unstructured directories. Programmed creation-time metadata sorting (os.path.getctime) to ensure sequential document assembly, maintaining accurate audit trails and process chronologies. Developed an automated PDF aggregation pipeline using PyPDF2.PdfMerger to iteratively append target files and handle clean file system IO closure upon export.</p>
+                        <p><strong>V&amp;V &amp; Impact:</strong> Verified MIME-type validation filtering to prevent non-PDF artifacts or corrupted file formats from breaking batch automated workflows. Streamlined operational administrative overhead by eliminating manual document compilation. The automated utility integrates with enterprise workflows (Power Automate) to guarantee standardized, chronologically sorted documentation packages for quality assurance and compliance reporting.</p>
                         <p class="tags">Technologies: Python • PyPDF2 • OS Automation • Data Pipelines</p>
                         <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Utility_and_Automation/pdf-merger" target="_blank" rel="noopener">View Repository</a>
                         </div>
@@ -708,9 +705,9 @@
                         <h3>Algorithmic Signal Synthesis &amp; Sequencing Engine</h3>
                     <div class="project-grid" data-category="automation">                        
                         <div class="project-details">
-                        <p><strong>System Context:</strong> Hardware-in-the-loop (HIL) testing for industrial acoustic alert systems requiring custom waveform generation.</p>
-                        <p><strong>Systems Contribution:</strong> Engineered a DSP pipeline using discrete sine generation, precise inter-tone spacing, and Int16 scaling for DAC compatibility.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Validated audio output hardware stages with zero external DSP dependencies, enabling automated regression testing.</p>
+                        <p><strong>System Context:</strong> This project develops a programmatic digital signal processing (DSP) and automated audio synthesis script in Python. The system translates structured input sequences (musical notes and beat durations) into raw continuous sine-wave audio signals, normalizes dynamic ranges, and streams the synthesized waveforms to output hardware buffers in real time</p>
+                        <p><strong>Systems Contribution:</strong> Programmed a custom mathematical synthesizer (createNote) using numpy to generate periodic sine waves (f(t) = sin(2&pi; f t)) sampled at a standard audio rate of 44.1&nbsp;kHz. Implemented amplitude scaling and 16-bit integer quantization (np.int16), mapping normalized float values to a 16-bit range (&plusmn; (2<sup>15</sup> - 1)) to prevent digital clipping and audio distortion. Developed sequence-building logic to append silent gap buffers (space_tone) between notes for clear articulation, concatenating arrays into a unified continuous audio stream (key_tones). Streamed 16-bit audio buffers directly to output hardware via simpleaudio (sa.play_buffer), managing audio thread execution until playback completion.</p>
+                        <p><strong>V&amp;V &amp; Impact:</strong> Verified frequency mapping against note lookup tables (noteFreq) and confirmed accurate temporal sizing (t<sub>samples</sub> = t<sub>duration</sub> &middot; f<sub>s</sub>) to ensure mathematically precise pitch and beat timing. Demonstrates core competency in programmatic digital signal processing (DSP), numeric array operations, and hardware interface integration. These fundamentals translate directly to industrial automation tasks such as building audio alert engines, acoustic sensor signal conditioning, and custom diagnostic tooling</p>
                         <p class="tags">Technologies: Python • NumPy • DSP • Signal Processing</p>
                         <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Utility_and_Automation/music-sheet-synthesizer" target="_blank" rel="noopener">View Repository</a>
                         </div>
