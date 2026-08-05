@@ -598,6 +598,7 @@ section a:hover {
   border: 1px solid #2d2d35;
   border-radius: 6px;
   padding: 0.85rem;
+  height: auto;
 }
 
 .visual-label {

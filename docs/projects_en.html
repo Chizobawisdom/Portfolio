@@ -58,37 +58,37 @@
                         <h3>Discrete-Event Digital Twin for Quality Control & Bottleneck Analysis in Automated Assembly Lines</h3>
                     <div class="project-grid" data-category="simulation">                        
                         <div class="project-details">                        
-                        <p><strong>System Context:</strong> This project models a multi-station automated quality control line (Cutting → Assembly → Inspection) operating under dynamic production constraints. The system simulates real-world manufacturing disturbances, including stochastic machine breakdowns (MTBF/MTTR), random process execution times, gauge measurement noise, and a closed-loop rework/scrap routing logic for defective components</p>
-                        <p><strong>My Systems Contribution:</strong> </p>
-                        <ul>
-                            <li>Discrete-Event Digital Twin Execution: Built an object-oriented Python discrete-event simulation using simpy to mirror real-time part flow across multi-station production constraints during an 8-hour operational shift.</li>
-                            <li>Disturbance & Reliability Modeling: Programmed continuous breakdown processes using exponential distributions (expovariate) for MTBF/MTTR downtime interruptions alongside Gaussian variation (gauss) for cycle times and measurement noise</li>
-                            <li>Quality & Closed-Loop Rework Logic: Implemented an automated inspection classification engine based on upper and lower specification limits (LSL = 9.9, USL = 10.1) to dynamically route parts into First Pass Yield (FPY), rework loops back to Assembly, or final scrap.</li>
-                            <li>Production KPI Analytics Pipeline: Automated calculations for station utilization, queue depth tracking, throughput (good parts/hr), Overall Equipment Effectiveness (OEE), scrap rates, and system bottleneck detection</li>
-                        </ul>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Verified model stability by incorporating a 30-minute warmup phase (WARMUP_MIN) to eliminate transient startup bias, ensuring accurate steady-state metric calculations. Validated line efficiency by analyzing station utilization and queue lengths, enabling precise identification of the primary bottleneck station. The simulation quantified the impact of machine availability and rework limits on overall throughput and OEE, providing a predictive decision-support tool for optimizing shop-floor capacity without physical line disruption</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/digital-twin-quality-control-line" target="_blank" rel="noopener">View Repository</a>
+                            <p><strong>System Context:</strong> This project models a multi-station automated quality control line (Cutting → Assembly → Inspection) operating under dynamic production constraints. The system simulates real-world manufacturing disturbances, including stochastic machine breakdowns (MTBF/MTTR), random process execution times, gauge measurement noise, and a closed-loop rework/scrap routing logic for defective components</p>
+                            <p><strong>My Systems Contribution:</strong> </p>
+                            <ul>
+                                <li>Discrete-Event Digital Twin Execution: Built an object-oriented Python discrete-event simulation using simpy to mirror real-time part flow across multi-station production constraints during an 8-hour operational shift.</li>
+                                <li>Disturbance & Reliability Modeling: Programmed continuous breakdown processes using exponential distributions (expovariate) for MTBF/MTTR downtime interruptions alongside Gaussian variation (gauss) for cycle times and measurement noise</li>
+                                <li>Quality & Closed-Loop Rework Logic: Implemented an automated inspection classification engine based on upper and lower specification limits (LSL = 9.9, USL = 10.1) to dynamically route parts into First Pass Yield (FPY), rework loops back to Assembly, or final scrap.</li>
+                                <li>Production KPI Analytics Pipeline: Automated calculations for station utilization, queue depth tracking, throughput (good parts/hr), Overall Equipment Effectiveness (OEE), scrap rates, and system bottleneck detection</li>
+                            </ul>
+                            <p><strong>V&amp;V &amp; Impact:</strong> Verified model stability by incorporating a 30-minute warmup phase (WARMUP_MIN) to eliminate transient startup bias, ensuring accurate steady-state metric calculations. Validated line efficiency by analyzing station utilization and queue lengths, enabling precise identification of the primary bottleneck station. The simulation quantified the impact of machine availability and rework limits on overall throughput and OEE, providing a predictive decision-support tool for optimizing shop-floor capacity without physical line disruption</p>
+                            <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/digital-twin-quality-control-line" target="_blank" rel="noopener">View Repository</a>
                         </div>
                         <div class="project-media">
-                        <div class="code-box">
-                        <span class="visual-label">Stochastic Machine Breakdown Logic</span>
-                        <pre><code># Continuous Exponential MTBF/MTTR Process
-                            def breakdown_process(env, station_name):
-                                mtbf = STATIONS[station_name]["mtbf"]
-                                mttr = STATIONS[station_name]["mttr"]
-                                if mtbf >= 9999: return
+                            <div class="code-box">
+                            <span class="visual-label">Stochastic Machine Breakdown Logic</span>
+                            <pre><code># Continuous Exponential MTBF/MTTR Process
+                                def breakdown_process(env, station_name):
+                                    mtbf = STATIONS[station_name]["mtbf"]
+                                    mttr = STATIONS[station_name]["mttr"]
+                                    if mtbf >= 9999: return
 
-                                while True:
-                                    time_to_failure = random.expovariate(1.0 / mtbf)
-                                    yield env.timeout(time_to_failure)
-                                    DOWN[station_name] = True
-                                    yield env.timeout(mttr)
-                                    DOWN[station_name] = False</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/Screenshot 2026-08-05 164730.png" alt="Simulation Graph" class="project-img">
-                            <span class="image-caption">Queue Dynamics &amp; Bottleneck Plot</span>
-                        </div>
+                                    while True:
+                                        time_to_failure = random.expovariate(1.0 / mtbf)
+                                        yield env.timeout(time_to_failure)
+                                        DOWN[station_name] = True
+                                        yield env.timeout(mttr)
+                                        DOWN[station_name] = False</code></pre>
+                            </div>
+                            <div class="image-wrapper">
+                                <img src="images/Screenshot 2026-08-05 164730.png" alt="Simulation Graph" class="project-img">
+                                <span class="image-caption">Queue Dynamics &amp; Bottleneck Plot</span>
+                            </div>
                         </div>
                     </div>
                     </div>
