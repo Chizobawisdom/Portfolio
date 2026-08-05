@@ -438,6 +438,7 @@ section a:hover {
   border-radius: 8px;
   background-color: #141418;
   border: 1px solid #2d2d35;
+  transition: height 0.3s ease-in-out;
 }
 
 .carousel-track {

@@ -1,4 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Helper function to update the wrapper height to match the current slide
+  function updateWrapperHeight(block, slideIndex) {
+    const wrapper = block.querySelector(".carousel-wrapper");
+    const slides = block.querySelectorAll(".carousel-slide");
+    
+    if (wrapper && slides[slideIndex]) {
+      const activeSlideHeight = slides[slideIndex].offsetHeight;
+      wrapper.style.height = `${activeSlideHeight}px`;
+    }
+  }
+
   // --- Category Tabs Switching ---
   const categoryTabs = document.querySelectorAll(".category-tab");
   const carouselBlocks = document.querySelectorAll(".carousel-block");
@@ -13,6 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
       carouselBlocks.forEach((block) => {
         if (block.getAttribute("data-category") === selectedCategory) {
           block.classList.add("active");
+          
+          // Re-recalculate height when tab becomes visible
+          const activeIndex = block.dataset.currentIndex ? parseInt(block.dataset.currentIndex) : 0;
+          updateWrapperHeight(block, activeIndex);
         } else {
           block.classList.remove("active");
         }
@@ -36,6 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function updateCarousel(index) {
       currentIndex = index;
+      block.dataset.currentIndex = currentIndex; // Store index for tab switches
+      
       track.style.transform = `translateX(-${currentIndex * 100}%)`;
 
       dots.forEach((dot, idx) => {
@@ -45,6 +62,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (counter) {
         counter.textContent = `${currentIndex + 1} / ${totalSlides}`;
       }
+
+      // Update height whenever the slide updates
+      updateWrapperHeight(block, currentIndex);
     }
 
     if (prevBtn) {
@@ -66,5 +86,8 @@ document.addEventListener("DOMContentLoaded", () => {
         updateCarousel(idx);
       });
     });
+
+    // Initialize height on initial page load
+    updateCarousel(0);
   });
 });
