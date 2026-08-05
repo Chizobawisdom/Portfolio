@@ -625,12 +625,18 @@
 
                     <!-- Slide 1: Root Finder -->
                     <div class="carousel-slide">
-                        <h3>Algorithmic Roots &amp; Polynomial Solvers</h3>
+                        <h3>Numerical Algorithm & Digital Twin Solver for Nonlinear System Dynamics Calibration</h3>
                     <div class="project-grid" data-category="automation">                        
                         <div class="project-details">
-                        <p><strong>System Context:</strong> Numerical kernel designed for suspension digital twins, replacing manual calibration steps that caused simulation bottlenecks.</p>
-                        <p><strong>Systems Contribution:</strong> Architected a hybrid Newton-Raphson kernel with Horner evaluation and a fail-safe fallback when derivatives approach zero.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Validated against 10,000+ random polynomials vs. MATLAB benchmarks (&lt;1e-6 precision). Reduced calibration setup from 3 days to 15 minutes.</p>
+                        <p><strong>System Context:</strong> In manufacturing systems engineering, physical processes (such as dynamic robot kinematics, thermal stress degradation, or fluid flow control) are governed by nonlinear polynomial equations. This project implements a Python-based numerical solver engine using the iterative Newton-Raphson algorithm to calculate exact real roots and steady-state operating points for dynamic system models</p>
+                        <p><strong>Systems Contribution:</strong> </p>
+                        <ul>
+                            <li>Algorithmic Solver Architecture: Implemented a customizable numerical solution pipeline in Python using Horner's method (poly) for efficient polynomial evaluation and symbolic-like coefficient differentiation (dpoly)</li>
+                            <li>Iterative Root-Finding Engine: Programmed a robust Newton-Raphson root solver (solver) featuring automated dynamic error tracking (maxError = 10<sup>-6</sup><), convergence formatting to 4 decimal places, and zero-derivative singularity protection via stochastic perturbation (random.uniform).</li>
+                            <li>State Identification & Root Clustering: Built a time-bounded root extraction module (real_roots) using continuous set deduplication to capture all unique operational equilibrium points prior to a predefined timeout limit</li>
+                            <li>Interactive System Visualization: Integrated numpy and matplotlib to render continuous function curves (f(x) vs. x) for initial parameter inspection and guess seeding</li>
+                        </ul>
+                        <p><strong>V&amp;V &amp; Impact:</strong> Verified convergence stability across higher-order polynomials ($n &ge; 2$), ensuring residual error thresholds remain below 10<sup>-6</sup> for precise operational root extraction. Validated solver functionality using real discriminant checks (b<sup>2</sup> - 4ac) to identify non-real root regimes. The tool serves as an efficient core mathematical engine for calibrating virtual digital twins, solving equilibrium states, and verifying control boundary conditions in automated machinery</p>
                         <p class="tags">Technologies: Python • NumPy • SciPy • Numerical Methods</p>
                         <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Utility_and_Automation/polynomial-root-finder" target="_blank" rel="noopener">View Repository</a>
                         </div>
