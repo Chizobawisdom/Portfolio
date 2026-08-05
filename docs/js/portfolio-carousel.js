@@ -3,11 +3,30 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateWrapperHeight(block, slideIndex) {
     const wrapper = block.querySelector(".carousel-wrapper");
     const slides = block.querySelectorAll(".carousel-slide");
-    
-    if (wrapper && slides[slideIndex]) {
-      const activeSlideHeight = slides[slideIndex].offsetHeight;
-      wrapper.style.height = `${activeSlideHeight}px`;
-    }
+    const targetSlide = slides[slideIndex];
+
+    if (!wrapper || !targetSlide) return;
+
+    // Function to calculate and apply height
+    const setHeight = () => {
+      // scrollHeight measures full content height including children
+      const newHeight = targetSlide.scrollHeight; 
+      if (newHeight > 0) {
+        wrapper.style.height = `${newHeight}px`;
+      }
+    };
+
+    // 1. Set immediately
+    setHeight();
+
+    // 2. Re-check height after all images inside the slide finish loading
+    const images = targetSlide.querySelectorAll("img");
+    images.forEach((img) => {
+      if (!img.complete) {
+        img.addEventListener("load", setHeight, { once: true });
+        img.addEventListener("error", setHeight, { once: true });
+      }
+    });
   }
 
   // --- Category Tabs Switching ---

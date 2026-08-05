@@ -468,6 +468,13 @@ section a:hover {
   margin-bottom: 1rem;
 }
 
+.carousel-slide img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  min-height: 150px; /* Adjust according to your preview image sizes */
+}
+
 /* --- Carousel Controls --- */
 .carousel-controls {
   display: flex;
