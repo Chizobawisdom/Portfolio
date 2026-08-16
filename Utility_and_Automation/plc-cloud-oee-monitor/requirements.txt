@@ -1,0 +1,4 @@
+pymodbus>=3.5
+dash>=2.14
+plotly>=5.20
+pandas>=2.0
