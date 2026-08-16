@@ -622,41 +622,46 @@
 
                     <!-- Slide 1: Root Finder -->
                     <div class="carousel-slide">
-                        <h3>Numerical Algorithm & Digital Twin Solver for Nonlinear System Dynamics Calibration</h3>
+                        <h3>Industrial PLC to Cloud OEE monitor</h3>
+                        <div class="model-screenshot-container">
+                            <img src="images/architecture.jpg" alt="PLC to OEE Architecture" loading="lazy">
+                        </div>
                     <div class="project-grid" data-category="automation">                        
                         <div class="project-details">
-                        <p><strong>System Context:</strong> In manufacturing systems engineering, physical processes (such as dynamic robot kinematics, thermal stress degradation, or fluid flow control) are governed by nonlinear polynomial equations. This project implements a Python-based numerical solver engine using the iterative Newton-Raphson algorithm to calculate exact real roots and steady-state operating points for dynamic system models</p>
+                        <p><strong>System Context:</strong> This project establishes a lightweight, end-to-end IT/OT integration stack bridging real-time industrial PLC logic and cloud-based analytics. The architecture models a simulated production line controlled by IEC 61131-3 standard ladder logic (seal-in circuit, latched faults, cycle counters) executed in a containerized OpenPLC Runtime, streamed via Modbus TCP into a decoupled Python data pipeline, and visualized as a live Overall Equipment Effectiveness (OEE) dashboard.</p>
                         <p><strong>Systems Contribution:</strong> </p>
                         <ul>
-                            <li>Algorithmic Solver Architecture: Implemented a customizable numerical solution pipeline in Python using Horner's method (poly) for efficient polynomial evaluation and symbolic-like coefficient differentiation (dpoly)</li>
-                            <li>Iterative Root-Finding Engine: Programmed a robust Newton-Raphson root solver (solver) featuring automated dynamic error tracking (maxError = 10<sup>-6</sup><), convergence formatting to 4 decimal places, and zero-derivative singularity protection via stochastic perturbation (random.uniform).</li>
-                            <li>State Identification & Root Clustering: Built a time-bounded root extraction module (real_roots) using continuous set deduplication to capture all unique operational equilibrium points prior to a predefined timeout limit</li>
-                            <li>Interactive System Visualization: Integrated numpy and matplotlib to render continuous function curves (f(x) vs. x) for initial parameter inspection and guess seeding</li>
+                            <li>Industrial PLC Control Logic: Programmed complete ladder diagram logic in OpenPLC Editor v4 incorporating start/stop seal-in circuits, interlocked cycle/good/reject counters, and latched jam/e-stop fault handshakes.</li>
+                            <li>Hardware Process Simulator: Built a Python simulation script (simulator.py) to drive virtual sensor and pushbutton inputs via writable Modbus TCP coils, emulating real-world production runs, product jams, and reject gates.</li>
+                            <li>Non-Invasive Telemetry Pipeline: Engineered a read-only, 1-second polling service (logger.py) that queries exposed Modbus coils and registers to log timestamped operational state data directly into a time-series SQLite database (oee_data.db).</li>
+                            <li>Decoupled OEE Analytics & Live Dashboard: Developed off-PLC Python calculation modules (oee_calculate.py) to compute Availability, Performance, and Quality KPIs, rendered in real time through an auto-refreshing Plotly Dash web application (dashboard.py).</li>
                         </ul>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Verified convergence stability across higher-order polynomials ($n &ge; 2$), ensuring residual error thresholds remain below 10<sup>-6</sup> for precise operational root extraction. Validated solver functionality using real discriminant checks (b<sup>2</sup> - 4ac) to identify non-real root regimes. The tool serves as an efficient core mathematical engine for calibrating virtual digital twins, solving equilibrium states, and verifying control boundary conditions in automated machinery</p>
-                        <p class="tags">Technologies: Python • NumPy • SciPy • Numerical Methods</p>
+                        <p><strong>V&amp;V &amp; Impact:</strong> Identified and resolved severe scan-cycle overrun issues (up to ~180ms) in the Dockerized PLC runtime by re-tuning the scan period to 100ms and adjusting simulator pulse lengths, preventing dropped sensor state edges. Corrected cross-rung counter drift where fault states caused counter discrepancies (Good + Reject != Cycle) by unifying interlock conditions across all counting rungs. Validated system telemetry against live runtime states using verification scripts (modbus_verify.py), ensuring high data hygiene and accurate, real-time OEE KPI tracking without overloading PLC scan times.</p>
+                        <p class="tags">Technologies: Python • SQLite • Plotly • OpenPLC</p>
                         <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Utility_and_Automation/polynomial-root-finder" target="_blank" rel="noopener">View Repository</a>
                         </div>
                         <div class="project-media">
                         <div class="code-box">
-                            <span class="visual-label">Newton Iteration Core</span>
-                            <pre><code>def solver(xi, coeff):
-                                maxError = 1e-6
-                                error = math.inf
-                                while (error > maxError):
-                                    df = poly(xi, dpoly(coeff))
-                                    if (df != 0):
-                                        xn = xi - poly(xi, coeff)/df
-                                    else:
-                                        xn = xi - poly(xi, coeff)/\
-                                            random.uniform(-1e-12, 1e-12)
-                                    error = abs(xn - xi)
-                                    xi = xn
-                                return format(xn, '.4f')</code></pre>
+                            <span class="visual-label">OEE Calculate Core</span>
+                            <pre><code>    
+                                final = readings[-1]
+                                cycle_count = final["cycle_count"]
+                                good_count = final["good_count"]
+                                reject_count = final["reject_count"]
+
+                                availability = (run_time / total_elapsed) if total_elapsed > 0 else 0.0
+
+                                ideal_cycles_possible = (run_time / ideal_cycle_time_seconds) if run_time > 0 else 0.0
+                                performance = (cycle_count / ideal_cycles_possible) if ideal_cycles_possible > 0 else 0.0
+
+                                quality = (good_count / cycle_count) if cycle_count > 0 else 0.0
+
+                                oee = availability * performance * quality
+                            </code></pre>
                         </div>
                         <div class="image-wrapper">
-                            <img src="images/projects/polynomial-solver.jpg" alt="Polynomial Solver Visualization" class="project-img">
-                            <span class="image-caption">Convergence Analysis Plot</span>
+                            <video src="Utility_and_Automation/plc-cloud-oee-monitor/files/dashboard_preview.mov" alt="Dashboard Preview" class="project-img">
+                            <span class="image-caption">OEE Dashboard</span>
                         </div>
                         </div>
                     </div>
