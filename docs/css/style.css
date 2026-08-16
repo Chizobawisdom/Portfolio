@@ -674,6 +674,8 @@ section a:hover {
 .model-screenshot-container {
   margin: 10px 0 15px 0;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .model-screenshot-container img {
