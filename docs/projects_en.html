@@ -644,19 +644,19 @@
                         <div class="code-box">
                             <span class="visual-label">OEE Calculate Core</span>
                             <pre><code>    
-                                final = readings[-1]
-                                cycle_count = final["cycle_count"]
-                                good_count = final["good_count"]
-                                reject_count = final["reject_count"]
+final = readings[-1]
+cycle_count = final["cycle_count"]
+good_count = final["good_count"]
+reject_count = final["reject_count"]
 
-                                availability = (run_time / total_elapsed) if total_elapsed > 0 else 0.0
+availability = (run_time / total_elapsed) if total_elapsed > 0 else 0.0
 
-                                ideal_cycles_possible = (run_time / ideal_cycle_time_seconds) if run_time > 0 else 0.0
-                                performance = (cycle_count / ideal_cycles_possible) if ideal_cycles_possible > 0 else 0.0
+ideal_cycles_possible = (run_time / ideal_cycle_time_seconds) if run_time > 0 else 0.0
+performance = (cycle_count / ideal_cycles_possible) if ideal_cycles_possible > 0 else 0.0
 
-                                quality = (good_count / cycle_count) if cycle_count > 0 else 0.0
+quality = (good_count / cycle_count) if cycle_count > 0 else 0.0
 
-                                oee = availability * performance * quality
+oee = availability * performance * quality
                             </code></pre>
                         </div>
                         <div class="image-wrapper">
@@ -683,21 +683,22 @@
                         <div class="project-media">
                         <div class="code-box">
                             <span class="visual-label">Chronological Document Pipeline</span>
-                            <pre><code>pdf_files = [
-                                f for f in os.listdir(pdf_folder)
-                                if mimetypes.guess_type(
-                                    os.path.join(pdf_folder, f)
-                                )[0] == 'application/pdf'
-                            ]
-                            pdf_files.sort(
-                                key=lambda x: os.path.getctime(
-                                    os.path.join(pdf_folder, x)
-                                )
-                            )
-                            merger = PdfMerger()
-                            for pdf in pdf_files:
-                                merger.append(os.path.join(pdf_folder, pdf))
-                            merger.write(merged_pdf_path)</code></pre>
+                            <pre><code>
+pdf_files = [
+    f for f in os.listdir(pdf_folder)
+    if mimetypes.guess_type(
+        os.path.join(pdf_folder, f)
+    )[0] == 'application/pdf'
+]
+pdf_files.sort(
+    key=lambda x: os.path.getctime(
+        os.path.join(pdf_folder, x)
+    )
+)
+merger = PdfMerger()
+for pdf in pdf_files:
+    merger.append(os.path.join(pdf_folder, pdf))
+merger.write(merged_pdf_path)</code></pre>
                         </div>
                         <div class="image-wrapper">
                             <img src="images/projects/pdf-merger.jpg" alt="PDF Merger Architecture" class="project-img">
