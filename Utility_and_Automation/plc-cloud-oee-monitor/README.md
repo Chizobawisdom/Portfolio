@@ -8,7 +8,7 @@ This project was built to demonstrate the full IT/OT integration stack used
 in real manufacturing retrofits: PLC control logic → industrial connectivity
 → data pipeline → analytics → dashboard.
 
-![Dashboard screenshot](screenshots/dashboard.png)
+![Dashboard screenshot](files/dashboard.png)
 
 ## Architecture
 
