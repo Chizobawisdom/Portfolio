@@ -719,28 +719,53 @@ merger.write(merged_pdf_path)</code></pre>
                     </div>
                     </div>
 
-                    <!-- Slide 3: Signal Synthesizer -->
+                    <!-- Slide 3: PDF RAG bot -->
                     <div class="carousel-slide">
-                        <h3>Algorithmic Signal Synthesis &amp; Sequencing Engine</h3>
+                        <h3>Retrieval Augmented Generation Engine </h3>
+                        <div class="model-screenshot-container">
+                            <video width="100%" height="auto" controls muted loop autoplay playsinline >
+                                <source src="https://github.com/Chizobawisdom/Portfolio/raw/refs/heads/main/Utility_and_Automation/plc-cloud-oee-monitor/files/dashboard_preview.mp4" type="video/mp4">
+                            </video>
+                        </div>
                     <div class="project-grid" data-category="automation">                        
                         <div class="project-details">
-                        <p><strong>System Context:</strong> This project develops a programmatic digital signal processing (DSP) and automated audio synthesis script in Python. The system translates structured input sequences (musical notes and beat durations) into raw continuous sine-wave audio signals, normalizes dynamic ranges, and streams the synthesized waveforms to output hardware buffers in real time</p>
-                        <p><strong>Systems Contribution:</strong> Programmed a custom mathematical synthesizer (createNote) using numpy to generate periodic sine waves (f(t) = sin(2&pi; f t)) sampled at a standard audio rate of 44.1&nbsp;kHz. Implemented amplitude scaling and 16-bit integer quantization (np.int16), mapping normalized float values to a 16-bit range (&plusmn; (2<sup>15</sup> - 1)) to prevent digital clipping and audio distortion. Developed sequence-building logic to append silent gap buffers (space_tone) between notes for clear articulation, concatenating arrays into a unified continuous audio stream (key_tones). Streamed 16-bit audio buffers directly to output hardware via simpleaudio (sa.play_buffer), managing audio thread execution until playback completion.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Verified frequency mapping against note lookup tables (noteFreq) and confirmed accurate temporal sizing (t<sub>samples</sub> = t<sub>duration</sub> &middot; f<sub>s</sub>) to ensure mathematically precise pitch and beat timing. Demonstrates core competency in programmatic digital signal processing (DSP), numeric array operations, and hardware interface integration. These fundamentals translate directly to industrial automation tasks such as building audio alert engines, acoustic sensor signal conditioning, and custom diagnostic tooling</p>
-                        <p class="tags">Technologies: Python • NumPy • DSP • Signal Processing</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Utility_and_Automation/music-sheet-synthesizer" target="_blank" rel="noopener">View Repository</a>
+                        <p><strong>System Context:</strong> This project implements a retrieval-augmented generation (RAG) pipeline in raw Python, built without frameworks (no LangChain/LlamaIndex) to demonstrate direct control over every stage: PDF ingestion, chunking, embedding, vector search, and grounded LLM generation. The system indexes a folder of PDF documents and answers natural-language questions using only retrieved passages, citing the exact source file and page for every claim.</p>
+                        <p><strong>Systems Contribution:</strong> Built a page-level PDF text extractor (pypdf) that preserves source traceability down to the page. Implemented a sliding-window chunking algorithm with configurable overlap to prevent context loss at chunk boundaries. Generated 384-dimensional embeddings locally via sentence-transformers (all-MiniLM-L6-v2), normalizing vectors so cosine similarity reduces to a single dot product across the full corpus. Wrote a NumPy-based similarity search (query &middot; chunk<sub>embeddings</sub><sup>T</sup>) ranking thousands of chunks without an external vector database. Engineered a grounding prompt that constrains the Claude API to answer strictly from retrieved context, with an explicit fallback response when no relevant passage exists &mdash; verified against out-of-scope queries to confirm the model does not hallucinate beyond the provided sources.</p>
+                        <p><strong>V&amp;V &amp; Impact:</strong> Validated retrieval quality by inspecting similarity-score decay across ranked results (0.71 &rarr; 0.61 &rarr; 0.47 on a known-relevant query), confirming the ranking carries real signal rather than near-uniform scores. Cross-checked generated answers against source PDF text to confirm citation accuracy. Deployed with a Streamlit front end for interactive querying. Demonstrates core competency in unstructured document processing, vector search fundamentals, and LLM grounding &mdash; directly applicable to industrial use cases such as searchable equipment manuals, SOP/compliance document Q&amp;A, and maintenance knowledge retrieval.</p>
+                        <p class="tags">Technologies: Python • NumPy • sentence-transformers • Anthropic API • Streamlit • RAG</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation/pdf-rag-bot" target="_blank" rel="noopener">View Repository</a>
                         </div>
                         <div class="project-media">
                         <div class="code-box">
-                            <span class="visual-label">Waveform Synthesis Block</span>
-                            <pre><code>tv = np.linspace(0, td, int(td * fs), False)
-tone = np.sin(2 * np.pi * f1 * tv)
+                            <span class="visual-label">Retrieval Block</span>
+                            <pre><code>
+def search_chunks(query, chunks, top_k=5):
+    query_embedding = model.encode(
+        [query], normalize_embeddings=True
+    )[0]
+    similarities = [
+        np.dot(query_embedding, chunk['embedding'])
+        for chunk in chunks
+    ]
+    top_indices = np.argsort(similarities)[-top_k:][::-1]
 
-space_tone = np.linspace(0, 0, int(sd * fs), False)
-dtone_space = np.concatenate((tone, space_tone))
-dtone_seq = (dtone_space *
-    (2**15 - 1) / np.max(np.abs(dtone_space)))
-return dtone_seq.astype(np.int16)</code></pre>
+    results = []
+    for i in top_indices:
+        result = chunks[i].copy()
+        result['score'] = float(similarities[i])
+        results.append(result)
+    return results
+
+def ask_claude(query, chunks, top_k=5):
+    retrieved_chunks = search_chunks(query, chunks, top_k=top_k)
+    prompt = build_prompt(query, retrieved_chunks)
+
+    response = client.messages.create(
+        model="claude-sonnet-4-5",
+        max_tokens=500,
+        messages=[{"role": "user", "content": prompt}]
+    )
+    return response.content[0].text, retrieved_chunks</code></pre>
                         </div>
                         <div class="image-wrapper">
                             <img src="images/projects/signal-synthesizer.jpg" alt="Synthesized Waveform Visual" class="project-img">
