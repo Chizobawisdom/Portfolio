@@ -23,14 +23,15 @@
     
         <section class="carousel-section">
             <h2>Engineering Projects &amp; Applications</h2>
-            <p>Systems Engineering applications across automation, computer vision, predictive analytics, and digital twins. Each project highlights architectural design, interface integration, code implementations, and measurable industrial impact.</p>
+            <p>Systems Engineering applications across Digital Twins & Simulation, Industrial automation, computer vision, and Industrial ML & analytics. Each project highlights architectural design, interface integration, code implementations, and measurable industrial impact.</p>
 
             <!-- CATEGORY TABS -->
             <div class="category-tabs">
                 <button class="category-tab active" data-category="simulation">Digital Twins &amp; Simulation</button>
+                <button class="category-tab" data-category="automation">Industrial Automation</button>
                 <button class="category-tab" data-category="vision">Computer Vision</button>
                 <button class="category-tab" data-category="ml">Industrial ML &amp; Analytics</button>
-                <button class="category-tab" data-category="automation">Industrial Automation</button>
+                
                 
             </div>
 
@@ -67,7 +68,7 @@
                                 <li>Production KPI Analytics Pipeline: Automated calculations for station utilization, queue depth tracking, throughput (good parts/hr), Overall Equipment Effectiveness (OEE), scrap rates, and system bottleneck detection</li>
                             </ul>
                             <p><strong>V&amp;V &amp; Impact:</strong> Verified model stability by incorporating a 30-minute warmup phase (WARMUP_MIN) to eliminate transient startup bias, ensuring accurate steady-state metric calculations. Validated line efficiency by analyzing station utilization and queue lengths, enabling precise identification of the primary bottleneck station. The simulation quantified the impact of machine availability and rework limits on overall throughput and OEE, providing a predictive decision-support tool for optimizing shop-floor capacity without physical line disruption</p>
-                            <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/digital-twin-quality-control-line" target="_blank" rel="noopener">View Repository</a>
+                            <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0/digital-twin-quality-control-line" target="_blank" rel="noopener">View Repository</a>
                         </div>
                         <div class="project-media">
                             <div class="code-box">
@@ -94,7 +95,7 @@ def breakdown_process(env, station_name):
                     </div>
                     </div>
 
-                    <!-- Slide 2: SimPy Digital Twin -->
+                    <!-- Slide 2: LT Spice 1 -->
                     <div class="carousel-slide">
                         <h3>Extended LTspice Simulation & Dynamic Response Analysis</h3>
                         <div class="model-screenshot-container">
@@ -110,7 +111,7 @@ def breakdown_process(env, station_name):
                             <li>Frequency Domain & Noise Filtering: Mapped system frequency response via Bode plots ($1\text{ Hz} - 500\text{ kHz}$) to define low-pass filter boundaries and eliminate high-frequency signal interference. </li>
                         </ul>
                         <p><strong>V&amp;V &amp; Impact:</strong> Validated the virtual simulation model against physical hardware test data, proving that adjusting internal loop gain ($K$) eliminates transient overshoot ($M_p = 51.94\%$ down to $0\%$). This confirmed model fidelity for predicting control loop stability and preventing mechanical/electrical overshoot in automated manufacturing hardware</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/instrumentation-amplifier-with-active-filter" target="_blank" rel="noopener">View Repository</a>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0/instrumentation-amplifier-with-active-filter" target="_blank" rel="noopener">View Repository</a>
                         </div>
                         <div class="project-media">
                         <div class="code-box">
@@ -152,7 +153,7 @@ SYMATTR InstName C1 / Value 22n
                         </ul>
                         <p>&zeta; = &minus;ln(<i>M</i><sub>p</sub>) / &radic;(&pi;<sup>2</sup> + ln<sup>2</sup>(<i>M</i><sub>p</sub>))</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Verified LTspice netlists against circuit specifications to confirm accurate generation of transient step responses and AC Bode frequency curves across $1\text{ Hz}$ to $500\text{ kHz}$.  <br>Cross-validated the physical oscilloscope measurements against virtual LTspice outputs, proving high-fidelity model performance for predicting real-world circuit behavior, overshoot, and phase dynamics in automated system components.</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/sallen-key-active-low-pass-filter" target="_blank" rel="noopener">View Repository</a>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0/sallen-key-active-low-pass-filter" target="_blank" rel="noopener">View Repository</a>
                         </div>
                         <div class="project-media">
                         <div class="code-box">
@@ -175,7 +176,7 @@ SYMATTR InstName C2 / Value 22n</code></pre>
                     </div>
                     </div>
 
-                    <!-- Slide 4: SimPy Digital Twin -->
+                    <!-- Slide 4: Warehouse sequencing -->
                     <div class="carousel-slide">
                         <h3>AnyLogic Digital Twin for Smart Warehouse Sequencing & Downtime Minimization</h3>
                         <div class="model-screenshot-container">
@@ -186,7 +187,7 @@ SYMATTR InstName C2 / Value 22n</code></pre>
                         <p><strong>System Context:</strong> Logistics optimization between high-bay storage and Body Shop—balancing storage buffer sizing against the financial impact of production line stoppages.</p>
                         <p><strong>My Systems Contribution:</strong> Developed a multi-method AnyLogic model with Java agents dynamically extracting production schedules into memory-mapped sequence structures. Engineered custom logic tracking <code>totalDowntimeHours</code>, <code>totalStorageCost</code>, and dynamically stopping/resuming material routing the moment a downstream bottleneck occurs.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Delivered an interactive operational digital twin capable of stress-testing re-sequencing strategies—providing an analytical framework to balance storage costs against downtime risks.</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/warehouse-sequence-optimization" target="_blank" rel="noopener">View Repository</a>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0/warehouse-sequence-optimization" target="_blank" rel="noopener">View Repository</a>
                         </div>
                         <div class="project-media">
                         <div class="code-box">
@@ -210,7 +211,7 @@ Downtime & Storage Cost Tracker
                     </div>
                     </div>
 
-                    <!-- Slide 5: SimPy Digital Twin -->
+                    <!-- Slide 5: Inspecton Bottleneck -->
                     <div class="carousel-slide">
                         <h3>AnyLogic Discrete Event Simulation for Industrial Quality Gate Capacity Optimization</h3>
                         <div class="model-screenshot-container">
@@ -221,7 +222,7 @@ Downtime & Storage Cost Tracker
                         <p><strong>System Context:</strong> A bottlenecked manual inspection gate—leadership needed data on whether to hire more inspectors (Scenario A) or upgrade equipment speed (Scenario B).</p>
                         <p><strong>My Systems Contribution:</strong> Built a stochastic DES in AnyLogic (Source → Queue → Service → SelectOutput → Sink) with exponential interarrival ($\lambda = 0.2$/min) and Triangular service times. Executed automated Parameter Variation experiments with independent replications to compute **95% confidence intervals** on all KPIs.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Proved Scenario A reduces mean cycle time by **71% (16.02 → 4.65 min)** and sharply mitigates volatility near saturation—outperforming the speed upgrade. Validated baseline performance against theoretical $M/G/1$ queueing models.</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Digital_Manufacturing_and_Industry_4.0/inspection-bottlneck-station" target="_blank" rel="noopener">View Repository</a>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0/inspection-bottlneck-station" target="_blank" rel="noopener">View Repository</a>
                         </div>
                         <div class="project-media">
                         <div class="code-box">
@@ -254,367 +255,8 @@ Downtime & Storage Cost Tracker
                 
             </div>
 
-            
-
             <!-- ==========================================
-                2. COMPUTER VISION
-                ========================================== -->
-            <div class="carousel-block" data-category="vision">
-                <div class="carousel-controls">
-                <button class="carousel-btn" data-dir="-1" aria-label="Previous">&#8592;</button>
-                <div class="carousel-dots">
-                    <button class="carousel-dot active" aria-label="Slide 1"></button>
-                    <button class="carousel-dot" aria-label="Slide 2"></button>
-                    <button class="carousel-dot" aria-label="Slide 3"></button>
-                    <button class="carousel-dot" aria-label="Slide 4"></button>
-                </div>
-                <button class="carousel-btn" data-dir="1" aria-label="Next">&#8594;</button>
-                <span class="carousel-counter">1 / 4</span>
-                </div>
-                <div class="carousel-wrapper">
-                <div class="carousel-track">
-
-                    <!-- Slide 1: Histogram Specification -->
-                    <div class="carousel-slide">
-                        <h3>Histogram Specification for Image Enhancement</h3>
-                        <div class="model-screenshot-container">
-                            <img src="images/Screenshot 2026-08-05 010508.png" alt="AnyLogic Quality Inspection Process Flowchart and Analytics Dashboard" loading="lazy">
-                        </div>
-                    <div class="project-grid" data-category="vision">                        
-                        <div class="project-details">                        
-                        <p><strong>System Context:</strong> Image pre-processing stage for inline visual quality control under variable plant lighting conditions.</p>
-                        <p><strong>Systems Contribution:</strong> Applied `skimage.exposure.match_histograms` to align tonal distributions against high-contrast reference profiles.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Eliminated lighting variations, significantly raising downstream CNN defect classification robustness.</p>
-                        <p class="tags">Technologies: OpenCV • scikit-image • Matplotlib • Python</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Machine_Vision/histogram-matching" target="_blank" rel="noopener">View Repository</a>
-                        </div>
-                        <div class="project-media">
-                        <div class="code-box">
-                            <span class="visual-label">Histogram Matching Pipeline</span>
-                            <pre><code>
-image = cv2.cvtColor(img_dark, cv2.COLOR_BGR2RGB)
-matched = match_histograms(image, reference)
-matched = matched.astype(np.uint8)
-
-for j, col in enumerate(('red','green','blue')):
-    img_hist, bins = exposure.histogram(
-        img[:, :, j], nbins=256)
-    axes[j, i].plot(
-        bins, img_hist / img_hist.max(), color=col)</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/output.png" alt="Histogram Comparison" class="project-img">
-                            <span class="image-caption">Histogram Distribution Overlay</span>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-
-                    <!-- Slide 2: Manual Histogram Matching -->
-                    <div class="carousel-slide">
-                        <h3>Histogram Matching from Scratch — Arithmetic Approach</h3>
-                    <div class="project-grid" data-category="vision">                        
-                        <div class="project-details">                        
-                        <p><strong>System Context:</strong> Designed for air-gapped embedded vision devices where third-party libraries like `skimage` cannot be installed.</p>
-                        <p><strong>Systems Contribution:</strong> Built histogram specification from raw NumPy using `np.bincount`, cumulative distribution matching, and lookup table indexing.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Achieved library-grade tonal matching with O(1) pixel transformation speed and zero external framework dependencies.</p>
-                        <p class="tags">Technologies: Python • NumPy • Computer Vision • Algorithms</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Machine_Vision/manual-histogram-matching" target="_blank" rel="noopener">View Repository</a>
-                        </div>
-                        <div class="project-media">
-                        <div class="code-box">
-                            <span class="visual-label">Manual CDF Lookup Construction</span>
-                            <pre><code>
-hist_a = np.bincount(image.ravel(), minlength=256)
-cdf_a  = np.cumsum(hist_a / hist_a.sum())
-
-hist_b = np.bincount(reference.ravel(), minlength=256)
-cdf_b  = np.cumsum(hist_b / hist_b.sum())
-
-mapping = np.zeros(256, dtype=np.uint8)
-for i in range(256):
-    diff = np.abs(cdf_a[i] - cdf_b)
-    mapping[i] = np.argmin(diff)
-
-matched_image = mapping[image]</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/2.png" alt="Manual Histogram Logic" class="project-img">
-                            <span class="image-caption">CDF Matching &amp; Remapping Visual</span>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-
-                    <!-- Slide 3: EfficientNet Classifier -->
-                    <div class="carousel-slide">
-                        <h3>Part Classifier: Transfer Learning via EfficientNetV2</h3>
-                    <div class="project-grid" data-category="vision">                        
-                        <div class="project-details">                        
-                        <p><strong>System Context:</strong> Automated part recognition for high-mix production cells to ensure proper work-cell routing.</p>
-                        <p><strong>Systems Contribution:</strong> Developed a TensorFlow/Keras pipeline utilizing EfficientNetV2B0, partial layer unfreezing, data augmentation, and early stopping.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Delivered reliable part classification with high accuracy, packaged into a `.keras` deployment format.</p>
-                        <p class="tags">Technologies: TensorFlow • Keras • EfficientNet • Computer Vision</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Machine_Vision/object-classification" target="_blank" rel="noopener">View Repository</a>
-                        </div>
-                        <div class="project-media">
-                        <div class="code-box">
-                            <span class="visual-label">Fine-Tuned EfficientNet Architecture</span>
-                            <pre><code>
-base_model = EfficientNetV2B0(
-input_shape=(224, 224, 3), include_top=False,
-weights="imagenet", pooling="avg")
-for layer in base_model.layers[:-20]:
-layer.trainable = False
-
-model = models.Sequential([
-data_augmentation,
-base_model,
-layers.Dense(256, activation="relu"),
-layers.Dropout(0.3),
-layers.Dense(3, activation="softmax")
-                            ])</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/output2.png" alt="Part Classification Metrics" class="project-img">
-                            <span class="image-caption">Confusion Matrix &amp; Training Loss</span>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-
-                    <!-- Slide 4: ResNet Vehicle Classifier -->
-                    <div class="carousel-slide">
-                        <h3>Vehicle Image Classifier: Two-Stage Fine-Tuning with ResNet50</h3>
-                    <div class="project-grid" data-category="vision">                        
-                        <div class="project-details">                        
-                        <p><strong>System Context:</strong> Automated vehicle class tagging for logistical inspection points and quality tracking.</p>
-                        <p><strong>Systems Contribution:</strong> Implemented a 2-stage training strategy using ResNet50: initial head training at `1e-3` followed by partial backbone unfreezing at `1e-4` with learning rate reduction.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Achieved high precision across vehicle categories while minimizing overfitting on small datasets.</p>
-                        <p class="tags">Technologies: ResNet50 • TensorFlow • Python • Deep Learning</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Machine_Vision/vehicle-classification" target="_blank" rel="noopener">View Repository</a>
-                        </div>
-                        <div class="project-media">
-                        <div class="code-box">
-                            <span class="visual-label">Two-Stage Fine-Tuning Strategy</span>
-                            <pre><code>
-# Stage 1: Frozen backbone
-base_model.trainable = False
-model.compile(optimizer=Adam(1e-3), loss="sparse_categorical_crossentropy")
-model.fit(train_ds, epochs=5)
-
-# Stage 2: Fine-tune last 30 layers
-base_model.trainable = True
-for layer in base_model.layers[:-30]:
-    layer.trainable = False
-
-model.compile(optimizer=Adam(1e-4), loss="sparse_categorical_crossentropy")
-model.fit(train_ds, epochs=30, callbacks=[ReduceLROnPlateau(factor=0.5)])</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/projects/vehicle-classification.jpg" alt="Vehicle Classification Model" class="project-img">
-                            <span class="image-caption">Validation Heatmap &amp; Learning Rate Curves</span>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-
-                </div>
-                </div>
-
-                
-            </div>
-
-            <!-- ==========================================
-                3. INDUSTRIAL ML & ANALYTICS
-                ========================================== -->
-            <div class="carousel-block" data-category="ml">
-                <div class="carousel-controls">
-                <button class="carousel-btn" data-dir="-1" aria-label="Previous">&#8592;</button>
-                <div class="carousel-dots">
-                    <button class="carousel-dot active" aria-label="Slide 1"></button>
-                    <button class="carousel-dot" aria-label="Slide 2"></button>
-                    <button class="carousel-dot" aria-label="Slide 3"></button>
-                    <button class="carousel-dot" aria-label="Slide 4"></button>
-                    <button class="carousel-dot" aria-label="Slide 5"></button>
-                </div>
-                <button class="carousel-btn" data-dir="1" aria-label="Next">&#8594;</button>
-                <span class="carousel-counter">1 / 5</span>
-                </div>
-                <div class="carousel-wrapper">
-                <div class="carousel-track">
-
-                    <!-- Slide 1: Income Analytics -->
-                    <div class="carousel-slide">
-                        <h3>Industrial Income &amp; Demographic Analytics Pipeline</h3>
-                    <div class="project-grid" data-category="ml">                        
-                        <div class="project-details">                        
-                        <p><strong>System Context:</strong> Predictive demographic modeling pipeline designed for workforce and resource allocation decisions.</p>
-                        <p><strong>Systems Contribution:</strong> Built a leak-free pipeline using ColumnTransformer, Mutual Information feature selection (`SelectKBest`), SMOTE oversampling, and RandomForest ensemble classification.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Outperformed Naive Bayes baselines in precision and recall across imbalanced dataset profiles.</p>
-                        <p class="tags">Technologies: scikit-learn • SMOTE • Pipeline • Analytics</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Industrial_AI_and_Quality_Engineering/adult-income-prediction" target="_blank" rel="noopener">View Repository</a>
-                        </div>
-                        <div class="project-media">
-                        <div class="code-box">
-                            <span class="visual-label">Multi-Model Pipeline Stack</span>
-                            <pre><code>
-pipe = Pipeline([
-    ('preprocessor', preprocessor),
-    ('kbest', SelectKBest(
-        score_func=mutual_info_classif, k=15)),
-    ('smote', SMOTE(
-        random_state=42, sampling_strategy=0.5)),
-    ('classifier', RandomForestClassifier())
-])
-
-pipe.fit(X_train, y_train)
-y_pred = pipe.predict(X_test)</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/Screenshot 2026-08-05 011216.png" alt="Income Analytics Pipeline" class="project-img">
-                            <span class="image-caption">Confusion Matrix</span>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-
-                    <!-- Slide 2: Time Series Forecasting -->
-                    <div class="carousel-slide">
-                        <h3>Chronological Forecasting &amp; Time-Series Regression</h3>
-                    <div class="project-grid" data-category="ml">                        
-                        <div class="project-details">                        
-                        <p><strong>System Context:</strong> Demand and load forecasting model to support maintenance and operational planning.</p>
-                        <p><strong>Systems Contribution:</strong> Enforced rolling `TimeSeriesSplit` cross-validation to maintain chronological ordering and eliminate temporal data leakage.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Generated consistent 24-hour demand forecasts that effectively tracked seasonal peaks and operational cycles.</p>
-                        <p class="tags">Technologies: scikit-learn • TimeSeriesSplit • Python • ML</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Industrial_AI_and_Quality_Engineering/bike-demand-forecasting" target="_blank" rel="noopener">View Repository</a>
-                        </div>
-                        <div class="project-media">
-                        <div class="code-box">
-                            <span class="visual-label">Temporal Cross-Validation Loop</span>
-                            <pre><code>
-tscv = TimeSeriesSplit(n_splits=10)
-for train_index, test_index in tscv.split(X):
-    X_tr, X_val = X.iloc[train_index], X.iloc[test_index]
-    y_tr, y_val = y.iloc[train_index], y.iloc[test_index]
-    
-    pipeline.fit(X_tr, y_tr)
-    preds = pipeline.predict(X_val)
-    scores.append(mean_squared_error(y_val, preds, squared=False))</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/Screenshot 2026-08-05 011425.png" alt="Time Series Plot" class="project-img">
-                            <span class="image-caption">Rolling Forecast vs. Observed Demand</span>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                    <!-- Slide 3: Time Series Forecasting -->
-                    <div class="carousel-slide">
-                        <h3>Automated Statistical Process Control (SPC) & Quality Capability Engine</h3>
-                    <div class="project-grid" data-category="ml">                        
-                        <div class="project-details">                        
-                        <p><strong>System Context:</strong> Real-time anomaly and drift detection across thousands of continuous factory sensor streams—replacing manual plotting with systemic statistical surveillance.</p>
-                        <p><strong>My Systems Contribution:</strong> Built a pure NumPy/Pandas engine computing dynamic subgroup means ($\bar{X}$) and ranges ($R$) using standard control constants ($A_2, D_3, D_4$). Programmed all 8 Nelson Run Rules, implemented Page-Hinkley and CUSUM drift detectors for micro-shift identification, and computed short/long-term capability indices ($C_p, C_{pk}, P_p, P_{pk}$).</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> A diagnostic framework that runs across thousands of streaming nodes, auto-generating a master quality dashboard and flagging rule violations before defects occur—enabling predictive quality at scale.</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Industrial_AI_and_Quality_Engineering/continuous-factory-process-control" target="_blank" rel="noopener">View Repository</a>
-                        </div>
-                        <div class="project-media">
-                        <div class="code-box">
-                        <span class="visual-label">Capability & Limit Formulations</span>
-                        <pre><code># Process Variance Subgroup Logic
-def subgroup_stats(subgroups: np.ndarray):
-    xbar = subgroups.mean(axis=1)
-    R = subgroups.max(axis=1) - subgroups.min(axis=1)
-    return xbar, R, float(xbar.mean()), float(R.mean())
-
-# Multi-Tier Drift Inversion Tracking
-Cpos = max(0.0, Cpos + zi - k)
-Cneg = min(0.0, Cneg + zi + k)
-if Cpos > h: ap.append(i); Cpos = 0.0</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/Xbar.png" alt="X Bar for DPC" class="project-img">
-                            <span class="image-caption">NA</span>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-
-                    <!-- Slide 4: Time Series Forecasting -->
-                    <div class="carousel-slide">
-                        <h3>Custom Probabilistic Naive Bayes Sorting Algorithm</h3>
-                    <div class="project-grid" data-category="ml">                        
-                        <div class="project-details">                        
-                        <p><strong>System Context:</strong> Lightweight classification for edge devices or legacy industrial controllers where external ML frameworks cannot be installed or are too resource-intensive.</p>
-                        <p><strong>My Systems Contribution:</strong> Built a pure Pandas classifier from first principles—calculating prior system states ($P(\text{Yes})$, $P(\text{No})$) via frequency lookups, mapping categorical streams to likelihood vectors ($P(X_i | Y)$), and applying Bayes' theorem iteratively to compute joint posterior values with normalized confidence intervals.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Deployed a fast, framework-free classification engine with absolute mathematical transparency—achieving operational decision-making on resource-constrained hardware.</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Industrial_AI_and_Quality_Engineering/Probabilistic-classifier" target="_blank" rel="noopener">View Repository</a>
-                        </div>
-                        <div class="project-media">
-                        <div class="code-box">
-                        <span class="visual-label">Bayesian Rule Logic</span>
-                        <pre><code># Joint Posterior & Conditional Mapping
-def conditional_probability(feature, value, target):
-    subset = df[y == target]
-    count = len(subset[subset[feature] == value])
-    return count / len(subset)
-
-for feature, value in test_instance.items():
-    p_yes *= conditional_probability(feature, value, "Yes")
-    p_no *= conditional_probability(feature, value, "No")</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/projects/time-series.jpg" alt="Time Series Plot" class="project-img">
-                            <span class="image-caption">NA</span>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-
-                    <!-- Slide 5: Time Series Forecasting -->
-                    <div class="carousel-slide">
-                        <h3>Advanced Industrial Defect Reduction Pipeline</h3>
-                    <div class="project-grid" data-category="ml">                        
-                        <div class="project-details">                        
-                        <p><strong>System Context:</strong> Diagnosing structural machinery fault types from high-frequency spectral signals—plagued by severe class imbalance and the curse of dimensionality in FFT-transformed features.</p>
-                        <p><strong>My Systems Contribution:</strong> Stabilized features with <code>StandardScaler</code> and applied <code>SMOTE</code> to balance minority fault classes. Isolated FFT columns for targeted PCA—reducing spectral noise into 10 dense orthogonal variance components—then horizontally stacked (<code>np.hstack</code>) with non-FFT features. Executed a 5-fold <code>RandomizedSearchCV</code> over <code>LGBMClassifier</code> hyperparameters to optimize multi-class boundaries.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Deployed a sub-millisecond anomaly mapping pipeline for predictive maintenance shop-floors—delivering detailed confusion matrices and multi-class reports suitable for production integration.</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Industrial_AI_and_Quality_Engineering/industrial-defect-classification" target="_blank" rel="noopener">View Repository</a>
-                        </div>
-                        <div class="project-media">
-                        <div class="code-box">
-                        <span class="visual-label">Spectral PCA & Ensemble Execution</span>
-                        <pre><code># Isolated Spectral Decomposition
-pca = PCA(n_components=10)
-X_train_fft = pca.fit_transform(
-    X_train_bal[:, [X.columns.get_loc(c) for c in fft_cols]]
-)
-
-# Feature Merging & Tuned Search Routing
-X_train_final = np.hstack([X_train_nonfft, X_train_fft])
-search = RandomizedSearchCV(
-    model, param_dist, n_iter=20, scoring='f1_macro', cv=5
-)
-search.fit(X_train_final, y_train_bal)</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/projects/time-series.jpg" alt="Time Series Plot" class="project-img">
-                            <span class="image-caption">NA</span>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-
-                </div>
-                </div>
-
-                
-            </div>
-
-            <!-- ==========================================
-                4. AUTOMATION & TOOLING
+                2. AUTOMATION & TOOLING
                 ========================================== -->
             <div class="carousel-block" data-category="automation">
                 <div class="carousel-controls">
@@ -680,46 +322,7 @@ oee = availability * performance * quality
                     </div>
                     </div>
 
-                    <!-- Slide 2: PDF Merger -->
-                    <div class="carousel-slide">
-                        <h3>Automated Document Merging Pipeline</h3>
-                    <div class="project-grid" data-category="automation">                        
-                        <div class="project-details">
-                        <p><strong>System Context:</strong> In industrial and manufacturing environments, automated workflows (such as Power Automate pipelines) generate volume-heavy documentation including quality inspection reports, material certificates, and production logs. This script acts as an automated post-processing utility to inspect, sort, and consolidate batch-generated PDF documents into unified system deliverables</p>
-                        <p><strong>Systems Contribution:</strong> Integrated Python's os and mimetypes modules (mimetypes.guess_type) to dynamically inspect folder contents and isolate valid PDF documents from unstructured directories. Programmed creation-time metadata sorting (os.path.getctime) to ensure sequential document assembly, maintaining accurate audit trails and process chronologies. Developed an automated PDF aggregation pipeline using PyPDF2.PdfMerger to iteratively append target files and handle clean file system IO closure upon export.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Verified MIME-type validation filtering to prevent non-PDF artifacts or corrupted file formats from breaking batch automated workflows. Streamlined operational administrative overhead by eliminating manual document compilation. The automated utility integrates with enterprise workflows (Power Automate) to guarantee standardized, chronologically sorted documentation packages for quality assurance and compliance reporting.</p>
-                        <p class="tags">Technologies: Python • PyPDF2 • OS Automation • Data Pipelines</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Utility_and_Automation/pdf-merger" target="_blank" rel="noopener">View Repository</a>
-                        </div>
-                        <div class="project-media">
-                        <div class="code-box">
-                            <span class="visual-label">Chronological Document Pipeline</span>
-                            <pre><code>
-pdf_files = [
-    f for f in os.listdir(pdf_folder)
-    if mimetypes.guess_type(
-        os.path.join(pdf_folder, f)
-    )[0] == 'application/pdf'
-]
-pdf_files.sort(
-    key=lambda x: os.path.getctime(
-        os.path.join(pdf_folder, x)
-    )
-)
-merger = PdfMerger()
-for pdf in pdf_files:
-    merger.append(os.path.join(pdf_folder, pdf))
-merger.write(merged_pdf_path)</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/pdf_merger.png" alt="PDF Merger Architecture" class="project-img">
-                            <span class="image-caption">Pipeline Execution &amp; Merged Output</span>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-
-                    <!-- Slide 3: PDF RAG bot -->
+                    <!-- Slide 2: PDF RAG bot -->
                     <div class="carousel-slide">
                         <h3>Retrieval Augmented Generation Engine</h3>
                         <div class="model-screenshot-container">
@@ -775,6 +378,45 @@ def ask_claude(query, chunks, top_k=5):
                     </div>
                     </div>
 
+                    <!-- Slide 3: PDF Merger -->
+                    <div class="carousel-slide">
+                        <h3>Automated Document Merging Pipeline</h3>
+                    <div class="project-grid" data-category="automation">                        
+                        <div class="project-details">
+                        <p><strong>System Context:</strong> In industrial and manufacturing environments, automated workflows (such as Power Automate pipelines) generate volume-heavy documentation including quality inspection reports, material certificates, and production logs. This script acts as an automated post-processing utility to inspect, sort, and consolidate batch-generated PDF documents into unified system deliverables</p>
+                        <p><strong>Systems Contribution:</strong> Integrated Python's os and mimetypes modules (mimetypes.guess_type) to dynamically inspect folder contents and isolate valid PDF documents from unstructured directories. Programmed creation-time metadata sorting (os.path.getctime) to ensure sequential document assembly, maintaining accurate audit trails and process chronologies. Developed an automated PDF aggregation pipeline using PyPDF2.PdfMerger to iteratively append target files and handle clean file system IO closure upon export.</p>
+                        <p><strong>V&amp;V &amp; Impact:</strong> Verified MIME-type validation filtering to prevent non-PDF artifacts or corrupted file formats from breaking batch automated workflows. Streamlined operational administrative overhead by eliminating manual document compilation. The automated utility integrates with enterprise workflows (Power Automate) to guarantee standardized, chronologically sorted documentation packages for quality assurance and compliance reporting.</p>
+                        <p class="tags">Technologies: Python • PyPDF2 • OS Automation • Data Pipelines</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation/pdf-merger" target="_blank" rel="noopener">View Repository</a>
+                        </div>
+                        <div class="project-media">
+                        <div class="code-box">
+                            <span class="visual-label">Chronological Document Pipeline</span>
+                            <pre><code>
+pdf_files = [
+    f for f in os.listdir(pdf_folder)
+    if mimetypes.guess_type(
+        os.path.join(pdf_folder, f)
+    )[0] == 'application/pdf'
+]
+pdf_files.sort(
+    key=lambda x: os.path.getctime(
+        os.path.join(pdf_folder, x)
+    )
+)
+merger = PdfMerger()
+for pdf in pdf_files:
+    merger.append(os.path.join(pdf_folder, pdf))
+merger.write(merged_pdf_path)</code></pre>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="images/pdf_merger.png" alt="PDF Merger Architecture" class="project-img">
+                            <span class="image-caption">Pipeline Execution &amp; Merged Output</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
                     <!-- Slide 4: Web Scraper -->
                     <div class="carousel-slide">
                         <h3>Automated Web Scraping &amp; Headline Extraction</h3>
@@ -784,7 +426,7 @@ def ask_claude(query, chunks, top_k=5):
                         <p><strong>Systems Contribution:</strong> Configured a headless Chrome instance via Selenium WebDriver and implemented XPath-based element targeting to reliably identify article teaser blocks within the page's DOM structure. Built extraction logic to pull title, subtitle, and article link from each teaser, then structured the results into a Pandas DataFrame for cleaning and tabular storage. Implemented automatic output file naming using the current date, and wrote the dataset to CSV in the script's working directory. Added graceful browser session teardown to ensure the WebDriver process terminates cleanly after each run, preventing orphaned browser instances.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Verified extraction reliability against the live page's DOM structure, confirming XPath selectors correctly isolate teaser blocks without capturing unrelated page elements. Confirmed CSV output integrity and correct date-based file naming across repeated runs. Demonstrates core competency in browser automation, DOM-based data extraction, and structured data handling — skills directly transferable to industrial contexts such as automated report scraping from web-based dashboards, competitor/market monitoring, and scheduled data collection for downstream analytics pipelines.</p>
                         <p class="tags">Technologies: Python • Selenium • Pandas • XPath</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/8cc2df58c246912ae7be8b3a93641d44c072871d/Utility_and_Automation/web-scraper" target="_blank" rel="noopener">View Repository</a>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation/web-scraper" target="_blank" rel="noopener">View Repository</a>
                         </div>
                         <div class="project-media">
                         <div class="code-box">
@@ -813,9 +455,364 @@ df.to_csv(f"headlines_{now}.csv")</code></pre>
                 </div>
                 </div>
                 
+            </div>            
+
+            <!-- ==========================================
+                3. COMPUTER VISION
+                ========================================== -->
+            <div class="carousel-block" data-category="vision">
+                <div class="carousel-controls">
+                <button class="carousel-btn" data-dir="-1" aria-label="Previous">&#8592;</button>
+                <div class="carousel-dots">
+                    <button class="carousel-dot active" aria-label="Slide 1"></button>
+                    <button class="carousel-dot" aria-label="Slide 2"></button>
+                    <button class="carousel-dot" aria-label="Slide 3"></button>
+                    <button class="carousel-dot" aria-label="Slide 4"></button>
+                </div>
+                <button class="carousel-btn" data-dir="1" aria-label="Next">&#8594;</button>
+                <span class="carousel-counter">1 / 4</span>
+                </div>
+                <div class="carousel-wrapper">
+                <div class="carousel-track">
+
+                    <!-- Slide 1: Histogram Specification -->
+                    <div class="carousel-slide">
+                        <h3>Histogram Specification for Image Enhancement</h3>
+                        <div class="model-screenshot-container">
+                            <img src="images/Screenshot 2026-08-05 010508.png" alt="AnyLogic Quality Inspection Process Flowchart and Analytics Dashboard" loading="lazy">
+                        </div>
+                    <div class="project-grid" data-category="vision">                        
+                        <div class="project-details">                        
+                        <p><strong>System Context:</strong> Image pre-processing stage for inline visual quality control under variable plant lighting conditions.</p>
+                        <p><strong>Systems Contribution:</strong> Applied `skimage.exposure.match_histograms` to align tonal distributions against high-contrast reference profiles.</p>
+                        <p><strong>V&amp;V &amp; Impact:</strong> Eliminated lighting variations, significantly raising downstream CNN defect classification robustness.</p>
+                        <p class="tags">Technologies: OpenCV • scikit-image • Matplotlib • Python</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision/histogram-matching" target="_blank" rel="noopener">View Repository</a>
+                        </div>
+                        <div class="project-media">
+                        <div class="code-box">
+                            <span class="visual-label">Histogram Matching Pipeline</span>
+                            <pre><code>
+image = cv2.cvtColor(img_dark, cv2.COLOR_BGR2RGB)
+matched = match_histograms(image, reference)
+matched = matched.astype(np.uint8)
+
+for j, col in enumerate(('red','green','blue')):
+    img_hist, bins = exposure.histogram(
+        img[:, :, j], nbins=256)
+    axes[j, i].plot(
+        bins, img_hist / img_hist.max(), color=col)</code></pre>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="images/output.png" alt="Histogram Comparison" class="project-img">
+                            <span class="image-caption">Histogram Distribution Overlay</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Slide 2: Manual Histogram Matching -->
+                    <div class="carousel-slide">
+                        <h3>Histogram Matching from Scratch — Arithmetic Approach</h3>
+                    <div class="project-grid" data-category="vision">                        
+                        <div class="project-details">                        
+                        <p><strong>System Context:</strong> Designed for air-gapped embedded vision devices where third-party libraries like `skimage` cannot be installed.</p>
+                        <p><strong>Systems Contribution:</strong> Built histogram specification from raw NumPy using `np.bincount`, cumulative distribution matching, and lookup table indexing.</p>
+                        <p><strong>V&amp;V &amp; Impact:</strong> Achieved library-grade tonal matching with O(1) pixel transformation speed and zero external framework dependencies.</p>
+                        <p class="tags">Technologies: Python • NumPy • Computer Vision • Algorithms</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision/manual-histogram-matching" target="_blank" rel="noopener">View Repository</a>
+                        </div>
+                        <div class="project-media">
+                        <div class="code-box">
+                            <span class="visual-label">Manual CDF Lookup Construction</span>
+                            <pre><code>
+hist_a = np.bincount(image.ravel(), minlength=256)
+cdf_a  = np.cumsum(hist_a / hist_a.sum())
+
+hist_b = np.bincount(reference.ravel(), minlength=256)
+cdf_b  = np.cumsum(hist_b / hist_b.sum())
+
+mapping = np.zeros(256, dtype=np.uint8)
+for i in range(256):
+    diff = np.abs(cdf_a[i] - cdf_b)
+    mapping[i] = np.argmin(diff)
+
+matched_image = mapping[image]</code></pre>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="images/2.png" alt="Manual Histogram Logic" class="project-img">
+                            <span class="image-caption">CDF Matching &amp; Remapping Visual</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Slide 3: EfficientNet Classifier -->
+                    <div class="carousel-slide">
+                        <h3>Part Classifier: Transfer Learning via EfficientNetV2</h3>
+                    <div class="project-grid" data-category="vision">                        
+                        <div class="project-details">                        
+                        <p><strong>System Context:</strong> Automated part recognition for high-mix production cells to ensure proper work-cell routing.</p>
+                        <p><strong>Systems Contribution:</strong> Developed a TensorFlow/Keras pipeline utilizing EfficientNetV2B0, partial layer unfreezing, data augmentation, and early stopping.</p>
+                        <p><strong>V&amp;V &amp; Impact:</strong> Delivered reliable part classification with high accuracy, packaged into a `.keras` deployment format.</p>
+                        <p class="tags">Technologies: TensorFlow • Keras • EfficientNet • Computer Vision</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision/object-classification" target="_blank" rel="noopener">View Repository</a>
+                        </div>
+                        <div class="project-media">
+                        <div class="code-box">
+                            <span class="visual-label">Fine-Tuned EfficientNet Architecture</span>
+                            <pre><code>
+base_model = EfficientNetV2B0(
+input_shape=(224, 224, 3), include_top=False,
+weights="imagenet", pooling="avg")
+for layer in base_model.layers[:-20]:
+layer.trainable = False
+
+model = models.Sequential([
+data_augmentation,
+base_model,
+layers.Dense(256, activation="relu"),
+layers.Dropout(0.3),
+layers.Dense(3, activation="softmax")
+                            ])</code></pre>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="images/output2.png" alt="Part Classification Metrics" class="project-img">
+                            <span class="image-caption">Confusion Matrix &amp; Training Loss</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Slide 4: ResNet Vehicle Classifier -->
+                    <div class="carousel-slide">
+                        <h3>Vehicle Image Classifier: Two-Stage Fine-Tuning with ResNet50</h3>
+                    <div class="project-grid" data-category="vision">                        
+                        <div class="project-details">                        
+                        <p><strong>System Context:</strong> Automated vehicle class tagging for logistical inspection points and quality tracking.</p>
+                        <p><strong>Systems Contribution:</strong> Implemented a 2-stage training strategy using ResNet50: initial head training at `1e-3` followed by partial backbone unfreezing at `1e-4` with learning rate reduction.</p>
+                        <p><strong>V&amp;V &amp; Impact:</strong> Achieved high precision across vehicle categories while minimizing overfitting on small datasets.</p>
+                        <p class="tags">Technologies: ResNet50 • TensorFlow • Python • Deep Learning</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision/vehicle-classification" target="_blank" rel="noopener">View Repository</a>
+                        </div>
+                        <div class="project-media">
+                        <div class="code-box">
+                            <span class="visual-label">Two-Stage Fine-Tuning Strategy</span>
+                            <pre><code>
+# Stage 1: Frozen backbone
+base_model.trainable = False
+model.compile(optimizer=Adam(1e-3), loss="sparse_categorical_crossentropy")
+model.fit(train_ds, epochs=5)
+
+# Stage 2: Fine-tune last 30 layers
+base_model.trainable = True
+for layer in base_model.layers[:-30]:
+    layer.trainable = False
+
+model.compile(optimizer=Adam(1e-4), loss="sparse_categorical_crossentropy")
+model.fit(train_ds, epochs=30, callbacks=[ReduceLROnPlateau(factor=0.5)])</code></pre>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="images/projects/vehicle-classification.jpg" alt="Vehicle Classification Model" class="project-img">
+                            <span class="image-caption">Validation Heatmap &amp; Learning Rate Curves</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                </div>
+                </div>
+
+                
             </div>
 
-            
+            <!-- ==========================================
+                4. INDUSTRIAL ML & ANALYTICS
+                ========================================== -->
+            <div class="carousel-block" data-category="ml">
+                <div class="carousel-controls">
+                <button class="carousel-btn" data-dir="-1" aria-label="Previous">&#8592;</button>
+                <div class="carousel-dots">
+                    <button class="carousel-dot active" aria-label="Slide 1"></button>
+                    <button class="carousel-dot" aria-label="Slide 2"></button>
+                    <button class="carousel-dot" aria-label="Slide 3"></button>
+                    <button class="carousel-dot" aria-label="Slide 4"></button>
+                    <button class="carousel-dot" aria-label="Slide 5"></button>
+                </div>
+                <button class="carousel-btn" data-dir="1" aria-label="Next">&#8594;</button>
+                <span class="carousel-counter">1 / 5</span>
+                </div>
+                <div class="carousel-wrapper">
+                <div class="carousel-track">
+
+                    <!-- Slide 1: Income Analytics -->
+                    <div class="carousel-slide">
+                        <h3>Adult Income &amp; Demographic Analytics Pipeline</h3>
+                    <div class="project-grid" data-category="ml">                        
+                        <div class="project-details">                        
+                        <p><strong>System Context:</strong> Predictive demographic modeling pipeline designed for workforce and resource allocation decisions.</p>
+                        <p><strong>Systems Contribution:</strong> Built a leak-free pipeline using ColumnTransformer, Mutual Information feature selection (`SelectKBest`), SMOTE oversampling, and RandomForest ensemble classification.</p>
+                        <p><strong>V&amp;V &amp; Impact:</strong> Outperformed Naive Bayes baselines in precision and recall across imbalanced dataset profiles.</p>
+                        <p class="tags">Technologies: scikit-learn • SMOTE • Pipeline • Analytics</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering/adult-income-prediction" target="_blank" rel="noopener">View Repository</a>
+                        </div>
+                        <div class="project-media">
+                        <div class="code-box">
+                            <span class="visual-label">Multi-Model Pipeline Stack</span>
+                            <pre><code>
+pipe = Pipeline([
+    ('preprocessor', preprocessor),
+    ('kbest', SelectKBest(
+        score_func=mutual_info_classif, k=15)),
+    ('smote', SMOTE(
+        random_state=42, sampling_strategy=0.5)),
+    ('classifier', RandomForestClassifier())
+])
+
+pipe.fit(X_train, y_train)
+y_pred = pipe.predict(X_test)</code></pre>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="images/Screenshot 2026-08-05 011216.png" alt="Income Analytics Pipeline" class="project-img">
+                            <span class="image-caption">Confusion Matrix</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Slide 2: Time Series Forecasting -->
+                    <div class="carousel-slide">
+                        <h3>Chronological Forecasting &amp; Time-Series Regression</h3>
+                    <div class="project-grid" data-category="ml">                        
+                        <div class="project-details">                        
+                        <p><strong>System Context:</strong> Demand and load forecasting model to support maintenance and operational planning.</p>
+                        <p><strong>Systems Contribution:</strong> Enforced rolling `TimeSeriesSplit` cross-validation to maintain chronological ordering and eliminate temporal data leakage.</p>
+                        <p><strong>V&amp;V &amp; Impact:</strong> Generated consistent 24-hour demand forecasts that effectively tracked seasonal peaks and operational cycles.</p>
+                        <p class="tags">Technologies: scikit-learn • TimeSeriesSplit • Python • ML</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering/bike-demand-forecasting" target="_blank" rel="noopener">View Repository</a>
+                        </div>
+                        <div class="project-media">
+                        <div class="code-box">
+                            <span class="visual-label">Temporal Cross-Validation Loop</span>
+                            <pre><code>
+tscv = TimeSeriesSplit(n_splits=10)
+for train_index, test_index in tscv.split(X):
+    X_tr, X_val = X.iloc[train_index], X.iloc[test_index]
+    y_tr, y_val = y.iloc[train_index], y.iloc[test_index]
+    
+    pipeline.fit(X_tr, y_tr)
+    preds = pipeline.predict(X_val)
+    scores.append(mean_squared_error(y_val, preds, squared=False))</code></pre>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="images/Screenshot 2026-08-05 011425.png" alt="Time Series Plot" class="project-img">
+                            <span class="image-caption">Rolling Forecast vs. Observed Demand</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <!-- Slide 3: Statistical Process Control -->
+                    <div class="carousel-slide">
+                        <h3>Automated Statistical Process Control (SPC) & Quality Capability Engine</h3>
+                    <div class="project-grid" data-category="ml">                        
+                        <div class="project-details">                        
+                        <p><strong>System Context:</strong> Real-time anomaly and drift detection across thousands of continuous factory sensor streams—replacing manual plotting with systemic statistical surveillance.</p>
+                        <p><strong>My Systems Contribution:</strong> Built a pure NumPy/Pandas engine computing dynamic subgroup means ($\bar{X}$) and ranges ($R$) using standard control constants ($A_2, D_3, D_4$). Programmed all 8 Nelson Run Rules, implemented Page-Hinkley and CUSUM drift detectors for micro-shift identification, and computed short/long-term capability indices ($C_p, C_{pk}, P_p, P_{pk}$).</p>
+                        <p><strong>V&amp;V &amp; Impact:</strong> A diagnostic framework that runs across thousands of streaming nodes, auto-generating a master quality dashboard and flagging rule violations before defects occur—enabling predictive quality at scale.</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering/continuous-factory-process-control" target="_blank" rel="noopener">View Repository</a>
+                        </div>
+                        <div class="project-media">
+                        <div class="code-box">
+                        <span class="visual-label">Capability & Limit Formulations</span>
+                        <pre><code># Process Variance Subgroup Logic
+def subgroup_stats(subgroups: np.ndarray):
+    xbar = subgroups.mean(axis=1)
+    R = subgroups.max(axis=1) - subgroups.min(axis=1)
+    return xbar, R, float(xbar.mean()), float(R.mean())
+
+# Multi-Tier Drift Inversion Tracking
+Cpos = max(0.0, Cpos + zi - k)
+Cneg = min(0.0, Cneg + zi + k)
+if Cpos > h: ap.append(i); Cpos = 0.0</code></pre>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="images/Xbar.png" alt="X Bar for DPC" class="project-img">
+                            <span class="image-caption">NA</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Slide 4: Naive Bayes -->
+                    <div class="carousel-slide">
+                        <h3>Custom Probabilistic Naive Bayes Sorting Algorithm</h3>
+                    <div class="project-grid" data-category="ml">                        
+                        <div class="project-details">                        
+                        <p><strong>System Context:</strong> Lightweight classification for edge devices or legacy industrial controllers where external ML frameworks cannot be installed or are too resource-intensive.</p>
+                        <p><strong>My Systems Contribution:</strong> Built a pure Pandas classifier from first principles—calculating prior system states ($P(\text{Yes})$, $P(\text{No})$) via frequency lookups, mapping categorical streams to likelihood vectors ($P(X_i | Y)$), and applying Bayes' theorem iteratively to compute joint posterior values with normalized confidence intervals.</p>
+                        <p><strong>V&amp;V &amp; Impact:</strong> Deployed a fast, framework-free classification engine with absolute mathematical transparency—achieving operational decision-making on resource-constrained hardware.</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering/Probabilistic-classifier" target="_blank" rel="noopener">View Repository</a>
+                        </div>
+                        <div class="project-media">
+                        <div class="code-box">
+                        <span class="visual-label">Bayesian Rule Logic</span>
+                        <pre><code># Joint Posterior & Conditional Mapping
+def conditional_probability(feature, value, target):
+    subset = df[y == target]
+    count = len(subset[subset[feature] == value])
+    return count / len(subset)
+
+for feature, value in test_instance.items():
+    p_yes *= conditional_probability(feature, value, "Yes")
+    p_no *= conditional_probability(feature, value, "No")</code></pre>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="images/projects/time-series.jpg" alt="Time Series Plot" class="project-img">
+                            <span class="image-caption">NA</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Slide 5: Time Series Forecasting -->
+                    <div class="carousel-slide">
+                        <h3>Advanced Industrial Defect Reduction Pipeline</h3>
+                    <div class="project-grid" data-category="ml">                        
+                        <div class="project-details">                        
+                        <p><strong>System Context:</strong> Diagnosing structural machinery fault types from high-frequency spectral signals—plagued by severe class imbalance and the curse of dimensionality in FFT-transformed features.</p>
+                        <p><strong>My Systems Contribution:</strong> Stabilized features with <code>StandardScaler</code> and applied <code>SMOTE</code> to balance minority fault classes. Isolated FFT columns for targeted PCA—reducing spectral noise into 10 dense orthogonal variance components—then horizontally stacked (<code>np.hstack</code>) with non-FFT features. Executed a 5-fold <code>RandomizedSearchCV</code> over <code>LGBMClassifier</code> hyperparameters to optimize multi-class boundaries.</p>
+                        <p><strong>V&amp;V &amp; Impact:</strong> Deployed a sub-millisecond anomaly mapping pipeline for predictive maintenance shop-floors—delivering detailed confusion matrices and multi-class reports suitable for production integration.</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering/industrial-defect-classification" target="_blank" rel="noopener">View Repository</a>
+                        </div>
+                        <div class="project-media">
+                        <div class="code-box">
+                        <span class="visual-label">Spectral PCA & Ensemble Execution</span>
+                        <pre><code># Isolated Spectral Decomposition
+pca = PCA(n_components=10)
+X_train_fft = pca.fit_transform(
+    X_train_bal[:, [X.columns.get_loc(c) for c in fft_cols]]
+)
+
+# Feature Merging & Tuned Search Routing
+X_train_final = np.hstack([X_train_nonfft, X_train_fft])
+search = RandomizedSearchCV(
+    model, param_dist, n_iter=20, scoring='f1_macro', cv=5
+)
+search.fit(X_train_final, y_train_bal)</code></pre>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="images/projects/time-series.jpg" alt="Time Series Plot" class="project-img">
+                            <span class="image-caption">NA</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                </div>
+                </div>
+
+                
+            </div>          
 
             </section>
 
