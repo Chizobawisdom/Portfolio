@@ -1,0 +1,25 @@
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Environment variables / secrets
+.env
+*.key
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Downloaded model files (sentence-transformers caches locally, can be large)
+*.pt
+*.bin
+model_cache/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# OS/editor clutter
+.DS_Store
+.vscode/
