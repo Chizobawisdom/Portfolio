@@ -654,10 +654,21 @@ section a:hover {
   background-color: #141418;
   border-top: 1px solid #2d2d35;
 }
+
+.project-details,
+.project-media {
+  min-width: 0;           /* let grid items shrink below content's natural width */
+}
+
+.code-box pre {
+  overflow-x: auto;
+  white-space: pre;       /* keep for code formatting */
+  max-width: 100%;
+}
 /* Responsive Stacking */
 @media (max-width: 850px) {
   .project-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);   /* keep the 0-minimum on mobile too */
   }
 }
 .project-category {
