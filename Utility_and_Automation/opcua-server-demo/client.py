@@ -1,8 +1,18 @@
 # Create a client instance
-from asyncua import Client
+from asyncua import Client, ua
+from asyncua.crypto.security_policies import SecurityPolicyBasic256Sha256
 
 async def main():
-    async with Client("opc.tcp://localhost:4840/freeopcua/server/") as client: # Connect to the server
+    client = Client(url="opc.tcp://localhost:4840/freeopcua/server/")
+    client.application_uri = "urn:opcua-demo:client"
+    await client.set_security(
+        SecurityPolicyBasic256Sha256,
+        certificate="client_cert.pem",
+        private_key="client_key.pem",
+        server_certificate="server_cert.pem",
+        mode=ua.MessageSecurityMode.SignAndEncrypt
+    )
+    async with client as client: # Connect to the server
         objects = client.nodes.objects # Get the objects node of the server
         nsidx = await client.get_namespace_index("http://opcua-demo.wisdom") # Get the namespace index for the registered namespace
         myobj = await objects.get_child([f"{nsidx}:MyObject"]) # Get the "MyObject" node from the server

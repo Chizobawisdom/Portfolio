@@ -380,42 +380,45 @@ def ask_claude(query, chunks, top_k=5):
 
                     <!-- Slide 3: PDF Merger -->
                     <div class="carousel-slide">
-                        <h3>Automated Document Merging Pipeline</h3>
-                    <div class="project-grid" data-category="automation">                        
+                        <h3>Secured OPC-UA Server &amp; Client</h3>
+                    <div class="project-grid" data-category="automation">
                         <div class="project-details">
-                        <p><strong>System Context:</strong> In industrial and manufacturing environments, automated workflows (such as Power Automate pipelines) generate volume-heavy documentation including quality inspection reports, material certificates, and production logs. This script acts as an automated post-processing utility to inspect, sort, and consolidate batch-generated PDF documents into unified system deliverables</p>
-                        <p><strong>Systems Contribution:</strong> Integrated Python's os and mimetypes modules (mimetypes.guess_type) to dynamically inspect folder contents and isolate valid PDF documents from unstructured directories. Programmed creation-time metadata sorting (os.path.getctime) to ensure sequential document assembly, maintaining accurate audit trails and process chronologies. Developed an automated PDF aggregation pipeline using PyPDF2.PdfMerger to iteratively append target files and handle clean file system IO closure upon export.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Verified MIME-type validation filtering to prevent non-PDF artifacts or corrupted file formats from breaking batch automated workflows. Streamlined operational administrative overhead by eliminating manual document compilation. The automated utility integrates with enterprise workflows (Power Automate) to guarantee standardized, chronologically sorted documentation packages for quality assurance and compliance reporting.</p>
-                        <p class="tags">Technologies: Python • PyPDF2 • OS Automation • Data Pipelines</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation/pdf-merger" target="_blank" rel="noopener">View Repository</a>
+                        <p><strong>System Context:</strong> Modern manufacturing IT/OT integration relies on OPC-UA as the standard interface layer between shop-floor equipment and SCADA, MES, and cloud systems &mdash; replacing plaintext, structureless protocols with a self-describing, secured address space any compliant client can browse. This project implements a fully working OPC-UA server and independent client from scratch in Python, deliberately built through the protocol's full security model rather than the unsecured "Hello World" most public tutorials stop at.</p>
+                        <p><strong>Systems Contribution:</strong> Built an asyncua-based OPC-UA server exposing a structured address space (object node with live Temperature and Counter variables) updating in real time via an async event loop. Implemented mutual X.509 certificate authentication using OpenSSL-generated certificates with Subject Alternative Name (SAN) entries matched exactly against each endpoint's application URI &mdash; the single most common point of failure in real OPC-UA deployments. Configured the `Basic256Sha256` security policy in `SignAndEncrypt` mode, enforcing signed and encrypted sessions end-to-end rather than allowing a silent fallback to plaintext. Developed an independent client that dynamically resolves the server's namespace index at runtime (rather than hardcoding it), browses the address space, and polls live values on a subscription loop.</p>
+                        <p><strong>V&amp;V &amp; Impact:</strong> Verified certificate configuration by inspecting each SAN entry with OpenSSL before wiring it into the application, and validated the security handshake by deliberately testing connection failures (missing certificate, mismatched application URI, incompatible security policy) before achieving a clean authenticated session. Confirmed live data integrity by cross-checking client-polled values against server-side state across a continuous run. Demonstrates the IT/OT integration layer sitting directly above the project's Modbus-based PLC monitor &mdash; directly applicable to connecting shop-floor PLCs to SCADA, MES, and cloud analytics platforms in a standards-compliant, secured manner.</p>
+                        <p class="tags">Technologies: Python • asyncua • OPC-UA • X.509 / OpenSSL • Async I/O</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation/opcua-server-demo" target="_blank" rel="noopener">View Repository</a>
                         </div>
                         <div class="project-media">
                         <div class="code-box">
-                            <span class="visual-label">Chronological Document Pipeline</span>
+                            <span class="visual-label">Secured Server Configuration</span>
                             <pre><code>
-pdf_files = [
-    f for f in os.listdir(pdf_folder)
-    if mimetypes.guess_type(
-        os.path.join(pdf_folder, f)
-    )[0] == 'application/pdf'
-]
-pdf_files.sort(
-    key=lambda x: os.path.getctime(
-        os.path.join(pdf_folder, x)
-    )
+server.set_endpoint(
+    "opc.tcp://0.0.0.0:4840/freeopcua/server/"
 )
-merger = PdfMerger()
-for pdf in pdf_files:
-    merger.append(os.path.join(pdf_folder, pdf))
-merger.write(merged_pdf_path)</code></pre>
+await server.set_application_uri(
+    "urn:opcua-demo:server"
+)
+server.set_security_policy([
+    ua.SecurityPolicyType.Basic256Sha256_SignAndEncrypt
+])
+await server.load_certificate("server_cert.pem")
+await server.load_private_key("server_key.pem")
+
+idx = await server.register_namespace(
+    "http://opcua-demo.wisdom"
+)
+myobj = await server.nodes.objects.add_object(idx, "MyObject")
+temperature = await myobj.add_variable(idx, "Temperature", 21.5)
+counter = await myobj.add_variable(idx, "Counter", 0)</code></pre>
                         </div>
                         <div class="image-wrapper">
-                            <img src="images/pdf_merger.png" alt="PDF Merger Architecture" class="project-img">
-                            <span class="image-caption">Pipeline Execution &amp; Merged Output</span>
+                            <img src="images/opcua_architecture.png" alt="OPC-UA Server and Client Architecture" class="project-img">
+                            <span class="image-caption">Server-Client Secure Channel Architecture</span>
                         </div>
                         </div>
                     </div>
-                    </div>
+                </div>
 
                     <!-- Slide 4: Web Scraper -->
                     <div class="carousel-slide">

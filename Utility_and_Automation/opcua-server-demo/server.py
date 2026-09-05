@@ -1,12 +1,21 @@
 # Create a server instance
 import asyncio
 import random
+from asyncua import ua
 from asyncua import Server
 
 async def main():
     server = Server()
-    await server.init() # Initialize the server
-    server.set_endpoint("opc.tcp://0.0.0.0:4840/freeopcua/server/") # Set the endpoint for the server
+    await server.init()
+    server.set_endpoint("opc.tcp://0.0.0.0:4840/freeopcua/server/")
+    await server.set_application_uri("urn:opcua-demo:server")
+
+    server.set_security_policy([
+        ua.SecurityPolicyType.Basic256Sha256_SignAndEncrypt
+    ])
+
+    await server.load_certificate("server_cert.pem")
+    await server.load_private_key("server_key.pem")
     idx = await server.register_namespace("http://opcua-demo.wisdom") # Register a new namespace for the server
 
     myobj = await server.nodes.objects.add_object(idx, "MyObject") # Add a new object to the server
