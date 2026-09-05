@@ -60,7 +60,7 @@
                     <div class="project-grid" data-category="simulation">                        
                         <div class="project-details">                        
                             <p><strong>System Context:</strong> This project models a multi-station automated quality control line (Cutting → Assembly → Inspection) operating under dynamic production constraints. The system simulates real-world manufacturing disturbances, including stochastic machine breakdowns (MTBF/MTTR), random process execution times, gauge measurement noise, and a closed-loop rework/scrap routing logic for defective components</p>
-                            <p><strong>My Systems Contribution:</strong> </p>
+                            <p><strong>Engineering Solution:</strong> </p>
                             <ul>
                                 <li>Discrete-Event Digital Twin Execution: Built an object-oriented Python discrete-event simulation using simpy to mirror real-time part flow across multi-station production constraints during an 8-hour operational shift.</li>
                                 <li>Disturbance & Reliability Modeling: Programmed continuous breakdown processes using exponential distributions (expovariate) for MTBF/MTTR downtime interruptions alongside Gaussian variation (gauss) for cycle times and measurement noise</li>
@@ -104,7 +104,7 @@ def breakdown_process(env, station_name):
                     <div class="project-grid" data-category="simulation">                        
                         <div class="project-details">                        
                         <p><strong>System Context:</strong> This project extension evaluates the dynamic response and control stability of an instrumentation amplifier front-end cascaded into a second-order active Sallen-Key low-pass filter network. By varying the feedback gain parameter (K), the system's transient overshoot, natural frequency, and damping characteristics are systematically characterized across both time-domain step inputs and frequency-domain AC sweeps.</p>
-                        <p><strong>My Systems Contribution:</strong></p>
+                        <p><strong>Engineering Solution:</strong></p>
                         <ul>
                             <li>Physical & Virtual Twin Development: Built a physical test rig using an oscilloscope and signal generator alongside a high-fidelity LTspice simulation model to replicate physical dynamic responses</li>
                             <li>Control Parameter Calibration: Analyzed physical and virtual step responses across variable feedback conditions ($K = 0\ \Omega$ to $2.062\text{ k}\Omega$) to extract critical dynamic metrics, including damping ratio ($\zeta = 0.204$) and natural frequency ($\omega_n = 3683\text{ rad/s}$). </li>
@@ -136,7 +136,7 @@ SYMATTR InstName C1 / Value 22n
                     </div>
                     </div>
 
-                    <!-- Slide 3: SimPy Digital Twin -->
+                    <!-- Slide 3: SimPy Digital Twin 
                     <div class="carousel-slide">
                         <h3>Active Low-Pass Filtering & Frequency Response SPICE Analysis</h3>
                         <div class="model-screenshot-container">
@@ -145,7 +145,7 @@ SYMATTR InstName C1 / Value 22n
                     <div class="project-grid" data-category="simulation">                        
                         <div class="project-details">                        
                         <p><strong>System Context:</strong> Validation and hardware-in-the-loop dynamic modeling of a second-order active filter control system. The physical test rig processes incoming step and sinusoidal excitation signals via an op-amp circuit, providing a benchmark to test signal conditioning and dynamic control loops used in industrial sensor and actuator subsystems.</p>
-                        <p><strong>My Systems Contribution:</strong></p>
+                        <p><strong>Engineering Solution:</strong></p>
                         <ul>
                             <li>Physical Rig Setup & Test Execution: Assembled the analog operational amplifier circuit, applied step and sinusoidal signal excitation via a wave generator, and captured dual-channel oscilloscope traces using precision cursors (x_1, x_2, y_1, y_2) to measure phase shift (&Delta; x), rise time, and peak overshoot.</li>
                             <li>Virtual Twin Simulation: Built a behavioral simulation model in LTspice incorporating .tran 30m transient analysis and .ac dec 10 1 500k frequency sweeps to replicate physical hardware execution.</li>
@@ -159,11 +159,11 @@ SYMATTR InstName C1 / Value 22n
                         <div class="code-box">
                         <span class="visual-label">AC Decadic Sweeping Network</span>
                         <pre><code>
-* Signal Input & Decadic Analysis Loop
+Signal Input & Decadic Analysis Loop
 V1 -224 288 R0 AC 1
 .ac dec 10 1 500k
 
-* Filter Passive RC Loop Specification
+Filter Passive RC Loop Specification
 SYMATTR InstName R1 / Value 47K
 SYMATTR InstName C1 / Value 440n
 SYMATTR InstName C2 / Value 22n</code></pre>
@@ -174,7 +174,7 @@ SYMATTR InstName C2 / Value 22n</code></pre>
                         </div>
                         </div>
                     </div>
-                    </div>
+                    </div>   -->
 
                     <!-- Slide 4: Warehouse sequencing -->
                     <div class="carousel-slide">
@@ -185,7 +185,7 @@ SYMATTR InstName C2 / Value 22n</code></pre>
                     <div class="project-grid" data-category="simulation">                        
                         <div class="project-details">                        
                         <p><strong>System Context:</strong> Logistics optimization between high-bay storage and Body Shop—balancing storage buffer sizing against the financial impact of production line stoppages.</p>
-                        <p><strong>My Systems Contribution:</strong> Developed a multi-method AnyLogic model with Java agents dynamically extracting production schedules into memory-mapped sequence structures. Engineered custom logic tracking <code>totalDowntimeHours</code>, <code>totalStorageCost</code>, and dynamically stopping/resuming material routing the moment a downstream bottleneck occurs.</p>
+                        <p><strong>Engineering Solution:</strong> Developed a multi-method AnyLogic model with Java agents dynamically extracting production schedules into memory-mapped sequence structures. Engineered custom logic tracking <code>totalDowntimeHours</code>, <code>totalStorageCost</code>, and dynamically stopping/resuming material routing the moment a downstream bottleneck occurs.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Delivered an interactive operational digital twin capable of stress-testing re-sequencing strategies—providing an analytical framework to balance storage costs against downtime risks.</p>
                         <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0/warehouse-sequence-optimization" target="_blank" rel="noopener">View Repository</a>
                         </div>
@@ -220,7 +220,7 @@ Downtime & Storage Cost Tracker
                     <div class="project-grid" data-category="simulation">                        
                         <div class="project-details">                        
                         <p><strong>System Context:</strong> A bottlenecked manual inspection gate—leadership needed data on whether to hire more inspectors (Scenario A) or upgrade equipment speed (Scenario B).</p>
-                        <p><strong>My Systems Contribution:</strong> Built a stochastic DES in AnyLogic (Source → Queue → Service → SelectOutput → Sink) with exponential interarrival ($\lambda = 0.2$/min) and Triangular service times. Executed automated Parameter Variation experiments with independent replications to compute **95% confidence intervals** on all KPIs.</p>
+                        <p><strong>Engineering Solution:</strong> Built a stochastic DES in AnyLogic (Source → Queue → Service → SelectOutput → Sink) with exponential interarrival ($\lambda = 0.2$/min) and Triangular service times. Executed automated Parameter Variation experiments with independent replications to compute **95% confidence intervals** on all KPIs.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Proved Scenario A reduces mean cycle time by **71% (16.02 → 4.65 min)** and sharply mitigates volatility near saturation—outperforming the speed upgrade. Validated baseline performance against theoretical $M/G/1$ queueing models.</p>
                         <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0/inspection-bottlneck-station" target="_blank" rel="noopener">View Repository</a>
                         </div>
@@ -284,7 +284,7 @@ Downtime & Storage Cost Tracker
                     <div class="project-grid" data-category="automation">                        
                         <div class="project-details">
                         <p><strong>System Context:</strong> This project establishes a lightweight, end-to-end IT/OT integration stack bridging real-time industrial PLC logic and cloud-based analytics. The architecture models a simulated production line controlled by IEC 61131-3 standard ladder logic (seal-in circuit, latched faults, cycle counters) executed in a containerized OpenPLC Runtime, streamed via Modbus TCP into a decoupled Python data pipeline, and visualized as a live Overall Equipment Effectiveness (OEE) dashboard.</p>
-                        <p><strong>Systems Contribution:</strong> </p>
+                        <p><strong>Engineering Solution:</strong> </p>
                         <ul>
                             <li>Industrial PLC Control Logic: Programmed complete ladder diagram logic in OpenPLC Editor v4 incorporating start/stop seal-in circuits, interlocked cycle/good/reject counters, and latched jam/e-stop fault handshakes.</li>
                             <li>Hardware Process Simulator: Built a Python simulation script (simulator.py) to drive virtual sensor and pushbutton inputs via writable Modbus TCP coils, emulating real-world production runs, product jams, and reject gates.</li>
@@ -333,7 +333,7 @@ oee = availability * performance * quality
                     <div class="project-grid" data-category="automation">                        
                         <div class="project-details">
                         <p><strong>System Context:</strong> This project implements a retrieval-augmented generation (RAG) pipeline in raw Python, built without frameworks (no LangChain/LlamaIndex) to demonstrate direct control over every stage: PDF ingestion, chunking, embedding, vector search, and grounded LLM generation. The system indexes a folder of PDF documents and answers natural-language questions using only retrieved passages, citing the exact source file and page for every claim.</p>
-                        <p><strong>Systems Contribution:</strong> Built a page-level PDF text extractor (pypdf) that preserves source traceability down to the page. Implemented a sliding-window chunking algorithm with configurable overlap to prevent context loss at chunk boundaries. Generated 384-dimensional embeddings locally via sentence-transformers (all-MiniLM-L6-v2), normalizing vectors so cosine similarity reduces to a single dot product across the full corpus. Wrote a NumPy-based similarity search (query &middot; chunk<sub>embeddings</sub><sup>T</sup>) ranking thousands of chunks without an external vector database. Engineered a grounding prompt that constrains the Claude API to answer strictly from retrieved context, with an explicit fallback response when no relevant passage exists &mdash; verified against out-of-scope queries to confirm the model does not hallucinate beyond the provided sources.</p>
+                        <p><strong>Engineering Solution:</strong> Built a page-level PDF text extractor (pypdf) that preserves source traceability down to the page. Implemented a sliding-window chunking algorithm with configurable overlap to prevent context loss at chunk boundaries. Generated 384-dimensional embeddings locally via sentence-transformers (all-MiniLM-L6-v2), normalizing vectors so cosine similarity reduces to a single dot product across the full corpus. Wrote a NumPy-based similarity search (query &middot; chunk<sub>embeddings</sub><sup>T</sup>) ranking thousands of chunks without an external vector database. Engineered a grounding prompt that constrains the Claude API to answer strictly from retrieved context, with an explicit fallback response when no relevant passage exists &mdash; verified against out-of-scope queries to confirm the model does not hallucinate beyond the provided sources.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Validated retrieval quality by inspecting similarity-score decay across ranked results (0.71 &rarr; 0.61 &rarr; 0.47 on a known-relevant query), confirming the ranking carries real signal rather than near-uniform scores. Cross-checked generated answers against source PDF text to confirm citation accuracy. Deployed with a Streamlit front end for interactive querying. Demonstrates core competency in unstructured document processing, vector search fundamentals, and LLM grounding &mdash; directly applicable to industrial use cases such as searchable equipment manuals, SOP/compliance document Q&amp;A, and maintenance knowledge retrieval.</p>
                         <p class="tags">Technologies: Python • NumPy • sentence-transformers • Anthropic API • Streamlit • RAG</p>
                         <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation/pdf-rag-bot" target="_blank" rel="noopener">View Repository</a>
@@ -384,7 +384,7 @@ def ask_claude(query, chunks, top_k=5):
                     <div class="project-grid" data-category="automation">
                         <div class="project-details">
                         <p><strong>System Context:</strong> Modern manufacturing IT/OT integration relies on OPC-UA as the standard interface layer between shop-floor equipment and SCADA, MES, and cloud systems &mdash; replacing plaintext, structureless protocols with a self-describing, secured address space any compliant client can browse. This project implements a fully working OPC-UA server and independent client from scratch in Python, deliberately built through the protocol's full security model rather than the unsecured "Hello World" most public tutorials stop at.</p>
-                        <p><strong>Systems Contribution:</strong> Built an asyncua-based OPC-UA server exposing a structured address space (object node with live Temperature and Counter variables) updating in real time via an async event loop. Implemented mutual X.509 certificate authentication using OpenSSL-generated certificates with Subject Alternative Name (SAN) entries matched exactly against each endpoint's application URI &mdash; the single most common point of failure in real OPC-UA deployments. Configured the `Basic256Sha256` security policy in `SignAndEncrypt` mode, enforcing signed and encrypted sessions end-to-end rather than allowing a silent fallback to plaintext. Developed an independent client that dynamically resolves the server's namespace index at runtime (rather than hardcoding it), browses the address space, and polls live values on a subscription loop.</p>
+                        <p><strong>Engineering Solution:</strong> Built an asyncua-based OPC-UA server exposing a structured address space (object node with live Temperature and Counter variables) updating in real time via an async event loop. Implemented mutual X.509 certificate authentication using OpenSSL-generated certificates with Subject Alternative Name (SAN) entries matched exactly against each endpoint's application URI &mdash; the single most common point of failure in real OPC-UA deployments. Configured the `Basic256Sha256` security policy in `SignAndEncrypt` mode, enforcing signed and encrypted sessions end-to-end rather than allowing a silent fallback to plaintext. Developed an independent client that dynamically resolves the server's namespace index at runtime (rather than hardcoding it), browses the address space, and polls live values on a subscription loop.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Verified certificate configuration by inspecting each SAN entry with OpenSSL before wiring it into the application, and validated the security handshake by deliberately testing connection failures (missing certificate, mismatched application URI, incompatible security policy) before achieving a clean authenticated session. Confirmed live data integrity by cross-checking client-polled values against server-side state across a continuous run. Demonstrates the IT/OT integration layer sitting directly above the project's Modbus-based PLC monitor &mdash; directly applicable to connecting shop-floor PLCs to SCADA, MES, and cloud analytics platforms in a standards-compliant, secured manner.</p>
                         <p class="tags">Technologies: Python • asyncua • OPC-UA • X.509 / OpenSSL • Async I/O</p>
                         <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation/opcua-server-demo" target="_blank" rel="noopener">View Repository</a>
@@ -420,13 +420,13 @@ counter = await myobj.add_variable(idx, "Counter", 0)</code></pre>
                     </div>
                 </div>
 
-                    <!-- Slide 4: Web Scraper -->
+                    <!-- Slide 4: Web Scraper 
                     <div class="carousel-slide">
                         <h3>Automated Web Scraping &amp; Headline Extraction</h3>
                     <div class="project-grid" data-category="automation">                        
                         <div class="project-details">                        
                         <p><strong>System Context:</strong> This project implements a headless web-scraping utility using Selenium WebDriver to automatically collect football news headlines, subtitles, and article links from The Sun's sports section. Built as part of a broader utilities collection for automation, data extraction, and workflow optimization, the script runs without a visible browser window, making it suitable for scheduled or background execution.</p>
-                        <p><strong>Systems Contribution:</strong> Configured a headless Chrome instance via Selenium WebDriver and implemented XPath-based element targeting to reliably identify article teaser blocks within the page's DOM structure. Built extraction logic to pull title, subtitle, and article link from each teaser, then structured the results into a Pandas DataFrame for cleaning and tabular storage. Implemented automatic output file naming using the current date, and wrote the dataset to CSV in the script's working directory. Added graceful browser session teardown to ensure the WebDriver process terminates cleanly after each run, preventing orphaned browser instances.</p>
+                        <p><strong>Engineering Solution:</strong> Configured a headless Chrome instance via Selenium WebDriver and implemented XPath-based element targeting to reliably identify article teaser blocks within the page's DOM structure. Built extraction logic to pull title, subtitle, and article link from each teaser, then structured the results into a Pandas DataFrame for cleaning and tabular storage. Implemented automatic output file naming using the current date, and wrote the dataset to CSV in the script's working directory. Added graceful browser session teardown to ensure the WebDriver process terminates cleanly after each run, preventing orphaned browser instances.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Verified extraction reliability against the live page's DOM structure, confirming XPath selectors correctly isolate teaser blocks without capturing unrelated page elements. Confirmed CSV output integrity and correct date-based file naming across repeated runs. Demonstrates core competency in browser automation, DOM-based data extraction, and structured data handling — skills directly transferable to industrial contexts such as automated report scraping from web-based dashboards, competitor/market monitoring, and scheduled data collection for downstream analytics pipelines.</p>
                         <p class="tags">Technologies: Python • Selenium • Pandas • XPath</p>
                         <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation/web-scraper" target="_blank" rel="noopener">View Repository</a>
@@ -453,7 +453,7 @@ df.to_csv(f"headlines_{now}.csv")</code></pre>
                         </div>
                         </div>
                     </div>
-                    </div>
+                    </div> -->
 
                 </div>
                 </div>
@@ -478,7 +478,7 @@ df.to_csv(f"headlines_{now}.csv")</code></pre>
                 <div class="carousel-wrapper">
                 <div class="carousel-track">
 
-                    <!-- Slide 1: Histogram Specification -->
+                    <!-- Slide 1: Histogram Specification 
                     <div class="carousel-slide">
                         <h3>Histogram Specification for Image Enhancement</h3>
                         <div class="model-screenshot-container">
@@ -487,7 +487,7 @@ df.to_csv(f"headlines_{now}.csv")</code></pre>
                     <div class="project-grid" data-category="vision">                        
                         <div class="project-details">                        
                         <p><strong>System Context:</strong> Image pre-processing stage for inline visual quality control under variable plant lighting conditions.</p>
-                        <p><strong>Systems Contribution:</strong> Applied `skimage.exposure.match_histograms` to align tonal distributions against high-contrast reference profiles.</p>
+                        <p><strong>Engineering Solution:</strong> Applied `skimage.exposure.match_histograms` to align tonal distributions against high-contrast reference profiles.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Eliminated lighting variations, significantly raising downstream CNN defect classification robustness.</p>
                         <p class="tags">Technologies: OpenCV • scikit-image • Matplotlib • Python</p>
                         <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision/histogram-matching" target="_blank" rel="noopener">View Repository</a>
@@ -512,15 +512,15 @@ for j, col in enumerate(('red','green','blue')):
                         </div>
                         </div>
                     </div>
-                    </div>
+                    </div>    -->
 
                     <!-- Slide 2: Manual Histogram Matching -->
                     <div class="carousel-slide">
-                        <h3>Histogram Matching from Scratch — Arithmetic Approach</h3>
+                        <h3>Histogram Matching: Arithmetic Approach</h3>
                     <div class="project-grid" data-category="vision">                        
                         <div class="project-details">                        
                         <p><strong>System Context:</strong> Designed for air-gapped embedded vision devices where third-party libraries like `skimage` cannot be installed.</p>
-                        <p><strong>Systems Contribution:</strong> Built histogram specification from raw NumPy using `np.bincount`, cumulative distribution matching, and lookup table indexing.</p>
+                        <p><strong>Engineering Solution:</strong> Built histogram specification from raw NumPy using `np.bincount`, cumulative distribution matching, and lookup table indexing.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Achieved library-grade tonal matching with O(1) pixel transformation speed and zero external framework dependencies.</p>
                         <p class="tags">Technologies: Python • NumPy • Computer Vision • Algorithms</p>
                         <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision/manual-histogram-matching" target="_blank" rel="noopener">View Repository</a>
@@ -556,7 +556,7 @@ matched_image = mapping[image]</code></pre>
                     <div class="project-grid" data-category="vision">                        
                         <div class="project-details">                        
                         <p><strong>System Context:</strong> Automated part recognition for high-mix production cells to ensure proper work-cell routing.</p>
-                        <p><strong>Systems Contribution:</strong> Developed a TensorFlow/Keras pipeline utilizing EfficientNetV2B0, partial layer unfreezing, data augmentation, and early stopping.</p>
+                        <p><strong>Engineering Solution:</strong> Developed a TensorFlow/Keras pipeline utilizing EfficientNetV2B0, partial layer unfreezing, data augmentation, and early stopping.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Delivered reliable part classification with high accuracy, packaged into a `.keras` deployment format.</p>
                         <p class="tags">Technologies: TensorFlow • Keras • EfficientNet • Computer Vision</p>
                         <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision/object-classification" target="_blank" rel="noopener">View Repository</a>
@@ -593,7 +593,7 @@ layers.Dense(3, activation="softmax")
                     <div class="project-grid" data-category="vision">                        
                         <div class="project-details">                        
                         <p><strong>System Context:</strong> Automated vehicle class tagging for logistical inspection points and quality tracking.</p>
-                        <p><strong>Systems Contribution:</strong> Implemented a 2-stage training strategy using ResNet50: initial head training at `1e-3` followed by partial backbone unfreezing at `1e-4` with learning rate reduction.</p>
+                        <p><strong>Engineering Solution:</strong> Implemented a 2-stage training strategy using ResNet50: initial head training at `1e-3` followed by partial backbone unfreezing at `1e-4` with learning rate reduction.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Achieved high precision across vehicle categories while minimizing overfitting on small datasets.</p>
                         <p class="tags">Technologies: ResNet50 • TensorFlow • Python • Deep Learning</p>
                         <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision/vehicle-classification" target="_blank" rel="noopener">View Repository</a>
@@ -654,7 +654,7 @@ model.fit(train_ds, epochs=30, callbacks=[ReduceLROnPlateau(factor=0.5)])</code>
                     <div class="project-grid" data-category="ml">                        
                         <div class="project-details">                        
                         <p><strong>System Context:</strong> Predictive demographic modeling pipeline designed for workforce and resource allocation decisions.</p>
-                        <p><strong>Systems Contribution:</strong> Built a leak-free pipeline using ColumnTransformer, Mutual Information feature selection (`SelectKBest`), SMOTE oversampling, and RandomForest ensemble classification.</p>
+                        <p><strong>Engineering Solution:</strong> Built a leak-free pipeline using ColumnTransformer, Mutual Information feature selection (`SelectKBest`), SMOTE oversampling, and RandomForest ensemble classification.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Outperformed Naive Bayes baselines in precision and recall across imbalanced dataset profiles.</p>
                         <p class="tags">Technologies: scikit-learn • SMOTE • Pipeline • Analytics</p>
                         <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering/adult-income-prediction" target="_blank" rel="noopener">View Repository</a>
@@ -689,7 +689,7 @@ y_pred = pipe.predict(X_test)</code></pre>
                     <div class="project-grid" data-category="ml">                        
                         <div class="project-details">                        
                         <p><strong>System Context:</strong> Demand and load forecasting model to support maintenance and operational planning.</p>
-                        <p><strong>Systems Contribution:</strong> Enforced rolling `TimeSeriesSplit` cross-validation to maintain chronological ordering and eliminate temporal data leakage.</p>
+                        <p><strong>Engineering Solution:</strong> Enforced rolling `TimeSeriesSplit` cross-validation to maintain chronological ordering and eliminate temporal data leakage.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Generated consistent 24-hour demand forecasts that effectively tracked seasonal peaks and operational cycles.</p>
                         <p class="tags">Technologies: scikit-learn • TimeSeriesSplit • Python • ML</p>
                         <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering/bike-demand-forecasting" target="_blank" rel="noopener">View Repository</a>
@@ -720,7 +720,7 @@ for train_index, test_index in tscv.split(X):
                     <div class="project-grid" data-category="ml">                        
                         <div class="project-details">                        
                         <p><strong>System Context:</strong> Real-time anomaly and drift detection across thousands of continuous factory sensor streams—replacing manual plotting with systemic statistical surveillance.</p>
-                        <p><strong>My Systems Contribution:</strong> Built a pure NumPy/Pandas engine computing dynamic subgroup means ($\bar{X}$) and ranges ($R$) using standard control constants ($A_2, D_3, D_4$). Programmed all 8 Nelson Run Rules, implemented Page-Hinkley and CUSUM drift detectors for micro-shift identification, and computed short/long-term capability indices ($C_p, C_{pk}, P_p, P_{pk}$).</p>
+                        <p><strong>Engineering Solution:</strong> Built a pure NumPy/Pandas engine computing dynamic subgroup means ($\bar{X}$) and ranges ($R$) using standard control constants ($A_2, D_3, D_4$). Programmed all 8 Nelson Run Rules, implemented Page-Hinkley and CUSUM drift detectors for micro-shift identification, and computed short/long-term capability indices ($C_p, C_{pk}, P_p, P_{pk}$).</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> A diagnostic framework that runs across thousands of streaming nodes, auto-generating a master quality dashboard and flagging rule violations before defects occur—enabling predictive quality at scale.</p>
                         <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering/continuous-factory-process-control" target="_blank" rel="noopener">View Repository</a>
                         </div>
@@ -752,7 +752,7 @@ if Cpos > h: ap.append(i); Cpos = 0.0</code></pre>
                     <div class="project-grid" data-category="ml">                        
                         <div class="project-details">                        
                         <p><strong>System Context:</strong> Lightweight classification for edge devices or legacy industrial controllers where external ML frameworks cannot be installed or are too resource-intensive.</p>
-                        <p><strong>My Systems Contribution:</strong> Built a pure Pandas classifier from first principles—calculating prior system states ($P(\text{Yes})$, $P(\text{No})$) via frequency lookups, mapping categorical streams to likelihood vectors ($P(X_i | Y)$), and applying Bayes' theorem iteratively to compute joint posterior values with normalized confidence intervals.</p>
+                        <p><strong>Engineering Solution:</strong> Built a pure Pandas classifier from first principles—calculating prior system states ($P(\text{Yes})$, $P(\text{No})$) via frequency lookups, mapping categorical streams to likelihood vectors ($P(X_i | Y)$), and applying Bayes' theorem iteratively to compute joint posterior values with normalized confidence intervals.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Deployed a fast, framework-free classification engine with absolute mathematical transparency—achieving operational decision-making on resource-constrained hardware.</p>
                         <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering/Probabilistic-classifier" target="_blank" rel="noopener">View Repository</a>
                         </div>
@@ -783,7 +783,7 @@ for feature, value in test_instance.items():
                     <div class="project-grid" data-category="ml">                        
                         <div class="project-details">                        
                         <p><strong>System Context:</strong> Diagnosing structural machinery fault types from high-frequency spectral signals—plagued by severe class imbalance and the curse of dimensionality in FFT-transformed features.</p>
-                        <p><strong>My Systems Contribution:</strong> Stabilized features with <code>StandardScaler</code> and applied <code>SMOTE</code> to balance minority fault classes. Isolated FFT columns for targeted PCA—reducing spectral noise into 10 dense orthogonal variance components—then horizontally stacked (<code>np.hstack</code>) with non-FFT features. Executed a 5-fold <code>RandomizedSearchCV</code> over <code>LGBMClassifier</code> hyperparameters to optimize multi-class boundaries.</p>
+                        <p><strong>Engineering Solution:</strong> Stabilized features with <code>StandardScaler</code> and applied <code>SMOTE</code> to balance minority fault classes. Isolated FFT columns for targeted PCA—reducing spectral noise into 10 dense orthogonal variance components—then horizontally stacked (<code>np.hstack</code>) with non-FFT features. Executed a 5-fold <code>RandomizedSearchCV</code> over <code>LGBMClassifier</code> hyperparameters to optimize multi-class boundaries.</p>
                         <p><strong>V&amp;V &amp; Impact:</strong> Deployed a sub-millisecond anomaly mapping pipeline for predictive maintenance shop-floors—delivering detailed confusion matrices and multi-class reports suitable for production integration.</p>
                         <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering/industrial-defect-classification" target="_blank" rel="noopener">View Repository</a>
                         </div>
