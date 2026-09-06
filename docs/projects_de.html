@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projekte - Wisdom Favour Chizoba</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- ===== NAVIGATION ===== -->
+        <nav class="language-switch"><a href="projects_en.html">EN</a></nav>
+        <nav>
+            <a href="index_de.html">Startseite</a>
+            <a href="resume_de.html">Lebenslauf</a>
+            <a href="projects_de.html" class="active">Projekte</a>
+        </nav>
+        <section class="carousel-section">
+            <h2>Ingenieurprojekte &amp; Anwendungen</h2>
+            <p>Anwendungen im Systems Engineering in den Bereichen Digitale Zwillinge &amp; Simulation, industrielle Automatisierung, Computer Vision sowie industrielles Machine Learning &amp; Analytics. Jedes Projekt zeigt die Entwicklung von Systemarchitekturen, Schnittstellenintegration, Code-Implementierungen und messbaren industriellen Auswirkungen.</p>
+            <!-- CATEGORY TABS -->
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="simulation">Digitale Zwillinge &amp; Simulation</button>
+                <button class="category-tab" data-category="automation">Industrielle Automatisierung</button>
+                <button class="category-tab" data-category="vision">Computer Vision</button>
+                <button class="category-tab" data-category="ml">Industrielles ML &amp; Analytics</button>
+            </div>
+
+            <!-- ==========================================
+                 1. DIGITAL TWINS & SIMULATION
+                 ========================================== -->
+
+            <div class="carousel-block active" data-category="simulation">
+                <div class="carousel-controls">
+                <button class="carousel-btn" data-dir="-1" aria-label="Vorheriges">&#8592;</button>
+                <div class="carousel-dots">
+                    <button class="carousel-dot active" aria-label="Folie 1"></button>
+                    <button class="carousel-dot" aria-label="Folie 2"></button>
+                    <button class="carousel-dot" aria-label="Folie 3"></button>
+                    <button class="carousel-dot" aria-label="Folie 4"></button>
+                </div>
+                <button class="carousel-btn" data-dir="1" aria-label="Nächstes">&#8594;</button>
+                <span class="carousel-counter">1 / 4</span>
+                </div>
+                <div class="carousel-wrapper">
+                <div class="carousel-track">
+
+                    <!-- Slide 1: SimPy Digital Twin -->
+                    <div class="carousel-slide">
+                        <h3>Diskret-ereignisorientierter Digitaler Zwilling für Qualitätskontrolle &amp; Engpassanalyse in automatisierten Montagelinien</h3>
+                    <div class="project-grid" data-category="simulation">
+                        <div class="project-details">
+                            <p><strong>Systemkontext:</strong> Dieses Projekt modelliert eine automatisierte Qualitätskontrolllinie mit mehreren Stationen (Schneiden → Montage → Inspektion), die unter dynamischen Produktionsbedingungen arbeitet. Das System simuliert reale Fertigungsstörungen, darunter stochastische Maschinenausfälle (MTBF/MTTR), zufällige Prozessausführungszeiten, Messrauschen von Prüfmitteln sowie eine geschlossene Nacharbeits-/Ausschusslogik für fehlerhafte Komponenten.</p>
+                            <p><strong>Engineering-Lösung:</strong></p>
+                            <ul>
+                                <li>Ausführung des diskret-ereignisorientierten Digitalen Zwillings: Entwicklung einer objektorientierten Python-Simulation mit SimPy, die den Echtzeit-Teilefluss unter den Produktionsbeschränkungen mehrerer Stationen während einer 8-stündigen Betriebsschicht abbildet.</li>
+                                <li>Störungs- &amp; Zuverlässigkeitsmodellierung: Programmierung kontinuierlicher Ausfallprozesse mithilfe exponentieller Verteilungen (expovariate) für MTBF/MTTR-Unterbrechungen sowie Gauß-Variation (gauss) für Zykluszeiten und Messrauschen.</li>
+                                <li>Qualitäts- &amp; Closed-Loop-Nacharbeitslogik: Implementierung einer automatisierten Inspektionsklassifizierung auf Basis oberer und unterer Spezifikationsgrenzen (LSL = 9.9, USL = 10.1), um Teile dynamisch in First Pass Yield (FPY), Nacharbeitskreise zurück zur Montage oder finalen Ausschuss zu routen.</li>
+                                <li>Produktions-KPI-Analytics-Pipeline: Automatisierte Berechnung von Stationsauslastung, Warteschlangentiefe, Durchsatz (Gutteile/h), Overall Equipment Effectiveness (OEE), Ausschussraten und Erkennung von Systemengpässen.</li>
+                            </ul>
+                            <p><strong>V&amp;V &amp; Wirkung:</strong> Die Modellstabilität wurde durch eine 30-minütige Aufwärmphase (WARMUP_MIN) überprüft, um transiente Verzerrungen beim Systemstart zu eliminieren und genaue stationäre Kennzahlen zu gewährleisten. Die Linieneffizienz wurde anhand von Stationsauslastung und Warteschlangenlängen validiert, wodurch die Identifikation der primären Engpassstation ermöglicht wurde. Die Simulation quantifizierte den Einfluss von Maschinenverfügbarkeit und Nacharbeitsgrenzen auf den Gesamtdurchsatz und die OEE und liefert damit ein prädiktives Entscheidungsunterstützungswerkzeug zur Optimierung der Produktionskapazität ohne Eingriff in die physische Produktionslinie.</p>
+                            <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0/digital-twin-quality-control-line" target="_blank" rel="noopener">Repository anzeigen</a>
+                        </div>
+                        <div class="project-media">
+                            <div class="code-box">
+                            <span class="visual-label">Stochastische Logik für Maschinenausfälle</span>
+                            <pre><code>
+# Continuous Exponential MTBF/MTTR Process
+
+def breakdown_process(env, station_name):
+    mtbf = STATIONS[station_name]["mtbf"]
+    mttr = STATIONS[station_name]["mttr"]
+
+    if mtbf >= 9999: return
+
+    while True:
+        time_to_failure = random.expovariate(1.0 / mtbf)
+        yield env.timeout(time_to_failure)
+
+        DOWN[station_name] = True
+        yield env.timeout(mttr)
+        DOWN[station_name] = False</code></pre>
+                            </div>
+                            <div class="image-wrapper">
+                                <img src="images/Screenshot 2026-08-05 164730.png" alt="Simulationsdiagramm" class="project-img">
+                                <span class="image-caption">Warteschlangendynamik &amp; Engpassdiagramm</span>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Slide 2: LT Spice 1 -->
+                    <div class="carousel-slide">
+                        <h3>Erweiterte LTspice-Simulation &amp; Analyse der dynamischen Antwort</h3>
+                        <div class="model-screenshot-container">
+                            <img src="images/Screenshot 2026-08-05 003942.png" alt="AnyLogic-Lagersimulation mit Prozessablauf und 2D/3D-Layoutansicht" loading="lazy">
+                        </div>
+                    <div class="project-grid" data-category="simulation">
+                        <div class="project-details">
+                        <p><strong>Systemkontext:</strong> Diese Projekterweiterung untersucht die dynamische Antwort und Regelungsstabilität einer Instrumentenverstärker-Eingangsstufe, die mit einem aktiven Sallen-Key-Tiefpassfilter zweiter Ordnung verbunden ist. Durch Variation des Rückkopplungsverstärkungsparameters (K) werden das transiente Überschwingen, die Eigenfrequenz und die Dämpfungseigenschaften des Systems sowohl bei Sprungantworten im Zeitbereich als auch bei AC-Frequenzsweeps systematisch charakterisiert.</p>
+                        <p><strong>Engineering-Lösung:</strong></p>
+                        <ul>
+                            <li>Entwicklung eines physischen &amp; virtuellen Zwillings: Aufbau eines physischen Prüfstands mit Oszilloskop und Signalgenerator sowie eines hochpräzisen LTspice-Simulationsmodells zur Nachbildung der physikalischen dynamischen Antworten.</li>
+                            <li>Kalibrierung der Regelungsparameter: Analyse physischer und virtueller Sprungantworten unter variablen Rückkopplungsbedingungen ($K = 0\ \Omega$ bis $2.062\text{ k}\Omega$), um kritische dynamische Kennwerte wie Dämpfungsverhältnis ($\zeta = 0.204$) und Eigenfrequenz ($\omega_n = 3683\text{ rad/s}$) zu bestimmen.</li>
+                            <li>Frequenzbereich &amp; Rauschfilterung: Abbildung des Frequenzgangs des Systems mithilfe von Bode-Diagrammen ($1\text{ Hz} - 500\text{ kHz}$), um die Grenzen des Tiefpassfilters festzulegen und hochfrequente Signalstörungen zu eliminieren.</li>
+                        </ul>
+                        <p><strong>V&amp;V &amp; Wirkung:</strong> Das virtuelle Simulationsmodell wurde anhand physischer Hardware-Testdaten validiert. Dabei wurde nachgewiesen, dass die Anpassung der internen Schleifenverstärkung ($K$) das transiente Überschwingen ($M_p = 51.94\%$ bis $0\%$) eliminiert. Dies bestätigte die Modelltreue bei der Vorhersage der Regelkreisstabilität und bei der Vermeidung mechanischer bzw. elektrischer Überschwingungen in automatisierter Fertigungshardware.</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0/instrumentation-amplifier-with-active-filter" target="_blank" rel="noopener">Repository anzeigen</a>
+                        </div>
+                        <div class="project-media">
+                        <div class="code-box">
+                        <span class="visual-label">SPICE-Netzliste &amp; Simulationsbedingungen</span>
+                        <pre><code>
+Sensor Pulse Source & Simulation Setup
+
+V1 -288 448 R0 PULSE(0 50m 0 1n 1n 5m 10m) Rser=50
+
+V2 400 464 R0 14
+
+V3 528 464 R0 -14
+
+* Active Component Network Configuration
+
+SYMATTR InstName R2 / Value 150K
+
+SYMATTR InstName R6 / Value 2.2K
+
+SYMATTR InstName C1 / Value 22n
+
+.tran 10m</code></pre>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="images/Screenshot 2026-08-05 163252.png" alt="Simulationsdiagramm" class="project-img">
+                            <span class="image-caption">Warteschlangendynamik &amp; Engpassdiagramm</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Slide 3: Active Low-Pass Filter -->
+                    <div class="carousel-slide">
+                        <h3>Aktive Tiefpassfilterung &amp; SPICE-Analyse des Frequenzgangs</h3>
+                        <div class="model-screenshot-container">
+                            <img src="images/Screenshot 2026-08-05 004029.png" alt="SPICE-Simulationsmodell" loading="lazy">
+                        </div>
+                    <div class="project-grid" data-category="simulation">
+                        <div class="project-details">
+                        <p><strong>Systemkontext:</strong> Validierung und Hardware-in-the-Loop-Modellierung der dynamischen Eigenschaften eines aktiven Filtersystems zweiter Ordnung. Der physische Prüfstand verarbeitet eingehende Sprung- und sinusförmige Anregungssignale über eine Operationsverstärkerschaltung und dient als Referenz zur Prüfung der Signalaufbereitung und dynamischen Regelkreise industrieller Sensor- und Aktorsubsysteme.</p>
+                        <p><strong>Engineering-Lösung:</strong></p>
+                        <ul>
+                            <li>Aufbau &amp; Durchführung des physischen Prüfstands: Aufbau der analogen Operationsverstärkerschaltung, Anwendung von Sprung- und sinusförmigen Anregungssignalen über einen Signalgenerator und Erfassung zweikanaliger Oszilloskopverläufe mit Präzisionscursoren (x_1, x_2, y_1, y_2) zur Messung von Phasenverschiebung (&Delta; x), Anstiegszeit und maximalem Überschwingen.</li>
+                            <li>Simulation des virtuellen Zwillings: Entwicklung eines Verhaltenssimulationsmodells in LTspice mit .tran 30m Transientenanalyse und .ac dec 10 1 500k Frequenzsweeps zur Nachbildung des physischen Hardwareverhaltens.</li>
+                            <li>Bestimmung von Regelungsparametern: Ableitung zentraler dynamischer Leistungskennwerte aus Hardware- und Simulationsdaten und mathematische Bestimmung eines Dämpfungsverhältnisses von ζ = 0.54 aus dem maximalen transienten Überschwingen (M<sub>p</sub> = 0.134 V).</li>
+                        </ul>
+                        <p>&zeta; = &minus;ln(<i>M</i><sub>p</sub>) / &radic;(&pi;<sup>2</sup> + ln<sup>2</sup>(<i>M</i><sub>p</sub>))</p>
+                        <p><strong>V&amp;V &amp; Wirkung:</strong> Die LTspice-Netzlisten wurden anhand der Schaltungsspezifikationen überprüft, um die korrekte Erzeugung transienter Sprungantworten und AC-Bode-Frequenzkurven im Bereich von $1\text{ Hz}$ bis $500\text{ kHz}$ sicherzustellen.<br>Die physischen Oszilloskopmessungen wurden mit den virtuellen LTspice-Ausgaben abgeglichen und bestätigten die hohe Modelltreue bei der Vorhersage des realen Schaltungsverhaltens, von Überschwingen und Phasendynamik in Komponenten automatisierter Systeme.</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0/sallen-key-active-low-pass-filter" target="_blank" rel="noopener">Repository anzeigen</a>
+                        </div>
+                        <div class="project-media">
+                        <div class="code-box">
+                        <span class="visual-label">AC-Dezaden-Sweep-Netzwerk</span>
+                        <pre><code>
+Signal Input & Decadic Analysis Loop
+
+V1 -224 288 R0 AC 1
+
+.ac dec 10 1 500k
+
+Filter Passive RC Loop Specification
+
+SYMATTR InstName R1 / Value 47K
+
+SYMATTR InstName C1 / Value 440n
+
+SYMATTR InstName C2 / Value 22n</code></pre>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="images/Screenshot 2026-08-05 161912.png" alt="Simulationsdiagramm" class="project-img">
+                            <span class="image-caption">Warteschlangendynamik &amp; Engpassdiagramm</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Slide 4: Warehouse sequencing -->
+                    <div class="carousel-slide">
+                        <h3>AnyLogic Digital Twin für intelligente Lagersequenzierung &amp; Minimierung von Stillstandszeiten</h3>
+                        <div class="model-screenshot-container">
+                            <img src="images/warehouse_simulation_model.png" alt="AnyLogic-Lagersimulationsfluss und 2D/3D-Layoutansicht" loading="lazy">
+                        </div>
+                    <div class="project-grid" data-category="simulation">
+                        <div class="project-details">
+                        <p><strong>Systemkontext:</strong> Logistikoptimierung zwischen Hochregallager und Karosseriebau – Ausbalancierung der Größe von Lagerpuffern gegenüber den finanziellen Auswirkungen von Produktionsstillständen.</p>
+                        <p><strong>Engineering-Lösung:</strong> Entwicklung eines Multi-Methoden-AnyLogic-Modells mit Java-Agenten, die Produktionspläne dynamisch in speicherabgebildete Sequenzstrukturen extrahieren. Entwicklung einer benutzerdefinierten Logik zur Erfassung von <code>totalDowntimeHours</code>, <code>totalStorageCost</code> sowie zum dynamischen Stoppen und Wiederaufnehmen der Materialzuführung, sobald ein nachgelagerter Engpass auftritt.</p>
+                        <p><strong>V&amp;V &amp; Wirkung:</strong> Entwicklung eines interaktiven operativen Digitalen Zwillings zur Belastungsprüfung von Neu-Sequenzierungsstrategien und Bereitstellung eines analytischen Rahmens zur Abwägung von Lagerkosten und Stillstandsrisiken.</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0/warehouse-sequence-optimization" target="_blank" rel="noopener">Repository anzeigen</a>
+                        </div>
+                        <div class="project-media">
+                        <div class="code-box">
+                        <span class="visual-label">Simulationsmodell &amp; Logikarchitektur</span>
+                        <pre><code>
+Downtime & Storage Cost Tracker
+
+    totalDowntimeHours = 13.46 hours;
+
+    totalDowntimeCost  = €5,383,184;
+
+    totalStorageCost   = €750,000;
+
+    bodyShopStopped    = false;
+
+// Sequential Map Ingestion Engine
+
+    plannedSequenceMap.clear();
+
+    List&lt;Tuple&gt; planned = select(planned_sequence).list();</code></pre>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="images/Screenshot 2026-08-05 002709.png" alt="AnyLogic-Lagersimulationsfluss" class="project-img">
+                            <span class="image-caption">Warteschlangendynamik &amp; Engpassdiagramm</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Slide 5: Inspection Bottleneck -->
+                    <div class="carousel-slide">
+                        <h3>Diskret-ereignisorientierte AnyLogic-Simulation zur Kapazitätsoptimierung eines industriellen Qualitätsprüftors</h3>
+                        <div class="model-screenshot-container">
+                            <img src="images/inspection_bottleneck_station.png" alt="AnyLogic-Prozessablauf der Qualitätsprüfung und Analyse-Dashboard" loading="lazy">
+                        </div>
+                    <div class="project-grid" data-category="simulation">
+                        <div class="project-details">
+                        <p><strong>Systemkontext:</strong> Ein durch manuelle Prüfung verursachter Engpass – die Unternehmensleitung benötigte Daten, um zu entscheiden, ob zusätzliche Prüfer eingestellt werden sollten (Szenario A) oder die Ausrüstungsgeschwindigkeit erhöht werden sollte (Szenario B).</p>
+                        <p><strong>Engineering-Lösung:</strong> Entwicklung einer stochastischen diskret-ereignisorientierten Simulation (DES) in AnyLogic (Source → Queue → Service → SelectOutput → Sink) mit exponentiell verteilten Zwischenankunftszeiten ($\lambda = 0.2$/min) und dreiecksförmig verteilten Bearbeitungszeiten. Durchführung automatisierter Parameter-Variations-Experimente mit unabhängigen Wiederholungen zur Berechnung von <strong>95-%-Konfidenzintervallen</strong> für alle KPIs.</p>
+                        <p><strong>V&amp;V &amp; Wirkung:</strong> Nachweis, dass Szenario A die mittlere Zykluszeit um <strong>71 % (16.02 → 4.65 min)</strong> reduziert und die Schwankungen nahe der Sättigungsgrenze deutlich verringert – und damit die Geschwindigkeitssteigerung übertrifft. Validierung der Basisleistung anhand theoretischer $M/G/1$-Warteschlangenmodelle.</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0/inspection-bottlneck-station" target="_blank" rel="noopener">Repository anzeigen</a>
+                        </div>
+                        <div class="project-media">
+                        <div class="code-box">
+                        <span class="visual-label">Simulationsmodell &amp; Logikarchitektur</span>
+                        <pre><code>
+// Dynamic Quality Inspection Routing Logic
+
+    if ( randomTrue(defectProbability) ) {
+
+        // Entity routes to scrap block
+
+        trgScrapEvent.add(time() - agent.entryTime);
+
+    } else {
+
+        // Entity successfully passes inspection
+
+        trgPassEvent.add(time() - agent.entryTime);
+    }
+
+    // Parameter Variation Multi-Run Callback
+
+    statUtilization.add( root.inspectorPool.utilization() );
+
+    statCycleTime.add( root.systemTimeMeasure.mean() );</code></pre>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="images/Screenshot 2026-08-05 002111.png" alt="AnyLogic-Lagersimulationsfluss" class="project-img">
+                            <span class="image-caption">Warteschlangendynamik &amp; Engpassdiagramm</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- ==========================================
+                 2. AUTOMATION & TOOLING
+                 ========================================== -->
+
+            <div class="carousel-block" data-category="automation">
+                <div class="carousel-controls">
+                <button class="carousel-btn" data-dir="-1" aria-label="Vorheriges">&#8592;</button>
+                <div class="carousel-dots">
+                    <button class="carousel-dot active" aria-label="Folie 1"></button>
+                    <button class="carousel-dot" aria-label="Folie 2"></button>
+                    <button class="carousel-dot" aria-label="Folie 3"></button>
+                </div>
+                <button class="carousel-btn" data-dir="1" aria-label="Nächstes">&#8594;</button>
+                <span class="carousel-counter">1 / 3</span>
+                </div>
+                <div class="carousel-wrapper">
+                <div class="carousel-track">
+
+                    <!-- Slide 1: Industrial PLC to OEE -->
+                    <div class="carousel-slide">
+                        <h3>Industrieller PLC-zu-Cloud-OEE-Monitor</h3>
+                        <div class="model-screenshot-container">
+                            <video width="100%" height="auto" controls muted loop playsinline>
+                                <source src="https://github.com/Chizobawisdom/Portfolio/raw/refs/heads/main/Utility_and_Automation/plc-cloud-oee-monitor/files/dashboard_preview.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    <div class="project-grid" data-category="automation">
+                        <div class="project-details">
+                        <p><strong>Systemkontext:</strong> Dieses Projekt etabliert einen schlanken, durchgängigen IT/OT-Integrationsstack, der Echtzeit-Logik industrieller SPS mit cloudbasierter Analytik verbindet. Die Architektur modelliert eine simulierte Produktionslinie, die durch IEC-61131-3-konforme Kontaktplanlogik (Selbsthalteschaltung, gespeicherte Fehler, Zykluszähler) gesteuert wird. Diese läuft in einer containerisierten OpenPLC Runtime, wird über Modbus TCP in eine entkoppelte Python-Datenpipeline übertragen und als Live-Dashboard für Overall Equipment Effectiveness (OEE) visualisiert.</p>
+                        <p><strong>Engineering-Lösung:</strong></p>
+                        <ul>
+                            <li>Industrielle SPS-Steuerungslogik: Entwicklung einer vollständigen Kontaktplanlogik im OpenPLC Editor v4 mit Start-/Stopp-Selbsthalteschaltungen, verriegelten Zählern für Zyklen/Gutteile/Ausschuss sowie gespeicherten Jam-/Not-Aus-Fehlerzuständen.</li>
+                            <li>Hardware-Prozesssimulator: Entwicklung eines Python-Simulationsskripts (simulator.py), das virtuelle Sensor- und Tastereingänge über beschreibbare Modbus-TCP-Coils ansteuert und reale Produktionsläufe, Produktstaus und Ausschleusungen simuliert.</li>
+                            <li>Nicht-invasive Telemetrie-Pipeline: Entwicklung eines schreibgeschützten Polling-Dienstes mit einem 1-Sekunden-Intervall (logger.py), der bereitgestellte Modbus-Coils und Register abfragt und zeitgestempelte Betriebszustandsdaten direkt in einer SQLite-Zeitreihendatenbank (oee_data.db) protokolliert.</li>
+                            <li>Entkoppelte OEE-Analytik &amp; Live-Dashboard: Entwicklung von Python-Berechnungsmodulen außerhalb der SPS (oee_calculate.py) zur Berechnung der KPIs Verfügbarkeit, Leistung und Qualität. Die Ergebnisse werden in Echtzeit über eine automatisch aktualisierte Plotly-Dash-Webanwendung (dashboard.py) dargestellt.</li>
+                        </ul>
+                        <p><strong>V&amp;V &amp; Wirkung:</strong> Schwere Probleme durch Scan-Zyklusüberschreitungen (bis zu ~180 ms) in der Docker-basierten PLC Runtime wurden identifiziert und behoben, indem die Scanperiode auf 100 ms neu abgestimmt und die Pulsdauern des Simulators angepasst wurden. Dadurch wurden verlorene Sensorsignalflanken verhindert. Außerdem wurde eine Drift zwischen Zählern verschiedener Rungs korrigiert, bei der Fehlerzustände zu Abweichungen führten (Good + Reject != Cycle), indem die Verriegelungsbedingungen über alle Zählrungs hinweg vereinheitlicht wurden. Die Systemtelemetrie wurde mithilfe von Verifikationsskripten (modbus_verify.py) gegen die Live-Laufzeitzustände validiert und gewährleistet damit eine hohe Datenqualität sowie eine genaue OEE-KPI-Erfassung in Echtzeit, ohne die SPS-Scanzeiten zu überlasten.</p>
+                        <p class="tags">Technologien: Python • SQLite • Plotly • OpenPLC</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation/plc-cloud-oee-monitor" target="_blank" rel="noopener">Repository anzeigen</a>
+                        </div>
+                        <div class="project-media">
+                        <div class="code-box">
+                            <span class="visual-label">OEE-Berechnungskern</span>
+                            <pre><code>
+final = readings[-1]
+
+cycle_count = final["cycle_count"]
+
+good_count = final["good_count"]
+
+reject_count = final["reject_count"]
+
+availability = (run_time / total_elapsed) if total_elapsed > 0 else 0.0
+
+ideal_cycles_possible = (run_time / ideal_cycle_time_seconds) if run_time > 0 else 0.0
+
+performance = (cycle_count / ideal_cycles_possible) if ideal_cycles_possible > 0 else 0.0
+
+quality = (good_count / cycle_count) if cycle_count > 0 else 0.0
+
+oee = availability * performance * quality</code></pre>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="images/architecture.png" alt="PLC-zu-OEE-Architektur" class="project-img">
+                            <span class="image-caption">PLC-zu-OEE-Architektur</span>
+                        </div>
+                        </div>
+
+                    </div>
+                    </div>
+
+                    <!-- Slide 2: PDF RAG bot -->
+                    <div class="carousel-slide">
+                        <h3>Retrieval-Augmented-Generation-Engine</h3>
+                        <div class="model-screenshot-container">
+                            <video width="100%" height="auto" controls muted loop playsinline>
+                                <source src="https://github.com/Chizobawisdom/Portfolio/raw/refs/heads/main/docs/images/Screen%20Recording%202026-08-18%20at%2005.01.35.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    <div class="project-grid" data-category="automation">
+                        <div class="project-details">
+                        <p><strong>Systemkontext:</strong> Dieses Projekt implementiert eine Retrieval-Augmented-Generation-(RAG)-Pipeline in reinem Python, ohne Frameworks (kein LangChain/LlamaIndex), um die direkte Kontrolle über jede Phase zu demonstrieren: PDF-Import, Chunking, Embedding, Vektorsuche und Grounded-LLM-Generierung. Das System indiziert einen Ordner mit PDF-Dokumenten und beantwortet natürlichsprachliche Fragen ausschließlich anhand der abgerufenen Textpassagen, wobei für jede Aussage die genaue Quelldatei und Seite angegeben wird.</p>
+                        <p><strong>Engineering-Lösung:</strong> Entwicklung eines seitenweisen PDF-Textextraktors (pypdf), der die Rückverfolgbarkeit bis auf Seitenebene erhält. Implementierung eines Sliding-Window-Chunking-Algorithmus mit konfigurierbarer Überlappung, um Kontextverluste an Chunk-Grenzen zu vermeiden. Lokale Erstellung von 384-dimensionalen Embeddings über sentence-transformers (all-MiniLM-L6-v2) und Normalisierung der Vektoren, sodass die Kosinusähnlichkeit über den gesamten Korpus auf ein einzelnes Skalarprodukt reduziert wird. Implementierung einer NumPy-basierten Ähnlichkeitssuche (query · chunk<sub>embeddings</sub><sup>T</sup>), die Tausende von Chunks ohne externe Vektordatenbank bewertet. Entwicklung eines Grounding-Prompts, der die Claude API strikt auf den abgerufenen Kontext beschränkt und eine explizite Fallback-Antwort verwendet, wenn keine relevante Passage existiert. Dies wurde mit Anfragen außerhalb des vorgesehenen Bereichs überprüft, um sicherzustellen, dass das Modell nicht über die bereitgestellten Quellen hinaus halluziniert.</p>
+                        <p><strong>V&amp;V &amp; Wirkung:</strong> Die Retrieval-Qualität wurde anhand des Abfalls der Ähnlichkeitswerte in den gerankten Ergebnissen überprüft (0.71 → 0.61 → 0.47 bei einer bekannten relevanten Anfrage). Dadurch wurde bestätigt, dass das Ranking tatsächlich relevante Signale trägt und nicht aus nahezu gleichförmigen Werten besteht. Generierte Antworten wurden mit dem Text der Quelldokumente abgeglichen, um die Zitiergenauigkeit zu bestätigen. Das System wurde mit einem Streamlit-Frontend für interaktive Abfragen bereitgestellt. Das Projekt demonstriert zentrale Kompetenzen in der Verarbeitung unstrukturierter Dokumente, den Grundlagen der Vektorsuche und dem Grounding von LLMs – direkt übertragbar auf industrielle Anwendungsfälle wie durchsuchbare Anlagenhandbücher, SOP-/Compliance-Dokument-Q&amp;A und die Suche nach Wartungswissen.</p>
+                        <p class="tags">Technologien: Python • NumPy • sentence-transformers • Anthropic API • Streamlit • RAG</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation/pdf-rag-bot" target="_blank" rel="noopener">Repository anzeigen</a>
+                        </div>
+                        <div class="project-media">
+                        <div class="code-box">
+                            <span class="visual-label">Retrieval-Block</span>
+                            <pre><code>
+def search_chunks(query, chunks, top_k=5):
+
+    query_embedding = model.encode(
+        [query], normalize_embeddings=True
+    )[0]
+
+    similarities = [
+        np.dot(query_embedding, chunk['embedding'])
+        for chunk in chunks
+    ]
+
+    top_indices = np.argsort(similarities)[-top_k:][::-1]
+
+    results = []
+
+    for i in top_indices:
+
+        result = chunks[i].copy()
+
+        result['score'] = float(similarities[i])
+
+        results.append(result)
+
+    return results
+
+def ask_claude(query, chunks, top_k=5):
+
+    retrieved_chunks = search_chunks(query, chunks, top_k=top_k)
+
+    prompt = build_prompt(query, retrieved_chunks)
+
+    response = client.messages.create(
+
+        model="claude-sonnet-4-5",
+
+        max_tokens=500,
+
+        messages=[{"role": "user", "content": prompt}]
+
+    )
+
+    return response.content[0].text, retrieved_chunks</code></pre>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="images/RAGProcess.png" alt="RAG-Workflow" class="project-img">
+                            <span class="image-caption">RAG-Workflow auf Grundlage der README</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Slide 3: Secured OPC-UA Server & Client -->
+                    <div class="carousel-slide">
+                        <h3>Gesicherter OPC-UA-Server &amp; Client</h3>
+                    <div class="project-grid" data-category="automation">
+                        <div class="project-details">
+                        <p><strong>Systemkontext:</strong> Die moderne IT/OT-Integration in der Fertigung nutzt OPC-UA als standardisierte Schnittstellenschicht zwischen Anlagen auf der Produktionsebene und SCADA-, MES- sowie Cloud-Systemen. Dabei werden unverschlüsselte, strukturlose Protokolle durch einen selbstbeschreibenden, abgesicherten Adressraum ersetzt, den jeder konforme Client durchsuchen kann. Dieses Projekt implementiert einen vollständig funktionsfähigen OPC-UA-Server und einen unabhängigen Client von Grund auf in Python und nutzt bewusst das vollständige Sicherheitsmodell des Protokolls anstelle des ungesicherten „Hello World“-Ansatzes, bei dem viele öffentliche Tutorials enden.</p>
+                        <p><strong>Engineering-Lösung:</strong> Entwicklung eines auf asyncua basierenden OPC-UA-Servers mit einem strukturierten Adressraum (Objektknoten mit den Live-Variablen Temperature und Counter), die in Echtzeit über eine asynchrone Event-Schleife aktualisiert werden. Implementierung einer gegenseitigen X.509-Zertifikatsauthentifizierung mit über OpenSSL erzeugten Zertifikaten und Subject-Alternative-Name-(SAN)-Einträgen, die exakt mit der Application URI jedes Endpunkts übereinstimmen – einer der häufigsten Fehlerpunkte bei realen OPC-UA-Implementierungen. Konfiguration der Sicherheitsrichtlinie <code>Basic256Sha256</code> im Modus <code>SignAndEncrypt</code>, wodurch signierte und verschlüsselte Sitzungen durchgängig erzwungen werden, ohne stillschweigend auf Klartext zurückzufallen. Entwicklung eines unabhängigen Clients, der den Namespace-Index des Servers zur Laufzeit dynamisch ermittelt, anstatt ihn fest zu codieren, den Adressraum durchsucht und Live-Werte über eine Subscription-Schleife abfragt.</p>
+                        <p><strong>V&amp;V &amp; Wirkung:</strong> Die Zertifikatskonfiguration wurde durch Prüfung jedes SAN-Eintrags mit OpenSSL vor der Integration in die Anwendung verifiziert. Der Sicherheits-Handshake wurde durch gezielte Tests von Verbindungsfehlern (fehlendes Zertifikat, nicht übereinstimmende Application URI, inkompatible Sicherheitsrichtlinie) validiert, bevor eine erfolgreiche authentifizierte Sitzung hergestellt wurde. Die Integrität der Live-Daten wurde durch den Abgleich der vom Client abgefragten Werte mit dem serverseitigen Zustand während eines kontinuierlichen Laufs bestätigt. Das Projekt demonstriert die IT/OT-Integrationsschicht direkt oberhalb des Modbus-basierten PLC-Monitors und ist unmittelbar auf die sichere und standardkonforme Verbindung von Produktions-SPS mit SCADA-, MES- und Cloud-Analytics-Plattformen übertragbar.</p>
+                        <p class="tags">Technologien: Python • asyncua • OPC-UA • X.509 / OpenSSL • Async I/O</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation/opcua-server-demo" target="_blank" rel="noopener">Repository anzeigen</a>
+                        </div>
+                        <div class="project-media">
+                        <div class="code-box">
+                            <span class="visual-label">Konfiguration des gesicherten Servers</span>
+                            <pre><code>
+server.set_endpoint(
+    "opc.tcp://0.0.0.0:4840/freeopcua/server/"
+)
+
+await server.set_application_uri(
+    "urn:opcua-demo:server"
+)
+
+server.set_security_policy([
+    ua.SecurityPolicyType.Basic256Sha256_SignAndEncrypt
+])
+
+await server.load_certificate("server_cert.pem")
+
+await server.load_private_key("server_key.pem")
+
+idx = await server.register_namespace(
+    "http://opcua-demo.wisdom"
+)
+
+myobj = await server.nodes.objects.add_object(idx, "MyObject")
+
+temperature = await myobj.add_variable(idx, "Temperature", 21.5)
+
+counter = await myobj.add_variable(idx, "Counter", 0)</code></pre>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="images/opcua_architecture.png" alt="OPC-UA-Server- und Client-Architektur" class="project-img">
+                            <span class="image-caption">Architektur des gesicherten Server-Client-Kanals</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- ==========================================
+                 3. COMPUTER VISION
+                 ========================================== -->
+
+            <div class="carousel-block" data-category="vision">
+                <div class="carousel-controls">
+                <button class="carousel-btn" data-dir="-1" aria-label="Vorheriges">&#8592;</button>
+                <div class="carousel-dots">
+                    <button class="carousel-dot active" aria-label="Folie 1"></button>
+                    <button class="carousel-dot" aria-label="Folie 2"></button>
+                    <button class="carousel-dot" aria-label="Folie 3"></button>
+                </div>
+                <button class="carousel-btn" data-dir="1" aria-label="Nächstes">&#8594;</button>
+                <span class="carousel-counter">1 / 3</span>
+                </div>
+                <div class="carousel-wrapper">
+                <div class="carousel-track">
+
+                    <!-- Slide 1: Histogram Specification -->
+                    <div class="carousel-slide">
+                        <h3>Histogrammangleichung zur Bildverbesserung</h3>
+                        <div class="model-screenshot-container">
+                            <img src="images/Screenshot 2026-08-05 010508.png" alt="AnyLogic-Prozessablauf der Qualitätsprüfung und Analyse-Dashboard" loading="lazy">
+                        </div>
+                    <div class="project-grid" data-category="vision">
+                        <div class="project-details">
+                        <p><strong>Systemkontext:</strong> Bildvorverarbeitungsstufe für die Inline-Sichtprüfung bei variierenden Beleuchtungsbedingungen in der Produktionsumgebung.</p>
+                        <p><strong>Engineering-Lösung:</strong> Anwendung von <code>skimage.exposure.match_histograms</code> zur Anpassung tonaler Verteilungen an kontrastreiche Referenzprofile.</p>
+                        <p><strong>V&amp;V &amp; Wirkung:</strong> Eliminierung von Beleuchtungsvariationen und deutliche Steigerung der Robustheit der nachgelagerten CNN-Fehlerklassifikation.</p>
+                        <p class="tags">Technologien: OpenCV • scikit-image • Matplotlib • Python</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision/histogram-matching" target="_blank" rel="noopener">Repository anzeigen</a>
+                        </div>
+                        <div class="project-media">
+                        <div class="code-box">
+                            <span class="visual-label">Histogramm-Matching-Pipeline</span>
+                            <pre><code>
+image = cv2.cvtColor(img_dark, cv2.COLOR_BGR2RGB)
+
+matched = match_histograms(image, reference)
+
+matched = matched.astype(np.uint8)
+
+for j, col in enumerate(('red','green','blue')):
+
+    img_hist, bins = exposure.histogram(
+        img[:, :, j], nbins=256)
+
+    axes[j, i].plot(
+        bins, img_hist / img_hist.max(), color=col)</code></pre>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="images/output.png" alt="Histogrammvergleich" class="project-img">
+                            <span class="image-caption">Überlagerung der Histogrammverteilungen</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Slide 2: Manual Histogram Matching -->
+                    <div class="carousel-slide">
+                        <h3>Histogrammangleichung: Arithmetischer Ansatz</h3>
+                    <div class="project-grid" data-category="vision">
+                        <div class="project-details">
+                        <p><strong>Systemkontext:</strong> Entwickelt für isolierte Embedded-Vision-Geräte, auf denen Drittanbieterbibliotheken wie <code>skimage</code> nicht installiert werden können.</p>
+                        <p><strong>Engineering-Lösung:</strong> Entwicklung einer Histogrammspezifikation direkt mit NumPy unter Verwendung von <code>np.bincount</code>, kumulativer Verteilungsanpassung und Lookup-Table-Indizierung.</p>
+                        <p><strong>V&amp;V &amp; Wirkung:</strong> Erreichen einer tonalen Anpassung auf Bibliotheksniveau mit O(1)-Pixeltransformationsgeschwindigkeit und ohne Abhängigkeiten von externen Frameworks.</p>
+                        <p class="tags">Technologien: Python • NumPy • Computer Vision • Algorithmen</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision/manual-histogram-matching" target="_blank" rel="noopener">Repository anzeigen</a>
+                        </div>
+                        <div class="project-media">
+                        <div class="code-box">
+                            <span class="visual-label">Manuelle Konstruktion der CDF-Lookup-Tabelle</span>
+                            <pre><code>
+hist_a = np.bincount(image.ravel(), minlength=256)
+
+cdf_a  = np.cumsum(hist_a / hist_a.sum())
+
+hist_b = np.bincount(reference.ravel(), minlength=256)
+
+cdf_b  = np.cumsum(hist_b / hist_b.sum())
+
+mapping = np.zeros(256, dtype=np.uint8)
+
+for i in range(256):
+
+    diff = np.abs(cdf_a[i] - cdf_b)
+
+    mapping[i] = np.argmin(diff)
+
+matched_image = mapping[image]</code></pre>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="images/2.png" alt="Manuelle Histogrammlogik" class="project-img">
+                            <span class="image-caption">CDF-Anpassung &amp; visuelle Neuzuordnung</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Slide 3: EfficientNet Classifier -->
+                    <div class="carousel-slide">
+                        <h3>Teileklassifikator: Transfer Learning mit EfficientNetV2</h3>
+                    <div class="project-grid" data-category="vision">
+                        <div class="project-details">
+                        <p><strong>Systemkontext:</strong> Automatisierte Teileerkennung für Produktionszellen mit hoher Variantenvielfalt zur Sicherstellung einer korrekten Weiterleitung an die jeweiligen Arbeitszellen.</p>
+                        <p><strong>Engineering-Lösung:</strong> Entwicklung einer TensorFlow/Keras-Pipeline mit EfficientNetV2B0, teilweise freigegebenen Schichten, Datenaugmentation und Early Stopping.</p>
+                        <p><strong>V&amp;V &amp; Wirkung:</strong> Zuverlässige Teileklassifikation mit hoher Genauigkeit, verpackt in einem <code>.keras</code>-Bereitstellungsformat.</p>
+                        <p class="tags">Technologien: TensorFlow • Keras • EfficientNet • Computer Vision</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision/object-classification" target="_blank" rel="noopener">Repository anzeigen</a>
+                        </div>
+                        <div class="project-media">
+                        <div class="code-box">
+                            <span class="visual-label">Feinabgestimmte EfficientNet-Architektur</span>
+                            <pre><code>
+base_model = EfficientNetV2B0(
+
+    input_shape=(224, 224, 3), include_top=False,
+
+    weights="imagenet", pooling="avg")
+
+for layer in base_model.layers[:-20]:
+
+    layer.trainable = False
+
+model = models.Sequential([
+
+    data_augmentation,
+
+    base_model,
+
+    layers.Dense(256, activation="relu"),
+
+    layers.Dropout(0.3),
+
+    layers.Dense(3, activation="softmax")
+
+])</code></pre>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="images/output2.png" alt="Kennzahlen der Teileklassifikation" class="project-img">
+                            <span class="image-caption">Konfusionsmatrix &amp; Trainingsverlust</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Slide 4: ResNet Vehicle Classifier -->
+                    <div class="carousel-slide">
+                        <h3>Fahrzeugbildklassifikator: Zweistufiges Fine-Tuning mit ResNet50</h3>
+                    <div class="project-grid" data-category="vision">
+                        <div class="project-details">
+                        <p><strong>Systemkontext:</strong> Automatisierte Klassifizierung von Fahrzeugen für logistische Inspektionspunkte und Qualitätserfassung.</p>
+                        <p><strong>Engineering-Lösung:</strong> Implementierung einer zweistufigen Trainingsstrategie mit ResNet50: zunächst Training des Klassifikationskopfes mit <code>1e-3</code>, anschließend teilweises Freigeben des Backbones mit <code>1e-4</code> und Reduzierung der Lernrate.</p>
+                        <p><strong>V&amp;V &amp; Wirkung:</strong> Hohe Präzision über verschiedene Fahrzeugkategorien hinweg bei gleichzeitiger Minimierung von Overfitting auf kleinen Datensätzen.</p>
+                        <p class="tags">Technologien: ResNet50 • TensorFlow • Python • Deep Learning</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision/vehicle-classification" target="_blank" rel="noopener">Repository anzeigen</a>
+                        </div>
+                        <div class="project-media">
+                        <div class="code-box">
+                            <span class="visual-label">Zweistufige Fine-Tuning-Strategie</span>
+                            <pre><code>
+# Stage 1: Frozen backbone
+
+base_model.trainable = False
+
+model.compile(optimizer=Adam(1e-3), loss="sparse_categorical_crossentropy")
+
+model.fit(train_ds, epochs=5)
+
+# Stage 2: Fine-tune last 30 layers
+
+base_model.trainable = True
+
+for layer in base_model.layers[:-30]:
+
+    layer.trainable = False
+
+model.compile(optimizer=Adam(1e-4), loss="sparse_categorical_crossentropy")
+
+model.fit(train_ds, epochs=30, callbacks=[ReduceLROnPlateau(factor=0.5)])</code></pre>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="images/projects/vehicle-classification.jpg" alt="Fahrzeugklassifikationsmodell" class="project-img">
+                            <span class="image-caption">Validierungs-Heatmap &amp; Lernratenkurven</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- ==========================================
+                 4. INDUSTRIAL ML & ANALYTICS
+                 ========================================== -->
+
+            <div class="carousel-block" data-category="ml">
+                <div class="carousel-controls">
+                <button class="carousel-btn" data-dir="-1" aria-label="Vorheriges">&#8592;</button>
+                <div class="carousel-dots">
+                    <button class="carousel-dot active" aria-label="Folie 1"></button>
+                    <button class="carousel-dot" aria-label="Folie 2"></button>
+                    <button class="carousel-dot" aria-label="Folie 3"></button>
+                    <button class="carousel-dot" aria-label="Folie 4"></button>
+                </div>
+                <button class="carousel-btn" data-dir="1" aria-label="Nächstes">&#8594;</button>
+                <span class="carousel-counter">1 / 4</span>
+                </div>
+                <div class="carousel-wrapper">
+                <div class="carousel-track">
+
+                    <!-- Slide 1: Income Analytics -->
+                    <div class="carousel-slide">
+                        <h3>Pipeline für Einkommens- &amp; demografische Analysen</h3>
+                    <div class="project-grid" data-category="ml">
+                        <div class="project-details">
+                        <p><strong>Systemkontext:</strong> Prädiktive demografische Modellierungspipeline zur Unterstützung von Entscheidungen zur Personal- und Ressourcenallokation.</p>
+                        <p><strong>Engineering-Lösung:</strong> Entwicklung einer leak-freien Pipeline mit ColumnTransformer, Mutual-Information-Feature-Selektion (<code>SelectKBest</code>), SMOTE-Oversampling und RandomForest-Ensemble-Klassifikation.</p>
+                        <p><strong>V&amp;V &amp; Wirkung:</strong> Bessere Präzision und Recall als Naive-Bayes-Baselines über verschiedene Profile unausgewogener Datensätze hinweg.</p>
+                        <p class="tags">Technologien: scikit-learn • SMOTE • Pipeline • Analytics</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering/adult-income-prediction" target="_blank" rel="noopener">Repository anzeigen</a>
+                        </div>
+                        <div class="project-media">
+                        <div class="code-box">
+                            <span class="visual-label">Multi-Modell-Pipeline-Stack</span>
+                            <pre><code>
+pipe = Pipeline([
+
+    ('preprocessor', preprocessor),
+
+    ('kbest', SelectKBest(
+
+        score_func=mutual_info_classif, k=15)),
+
+    ('smote', SMOTE(
+
+        random_state=42, sampling_strategy=0.5)),
+
+    ('classifier', RandomForestClassifier())
+
+])
+
+pipe.fit(X_train, y_train)
+
+y_pred = pipe.predict(X_test)</code></pre>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="images/Screenshot 2026-08-05 011216.png" alt="Pipeline für Einkommensanalysen" class="project-img">
+                            <span class="image-caption">Konfusionsmatrix</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Slide 2: Time Series Forecasting -->
+                    <div class="carousel-slide">
+                        <h3>Chronologische Prognose &amp; Zeitreihenregression</h3>
+                    <div class="project-grid" data-category="ml">
+                        <div class="project-details">
+                        <p><strong>Systemkontext:</strong> Nachfrage- und Lastprognosemodell zur Unterstützung von Wartungs- und Betriebsplanung.</p>
+                        <p><strong>Engineering-Lösung:</strong> Verwendung einer rollierenden <code>TimeSeriesSplit</code>-Kreuzvalidierung zur Beibehaltung der chronologischen Reihenfolge und Vermeidung zeitlicher Datenlecks.</p>
+                        <p><strong>V&amp;V &amp; Wirkung:</strong> Erstellung konsistenter 24-Stunden-Nachfrageprognosen, die saisonale Spitzen und betriebliche Zyklen effektiv abbilden.</p>
+                        <p class="tags">Technologien: scikit-learn • TimeSeriesSplit • Python • ML</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering/bike-demand-forecasting" target="_blank" rel="noopener">Repository anzeigen</a>
+                        </div>
+                        <div class="project-media">
+                        <div class="code-box">
+                            <span class="visual-label">Temporale Kreuzvalidierungsschleife</span>
+                            <pre><code>
+tscv = TimeSeriesSplit(n_splits=10)
+
+for train_index, test_index in tscv.split(X):
+
+    X_tr, X_val = X.iloc[train_index], X.iloc[test_index]
+
+    y_tr, y_val = y.iloc[train_index], y.iloc[test_index]
+
+    pipeline.fit(X_tr, y_tr)
+
+    preds = pipeline.predict(X_val)
+
+    scores.append(mean_squared_error(y_val, preds, squared=False))</code></pre>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="images/Screenshot 2026-08-05 011425.png" alt="Zeitreihendiagramm" class="project-img">
+                            <span class="image-caption">Rollierende Prognose vs. beobachtete Nachfrage</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Slide 3: Statistical Process Control -->
+                    <div class="carousel-slide">
+                        <h3>Automatisierte Statistische Prozessregelung (SPC) &amp; Qualitätsfähigkeits-Engine</h3>
+                    <div class="project-grid" data-category="ml">
+                        <div class="project-details">
+                        <p><strong>Systemkontext:</strong> Echtzeit-Erkennung von Anomalien und Drift über Tausende kontinuierlicher Fabriksensorströme – als Ersatz für manuelle Diagramme durch eine systematische statistische Überwachung.</p>
+                        <p><strong>Engineering-Lösung:</strong> Entwicklung einer reinen NumPy/Pandas-Engine zur Berechnung dynamischer Untergruppenmittelwerte ($\bar{X}$) und Spannweiten ($R$) mithilfe standardisierter Regelungskonstanten ($A_2, D_3, D_4$). Programmierung aller 8 Nelson Run Rules, Implementierung von Page-Hinkley- und CUSUM-Drifterkennungen zur Identifikation von Mikroversätzen sowie Berechnung kurz- und langfristiger Prozessfähigkeitsindizes ($C_p, C_{pk}, P_p, P_{pk}$).</p>
+                        <p><strong>V&amp;V &amp; Wirkung:</strong> Entwicklung eines Diagnoseframeworks, das über Tausende von Streaming-Nodes läuft, automatisch ein zentrales Qualitätsdashboard erzeugt und Regelverletzungen erkennt, bevor Fehler auftreten – und damit prädiktive Qualitätssicherung in großem Maßstab ermöglicht.</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering/continuous-factory-process-control" target="_blank" rel="noopener">Repository anzeigen</a>
+                        </div>
+                        <div class="project-media">
+                        <div class="code-box">
+                        <span class="visual-label">Formulierungen für Prozessfähigkeit &amp; Grenzwerte</span>
+                        <pre><code># Process Variance Subgroup Logic
+def subgroup_stats(subgroups: np.ndarray):
+
+    xbar = subgroups.mean(axis=1)
+
+    R = subgroups.max(axis=1) - subgroups.min(axis=1)
+
+    return xbar, R, float(xbar.mean()), float(R.mean())
+
+# Multi-Tier Drift Inversion Tracking
+
+Cpos = max(0.0, Cpos + zi - k)
+
+Cneg = min(0.0, Cneg + zi + k)
+
+if Cpos > h: ap.append(i); Cpos = 0.0</code></pre>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="images/Xbar.png" alt="X-Bar-Diagramm für DPC" class="project-img">
+                            <span class="image-caption">NA</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Slide 4: Naive Bayes -->
+                    <div class="carousel-slide">
+                        <h3>Benutzerdefinierter probabilistischer Naive-Bayes-Sortieralgorithmus</h3>
+                    <div class="project-grid" data-category="ml">
+                        <div class="project-details">
+                        <p><strong>Systemkontext:</strong> Leichtgewichtige Klassifikation für Edge-Geräte oder ältere industrielle Steuerungen, auf denen externe ML-Frameworks nicht installiert werden können oder zu ressourcenintensiv sind.</p>
+                        <p><strong>Engineering-Lösung:</strong> Entwicklung eines reinen Pandas-Klassifikators von Grund auf – Berechnung der a-priori-Systemzustände ($P(\text{Yes})$, $P(\text{No})$) über Häufigkeitsabfragen, Zuordnung kategorialer Datenströme zu Likelihood-Vektoren ($P(X_i | Y)$) und iterative Anwendung des Satzes von Bayes zur Berechnung gemeinsamer Posterior-Werte mit normalisierten Konfidenzintervallen.</p>
+                        <p><strong>V&amp;V &amp; Wirkung:</strong> Bereitstellung einer schnellen, frameworkfreien Klassifikations-Engine mit vollständiger mathematischer Transparenz und damit operativer Entscheidungsfähigkeit auf ressourcenbeschränkter Hardware.</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering/Probabilistic-classifier" target="_blank" rel="noopener">Repository anzeigen</a>
+                        </div>
+                        <div class="project-media">
+                        <div class="code-box">
+                        <span class="visual-label">Bayessche Regellogik</span>
+                        <pre><code># Joint Posterior & Conditional Mapping
+def conditional_probability(feature, value, target):
+
+    subset = df[y == target]
+
+    count = len(subset[subset[feature] == value])
+
+    return count / len(subset)
+
+for feature, value in test_instance.items():
+
+    p_yes *= conditional_probability(feature, value, "Yes")
+
+    p_no *= conditional_probability(feature, value, "No")</code></pre>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="images/projects/time-series.jpg" alt="Zeitreihendiagramm" class="project-img">
+                            <span class="image-caption">NA</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Slide 5: Industrial Defect Reduction -->
+                    <div class="carousel-slide">
+                        <h3>Erweiterte Pipeline zur Reduzierung industrieller Fehler</h3>
+                    <div class="project-grid" data-category="ml">
+                        <div class="project-details">
+                        <p><strong>Systemkontext:</strong> Diagnose struktureller Maschinenschadensarten anhand hochfrequenter Spektralsignale, die durch starke Klassenungleichgewichte und den Fluch der Dimensionalität bei FFT-transformierten Merkmalen beeinträchtigt werden.</p>
+                        <p><strong>Engineering-Lösung:</strong> Stabilisierung der Merkmale mit <code>StandardScaler</code> und Anwendung von <code>SMOTE</code> zum Ausgleich unterrepräsentierter Fehlerklassen. Isolierung der FFT-Spalten für eine gezielte PCA, wodurch spektrales Rauschen auf 10 dichte orthogonale Varianzkomponenten reduziert und anschließend horizontal (<code>np.hstack</code>) mit Nicht-FFT-Merkmalen kombiniert wurde. Durchführung einer 5-fachen <code>RandomizedSearchCV</code> über die Hyperparameter des <code>LGBMClassifier</code> zur Optimierung der Grenzen für die Mehrklassenklassifikation.</p>
+                        <p><strong>V&amp;V &amp; Wirkung:</strong> Bereitstellung einer Anomalie-Mapping-Pipeline mit einer Laufzeit von unter einer Millisekunde für Predictive-Maintenance-Anwendungen in der Produktion. Die Pipeline liefert detaillierte Konfusionsmatrizen und Mehrklassenberichte, die für die Integration in Produktionssysteme geeignet sind.</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering/industrial-defect-classification" target="_blank" rel="noopener">Repository anzeigen</a>
+                        </div>
+                        <div class="project-media">
+                        <div class="code-box">
+                        <span class="visual-label">Spektrale PCA &amp; Ensemble-Ausführung</span>
+                        <pre><code># Isolated Spectral Decomposition
+pca = PCA(n_components=10)
+
+X_train_fft = pca.fit_transform(
+
+    X_train_bal[:, [X.columns.get_loc(c) for c in fft_cols]]
+
+)
+
+# Feature Merging & Tuned Search Routing
+
+X_train_final = np.hstack([X_train_nonfft, X_train_fft])
+
+search = RandomizedSearchCV(
+
+    model, param_dist, n_iter=20, scoring='f1_macro', cv=5
+
+)
+
+search.fit(X_train_final, y_train_bal)</code></pre>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="images/projects/time-series.jpg" alt="Zeitreihendiagramm" class="project-img">
+                            <span class="image-caption">NA</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FOOTER ===== -->
+        <footer>
+            <div class="footer-left">
+                <span>&copy; 2026 Wisdom Favour Chizoba</span>
+                <a href="mailto:wchizoba@gmail.com">wchizoba@gmail.com</a>
+                <span>+49 157 5591 8419</span>
+            </div>
+            <div class="social">
+                <a href="https://www.linkedin.com/in/wisdomfavourchizoba" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/Chizobawisdom" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- end container -->
+    <script src="js/portfolio-carousel.js"></script>
+</body>
+</html>
+```
