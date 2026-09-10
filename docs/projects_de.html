@@ -105,10 +105,10 @@ def breakdown_process(env, station_name):
                         <p><strong>Engineering-Lösung:</strong></p>
                         <ul>
                             <li>Entwicklung eines physischen &amp; virtuellen Zwillings: Aufbau eines physischen Prüfstands mit Oszilloskop und Signalgenerator sowie eines hochpräzisen LTspice-Simulationsmodells zur Nachbildung der physikalischen dynamischen Antworten.</li>
-                            <li>Kalibrierung der Regelungsparameter: Analyse physischer und virtueller Sprungantworten unter variablen Rückkopplungsbedingungen ($K = 0\ \Omega$ bis $2.062\text{ k}\Omega$), um kritische dynamische Kennwerte wie Dämpfungsverhältnis ($\zeta = 0.204$) und Eigenfrequenz ($\omega_n = 3683\text{ rad/s}$) zu bestimmen.</li>
-                            <li>Frequenzbereich &amp; Rauschfilterung: Abbildung des Frequenzgangs des Systems mithilfe von Bode-Diagrammen ($1\text{ Hz} - 500\text{ kHz}$), um die Grenzen des Tiefpassfilters festzulegen und hochfrequente Signalstörungen zu eliminieren.</li>
+                            <li>Kalibrierung der Regelungsparameter: Analyse physischer und virtueller Sprungantworten unter variablen Rückkopplungsbedingungen (&#x24;K = 0&nbsp;&Omega; bis 2.062&nbsp;k&Omega;), um kritische dynamische Kennwerte wie Dämpfungsverhältnis (&#x03B6; = 0.204) und Eigenfrequenz (&omega;<sub>n</sub> = 3683&nbsp;rad/s) zu bestimmen.</li>
+                            <li>Frequenzbereich &amp; Rauschfilterung: Abbildung des Frequenzgangs des Systems mithilfe von Bode-Diagrammen (1&nbsp;Hz &ndash; 500&nbsp;kHz), um die Grenzen des Tiefpassfilters festzulegen und hochfrequente Signalstörungen zu eliminieren.</li>
                         </ul>
-                        <p><strong>V&amp;V &amp; Wirkung:</strong> Das virtuelle Simulationsmodell wurde anhand physischer Hardware-Testdaten validiert. Dabei wurde nachgewiesen, dass die Anpassung der internen Schleifenverstärkung ($K$) das transiente Überschwingen ($M_p = 51.94\%$ bis $0\%$) eliminiert. Dies bestätigte die Modelltreue bei der Vorhersage der Regelkreisstabilität und bei der Vermeidung mechanischer bzw. elektrischer Überschwingungen in automatisierter Fertigungshardware.</p>
+                        <p><strong>V&amp;V &amp; Wirkung:</strong> Das virtuelle Simulationsmodell wurde anhand physischer Hardware-Testdaten validiert. Dabei wurde nachgewiesen, dass die Anpassung der internen Schleifenverstärkung (K) das transiente Überschwingen (M<sub>p</sub> = 51.94% ↓ 0%) eliminiert. Dies bestätigte die Modelltreue bei der Vorhersage der Regelkreisstabilität und bei der Vermeidung mechanischer bzw. elektrischer Überschwingungen in automatisierter Fertigungshardware.</p>
                         <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0/instrumentation-amplifier-with-active-filter" target="_blank" rel="noopener">Repository anzeigen</a>
                         </div>
                         <div class="project-media">
@@ -236,8 +236,8 @@ Downtime & Storage Cost Tracker
                     <div class="project-grid" data-category="simulation">
                         <div class="project-details">
                         <p><strong>Systemkontext:</strong> Ein durch manuelle Prüfung verursachter Engpass – die Unternehmensleitung benötigte Daten, um zu entscheiden, ob zusätzliche Prüfer eingestellt werden sollten (Szenario A) oder die Ausrüstungsgeschwindigkeit erhöht werden sollte (Szenario B).</p>
-                        <p><strong>Engineering-Lösung:</strong> Entwicklung einer stochastischen diskret-ereignisorientierten Simulation (DES) in AnyLogic (Source → Queue → Service → SelectOutput → Sink) mit exponentiell verteilten Zwischenankunftszeiten ($\lambda = 0.2$/min) und dreiecksförmig verteilten Bearbeitungszeiten. Durchführung automatisierter Parameter-Variations-Experimente mit unabhängigen Wiederholungen zur Berechnung von <strong>95-%-Konfidenzintervallen</strong> für alle KPIs.</p>
-                        <p><strong>V&amp;V &amp; Wirkung:</strong> Nachweis, dass Szenario A die mittlere Zykluszeit um <strong>71 % (16.02 → 4.65 min)</strong> reduziert und die Schwankungen nahe der Sättigungsgrenze deutlich verringert – und damit die Geschwindigkeitssteigerung übertrifft. Validierung der Basisleistung anhand theoretischer $M/G/1$-Warteschlangenmodelle.</p>
+                        <p><strong>Engineering-Lösung:</strong> Entwicklung einer stochastischen diskret-ereignisorientierten Simulation (DES) in AnyLogic (Source → Queue → Service → SelectOutput → Sink) mit exponentiell verteilten Zwischenankunftszeiten (&lambda; = 0.2/min) und dreiecksförmig verteilten Bearbeitungszeiten. Durchführung automatisierter Parameter-Variations-Experimente mit unabhängigen Wiederholungen zur Berechnung von <strong>95-%-Konfidenzintervallen</strong> für alle KPIs.</p>
+                        <p><strong>V&amp;V &amp; Wirkung:</strong> Nachweis, dass Szenario A die mittlere Zykluszeit um <strong>71 % (16.02 → 4.65 min)</strong> reduziert und die Schwankungen nahe der Sättigungsgrenze deutlich verringert – und damit die Geschwindigkeitssteigerung übertrifft. Validierung der Basisleistung anhand theoretischer M/G/1-Warteschlangenmodelle.</p>
                         <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0/inspection-bottlneck-station" target="_blank" rel="noopener">Repository anzeigen</a>
                         </div>
                         <div class="project-media">
@@ -359,7 +359,7 @@ oee = availability * performance * quality</code></pre>
                         <div class="project-details">
                         <p><strong>Systemkontext:</strong> Dieses Projekt implementiert eine Retrieval-Augmented-Generation-(RAG)-Pipeline in reinem Python, ohne Frameworks (kein LangChain/LlamaIndex), um die direkte Kontrolle über jede Phase zu demonstrieren: PDF-Import, Chunking, Embedding, Vektorsuche und Grounded-LLM-Generierung. Das System indiziert einen Ordner mit PDF-Dokumenten und beantwortet natürlichsprachliche Fragen ausschließlich anhand der abgerufenen Textpassagen, wobei für jede Aussage die genaue Quelldatei und Seite angegeben wird.</p>
                         <p><strong>Engineering-Lösung:</strong> Entwicklung eines seitenweisen PDF-Textextraktors (pypdf), der die Rückverfolgbarkeit bis auf Seitenebene erhält. Implementierung eines Sliding-Window-Chunking-Algorithmus mit konfigurierbarer Überlappung, um Kontextverluste an Chunk-Grenzen zu vermeiden. Lokale Erstellung von 384-dimensionalen Embeddings über sentence-transformers (all-MiniLM-L6-v2) und Normalisierung der Vektoren, sodass die Kosinusähnlichkeit über den gesamten Korpus auf ein einzelnes Skalarprodukt reduziert wird. Implementierung einer NumPy-basierten Ähnlichkeitssuche (query · chunk<sub>embeddings</sub><sup>T</sup>), die Tausende von Chunks ohne externe Vektordatenbank bewertet. Entwicklung eines Grounding-Prompts, der die Claude API strikt auf den abgerufenen Kontext beschränkt und eine explizite Fallback-Antwort verwendet, wenn keine relevante Passage existiert. Dies wurde mit Anfragen außerhalb des vorgesehenen Bereichs überprüft, um sicherzustellen, dass das Modell nicht über die bereitgestellten Quellen hinaus halluziniert.</p>
-                        <p><strong>V&amp;V &amp; Wirkung:</strong> Die Retrieval-Qualität wurde anhand des Abfalls der Ähnlichkeitswerte in den gerankten Ergebnissen überprüft (0.71 → 0.61 → 0.47 bei einer bekannten relevanten Anfrage). Dadurch wurde bestätigt, dass das Ranking tatsächlich relevante Signale trägt und nicht aus nahezu gleichförmigen Werten besteht. Generierte Antworten wurden mit dem Text der Quelldokumente abgeglichen, um die Zitiergenauigkeit zu bestätigen. Das System wurde mit einem Streamlit-Frontend für interaktive Abfragen bereitgestellt. Das Projekt demonstriert zentrale Kompetenzen in der Verarbeitung unstrukturierter Dokumente, den Grundlagen der Vektorsuche und dem Grounding von LLMs – direkt übertragbar auf industrielle Anwendungsfälle wie durchsuchbare Anlagenhandbücher, SOP-/Compliance-Dokument-Q&amp;A und die Suche nach Wartungswissen.</p>
+                        <p><strong>V&amp;V &amp; Wirkung:</strong> Die Retrieval-Qualität wurde anhand des Abfalls der Ähnlichkeitswerte in den gerankten Ergebnissen überprüft (0.71 → 0.61 → 0.47 bei einer bekannten relevanten Anfrage). Dadurch wurde bestätigt, dass das Ranking tatsächlich relevante Signale trägt und nicht aus nahezu gleichförmigen Werten besteht. Generierte Antworten wurden mit dem Text der Quelldokumente abgeglichen, um die Zitiergenauigkeit zu bestätigen. Das System wurde mit einem Streamlit-Frontend für interaktive Abfragen bereitgestellt. Das Projekt demonstriert zentrale Kompetenzen in der Verarbeitung unstrukturierter Dokumente, den Grundlagen der Vektorsuche und dem Grounding von LLMs direkt übertragbar auf industrielle Anwendungsfälle wie durchsuchbare Anlagenhandbücher, SOP-/Compliance-Dokument-Q&amp;A und die Suche nach Wartungswissen.</p>
                         <p class="tags">Technologien: Python • NumPy • sentence-transformers • Anthropic API • Streamlit • RAG</p>
                         <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation/pdf-rag-bot" target="_blank" rel="noopener">Repository anzeigen</a>
                         </div>
@@ -368,46 +368,28 @@ oee = availability * performance * quality</code></pre>
                             <span class="visual-label">Retrieval-Block</span>
                             <pre><code>
 def search_chunks(query, chunks, top_k=5):
-
     query_embedding = model.encode(
         [query], normalize_embeddings=True
     )[0]
-
     similarities = [
         np.dot(query_embedding, chunk['embedding'])
         for chunk in chunks
     ]
-
     top_indices = np.argsort(similarities)[-top_k:][::-1]
-
     results = []
-
     for i in top_indices:
-
         result = chunks[i].copy()
-
         result['score'] = float(similarities[i])
-
         results.append(result)
-
     return results
-
 def ask_claude(query, chunks, top_k=5):
-
     retrieved_chunks = search_chunks(query, chunks, top_k=top_k)
-
     prompt = build_prompt(query, retrieved_chunks)
-
     response = client.messages.create(
-
         model="claude-sonnet-4-5",
-
         max_tokens=500,
-
         messages=[{"role": "user", "content": prompt}]
-
     )
-
     return response.content[0].text, retrieved_chunks</code></pre>
                         </div>
                         <div class="image-wrapper">
@@ -424,7 +406,7 @@ def ask_claude(query, chunks, top_k=5):
                     <div class="project-grid" data-category="automation">
                         <div class="project-details">
                         <p><strong>Systemkontext:</strong> Die moderne IT/OT-Integration in der Fertigung nutzt OPC-UA als standardisierte Schnittstellenschicht zwischen Anlagen auf der Produktionsebene und SCADA-, MES- sowie Cloud-Systemen. Dabei werden unverschlüsselte, strukturlose Protokolle durch einen selbstbeschreibenden, abgesicherten Adressraum ersetzt, den jeder konforme Client durchsuchen kann. Dieses Projekt implementiert einen vollständig funktionsfähigen OPC-UA-Server und einen unabhängigen Client von Grund auf in Python und nutzt bewusst das vollständige Sicherheitsmodell des Protokolls anstelle des ungesicherten „Hello World“-Ansatzes, bei dem viele öffentliche Tutorials enden.</p>
-                        <p><strong>Engineering-Lösung:</strong> Entwicklung eines auf asyncua basierenden OPC-UA-Servers mit einem strukturierten Adressraum (Objektknoten mit den Live-Variablen Temperature und Counter), die in Echtzeit über eine asynchrone Event-Schleife aktualisiert werden. Implementierung einer gegenseitigen X.509-Zertifikatsauthentifizierung mit über OpenSSL erzeugten Zertifikaten und Subject-Alternative-Name-(SAN)-Einträgen, die exakt mit der Application URI jedes Endpunkts übereinstimmen – einer der häufigsten Fehlerpunkte bei realen OPC-UA-Implementierungen. Konfiguration der Sicherheitsrichtlinie <code>Basic256Sha256</code> im Modus <code>SignAndEncrypt</code>, wodurch signierte und verschlüsselte Sitzungen durchgängig erzwungen werden, ohne stillschweigend auf Klartext zurückzufallen. Entwicklung eines unabhängigen Clients, der den Namespace-Index des Servers zur Laufzeit dynamisch ermittelt, anstatt ihn fest zu codieren, den Adressraum durchsucht und Live-Werte über eine Subscription-Schleife abfragt.</p>
+                        <p><strong>Engineering-Lösung:</strong> Entwicklung eines auf asyncua basierenden OPC-UA-Servers mit einem strukturierten Adressraum (Objektknoten mit den Live-Variablen Temperature und Counter), die in Echtzeit über eine asynchrone Event-Schleife aktualisiert werden. Implementierung einer gegenseitigen X.509-Zertifikatsauthentifizierung mit über OpenSSL erzeugten Zertifikaten und Subject-Alternative-Name-(SAN)-Einträgen, die exakt mit der Application URI jedes Endpunkts übereinstimmen einer der häufigsten Fehlerpunkte bei realen OPC-UA-Implementierungen. Konfiguration der Sicherheitsrichtlinie <code>Basic256Sha256</code> im Modus <code>SignAndEncrypt</code>, wodurch signierte und verschlüsselte Sitzungen durchgängig erzwungen werden, ohne stillschweigend auf Klartext zurückzufallen. Entwicklung eines unabhängigen Clients, der den Namespace-Index des Servers zur Laufzeit dynamisch ermittelt, anstatt ihn fest zu codieren, den Adressraum durchsucht und Live-Werte über eine Subscription-Schleife abfragt.</p>
                         <p><strong>V&amp;V &amp; Wirkung:</strong> Die Zertifikatskonfiguration wurde durch Prüfung jedes SAN-Eintrags mit OpenSSL vor der Integration in die Anwendung verifiziert. Der Sicherheits-Handshake wurde durch gezielte Tests von Verbindungsfehlern (fehlendes Zertifikat, nicht übereinstimmende Application URI, inkompatible Sicherheitsrichtlinie) validiert, bevor eine erfolgreiche authentifizierte Sitzung hergestellt wurde. Die Integrität der Live-Daten wurde durch den Abgleich der vom Client abgefragten Werte mit dem serverseitigen Zustand während eines kontinuierlichen Laufs bestätigt. Das Projekt demonstriert die IT/OT-Integrationsschicht direkt oberhalb des Modbus-basierten PLC-Monitors und ist unmittelbar auf die sichere und standardkonforme Verbindung von Produktions-SPS mit SCADA-, MES- und Cloud-Analytics-Plattformen übertragbar.</p>
                         <p class="tags">Technologien: Python • asyncua • OPC-UA • X.509 / OpenSSL • Async I/O</p>
                         <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation/opcua-server-demo" target="_blank" rel="noopener">Repository anzeigen</a>
@@ -436,27 +418,19 @@ def ask_claude(query, chunks, top_k=5):
 server.set_endpoint(
     "opc.tcp://0.0.0.0:4840/freeopcua/server/"
 )
-
 await server.set_application_uri(
     "urn:opcua-demo:server"
 )
-
 server.set_security_policy([
     ua.SecurityPolicyType.Basic256Sha256_SignAndEncrypt
 ])
-
 await server.load_certificate("server_cert.pem")
-
 await server.load_private_key("server_key.pem")
-
 idx = await server.register_namespace(
     "http://opcua-demo.wisdom"
 )
-
 myobj = await server.nodes.objects.add_object(idx, "MyObject")
-
 temperature = await myobj.add_variable(idx, "Temperature", 21.5)
-
 counter = await myobj.add_variable(idx, "Counter", 0)</code></pre>
                         </div>
                         <div class="image-wrapper">
@@ -697,23 +671,15 @@ model.fit(train_ds, epochs=30, callbacks=[ReduceLROnPlateau(factor=0.5)])</code>
                             <span class="visual-label">Multi-Modell-Pipeline-Stack</span>
                             <pre><code>
 pipe = Pipeline([
-
     ('preprocessor', preprocessor),
-
     ('kbest', SelectKBest(
-
         score_func=mutual_info_classif, k=15)),
-
     ('smote', SMOTE(
-
         random_state=42, sampling_strategy=0.5)),
-
     ('classifier', RandomForestClassifier())
-
 ])
 
 pipe.fit(X_train, y_train)
-
 y_pred = pipe.predict(X_test)</code></pre>
                         </div>
                         <div class="image-wrapper">
@@ -740,17 +706,11 @@ y_pred = pipe.predict(X_test)</code></pre>
                             <span class="visual-label">Temporale Kreuzvalidierungsschleife</span>
                             <pre><code>
 tscv = TimeSeriesSplit(n_splits=10)
-
 for train_index, test_index in tscv.split(X):
-
     X_tr, X_val = X.iloc[train_index], X.iloc[test_index]
-
     y_tr, y_val = y.iloc[train_index], y.iloc[test_index]
-
     pipeline.fit(X_tr, y_tr)
-
     preds = pipeline.predict(X_val)
-
     scores.append(mean_squared_error(y_val, preds, squared=False))</code></pre>
                         </div>
                         <div class="image-wrapper">
@@ -766,9 +726,9 @@ for train_index, test_index in tscv.split(X):
                         <h3>Automatisierte Statistische Prozessregelung (SPC) &amp; Qualitätsfähigkeits-Engine</h3>
                     <div class="project-grid" data-category="ml">
                         <div class="project-details">
-                        <p><strong>Systemkontext:</strong> Echtzeit-Erkennung von Anomalien und Drift über Tausende kontinuierlicher Fabriksensorströme – als Ersatz für manuelle Diagramme durch eine systematische statistische Überwachung.</p>
-                        <p><strong>Engineering-Lösung:</strong> Entwicklung einer reinen NumPy/Pandas-Engine zur Berechnung dynamischer Untergruppenmittelwerte ($\bar{X}$) und Spannweiten ($R$) mithilfe standardisierter Regelungskonstanten ($A_2, D_3, D_4$). Programmierung aller 8 Nelson Run Rules, Implementierung von Page-Hinkley- und CUSUM-Drifterkennungen zur Identifikation von Mikroversätzen sowie Berechnung kurz- und langfristiger Prozessfähigkeitsindizes ($C_p, C_{pk}, P_p, P_{pk}$).</p>
-                        <p><strong>V&amp;V &amp; Wirkung:</strong> Entwicklung eines Diagnoseframeworks, das über Tausende von Streaming-Nodes läuft, automatisch ein zentrales Qualitätsdashboard erzeugt und Regelverletzungen erkennt, bevor Fehler auftreten – und damit prädiktive Qualitätssicherung in großem Maßstab ermöglicht.</p>
+                        <p><strong>Systemkontext:</strong> Echtzeit-Erkennung von Anomalien und Drift über Tausende kontinuierlicher Fabriksensorströme als Ersatz für manuelle Diagramme durch eine systematische statistische Überwachung.</p>
+                        <p><strong>Engineering-Lösung:</strong> Entwicklung einer reinen NumPy/Pandas-Engine zur Berechnung dynamischer Untergruppenmittelwerte (&#773;X) und Spannweiten (R) mithilfe standardisierter Regelungskonstanten (A<sub>2</sub>, D<sub>3</sub>, D<sub>4</sub>). Programmierung aller 8 Nelson Run Rules, Implementierung von Page-Hinkley- und CUSUM-Drifterkennungen zur Identifikation von Mikroversätzen sowie Berechnung kurz- und langfristiger Prozessfähigkeitsindizes (<i>C</i><sub>p</sub>, <i>C</i><sub>pk</sub>, <i>P</i><sub>p</sub>, <i>P</i><sub>pk</sub>).</p>
+                        <p><strong>V&amp;V &amp; Wirkung:</strong> Entwicklung eines Diagnoseframeworks, das über Tausende von Streaming-Nodes läuft, automatisch ein zentrales Qualitätsdashboard erzeugt und Regelverletzungen erkennt, bevor Fehler auftreten und damit prädiktive Qualitätssicherung in großem Maßstab ermöglicht.</p>
                         <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering/continuous-factory-process-control" target="_blank" rel="noopener">Repository anzeigen</a>
                         </div>
                         <div class="project-media">
@@ -776,19 +736,12 @@ for train_index, test_index in tscv.split(X):
                         <span class="visual-label">Formulierungen für Prozessfähigkeit &amp; Grenzwerte</span>
                         <pre><code># Process Variance Subgroup Logic
 def subgroup_stats(subgroups: np.ndarray):
-
     xbar = subgroups.mean(axis=1)
-
     R = subgroups.max(axis=1) - subgroups.min(axis=1)
-
     return xbar, R, float(xbar.mean()), float(R.mean())
-
 # Multi-Tier Drift Inversion Tracking
-
 Cpos = max(0.0, Cpos + zi - k)
-
 Cneg = min(0.0, Cneg + zi + k)
-
 if Cpos > h: ap.append(i); Cpos = 0.0</code></pre>
                         </div>
                         <div class="image-wrapper">
@@ -850,23 +803,14 @@ for feature, value in test_instance.items():
                         <span class="visual-label">Spektrale PCA &amp; Ensemble-Ausführung</span>
                         <pre><code># Isolated Spectral Decomposition
 pca = PCA(n_components=10)
-
 X_train_fft = pca.fit_transform(
-
     X_train_bal[:, [X.columns.get_loc(c) for c in fft_cols]]
-
 )
-
 # Feature Merging & Tuned Search Routing
-
 X_train_final = np.hstack([X_train_nonfft, X_train_fft])
-
 search = RandomizedSearchCV(
-
     model, param_dist, n_iter=20, scoring='f1_macro', cv=5
-
 )
-
 search.fit(X_train_final, y_train_bal)</code></pre>
                         </div>
                         <div class="image-wrapper">
