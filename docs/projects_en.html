@@ -30,7 +30,7 @@
                 <button class="category-tab active" data-category="simulation">Digital Twins &amp; Simulation</button>
                 <button class="category-tab" data-category="automation">Industrial Automation</button>
                 <button class="category-tab" data-category="vision">Computer Vision</button>
-                <button class="category-tab" data-category="ml">Industrial ML &amp; Analytics</button>
+                <button class="category-tab" data-category="ml">Industrial AI &amp; Analytics</button>
                 
                 
             </div>
@@ -263,10 +263,9 @@ Downtime & Storage Cost Tracker
                 <div class="carousel-dots">
                     <button class="carousel-dot active" aria-label="Slide 1"></button>
                     <button class="carousel-dot" aria-label="Slide 2"></button>
-                    <button class="carousel-dot" aria-label="Slide 3"></button>
                 </div>
                 <button class="carousel-btn" data-dir="1" aria-label="Next">&#8594;</button>
-                <span class="carousel-counter">1 / 3</span>
+                <span class="carousel-counter">1 / 2</span>
                 </div>
                 <div class="carousel-wrapper">
                 <div class="carousel-track">
@@ -320,63 +319,7 @@ oee = availability * performance * quality
                     </div>
                     </div>
 
-                    <!-- Slide 2: PDF RAG bot -->
-                    <div class="carousel-slide">
-                        <h3>Retrieval Augmented Generation Engine</h3>
-                        <div class="model-screenshot-container">
-                            <video width="100%" height="auto" controls muted loop playsinline >
-                                <source src="https://github.com/Chizobawisdom/Portfolio/raw/refs/heads/main/docs/images/Screen%20Recording%202026-08-18%20at%2005.01.35.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                    <div class="project-grid" data-category="automation">                        
-                        <div class="project-details">
-                        <p><strong>System Context:</strong> This project implements a retrieval-augmented generation (RAG) pipeline in raw Python, built without frameworks (no LangChain/LlamaIndex) to demonstrate direct control over every stage: PDF ingestion, chunking, embedding, vector search, and grounded LLM generation. The system indexes a folder of PDF documents and answers natural-language questions using only retrieved passages, citing the exact source file and page for every claim.</p>
-                        <p><strong>Engineering Solution:</strong> Built a page-level PDF text extractor (pypdf) that preserves source traceability down to the page. Implemented a sliding-window chunking algorithm with configurable overlap to prevent context loss at chunk boundaries. Generated 384-dimensional embeddings locally via sentence-transformers (all-MiniLM-L6-v2), normalizing vectors so cosine similarity reduces to a single dot product across the full corpus. Wrote a NumPy-based similarity search (query &middot; chunk<sub>embeddings</sub><sup>T</sup>) ranking thousands of chunks without an external vector database. Engineered a grounding prompt that constrains the Claude API to answer strictly from retrieved context, with an explicit fallback response when no relevant passage exists and verified against out-of-scope queries to confirm the model does not hallucinate beyond the provided sources.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Validated retrieval quality by inspecting similarity-score decay across ranked results (0.71 &rarr; 0.61 &rarr; 0.47 on a known-relevant query), confirming the ranking carries real signal rather than near-uniform scores. Cross-checked generated answers against source PDF text to confirm citation accuracy. Deployed with a Streamlit front end for interactive querying. Demonstrates core competency in unstructured document processing, vector search fundamentals, and LLM grounding: directly applicable to industrial use cases such as searchable equipment manuals, SOP/compliance document Q&amp;A, and maintenance knowledge retrieval.</p>
-                        <p class="tags">Technologies: Python • NumPy • sentence-transformers • Anthropic API • Streamlit • RAG</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation/pdf-rag-bot" target="_blank" rel="noopener">View Repository</a>
-                        </div>
-                        <div class="project-media">
-                        <div class="code-box">
-                            <span class="visual-label">Retrieval Block</span>
-                            <pre><code>
-def search_chunks(query, chunks, top_k=5):
-    query_embedding = model.encode(
-        [query], normalize_embeddings=True
-    )[0]
-    similarities = [
-        np.dot(query_embedding, chunk['embedding'])
-        for chunk in chunks
-    ]
-    top_indices = np.argsort(similarities)[-top_k:][::-1]
-
-    results = []
-    for i in top_indices:
-        result = chunks[i].copy()
-        result['score'] = float(similarities[i])
-        results.append(result)
-    return results
-
-def ask_claude(query, chunks, top_k=5):
-    retrieved_chunks = search_chunks(query, chunks, top_k=top_k)
-    prompt = build_prompt(query, retrieved_chunks)
-
-    response = client.messages.create(
-        model="claude-sonnet-4-5",
-        max_tokens=500,
-        messages=[{"role": "user", "content": prompt}]
-    )
-    return response.content[0].text, retrieved_chunks</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/RAGProcess.png" alt="RAG Workflow" class="project-img">
-                            <span class="image-caption">RAG Workflow based on README</span>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-
-                    <!-- Slide 3: Secured OPC-UA Server & Client -->
+                    <!-- Slide 2: Secured OPC-UA Server & Client -->
                     <div class="carousel-slide">
                         <h3>Secured OPC-UA Server &amp; Client</h3>
                     <div class="project-grid" data-category="automation">
@@ -637,43 +580,65 @@ model.fit(train_ds, epochs=30, callbacks=[ReduceLROnPlateau(factor=0.5)])</code>
                     <button class="carousel-dot" aria-label="Slide 2"></button>
                     <button class="carousel-dot" aria-label="Slide 3"></button>
                     <button class="carousel-dot" aria-label="Slide 4"></button>
+                    <button class="carousel-dot" aria-label="Slide 5"></button>
                 </div>
                 <button class="carousel-btn" data-dir="1" aria-label="Next">&#8594;</button>
-                <span class="carousel-counter">1 / 4</span>
+                <span class="carousel-counter">1 / 5</span>
                 </div>
                 <div class="carousel-wrapper">
                 <div class="carousel-track">
 
-                    <!-- Slide 1: Income Analytics -->
+                    <!-- Slide 1: PDF RAG bot -->
                     <div class="carousel-slide">
-                        <h3>Adult Income &amp; Demographic Analytics Pipeline</h3>
-                    <div class="project-grid" data-category="ml">                        
-                        <div class="project-details">                        
-                        <p><strong>System Context:</strong> Predictive demographic modeling pipeline designed for workforce and resource allocation decisions.</p>
-                        <p><strong>Engineering Solution:</strong> Built a leak-free pipeline using ColumnTransformer, Mutual Information feature selection (`SelectKBest`), SMOTE oversampling, and RandomForest ensemble classification.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Outperformed Naive Bayes baselines in precision and recall across imbalanced dataset profiles.</p>
-                        <p class="tags">Technologies: scikit-learn • SMOTE • Pipeline • Analytics</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering/adult-income-prediction" target="_blank" rel="noopener">View Repository</a>
+                        <h3>Retrieval Augmented Generation Engine</h3>
+                        <div class="model-screenshot-container">
+                            <video width="100%" height="auto" controls muted loop playsinline >
+                                <source src="https://github.com/Chizobawisdom/Portfolio/raw/refs/heads/main/docs/images/Screen%20Recording%202026-08-18%20at%2005.01.35.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    <div class="project-grid" data-category="automation">                        
+                        <div class="project-details">
+                        <p><strong>System Context:</strong> This project implements a retrieval-augmented generation (RAG) pipeline in raw Python, built without frameworks (no LangChain/LlamaIndex) to demonstrate direct control over every stage: PDF ingestion, chunking, embedding, vector search, and grounded LLM generation. The system indexes a folder of PDF documents and answers natural-language questions using only retrieved passages, citing the exact source file and page for every claim.</p>
+                        <p><strong>Engineering Solution:</strong> Built a page-level PDF text extractor (pypdf) that preserves source traceability down to the page. Implemented a sliding-window chunking algorithm with configurable overlap to prevent context loss at chunk boundaries. Generated 384-dimensional embeddings locally via sentence-transformers (all-MiniLM-L6-v2), normalizing vectors so cosine similarity reduces to a single dot product across the full corpus. Wrote a NumPy-based similarity search (query &middot; chunk<sub>embeddings</sub><sup>T</sup>) ranking thousands of chunks without an external vector database. Engineered a grounding prompt that constrains the Claude API to answer strictly from retrieved context, with an explicit fallback response when no relevant passage exists and verified against out-of-scope queries to confirm the model does not hallucinate beyond the provided sources.</p>
+                        <p><strong>V&amp;V &amp; Impact:</strong> Validated retrieval quality by inspecting similarity-score decay across ranked results (0.71 &rarr; 0.61 &rarr; 0.47 on a known-relevant query), confirming the ranking carries real signal rather than near-uniform scores. Cross-checked generated answers against source PDF text to confirm citation accuracy. Deployed with a Streamlit front end for interactive querying. Demonstrates core competency in unstructured document processing, vector search fundamentals, and LLM grounding: directly applicable to industrial use cases such as searchable equipment manuals, SOP/compliance document Q&amp;A, and maintenance knowledge retrieval.</p>
+                        <p class="tags">Technologies: Python • NumPy • sentence-transformers • Anthropic API • Streamlit • RAG</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation/pdf-rag-bot" target="_blank" rel="noopener">View Repository</a>
                         </div>
                         <div class="project-media">
                         <div class="code-box">
-                            <span class="visual-label">Multi-Model Pipeline Stack</span>
+                            <span class="visual-label">Retrieval Block</span>
                             <pre><code>
-pipe = Pipeline([
-    ('preprocessor', preprocessor),
-    ('kbest', SelectKBest(
-        score_func=mutual_info_classif, k=15)),
-    ('smote', SMOTE(
-        random_state=42, sampling_strategy=0.5)),
-    ('classifier', RandomForestClassifier())
-])
+def search_chunks(query, chunks, top_k=5):
+    query_embedding = model.encode(
+        [query], normalize_embeddings=True
+    )[0]
+    similarities = [
+        np.dot(query_embedding, chunk['embedding'])
+        for chunk in chunks
+    ]
+    top_indices = np.argsort(similarities)[-top_k:][::-1]
 
-pipe.fit(X_train, y_train)
-y_pred = pipe.predict(X_test)</code></pre>
+    results = []
+    for i in top_indices:
+        result = chunks[i].copy()
+        result['score'] = float(similarities[i])
+        results.append(result)
+    return results
+
+def ask_claude(query, chunks, top_k=5):
+    retrieved_chunks = search_chunks(query, chunks, top_k=top_k)
+    prompt = build_prompt(query, retrieved_chunks)
+
+    response = client.messages.create(
+        model="claude-sonnet-4-5",
+        max_tokens=500,
+        messages=[{"role": "user", "content": prompt}]
+    )
+    return response.content[0].text, retrieved_chunks</code></pre>
                         </div>
                         <div class="image-wrapper">
-                            <img src="images/Screenshot 2026-08-05 011216.png" alt="Income Analytics Pipeline" class="project-img">
-                            <span class="image-caption">Confusion Matrix</span>
+                            <img src="images/RAGProcess.png" alt="RAG Workflow" class="project-img">
+                            <span class="image-caption">RAG Workflow based on README</span>
                         </div>
                         </div>
                     </div>
@@ -710,6 +675,7 @@ for train_index, test_index in tscv.split(X):
                         </div>
                     </div>
                     </div>
+
                     <!-- Slide 3: Statistical Process Control -->
                     <div class="carousel-slide">
                         <h3>Automated Statistical Process Control (SPC) & Quality Capability Engine</h3>
@@ -742,36 +708,54 @@ if Cpos > h: ap.append(i); Cpos = 0.0</code></pre>
                     </div>
                     </div>
 
-                    <!-- Slide 4: Naive Bayes 
+                    <!-- Slide 4: NLP to SQL -->
                     <div class="carousel-slide">
-                        <h3>Custom Probabilistic Naive Bayes Sorting Algorithm</h3>
-                    <div class="project-grid" data-category="ml">                        
-                        <div class="project-details">                        
-                        <p><strong>System Context:</strong> Lightweight classification for edge devices or legacy industrial controllers where external ML frameworks cannot be installed or are too resource-intensive.</p>
-                        <p><strong>Engineering Solution:</strong> Built a pure Pandas classifier from first principles—calculating prior system states ($P(\text{Yes})$, $P(\text{No})$) via frequency lookups, mapping categorical streams to likelihood vectors ($P(X_i | Y)$), and applying Bayes' theorem iteratively to compute joint posterior values with normalized confidence intervals.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Deployed a fast, framework-free classification engine with absolute mathematical transparency—achieving operational decision-making on resource-constrained hardware.</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering/Probabilistic-classifier" target="_blank" rel="noopener">View Repository</a>
+                        <h3>Agentic NLP-to-SQL Pipeline for the Manufacturing Database</h3>
+                        <div class="model-screenshot-container">
+                            <video width="100%" height="auto" controls muted loop playsinline>
+                                <source src="https://github.com/Chizobawisdom/Portfolio/raw/refs/heads/main/docs/images/demo%20(1).mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    <div class="project-grid" data-category="ml">
+                        <div class="project-details">
+                        <p><strong>System Context:</strong> Factory workers and managers require fast access to complex production data (e.g., WIP, First Pass Yield, cycle times) to identify bottlenecks. However, the data resides in a relational MariaDB with over 3.2 GB of production data and complex relationships. This project implements a multi-stage AI pipeline that translates natural language questions into executable SQL queries.</p>
+                        <p><strong>Engineering Solution:</strong> 
+                            <ul>
+                                <li>Dockerized Infrastructure: Setup of an isolated, containerized environment (MariaDB, Python App, Streamlit UI) for secure processing of large data volumes without impacting live production systems.</li>
+                                <li>Baseline vs. Agentic Workflow: Development of a baseline (single LLM prompt) and an agent (self-correction loop). The agent uses the database as a tool to detect syntax errors in generated SQL queries, feed them back to the LLM, and correct them autonomously.</li>
+                                <li>Schema-Aware Prompting: Dynamic extraction of the database schema (including sample data) via SQLAlchemy to maximize the LLM's context and minimize hallucinations.</li>
+                                <li>Automated Evaluation Pipeline: Implementation of an evaluator that executes the generated queries against "Gold SQL" and measures Execution Accuracy.</li>
+                            </ul></p>
+                        <p><strong>V&amp;V &amp; Impact:</strong> The pipeline was successfully validated in a Docker environment. Through its self-correction loop, the agent prevented hard pipeline crashes caused by syntax errors (e.g., from chatty LLM output) and improved robustness compared to the baseline. Evaluation on a benchmark dataset yielded an Execution Accuracy of 73.68% for both systems, highlighting that semantic accuracy (business logic) is a greater hurdle in the NLP-to-SQL domain than pure syntax. The system provides an interactive Streamlit dashboard for real-time queries and demonstrates the seamless integration of Large Language Models into industrial database ecosystems.</p>
+                        <p class="tags">Technologies: LangGraph • Docker • Python • Anthropic • SQL • NLP</p>
+                        <a class="button-link" href="https://github.com/Chizobawisdom/Group_8_Intelligentsystems_Casestudy.git" target="_blank" rel="noopener">View Repository</a>
                         </div>
                         <div class="project-media">
                         <div class="code-box">
-                        <span class="visual-label">Bayesian Rule Logic</span>
-                        <pre><code># Joint Posterior & Conditional Mapping
-def conditional_probability(feature, value, target):
-    subset = df[y == target]
-    count = len(subset[subset[feature] == value])
-    return count / len(subset)
-
-for feature, value in test_instance.items():
-    p_yes *= conditional_probability(feature, value, "Yes")
-    p_no *= conditional_probability(feature, value, "No")</code></pre>
+                        <span class="visual-label">Correction Logic</span>
+                        <pre><code># Agentic Self-Correction Loop
+success, error_msg = execute_sql(engine, sql_query)
+if not success:
+    print(f"First attempt failed: {error_msg}")
+    correction_prompt = f"""
+    The SQL query you wrote failed with this database error:
+    {error_msg}
+    Here was your query:
+    {sql_query}
+    Please fix the query and output ONLY the corrected SQL.
+    """
+    sql_query = generate_sql(llm, schema_text, correction_prompt)
+    success, error_msg = execute_sql(engine, sql_query)
+    if success:
+        print("Agent successfully corrected the SQL!")</code></pre>
                         </div>
                         <div class="image-wrapper">
-                            <img src="images/projects/time-series.jpg" alt="Time Series Plot" class="project-img">
+                            <img src="images/Agentischer NLP-zu-SQL-Workflow.png" alt="Workflow_Diagram" class="project-img">
                             <span class="image-caption">NA</span>
                         </div>
                         </div>
                     </div>
-                    </div>   -->
+                    </div>
 
                     <!-- Slide 5: Time Series Forecasting -->
                     <div class="carousel-slide">
