@@ -716,12 +716,12 @@ if Cpos > h: ap.append(i); Cpos = 0.0</code></pre>
                     </div>
                     </div>
 
-                    <!-- Slide 4: Naive Bayes -->
+                    <!-- Slide 4: NLP to SQL -->
                     <div class="carousel-slide">
                         <h3>Agentic NLP-to-SQL Pipeline für die Fertigungsdatenbank</h3>
                         <div class="model-screenshot-container">
                             <video width="100%" height="auto" controls muted loop playsinline>
-                                <source src="https://github.com/Chizobawisdom/Portfolio/raw/refs/heads/main/docs/images/Screen%20Recording%202026-08-18%20at%2005.01.35.mp4" type="video/mp4">
+                                <source src="https://github.com/Chizobawisdom/Portfolio/raw/refs/heads/main/docs/images/demo%20(1).mp4" type="video/mp4">
                             </video>
                         </div>
                     <div class="project-grid" data-category="ml">
@@ -735,6 +735,7 @@ if Cpos > h: ap.append(i); Cpos = 0.0</code></pre>
                                 <li>Automatisierte Evaluierungs-Pipeline: Implementierung eines Evaluators, der die generierten Queries gegen "Gold SQL" ausführt und die Execution Accuracy misst.</li>
                             </ul></p>
                         <p><strong>V&amp;V &amp; Wirkung:</strong> Die Pipeline wurde erfolgreich in einer Docker-Umgebung validiert. Der Agent verhinderte durch seinen Self-Correction-Loop harte Pipeline-Abstürze bei Syntaxfehlern (z.B. durch Chatty-LLM-Output) und verbesserte die Robustheit im Vergleich zur Baseline. Die Evaluierung auf einem Benchmark-Datensatz ergab eine Execution Accuracy von 73,68 % für beide Systeme, was verdeutlicht, dass semantische Genauigkeit (Business-Logik) im NLP-to-SQL-Bereich eine größere Hürde darstellt als reine Syntax. Das System liefert ein interaktives Streamlit-Dashboard für Echtzeit-Abfragen und demonstriert die nahtlose Integration von Large Language Models in industrielle Datenbank-Ökosysteme.</p>
+                        <p class="tags">Technologien: Langraph • Docker • Python • Anthropic• SQL • NLP</p>
                         <a class="button-link" href="https://github.com/Chizobawisdom/Group_8_Intelligentsystems_Casestudy.git" target="_blank" rel="noopener">Repository anzeigen</a>
                         </div>
                         <div class="project-media">
@@ -743,7 +744,7 @@ if Cpos > h: ap.append(i); Cpos = 0.0</code></pre>
                         <pre><code># Agentic Self-Correction Loop
 success, error_msg = execute_sql(engine, sql_query)
 if not success:
-    print(f"⚠️ First attempt failed: {error_msg}")
+    print(f"First attempt failed: {error_msg}")
     correction_prompt = f"""
     The SQL query you wrote failed with this database error:
     {error_msg}
@@ -754,7 +755,7 @@ if not success:
     sql_query = generate_sql(llm, schema_text, correction_prompt)
     success, error_msg = execute_sql(engine, sql_query)
     if success:
-        print("✅ Agent successfully corrected the SQL!")</code></pre>
+        print("Agent successfully corrected the SQL!")</code></pre>
                         </div>
                         <div class="image-wrapper">
                             <img src="images/Agentischer NLP-zu-SQL-Workflow.png" alt="Workflow_Diagram" class="project-img">
