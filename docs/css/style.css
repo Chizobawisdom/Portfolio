@@ -346,6 +346,40 @@ section a:hover {
 .btn-download:hover .download-icon {
   stroke: #ffffff;
 }
+
+.btn-download2 {
+    /* 1. Fix the layout and alignment */
+    display: flex;               /* Aligns the SVG icon and text side-by-side */
+    align-items: center;         /* Vertically centers the icon and text */
+    justify-content: center;     /* Horizontally centers them inside the button */
+    gap: 0.5rem;                 /* Adds space between the icon and the text */
+    
+    /* 2. Reduce length and center on page */
+    width: fit-content;          /* Shrinks the button to fit the text */
+    margin: -1.5rem auto 2rem auto;           /* Centers the button (auto left/right) and adds spacing */
+    
+    /* 3. Visual styling (matching your dark theme) */
+    padding: 0.75rem 1.5rem;
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    color: #c9d1d9;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-download2:hover {
+    background-color: #21262d;
+    border-color: #38bdf8; /* Cyan hover effect */
+    color: #ffffff;
+}
+
+/* Ensure the SVG doesn't shrink weirdly inside the flex container */
+.download-icon2 {
+    flex-shrink: 0;
+} 
 /* --- Work Experience Cards (.project2) --- */
 .experience {
   display: flex;
@@ -734,8 +768,8 @@ section a:hover {
 
 /* Card Background & Border */
 .skill-card {
-    background-color: #161b22; /* Dark charcoal background matching your screenshot */
-    border: 1px solid #21262d; /* Very subtle dark border */
+    background-color: #141418; /* Dark charcoal background matching your screenshot */
+    border: 1px solid #2d2d35; /* Very subtle dark border */
     border-radius: 12px;
     padding: 1.75rem;
     box-shadow: none;
@@ -744,7 +778,7 @@ section a:hover {
 
 .skill-card:hover {
     transform: translateY(-2px);
-    border-color: #38bdf8; /* Cyan glow on hover */
+    border-color: #6c757d; /* Cyan glow on hover */
 }
 
 /* Card Title */
@@ -752,7 +786,7 @@ section a:hover {
     font-size: 1.15rem;
     font-weight: 600;
     margin-bottom: 1.25rem;
-    color: #38bdf8; /* Vivid cyan blue from your screenshot */
+    color: #9e9ea7; /* Vivid cyan blue from your screenshot */
     letter-spacing: 0.02em;
 }
 
