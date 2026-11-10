@@ -424,26 +424,29 @@ counter = await myobj.add_variable(idx, "Counter", 0)</code></pre>
                             </div>
                             <div class="project-media">
                                 <div class="code-box">
-                                    <span class="visual-label">Dense SIFT + Codebook-Pipeline</span>
+                                    <span class="visual-label">Dense SIFT Pipeline</span>
                                     <pre><code>
-# Extraktion dichter SIFT-Deskriptoren
-sift = cv2.SIFT_create()
-keypoints = [cv2.KeyPoint(x, y, 16)
-            for y in range(0, 256, 8)
-            for x in range(0, 256, 8)]
-_, descriptors = sift.compute(gray, keypoints)
+# Dense SIFT descriptor extraction
+def dense_keypoints(size=IMG_SIZE, step=STEP, kp_size=KP_SIZE):
+    half = kp_size // 2
+    return [
+        cv2.KeyPoint(float(x), float(y), kp_size)
+        for y in range(half, size - half + 1, step)
+        for x in range(half, size - half + 1, step)
+    ]
 
-# Aufbau des visuellen Vokabulars mit MiniBatchKMeans
-codebook = MiniBatchKMeans(n_clusters=512, batch_size=1024)
-codebook.fit(np.vstack(train_descriptors))
 
-# Kodierung der räumlichen Pyramide (1x1 + 1x3 Regionen)
-hist = np.concatenate([region_hist(img, region, codebook)
-                    for region in pyramid_regions(img.shape)])
-
-# Klassifikation mit RBF-Kernel-SVM
-clf = SVC(kernel='rbf', C=1.0, gamma='scale')
-clf.fit(X_train_pca, y_train)</code></pre>
+def extract_dense_sift(path):
+    """Return (descriptors [N,128], y-coordinates [N]) for one image."""
+    img = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
+    if img is None:
+        raise IOError(f"Could not read image: {path}")
+    img = cv2.resize(img, (IMG_SIZE, IMG_SIZE))
+    sift = cv2.SIFT_create()
+    kps = dense_keypoints()
+    kps, desc = sift.compute(img, kps)
+    ys = np.array([kp.pt[1] for kp in kps], dtype=np.float32)
+    return desc.astype(np.float32), ys</code></pre>
                                 </div>
                                 <div class="image-wrapper">
                                     <img src="images/Screenshot 2026-11-10 at 16.05.43.png" alt="BoVW Szenenklassifikationsergebnisse" class="project-img">
