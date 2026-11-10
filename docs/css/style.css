@@ -697,3 +697,102 @@ section a:hover {
   border: 1px solid #ddd;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* ===== Skills Section — Matched to Theme ===== */
+
+.skills-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 5vw;
+}
+
+/* Main Heading & Underline */
+.skills-section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #333333; /* The thin gray line under the title */
+}
+
+/* Intro Paragraph */
+.skills-intro {
+    max-width: 900px;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+    color: #9ca3af; /* Muted light gray text */
+    font-size: 1rem;
+}
+
+/* Grid Layout */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Card Background & Border */
+.skill-card {
+    background-color: #161b22; /* Dark charcoal background matching your screenshot */
+    border: 1px solid #21262d; /* Very subtle dark border */
+    border-radius: 12px;
+    padding: 1.75rem;
+    box-shadow: none;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-2px);
+    border-color: #38bdf8; /* Cyan glow on hover */
+}
+
+/* Card Title */
+.skill-card h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    color: #38bdf8; /* Vivid cyan blue from your screenshot */
+    letter-spacing: 0.02em;
+}
+
+/* Pills Container */
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+/* Individual Pills */
+.skill-pill {
+    display: inline-block;
+    background-color: #21262d; /* Dark gray pill */
+    color: #c9d1d9; /* Off-white text */
+    font-size: 0.875rem;
+    padding: 0.5rem 0.95rem;
+    border-radius: 999px; /* Fully rounded */
+    border: none; /* Removed the border */
+    white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.skill-pill:hover {
+    background-color: #30363d;
+    color: #ffffff;
+    cursor: default;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .skills-section {
+        padding: 3rem 5vw;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-card {
+        padding: 1.25rem;
+    }
+}
