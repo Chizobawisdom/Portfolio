@@ -121,112 +121,160 @@
 
         <!-- ─── SKILLS – CAROUSEL ─── -->
 
-        <section class="carousel-section">
+        <section >
             <h2>Professional Skills</h2>
-            <p>
-                Development and digitalization of manufacturing and production systems, industrial data analysis, manufacturing analytics, process automation, as well as the development of data-driven solutions to optimize production, quality, and traceability.
+            <p class="experience">
+                Development and digitalization of manufacturing and production systems, industrial data analysis, manufacturing analytics, process automation, digital twins, machine vision, and the development of data-driven solutions to optimize production, quality, and traceability.
             </p>
 
-            <div class="category-tabs">
-                <button class="category-tab active" data-category="core">
-                    Manufacturing Analytics
-                </button>
-                <button class="category-tab" data-category="mfg">
-                    Manufacturing Systems & Quality
-                </button>
-                <button class="category-tab" data-category="tools">
-                    Automation & Digitalization
-                </button>
-            </div>
+            <div class="experience">
 
-            <!-- Manufacturing Analytics -->
-            <div class="carousel-block active" data-category="core">
-                <div class="carousel-wrapper">
-                    <div class="carousel-track">
-                        <div class="carousel-slide">
-                            <div class="project">
-                                <h3>Manufacturing Analytics & Industrial Data</h3>
-                                <ul>
-                                    <li>
-                                        <strong>Production Data Analysis:</strong> Development of data-driven solutions for analyzing production, quality, and process data using SQL, Python, and statistical methods.
-                                    </li>
+                <!-- 1. Manufacturing Analytics -->
+                <article class="project2" data-category="core">
+                    <h3>Manufacturing Analytics & Industrial Data</h3>
+                    <ul>
+                        <li>
+                            Production Data Analysis: Development of data-driven solutions for analyzing production, quality, and process data using SQL, Python, and statistical methods.
+                        </li>
+                        <li>
+                            KPI Development & Reporting: Design and implementation of key metrics such as First Pass Yield (FPY), defect rate, throughput, Work-in-Progress (WIP), lead time, Overall Equipment Effectiveness (OEE), and equipment utilization.
+                        </li>
+                        <li>
+                            Manufacturing Intelligence & Dashboards: Development of real-time dashboards and analytics platforms using Grafana, Power BI, Plotly Dash, Streamlit, and SQL-based data models to support operational and strategic decision-making.
+                        </li>
+                        <li>
+                            Data Integration & ETL: Building automated data pipelines for capturing, transforming, and providing production data from manufacturing systems and enterprise applications.
+                        </li>
+                        <li>
+                            Statistical Process Control (SPC): Implementation of control charts (X̅-R), Nelson Run Rules, Page-Hinkley and CUSUM drift detection, and capability analysis (Cp, Cpk, Pp, Ppk) for real-time quality surveillance across streaming sensor data.
+                        </li>
+                        <li>
+                            Time-Series Forecasting: Demand and load forecasting using rolling <code>TimeSeriesSplit</code> cross-validation to preserve chronological ordering and eliminate temporal data leakage.
+                        </li>
+                        <li>
+                            Data Engineering: Building relational data models, complex SQL queries, database views, and ETL pipelines across MariaDB, SQLite, and enterprise systems; API integration and automated data transformation with Python, SQL, Excel, and VBA.
+                        </li>
+                    </ul>
+                </article>
 
-                                    <li>
-                                        <strong>KPI Development & Reporting:</strong> Design and implementation of key metrics such as First Pass Yield (FPY), defect rate, throughput, Work-in-Progress (WIP), lead time, and equipment utilization.
-                                    </li>
+                <!-- 2. Manufacturing Systems & Quality -->
+                <article class="project2" data-category="mfg">
+                    <h3>Manufacturing Systems, Quality & Traceability</h3>
+                    <ul>
+                        <li>
+                            Manufacturing Systems Development: Development and enhancement of production systems to support manufacturing control, quality assurance, and traceability across the entire product lifecycle.
+                        </li>
+                        <li>
+                            Production Optimization: Analysis of material flow, bottlenecks, cycle times, and process performance for the continuous improvement of manufacturing operations.
+                        </li>
+                        <li>
+                            Quality and Defect Analysis: Investigation of process and quality data to identify root causes, defect patterns, and potential for improvement.
+                        </li>
+                        <li>
+                            Traceability & Production History: Development of solutions for tracking products, production steps, and quality events within complex manufacturing environments.
+                        </li>
+                        <li>
+                            Quality Systems & Standards: Working knowledge of IATF 16949, AEC-Q102, EN9100, and EASA Part-145/Part-21 requirements; experience with PPAP documentation (CDC, Flow Charts, Control Plans) and audit readiness.
+                        </li>
+                        <li>
+                            Root Cause Analysis & CAPA: Structured problem-solving using 8D, 5 Why, and Ishikawa diagrams; CAPA processes, First Article Inspections (FAIs), NCRs, and customer complaint handling.
+                        </li>
+                        <li>
+                            Lean & Continuous Improvement: Gemba walks, 5S, Standard Work, process waste reduction, and standardised workflows for improved quality and efficiency.
+                        </li>
+                        <li>
+                            Digital Quality Workflows: Designing Microsoft Power Apps solutions to transform manual RCA and quality processes into standardised, traceable digital workflows.
+                        </li>
+                    </ul>
+                </article>
 
-                                    <li>
-                                        <strong>Manufacturing Intelligence:</strong> Development of real-time dashboards and analytics platforms using Grafana, Power BI, and SQL-based data models to support operational and strategic decision-making.
-                                    </li>
+                <!-- 3. Automation & Digitalization -->
+                <article class="project2" data-category="tools">
+                    <h3>Automation, Integration & Digitalization</h3>
+                    <ul>
+                        <li>
+                            Workflow Automation: Development of automated processes using n8n, Power Automate, VBA macros, and database-driven solutions to reduce manual tasks.
+                        </li>
+                        <li>
+                            Digital Manufacturing Applications: Development of custom applications and user interfaces using Scriptcase, SQL, and web technologies to support shopfloor and engineering processes.
+                        </li>
+                        <li>
+                            System Integration (IT/OT): Connecting production systems, databases, APIs, and visualization platforms to create seamless data and information flows.
+                        </li>
+                        <li>
+                            Industrial PLC Programming: IEC 61131-3 ladder logic (seal-in circuits, interlocked counters, latched fault handshakes) in OpenPLC; hardware process simulation via Modbus TCP coils.
+                        </li>
+                        <li>
+                            Industrial Communication Protocols: Modbus TCP (read-only telemetry polling, writable coils) and secured OPC-UA (X.509 certificate authentication, Basic256Sha256 SignAndEncrypt, namespace resolution, and subscription-based polling).
+                        </li>
+                        <li>
+                            API & Database Development: Designing and consuming APIs, building relational data models, and writing efficient SQL for production and analytics applications.
+                        </li>
+                        <li>
+                            Containerisation & Deployment: Docker-based infrastructure for isolated, reproducible industrial applications (MariaDB, Python services, Streamlit UI).
+                        </li>
+                        <li>
+                            Technologies & Tools: Grafana, MariaDB, SQLite, SQL, Python, Scriptcase, n8n, Power Automate, Power BI, Power Apps, SAP, SharePoint, Excel, KNIME, MATLAB, OpenPLC, LTspice, Docker, and modern web technologies.
+                        </li>
+                    </ul>
+                </article>
 
-                                    <li>
-                                        <strong>Data Integration & ETL:</strong> Building automated data pipelines for capturing, transforming, and providing production data from manufacturing systems and enterprise applications.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <!-- 4. Digital Twins & Simulation -->
+                <article class="project2" data-category="sim">
+                    <h3>Digital Twins & Simulation</h3>
+                    <ul>
+                        <li>
+                            Discrete-Event Simulation: Object-oriented DES in Python (<code>simpy</code>) and AnyLogic (Java agents, multi-method modelling) to mirror real-time part flow across multi-station production constraints.
+                        </li>
+                        <li>
+                            Stochastic & Reliability Modelling: Exponential MTBF/MTTR breakdown processes, Gaussian cycle-time variation, measurement noise, and closed-loop rework/scrap routing logic.
+                        </li>
+                        <li>
+                            Bottleneck & Capacity Analysis: Station utilisation, queue-depth tracking, throughput analysis, OEE, scrap-rate calculation, and bottleneck identification; parameter-variation experiments with 95% confidence intervals.
+                        </li>
+                        <li>
+                            Queueing Theory & Validation: Validating simulation baselines against theoretical M/G/1 queueing models; warm-up-phase design to eliminate transient startup bias.
+                        </li>
+                        <li>
+                            Control-System Simulation: LTspice modelling of analogue front-end circuits (instrumentation amplifiers, Sallen-Key filters), Bode-plot frequency-domain analysis, and physical/virtual twin validation against oscilloscope test data.
+                        </li>
+                        <li>
+                            Logistics & Warehouse Simulation: AnyLogic models balancing storage-buffer sizing against downtime cost, with dynamic stop/resume material routing when downstream bottlenecks occur.
+                        </li>
+                        <li>
+                            Tools: Python (<code>simpy</code>, <code>numpy</code>, <code>scipy</code>), AnyLogic, LTspice, Plotly.
+                        </li>
+                    </ul>
+                </article>
 
-            <!-- Manufacturing Systems -->
-            <div class="carousel-block" data-category="mfg">
-                <div class="carousel-wrapper">
-                    <div class="carousel-track">
-                        <div class="carousel-slide">
-                            <div class="project">
-                                <h3>Manufacturing Systems, Quality & Traceability</h3>
-                                <ul>
-                                    <li>
-                                        <strong>Manufacturing Systems Development:</strong> Development and enhancement of production systems to support manufacturing control, quality assurance, and traceability across the entire product lifecycle.
-                                    </li>
+                <!-- 5. Machine Vision & Applied AI -->
+                <article class="project2" data-category="vision">
+                    <h3>Machine Vision & Applied AI</h3>
+                    <ul>
+                        <li>
+                            Classical Computer Vision: Dense SIFT descriptor extraction, Bag of Visual Words (BoVW) with MiniBatchKMeans codebooks, spatial-pyramid encoding, PCA dimensionality reduction, and RBF-kernel SVM classification (8-category scene recognition benchmark).
+                        </li>
+                        <li>
+                            Image Processing: Histogram matching/specification from raw NumPy (CDF matching, LUT indexing) for air-gapped embedded vision devices; OpenCV-based preprocessing and visualisation.
+                        </li>
+                        <li>
+                            Deep Learning (Transfer Learning): Fine-tuning EfficientNetV2B0 (partial layer unfreezing, data augmentation, early stopping) and ResNet50 (two-stage fine-tuning with learning-rate reduction) for industrial part and vehicle classification; TensorFlow/Keras deployment format.
+                        </li>
+                        <li>
+                            Industrial ML & Predictive Maintenance: FFT spectral feature extraction, targeted PCA, SMOTE class-imbalance handling, and LightGBM (<code>LGBMClassifier</code>) with <code>RandomizedSearchCV</code> for multi-class machinery fault diagnosis.
+                        </li>
+                        <li>
+                            Retrieval-Augmented Generation (RAG): PDF ingestion, sliding-window chunking, sentence-transformer embeddings, NumPy-based cosine similarity search, and grounded LLM generation with page-level citation traceability (Claude API, Streamlit front end).
+                        </li>
+                        <li>
+                            Agentic AI for Manufacturing Data: Multi-stage NLP-to-SQL pipeline with schema-aware prompting, self-correcting agent loops, and automated execution-accuracy evaluation against “Gold SQL”; Dockerised MariaDB backend with Streamlit UI.
+                        </li>
+                        <li>
+                            Libraries & Tools: OpenCV, NumPy, pandas, scikit-learn, TensorFlow/Keras, LightGBM, sentence-transformers, pypdf, SQLAlchemy, Streamlit, Plotly Dash.
+                        </li>
+                    </ul>
+                </article>
 
-                                    <li>
-                                        <strong>Production Optimization:</strong> Analysis of material flow, bottlenecks, cycle times, and process performance for the continuous improvement of manufacturing operations.
-                                    </li>
-
-                                    <li>
-                                        <strong>Quality and Defect Analysis:</strong> Investigation of process and quality data to identify root causes, defect patterns, and potential for improvement.
-                                    </li>
-
-                                    <li>
-                                        <strong>Traceability & Production History:</strong> Development of solutions for tracking products, production steps, and quality events within complex manufacturing environments.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Automation & Digitalisation -->
-            <div class="carousel-block" data-category="tools">
-                <div class="carousel-wrapper">
-                    <div class="carousel-track">
-                        <div class="carousel-slide">
-                            <div class="project">
-                                <h3>Automation, Integration & Digitalization</h3>
-                                <ul>
-                                    <li>
-                                        <strong>Workflow Automation:</strong> Development of automated processes using n8n, Power Automate, and database-driven solutions to reduce manual tasks.
-                                    </li>
-
-                                    <li>
-                                        <strong>Digital Manufacturing Applications:</strong> Development of custom applications and user interfaces using Scriptcase, SQL, and web technologies to support shopfloor and engineering processes.
-                                    </li>
-
-                                    <li>
-                                        <strong>System Integration:</strong> Connecting production systems, databases, APIs, and visualization platforms to create seamless data and information flows.
-                                    </li>
-
-                                    <li>
-                                        <strong>Technologies & Tools:</strong> Grafana, MariaDB, SQL, Python, Scriptcase, n8n, Power BI, SAP, SharePoint, Excel, KNIME, MATLAB, and modern web technologies.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
