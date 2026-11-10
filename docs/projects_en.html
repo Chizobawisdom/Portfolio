@@ -418,41 +418,50 @@ df.to_csv(f"headlines_{now}.csv")</code></pre>
                 <div class="carousel-wrapper">
                 <div class="carousel-track">
 
-                    <!-- Slide 1: Histogram Specification 
+                    Slide 1: BoVW Scene Classification 
                     <div class="carousel-slide">
-                        <h3>Histogram Specification for Image Enhancement</h3>
-                        <div class="model-screenshot-container">
-                            <img src="images/Screenshot 2026-08-05 010508.png" alt="AnyLogic Quality Inspection Process Flowchart and Analytics Dashboard" loading="lazy">
-                        </div>
-                    <div class="project-grid" data-category="vision">                        
-                        <div class="project-details">                        
-                        <p><strong>System Context:</strong> Image pre-processing stage for inline visual quality control under variable plant lighting conditions.</p>
-                        <p><strong>Engineering Solution:</strong> Applied `skimage.exposure.match_histograms` to align tonal distributions against high-contrast reference profiles.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Eliminated lighting variations, significantly raising downstream CNN defect classification robustness.</p>
-                        <p class="tags">Technologies: OpenCV • scikit-image • Matplotlib • Python</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision/histogram-matching" target="_blank" rel="noopener">View Repository</a>
+                    <h3>Bag of Visual Words Scene Classification</h3>
+                    <div class="model-screenshot-container">
+                        <img src="mages/Bag of Visual Words Pipeline.png" alt="BoVW Pipeline: Dense SIFT → Codebook → Spatial Pyramid → SVM" loading="lazy">
+                    </div>
+                    <div class="project-grid" data-category="vision">
+                        <div class="project-details">
+                            <p><strong>System Context:</strong> Scene classification across 8 categories (coast, forest, highway, insidecity, mountain, opencountry, street, tallbuilding) for automated visual recognition pipelines.</p>
+                            <p><strong>Engineering Solution:</strong> Built a Bag of Visual Words pipeline using dense SIFT descriptors (grid step=8, keypoint size=16), a 512‑word MiniBatchKMeans codebook, horizontal spatial pyramid encoding, PCA (64 components), and an RBF‑kernel SVM classifier.</p>
+                            <p><strong>V&amp;V &amp; Impact:</strong> 8‑fold stratified cross‑validation on 1,882 training images and evaluation on 806 held‑out test images. Replicates the best BoVW configuration from arXiv:2105.04895, delivering robust scene categorization without deep learning.</p>
+                            <p class="tags">Technologies: OpenCV • scikit-learn • NumPy • BoVW • Python</p>
+                            <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision/bovw-project" target="_blank" rel="noopener">View Repository</a>
                         </div>
                         <div class="project-media">
-                        <div class="code-box">
-                            <span class="visual-label">Histogram Matching Pipeline</span>
-                            <pre><code>
-image = cv2.cvtColor(img_dark, cv2.COLOR_BGR2RGB)
-matched = match_histograms(image, reference)
-matched = matched.astype(np.uint8)
+                            <div class="code-box">
+                                <span class="visual-label">Dense SIFT + Codebook Pipeline</span>
+                                <pre><code>
+# Dense SIFT descriptor extraction
+sift = cv2.SIFT_create()
+keypoints = [cv2.KeyPoint(x, y, 16)
+            for y in range(0, 256, 8)
+            for x in range(0, 256, 8)]
+_, descriptors = sift.compute(gray, keypoints)
 
-for j, col in enumerate(('red','green','blue')):
-    img_hist, bins = exposure.histogram(
-        img[:, :, j], nbins=256)
-    axes[j, i].plot(
-        bins, img_hist / img_hist.max(), color=col)</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/output.png" alt="Histogram Comparison" class="project-img">
-                            <span class="image-caption">Histogram Distribution Overlay</span>
-                        </div>
+# Build visual vocabulary with MiniBatchKMeans
+codebook = MiniBatchKMeans(n_clusters=512, batch_size=1024)
+codebook.fit(np.vstack(train_descriptors))
+
+# Spatial pyramid encoding (1x1 + 1x3 regions)
+hist = np.concatenate([region_hist(img, region, codebook)
+                    for region in pyramid_regions(img.shape)])
+
+# Classify with RBF-kernel SVM
+clf = SVC(kernel='rbf', C=1.0, gamma='scale')
+clf.fit(X_train_pca, y_train)</code></pre>
+                            </div>
+                            <div class="image-wrapper">
+                                <img src="images/Screenshot 2026-11-10 at 16.05.43.png" alt="BoVW Scene Classification Results" class="project-img">
+                                <span class="image-caption">Confusion Matrix &amp; Classification Report</span>
+                            </div>
                         </div>
                     </div>
-                    </div>    -->
+                </div>
 
                     <!-- Slide 2: Manual Histogram Matching -->
                     <div class="carousel-slide">
