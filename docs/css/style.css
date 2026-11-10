@@ -830,3 +830,157 @@ section a:hover {
         padding: 1.25rem;
     }
 }
+/* ===== Projects Section ===== */
+.projects-section {
+    padding: 3rem 0;
+}
+
+.projects-section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.section-desc {
+    color: #9ca3af;
+    margin-bottom: 2rem;
+    max-width: 900px;
+    line-height: 1.6;
+}
+
+/* Tabs */
+.category-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 3rem;
+}
+
+.category-tab {
+    background-color: #141418;
+    border: 1px solid #30363d;
+    color: #9e9ea7;
+    padding: 0.6rem 1.25rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.category-tab:hover {
+    border-color: #21262d;
+    color: #ffffff;
+}
+
+.category-tab.active {
+    background-color: #495057;
+    border-color: #6c757d;
+    color: #ffffff;
+}
+
+/* Containers */
+.projects-container {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    gap: 2rem; /* Space between cards */
+}
+
+.projects-container.active {
+    display: flex; /* Shows active category vertically */
+}
+
+/* ===== Individual Project Card ===== */
+.project-card {
+    background-color: #0d1117; /* Matches your page background */
+    border: 1px solid #30363d;
+    border-radius: 16px;
+    padding: 2.5rem;
+}
+
+.project-card h3 {
+    font-size: 1.6rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.project-subtitle {
+    color: #9CDCFE; /* Cyan subtitle */
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+/* Tech Tags (Pills) */
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.tag {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    color: #c9d1d9;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+}
+
+/* Repository Button */
+.project-actions {
+    margin-bottom: 2.5rem;
+}
+
+.btn-repo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: transparent;
+    border: 1px solid #9CDCFE;
+    color: #9CDCFE;
+    padding: 0.6rem 1.5rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-repo:hover {
+    background-color: #9CDCFE;
+    color: #0d1117;
+}
+
+/* Top Image/Video Container */
+.model-screenshot-container {
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #30363d;
+}
+
+.model-screenshot-container img,
+.model-screenshot-container video {
+    width: 100%;
+    display: block;
+}
+
+/* Inner Grid (Code + Images vs Text) */
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    border-top: 1px solid #30363d;
+    padding-top: 2rem;
+}
+
+@media (max-width: 900px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+    .project-card {
+        padding: 1.5rem;
+    }
+}

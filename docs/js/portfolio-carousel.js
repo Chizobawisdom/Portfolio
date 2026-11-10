@@ -1,112 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Helper function to update the wrapper height to match the current slide
-  function updateWrapperHeight(block, slideIndex) {
-    const wrapper = block.querySelector(".carousel-wrapper");
-    const slides = block.querySelectorAll(".carousel-slide");
-    const targetSlide = slides[slideIndex];
+    const tabs = document.querySelectorAll(".category-tab");
+    const containers = document.querySelectorAll(".projects-container");
 
-    if (!wrapper || !targetSlide) return;
+    tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            // 1. Remove active class from all tabs and containers
+            tabs.forEach(t => t.classList.remove("active"));
+            containers.forEach(c => c.classList.remove("active"));
 
-    // Function to calculate and apply height
-    const setHeight = () => {
-      // scrollHeight measures full content height including children
-      const newHeight = targetSlide.scrollHeight; 
-      if (newHeight > 0) {
-        wrapper.style.height = `${newHeight}px`;
-      }
-    };
+            // 2. Add active class to clicked tab
+            tab.classList.add("active");
 
-    // 1. Set immediately
-    setHeight();
-
-    // 2. Re-check height after all images inside the slide finish loading
-    const images = targetSlide.querySelectorAll("img");
-    images.forEach((img) => {
-      if (!img.complete) {
-        img.addEventListener("load", setHeight, { once: true });
-        img.addEventListener("error", setHeight, { once: true });
-      }
+            // 3. Find the matching container and make it active
+            const targetCategory = tab.getAttribute("data-category");
+            const targetContainer = document.querySelector(`.projects-container[data-category="${targetCategory}"]`);
+            
+            if (targetContainer) {
+                targetContainer.classList.add("active");
+            }
+        });
     });
-  }
-
-  // --- Category Tabs Switching ---
-  const categoryTabs = document.querySelectorAll(".category-tab");
-  const carouselBlocks = document.querySelectorAll(".carousel-block");
-
-  categoryTabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      const selectedCategory = tab.getAttribute("data-category");
-
-      categoryTabs.forEach((t) => t.classList.remove("active"));
-      tab.classList.add("active");
-
-      carouselBlocks.forEach((block) => {
-        if (block.getAttribute("data-category") === selectedCategory) {
-          block.classList.add("active");
-          
-          // Re-recalculate height when tab becomes visible
-          const activeIndex = block.dataset.currentIndex ? parseInt(block.dataset.currentIndex) : 0;
-          updateWrapperHeight(block, activeIndex);
-        } else {
-          block.classList.remove("active");
-        }
-      });
-    });
-  });
-
-  // --- Carousel Slide Mechanism ---
-  carouselBlocks.forEach((block) => {
-    const track = block.querySelector(".carousel-track");
-    const slides = block.querySelectorAll(".carousel-slide");
-    const prevBtn = block.querySelector('.carousel-btn[data-dir="-1"]');
-    const nextBtn = block.querySelector('.carousel-btn[data-dir="1"]');
-    const dots = block.querySelectorAll(".carousel-dot");
-    const counter = block.querySelector(".carousel-counter");
-
-    if (!slides.length) return;
-
-    let currentIndex = 0;
-    const totalSlides = slides.length;
-
-    function updateCarousel(index) {
-      currentIndex = index;
-      block.dataset.currentIndex = currentIndex; // Store index for tab switches
-      
-      track.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-      dots.forEach((dot, idx) => {
-        dot.classList.toggle("active", idx === currentIndex);
-      });
-
-      if (counter) {
-        counter.textContent = `${currentIndex + 1} / ${totalSlides}`;
-      }
-
-      // Update height whenever the slide updates
-      updateWrapperHeight(block, currentIndex);
-    }
-
-    if (prevBtn) {
-      prevBtn.addEventListener("click", () => {
-        const newIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-        updateCarousel(newIndex);
-      });
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener("click", () => {
-        const newIndex = (currentIndex + 1) % totalSlides;
-        updateCarousel(newIndex);
-      });
-    }
-
-    dots.forEach((dot, idx) => {
-      dot.addEventListener("click", () => {
-        updateCarousel(idx);
-      });
-    });
-
-    // Initialize height on initial page load
-    updateCarousel(0);
-  });
 });

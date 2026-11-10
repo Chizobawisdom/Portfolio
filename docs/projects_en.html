@@ -20,10 +20,10 @@
             <a href="resume_en.html">Resume</a>
             <a href="projects_en.html" class="active">Projects</a>
         </nav>
-    
-        <section class="carousel-section">
+
+        <section>
             <h2>Engineering Projects &amp; Applications</h2>
-            <p>Systems Engineering applications across Digital Twins & Simulation, Industrial automation, computer vision, and Industrial ML & analytics. Each project highlights architectural design, interface integration, code implementations, and measurable industrial impact.</p>
+            <p class="section-desc">Systems Engineering applications across Digital Twins &amp; Simulation, Industrial automation, computer vision, and Industrial ML &amp; analytics. Each project highlights architectural design, interface integration, code implementations, and measurable industrial impact.</p>
 
             <!-- CATEGORY TABS -->
             <div class="category-tabs">
@@ -31,49 +31,42 @@
                 <button class="category-tab" data-category="automation">Industrial Automation</button>
                 <button class="category-tab" data-category="vision">Computer Vision</button>
                 <button class="category-tab" data-category="ml">Industrial AI &amp; Analytics</button>
-                
-                
             </div>
 
             <!-- ==========================================
                 1. DIGITAL TWINS & SIMULATION
                 ========================================== -->
-            <div class="carousel-block active" data-category="simulation">
-                <div class="carousel-controls">
-                <button class="carousel-btn" data-dir="-1" aria-label="Previous">&#8592;</button>
-                <div class="carousel-dots">
-                    <button class="carousel-dot active" aria-label="Slide 1"></button>
-                    <button class="carousel-dot" aria-label="Slide 2"></button>
-                    <button class="carousel-dot" aria-label="Slide 3"></button>
-                    <button class="carousel-dot" aria-label="Slide 4"></button>
-                </div>
-                <button class="carousel-btn" data-dir="1" aria-label="Next">&#8594;</button>
-                <span class="carousel-counter">1 / 4</span>
-                </div>
-                <div class="carousel-wrapper">
-                <div class="carousel-track">
+            <div class="projects-container active" data-category="simulation">
 
-                    <!-- Slide 1: SimPy Digital Twin -->
-                    <div class="carousel-slide">
-                        <h3>Discrete-Event Digital Twin for Quality Control & Bottleneck Analysis in Automated Assembly Lines</h3>
-                    <div class="project-grid" data-category="simulation">                        
-                        <div class="project-details">                        
-                            <p><strong>System Context:</strong> This project models a multi-station automated quality control line (Cutting → Assembly → Inspection) operating under dynamic production constraints. The system simulates real-world manufacturing disturbances, including stochastic machine breakdowns (MTBF/MTTR), random process execution times, gauge measurement noise, and a closed-loop rework/scrap routing logic for defective components</p>
-                            <p><strong>Engineering Solution:</strong> </p>
+                <!-- Project 1 -->
+                <article class="project-card">
+                    <h3>Discrete-Event Digital Twin for Quality Control &amp; Bottleneck Analysis</h3>
+                    <p class="project-subtitle">Models a multi-station automated quality control line under dynamic production constraints, simulating stochastic breakdowns and rework logic.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Python</span><span class="tag">SimPy</span><span class="tag">DES</span><span class="tag">MTBF/MTTR</span><span class="tag">OEE</span>
+                    </div>
+                    <div class="project-actions">
+                        <a class="btn-repo" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0/digital-twin-quality-control-line" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            View repository
+                        </a>
+                    </div>
+                    <div class="project-grid">
+                        <div class="project-details">
+                            <p><strong>System Context:</strong> The system simulates real-world manufacturing disturbances, including stochastic machine breakdowns (MTBF/MTTR), random process execution times, gauge measurement noise, and a closed-loop rework/scrap routing logic for defective components.</p>
+                            <p><strong>Engineering Solution:</strong></p>
                             <ul>
-                                <li>Discrete-Event Digital Twin Execution: Built an object-oriented Python discrete-event simulation using simpy to mirror real-time part flow across multi-station production constraints during an 8-hour operational shift.</li>
-                                <li>Disturbance & Reliability Modeling: Programmed continuous breakdown processes using exponential distributions (expovariate) for MTBF/MTTR downtime interruptions alongside Gaussian variation (gauss) for cycle times and measurement noise</li>
-                                <li>Quality & Closed-Loop Rework Logic: Implemented an automated inspection classification engine based on upper and lower specification limits (LSL = 9.9, USL = 10.1) to dynamically route parts into First Pass Yield (FPY), rework loops back to Assembly, or final scrap.</li>
-                                <li>Production KPI Analytics Pipeline: Automated calculations for station utilization, queue depth tracking, throughput (good parts/hr), Overall Equipment Effectiveness (OEE), scrap rates, and system bottleneck detection</li>
+                                <li>Built an object-oriented Python discrete-event simulation using <code>simpy</code> to mirror real-time part flow across multi-station production constraints during an 8-hour operational shift.</li>
+                                <li>Programmed continuous breakdown processes using exponential distributions (MTBF/MTTR) alongside Gaussian variation for cycle times.</li>
+                                <li>Implemented an automated inspection classification engine (LSL = 9.9, USL = 10.1) to dynamically route parts into FPY, rework, or scrap.</li>
+                                <li>Automated calculations for station utilization, queue depth, throughput, OEE, and bottleneck detection.</li>
                             </ul>
-                            <p><strong>V&amp;V &amp; Impact:</strong> Verified model stability by incorporating a 30-minute warmup phase (WARMUP_MIN) to eliminate transient startup bias, ensuring accurate steady-state metric calculations. Validated line efficiency by analyzing station utilization and queue lengths, enabling precise identification of the primary bottleneck station. The simulation quantified the impact of machine availability and rework limits on overall throughput and OEE, providing a predictive decision-support tool for optimizing shop-floor capacity without physical line disruption</p>
-                            <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0/digital-twin-quality-control-line" target="_blank" rel="noopener">View Repository</a>
+                            <p><strong>V&amp;V &amp; Impact:</strong> Verified model stability by incorporating a 30-minute warmup phase to eliminate transient startup bias. The simulation quantified the impact of machine availability and rework limits on overall throughput and OEE.</p>
                         </div>
                         <div class="project-media">
                             <div class="code-box">
-                            <span class="visual-label">Stochastic Machine Breakdown Logic</span>
-                            <pre><code>
-# Continuous Exponential MTBF/MTTR Process
+                                <span class="visual-label">Stochastic Machine Breakdown Logic</span>
+        <pre><code># Continuous Exponential MTBF/MTTR Process
 def breakdown_process(env, station_name):
     mtbf = STATIONS[station_name]["mtbf"]
     mttr = STATIONS[station_name]["mttr"]
@@ -92,31 +85,39 @@ def breakdown_process(env, station_name):
                             </div>
                         </div>
                     </div>
-                    </div>
+                </article>
 
-                    <!-- Slide 2: LT Spice 1 -->
-                    <div class="carousel-slide">
-                        <h3>Extended LTspice Simulation & Dynamic Response Analysis</h3>
-                        <div class="model-screenshot-container">
-                            <img src="images/Screenshot 2026-08-05 003942.png" alt="AnyLogic Warehouse Simulation Flow and 2D/3D Layout View" loading="lazy">
-                        </div>
-                    <div class="project-grid" data-category="simulation">                        
-                        <div class="project-details">                        
-                        <p><strong>System Context:</strong> This project extension evaluates the dynamic response and control stability of an instrumentation amplifier front-end cascaded into a second-order active Sallen-Key low-pass filter network. By varying the feedback gain parameter (K), the system's transient overshoot, natural frequency, and damping characteristics are systematically characterized across both time-domain step inputs and frequency-domain AC sweeps.</p>
-                        <p><strong>Engineering Solution:</strong></p>
-                        <ul>
-                            <li>Physical & Virtual Twin Development: Built a physical test rig using an oscilloscope and signal generator alongside a high-fidelity LTspice simulation model to replicate physical dynamic responses</li>
-                            <li>Control Parameter Calibration: Analyzed physical and virtual step responses across variable feedback conditions (K = 0&nbsp;&Omega; to 2.062&nbsp;k&Omega;) to extract critical dynamic metrics, including damping ratio (&#x03B6; = 0.204) and natural frequency (&omega;<sub>n</sub> = 3683&nbsp;rad/s). </li>
-                            <li>Frequency Domain & Noise Filtering: Mapped system frequency response via Bode plots (1&nbsp;Hz &ndash; 500&nbsp;kHz) to define low-pass filter boundaries and eliminate high-frequency signal interference. </li>
-                        </ul>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Validated the virtual simulation model against physical hardware test data, proving that adjusting internal loop gain (K) eliminates transient overshoot (M<sub>p</sub> = 51.94% ↓ 0%). This confirmed model fidelity for predicting control loop stability and preventing mechanical/electrical overshoot in automated manufacturing hardware</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0/instrumentation-amplifier-with-active-filter" target="_blank" rel="noopener">View Repository</a>
+                <!-- Project 2 -->
+                <article class="project-card">
+                    <h3>Extended LTspice Simulation &amp; Dynamic Response Analysis</h3>
+                    <p class="project-subtitle">Evaluation of the dynamic response and control stability of an instrumentation amplifier front-end cascaded into an active Sallen-Key low-pass filter.</p>
+                    <div class="tech-tags">
+                        <span class="tag">LTspice</span><span class="tag">Control Systems</span><span class="tag">Bode Plot</span><span class="tag">Hardware-in-the-Loop</span>
+                    </div>
+                    <div class="project-actions">
+                        <a class="btn-repo" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0/instrumentation-amplifier-with-active-filter" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            View repository
+                        </a>
+                    </div>
+                    <div class="model-screenshot-container">
+                        <img src="images/Screenshot 2026-08-05 003942.png" alt="AnyLogic Warehouse Simulation Flow" loading="lazy">
+                    </div>
+                    <div class="project-grid">
+                        <div class="project-details">
+                            <p><strong>System Context:</strong> By varying the feedback gain parameter (K), the system's transient overshoot, natural frequency, and damping characteristics are systematically characterized across both time-domain step inputs and frequency-domain AC sweeps.</p>
+                            <p><strong>Engineering Solution:</strong></p>
+                            <ul>
+                                <li>Built a physical test rig using an oscilloscope and signal generator alongside a high-fidelity LTspice simulation model.</li>
+                                <li>Analyzed step responses to extract dynamic metrics, including damping ratio (ζ = 0.204) and natural frequency (ω_n = 3683 rad/s).</li>
+                                <li>Mapped system frequency response via Bode plots (1 Hz – 500 kHz) to define low-pass filter boundaries.</li>
+                            </ul>
+                            <p><strong>V&amp;V &amp; Impact:</strong> Validated the virtual simulation model against physical hardware, proving that adjusting internal loop gain eliminates transient overshoot (M_p = 51.94% ↓ 0%).</p>
                         </div>
                         <div class="project-media">
-                        <div class="code-box">
-                        <span class="visual-label">SPICE Netlist & Simulation Constraints</span>
-                        <pre><code>
-Sensor Pulse Source & Simulation Setup
+                            <div class="code-box">
+                                <span class="visual-label">SPICE Netlist &amp; Simulation Constraints</span>
+        <pre><code>Sensor Pulse Source & Simulation Setup
 V1 -288 448 R0 PULSE(0 50m 0 1n 1n 5m 10m) Rser=50
 V2 400 464 R0 14
 V3 528 464 R0 -14
@@ -126,319 +127,229 @@ SYMATTR InstName R2 / Value 150K
 SYMATTR InstName R6 / Value 2.2K
 SYMATTR InstName C1 / Value 22n
 .tran 10m</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/Screenshot 2026-08-05 163252.png" alt="Simulation Graph" class="project-img">
-                            <span class="image-caption">Queue Dynamics &amp; Bottleneck Plot</span>
-                        </div>
+                            </div>
+                            <div class="image-wrapper">
+                                <img src="images/Screenshot 2026-08-05 163252.png" alt="Simulation Graph" class="project-img">
+                                <span class="image-caption">Queue Dynamics &amp; Bottleneck Plot</span>
+                            </div>
                         </div>
                     </div>
-                    </div>
+                </article>
 
-                    <!-- Slide 3: SimPy Digital Twin 
-                    <div class="carousel-slide">
-                        <h3>Active Low-Pass Filtering & Frequency Response SPICE Analysis</h3>
-                        <div class="model-screenshot-container">
-                            <img src="images/Screenshot 2026-08-05 004029.png" alt="AnyLogic Warehouse Simulation Flow and 2D/3D Layout View" loading="lazy">
-                        </div>
-                    <div class="project-grid" data-category="simulation">                        
-                        <div class="project-details">                        
-                        <p><strong>System Context:</strong> Validation and hardware-in-the-loop dynamic modeling of a second-order active filter control system. The physical test rig processes incoming step and sinusoidal excitation signals via an op-amp circuit, providing a benchmark to test signal conditioning and dynamic control loops used in industrial sensor and actuator subsystems.</p>
-                        <p><strong>Engineering Solution:</strong></p>
-                        <ul>
-                            <li>Physical Rig Setup & Test Execution: Assembled the analog operational amplifier circuit, applied step and sinusoidal signal excitation via a wave generator, and captured dual-channel oscilloscope traces using precision cursors (x_1, x_2, y_1, y_2) to measure phase shift (&Delta; x), rise time, and peak overshoot.</li>
-                            <li>Virtual Twin Simulation: Built a behavioral simulation model in LTspice incorporating .tran 30m transient analysis and .ac dec 10 1 500k frequency sweeps to replicate physical hardware execution.</li>
-                            <li>Control Parameter Extraction: Derived key dynamic performance metrics from hardware and simulation data, mathematically extracting a damping ratio of ζ = 0.54 from transient maximum overshoot (M<sub>p</sub> = 0.134 V): </li>
-                        </ul>
-                        <p>&zeta; = &minus;ln(<i>M</i><sub>p</sub>) / &radic;(&pi;<sup>2</sup> + ln<sup>2</sup>(<i>M</i><sub>p</sub>))</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Verified LTspice netlists against circuit specifications to confirm accurate generation of transient step responses and AC Bode frequency curves across $1\text{ Hz}$ to $500\text{ kHz}$.  <br>Cross-validated the physical oscilloscope measurements against virtual LTspice outputs, proving high-fidelity model performance for predicting real-world circuit behavior, overshoot, and phase dynamics in automated system components.</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0/sallen-key-active-low-pass-filter" target="_blank" rel="noopener">View Repository</a>
+                <!-- Project 3 -->
+                <article class="project-card">
+                    <h3>AnyLogic Digital Twin for Smart Warehouse Sequencing</h3>
+                    <p class="project-subtitle">Logistics optimization between high-bay storage and Body Shop balancing storage buffer sizing against the financial impact of production line stoppages.</p>
+                    <div class="tech-tags">
+                        <span class="tag">AnyLogic</span><span class="tag">Java</span><span class="tag">Logistics</span><span class="tag">Simulation</span>
+                    </div>
+                    <div class="project-actions">
+                        <a class="btn-repo" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0/warehouse-sequence-optimization" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            View repository
+                        </a>
+                    </div>
+                    <div class="model-screenshot-container">
+                        <img src="images/warehouse_simulation_model.png" alt="AnyLogic Warehouse Simulation Flow" loading="lazy">
+                    </div>
+                    <div class="project-grid">
+                        <div class="project-details">
+                            <p><strong>Engineering Solution:</strong> Developed a multi-method AnyLogic model with Java agents dynamically extracting production schedules into memory-mapped sequence structures. Engineered custom logic tracking <code>totalDowntimeHours</code>, <code>totalStorageCost</code>, and dynamically stopping/resuming material routing the moment a downstream bottleneck occurs.</p>
+                            <p><strong>V&amp;V &amp; Impact:</strong> Delivered an interactive operational digital twin capable of stress-testing re-sequencing strategies, providing an analytical framework to balance storage costs against downtime risks.</p>
                         </div>
                         <div class="project-media">
-                        <div class="code-box">
-                        <span class="visual-label">AC Decadic Sweeping Network</span>
-                        <pre><code>
-Signal Input & Decadic Analysis Loop
-V1 -224 288 R0 AC 1
-.ac dec 10 1 500k
-
-Filter Passive RC Loop Specification
-SYMATTR InstName R1 / Value 47K
-SYMATTR InstName C1 / Value 440n
-SYMATTR InstName C2 / Value 22n</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/Screenshot 2026-08-05 161912.png" alt="Simulation Graph" class="project-img">
-                            <span class="image-caption">Queue Dynamics &amp; Bottleneck Plot</span>
-                        </div>
-                        </div>
-                    </div>
-                    </div>   -->
-
-                    <!-- Slide 4: Warehouse sequencing -->
-                    <div class="carousel-slide">
-                        <h3>AnyLogic Digital Twin for Smart Warehouse Sequencing & Downtime Minimization</h3>
-                        <div class="model-screenshot-container">
-                            <img src="images/warehouse_simulation_model.png" alt="AnyLogic Warehouse Simulation Flow and 2D/3D Layout View" loading="lazy">
-                        </div>
-                    <div class="project-grid" data-category="simulation">                        
-                        <div class="project-details">                        
-                        <p><strong>System Context:</strong> Logistics optimization between high-bay storage and Body Shop balancing storage buffer sizing against the financial impact of production line stoppages.</p>
-                        <p><strong>Engineering Solution:</strong> Developed a multi-method AnyLogic model with Java agents dynamically extracting production schedules into memory-mapped sequence structures. Engineered custom logic tracking <code>totalDowntimeHours</code>, <code>totalStorageCost</code>, and dynamically stopping/resuming material routing the moment a downstream bottleneck occurs.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Delivered an interactive operational digital twin capable of stress-testing re-sequencing strategies, providing an analytical framework to balance storage costs against downtime risks.</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0/warehouse-sequence-optimization" target="_blank" rel="noopener">View Repository</a>
-                        </div>
-                        <div class="project-media">
-                        <div class="code-box">
-                        <span class="visual-label">Simulation Model & Logic Architecture</span>
-                        <pre><code>
-Downtime & Storage Cost Tracker
-    totalDowntimeHours = 13.46 hours;
-    totalDowntimeCost  = €5,383,184;
-    totalStorageCost   = €750,000;
-    bodyShopStopped    = false;
+                            <div class="code-box">
+                                <span class="visual-label">Simulation Model &amp; Logic Architecture</span>
+        <pre><code>Downtime & Storage Cost Tracker
+totalDowntimeHours = 13.46 hours;
+totalDowntimeCost  = €5,383,184;
+totalStorageCost   = €750,000;
+bodyShopStopped    = false;
 
 // Sequential Map Ingestion Engine
-    plannedSequenceMap.clear();
-    List&lt;Tuple&gt; planned = select(planned_sequence).list();</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/Screenshot 2026-08-05 002709.png" alt="AnyLogic Warehouse Simulation Flow" class="project-img">
-                            <span class="image-caption">Queue Dynamics &amp; Bottleneck Plot</span>
-                        </div>
+plannedSequenceMap.clear();
+List&lt;Tuple&gt; planned = select(planned_sequence).list();</code></pre>
+                            </div>
+                            <div class="image-wrapper">
+                                <img src="images/Screenshot 2026-08-05 002709.png" alt="AnyLogic Warehouse Simulation Flow" class="project-img">
+                                <span class="image-caption">Queue Dynamics &amp; Bottleneck Plot</span>
+                            </div>
                         </div>
                     </div>
-                    </div>
+                </article>
 
-                    <!-- Slide 5: Inspecton Bottleneck -->
-                    <div class="carousel-slide">
-                        <h3>AnyLogic Discrete Event Simulation for Industrial Quality Gate Capacity Optimization</h3>
-                        <div class="model-screenshot-container">
-                            <img src="images/inspection_bottleneck_station.png" alt="AnyLogic Quality Inspection Process Flowchart and Analytics Dashboard" loading="lazy">
-                        </div>
-                    <div class="project-grid" data-category="simulation">                        
-                        <div class="project-details">                        
-                        <p><strong>System Context:</strong> A bottlenecked manual inspection gate: leadership needed data on whether to hire more inspectors (Scenario A) or upgrade equipment speed (Scenario B).</p>
-                        <p><strong>Engineering Solution:</strong> Built a stochastic DES in AnyLogic (Source → Queue → Service → SelectOutput → Sink) with exponential interarrival (&lambda; = 0.2/min) and Triangular service times. Executed automated Parameter Variation experiments with independent replications to compute **95% confidence intervals** on all KPIs.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Proved Scenario A reduces mean cycle time by **71% (16.02 → 4.65 min)** and sharply mitigates volatility near saturation outperforming the speed upgrade. Validated baseline performance against theoretical M/G/1 queueing models.</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0/inspection-bottlneck-station" target="_blank" rel="noopener">View Repository</a>
+                <!-- Project 4 -->
+                <article class="project-card">
+                    <h3>AnyLogic DES for Industrial Quality Gate Capacity Optimization</h3>
+                    <p class="project-subtitle">A bottlenecked manual inspection gate analysis: whether to hire more inspectors (Scenario A) or upgrade equipment speed (Scenario B).</p>
+                    <div class="tech-tags">
+                        <span class="tag">AnyLogic</span><span class="tag">DES</span><span class="tag">Queueing Theory</span><span class="tag">M/G/1 Models</span>
+                    </div>
+                    <div class="project-actions">
+                        <a class="btn-repo" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Digital_Manufacturing_and_Industry_4.0/inspection-bottlneck-station" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            View repository
+                        </a>
+                    </div>
+                    <div class="model-screenshot-container">
+                        <img src="images/inspection_bottleneck_station.png" alt="AnyLogic Quality Inspection Process" loading="lazy">
+                    </div>
+                    <div class="project-grid">
+                        <div class="project-details">
+                            <p><strong>Engineering Solution:</strong> Built a stochastic DES in AnyLogic (Source → Queue → Service → SelectOutput → Sink) with exponential interarrival (&lambda; = 0.2/min) and Triangular service times. Executed automated Parameter Variation experiments with independent replications to compute 95% confidence intervals on all KPIs.</p>
+                            <p><strong>V&amp;V &amp; Impact:</strong> Proved Scenario A reduces mean cycle time by 71% (16.02 → 4.65 min) and sharply mitigates volatility near saturation outperforming the speed upgrade. Validated baseline performance against theoretical M/G/1 queueing models.</p>
                         </div>
                         <div class="project-media">
-                        <div class="code-box">
-                        <span class="visual-label">Simulation Model & Logic Architecture</span>
-                        <pre><code>
-// Dynamic Quality Inspection Routing Logic
-    if ( randomTrue(defectProbability) ) {
-        // Entity routes to scrap block
-        trgScrapEvent.add(time() - agent.entryTime);
-    } else {
-        // Entity successfully passes inspection
-        trgPassEvent.add(time() - agent.entryTime);
-    }
+                            <div class="code-box">
+                                <span class="visual-label">Simulation Model &amp; Logic Architecture</span>
+        <pre><code>// Dynamic Quality Inspection Routing Logic
+if ( randomTrue(defectProbability) ) {
+    trgScrapEvent.add(time() - agent.entryTime);
+} else {
+    trgPassEvent.add(time() - agent.entryTime);
+}
 
-    // Parameter Variation Multi-Run Callback
-    statUtilization.add( root.inspectorPool.utilization() );
-    statCycleTime.add( root.systemTimeMeasure.mean() );</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/Screenshot 2026-08-05 002111.png" alt="AnyLogic Warehouse Simulation Flow" class="project-img">
-                            <span class="image-caption">Queue Dynamics &amp; Bottleneck Plot</span>
-                        </div>
+// Parameter Variation Multi-Run Callback
+statUtilization.add( root.inspectorPool.utilization() );
+statCycleTime.add( root.systemTimeMeasure.mean() );</code></pre>
+                            </div>
+                            <div class="image-wrapper">
+                                <img src="images/Screenshot 2026-08-05 002111.png" alt="Analytics" class="project-img">
+                                <span class="image-caption">Queue Dynamics &amp; Bottleneck Plot</span>
+                            </div>
                         </div>
                     </div>
-                    </div>
-
-                </div>
-                </div>
-
-                
+                </article>
             </div>
 
             <!-- ==========================================
                 2. AUTOMATION & TOOLING
                 ========================================== -->
-            <div class="carousel-block" data-category="automation">
-                <div class="carousel-controls">
-                <button class="carousel-btn" data-dir="-1" aria-label="Previous">&#8592;</button>
-                <div class="carousel-dots">
-                    <button class="carousel-dot active" aria-label="Slide 1"></button>
-                    <button class="carousel-dot" aria-label="Slide 2"></button>
-                </div>
-                <button class="carousel-btn" data-dir="1" aria-label="Next">&#8594;</button>
-                <span class="carousel-counter">1 / 2</span>
-                </div>
-                <div class="carousel-wrapper">
-                <div class="carousel-track">
-
-                    <!-- Slide 1: Industrial PLC to OEE -->
-                    <div class="carousel-slide">
-                        <h3>Industrial PLC to Cloud OEE monitor</h3>
-                        <div class="model-screenshot-container">
-                            <video width="100%" height="auto" controls muted loop playsinline>
-                                <source src="https://github.com/Chizobawisdom/Portfolio/raw/refs/heads/main/Utility_and_Automation/plc-cloud-oee-monitor/files/dashboard_preview.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                    <div class="project-grid" data-category="automation">                        
+            <div class="projects-container" data-category="automation">
+                <!-- Project 1 -->
+                <article class="project-card">
+                    <h3>Industrial PLC to Cloud OEE Monitor</h3>
+                    <p class="project-subtitle">End-to-end IT/OT integration stack bridging real-time industrial PLC logic and cloud-based analytics via Modbus TCP.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Python</span><span class="tag">SQLite</span><span class="tag">Plotly Dash</span><span class="tag">OpenPLC</span><span class="tag">Modbus TCP</span>
+                    </div>
+                    <div class="project-actions">
+                        <a class="btn-repo" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation/plc-cloud-oee-monitor" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            View repository
+                        </a>
+                    </div>
+                    <div class="model-screenshot-container">
+                        <video width="100%" height="auto" controls muted loop playsinline>
+                            <source src="https://github.com/Chizobawisdom/Portfolio/raw/refs/heads/main/Utility_and_Automation/plc-cloud-oee-monitor/files/dashboard_preview.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="project-grid">
                         <div class="project-details">
-                        <p><strong>System Context:</strong> This project establishes a lightweight, end-to-end IT/OT integration stack bridging real-time industrial PLC logic and cloud-based analytics. The architecture models a simulated production line controlled by IEC 61131-3 standard ladder logic (seal-in circuit, latched faults, cycle counters) executed in a containerized OpenPLC Runtime, streamed via Modbus TCP into a decoupled Python data pipeline, and visualized as a live Overall Equipment Effectiveness (OEE) dashboard.</p>
-                        <p><strong>Engineering Solution:</strong> </p>
-                        <ul>
-                            <li>Industrial PLC Control Logic: Programmed complete ladder diagram logic in OpenPLC Editor v4 incorporating start/stop seal-in circuits, interlocked cycle/good/reject counters, and latched jam/e-stop fault handshakes.</li>
-                            <li>Hardware Process Simulator: Built a Python simulation script (simulator.py) to drive virtual sensor and pushbutton inputs via writable Modbus TCP coils, emulating real-world production runs, product jams, and reject gates.</li>
-                            <li>Non-Invasive Telemetry Pipeline: Engineered a read-only, 1-second polling service (logger.py) that queries exposed Modbus coils and registers to log timestamped operational state data directly into a time-series SQLite database (oee_data.db).</li>
-                            <li>Decoupled OEE Analytics & Live Dashboard: Developed off-PLC Python calculation modules (oee_calculate.py) to compute Availability, Performance, and Quality KPIs, rendered in real time through an auto-refreshing Plotly Dash web application (dashboard.py).</li>
-                        </ul>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Identified and resolved severe scan-cycle overrun issues (up to ~180ms) in the Dockerized PLC runtime by re-tuning the scan period to 100ms and adjusting simulator pulse lengths, preventing dropped sensor state edges. Corrected cross-rung counter drift where fault states caused counter discrepancies (Good + Reject != Cycle) by unifying interlock conditions across all counting rungs. Validated system telemetry against live runtime states using verification scripts (modbus_verify.py), ensuring high data hygiene and accurate, real-time OEE KPI tracking without overloading PLC scan times.</p>
-                        <p class="tags">Technologies: Python • SQLite • Plotly • OpenPLC</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation/plc-cloud-oee-monitor" target="_blank" rel="noopener">View Repository</a>
+                            <p><strong>System Context:</strong> Models a simulated production line controlled by IEC 61131-3 ladder logic executed in a containerized OpenPLC Runtime, streamed via Modbus TCP into a decoupled Python data pipeline, and visualized as a live OEE dashboard.</p>
+                            <p><strong>Engineering Solution:</strong></p>
+                            <ul>
+                                <li>Programmed complete ladder diagram logic in OpenPLC Editor v4 incorporating start/stop seal-in circuits and interlocked counters.</li>
+                                <li>Built a Python simulation script to drive virtual sensors via writable Modbus TCP coils.</li>
+                                <li>Engineered a read-only polling service to log timestamped operational data directly into SQLite.</li>
+                                <li>Developed off-PLC Python calculation modules to compute Availability, Performance, and Quality KPIs rendered in Plotly Dash.</li>
+                            </ul>
                         </div>
                         <div class="project-media">
-                        <div class="code-box">
-                            <span class="visual-label">OEE Calculate Core</span>
-                            <pre><code>    
-final = readings[-1]
+                            <div class="code-box">
+                                <span class="visual-label">OEE Calculate Core</span>
+        <pre><code>final = readings[-1]
 cycle_count = final["cycle_count"]
 good_count = final["good_count"]
-reject_count = final["reject_count"]
 
 availability = (run_time / total_elapsed) if total_elapsed > 0 else 0.0
-
 ideal_cycles_possible = (run_time / ideal_cycle_time_seconds) if run_time > 0 else 0.0
 performance = (cycle_count / ideal_cycles_possible) if ideal_cycles_possible > 0 else 0.0
-
 quality = (good_count / cycle_count) if cycle_count > 0 else 0.0
 
-oee = availability * performance * quality
-                            </code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/architecture.png" alt="PLC to OEE Architecture" class="project-img">
-                            <span class="image-caption">PLC to OEE Architecture</span>
-                        </div>
+oee = availability * performance * quality</code></pre>
+                            </div>
+                            <div class="image-wrapper">
+                                <img src="images/architecture.png" alt="PLC to OEE Architecture" class="project-img">
+                                <span class="image-caption">PLC to OEE Architecture</span>
+                            </div>
                         </div>
                     </div>
-                    </div>
+                </article>
 
-                    <!-- Slide 2: Secured OPC-UA Server & Client -->
-                    <div class="carousel-slide">
-                        <h3>Secured OPC-UA Server &amp; Client</h3>
-                    <div class="project-grid" data-category="automation">
+                <!-- Project 2 -->
+                <article class="project-card">
+                    <h3>Secured OPC-UA Server &amp; Client</h3>
+                    <p class="project-subtitle">Implementing a fully working OPC-UA server and independent client from scratch in Python, built through the protocol's full security model.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Python</span><span class="tag">asyncua</span><span class="tag">OPC-UA</span><span class="tag">X.509 / OpenSSL</span>
+                    </div>
+                    <div class="project-actions">
+                        <a class="btn-repo" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation/opcua-server-demo" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            View repository
+                        </a>
+                    </div>
+                    <div class="project-grid">
                         <div class="project-details">
-                        <p><strong>System Context:</strong> Modern manufacturing IT/OT integration relies on OPC-UA as the standard interface layer between shop-floor equipment and SCADA, MES, and cloud systems replacing plaintext, structureless protocols with a self-describing, secured address space any compliant client can browse. This project implements a fully working OPC-UA server and independent client from scratch in Python, deliberately built through the protocol's full security model.</p>
-                        <p><strong>Engineering Solution:</strong> Built an asyncua-based OPC-UA server exposing a structured address space (object node with live Temperature and Counter variables) updating in real time via an async event loop. Implemented mutual X.509 certificate authentication using OpenSSL-generated certificates with Subject Alternative Name (SAN) entries matched exactly against each endpoint's application URI, the single most common point of failure in real OPC-UA deployments. Configured the `Basic256Sha256` security policy in `SignAndEncrypt` mode, enforcing signed and encrypted sessions end-to-end rather than allowing a silent fallback to plaintext. Developed an independent client that dynamically resolves the server's namespace index at runtime (rather than hardcoding it), browses the address space, and polls live values on a subscription loop.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Verified certificate configuration by inspecting each SAN entry with OpenSSL before wiring it into the application, and validated the security handshake by deliberately testing connection failures (missing certificate, mismatched application URI, incompatible security policy) before achieving a clean authenticated session. Confirmed live data integrity by cross-checking client-polled values against server-side state across a continuous run. Demonstrates the IT/OT integration layer sitting directly above the project's Modbus-based PLC monitor, directly applicable to connecting shop-floor PLCs to SCADA, MES, and cloud analytics platforms in a standards-compliant, secured manner.</p>
-                        <p class="tags">Technologies: Python • asyncua • OPC-UA • X.509 / OpenSSL • Async I/O</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation/opcua-server-demo" target="_blank" rel="noopener">View Repository</a>
+                            <p><strong>Engineering Solution:</strong> Built an asyncua-based OPC-UA server exposing a structured address space updating in real time via an async event loop. Implemented mutual X.509 certificate authentication using OpenSSL-generated certificates with Subject Alternative Name (SAN) entries matched exactly against each endpoint's application URI. Configured the <code>Basic256Sha256</code> security policy in <code>SignAndEncrypt</code> mode.</p>
+                            <p><strong>V&amp;V &amp; Impact:</strong> Verified certificate configuration by inspecting each SAN entry with OpenSSL before wiring it into the application, and validated the security handshake by deliberately testing connection failures before achieving a clean authenticated session.</p>
                         </div>
                         <div class="project-media">
-                        <div class="code-box">
-                            <span class="visual-label">Secured Server Configuration</span>
-                            <pre><code>
-server.set_endpoint(
-    "opc.tcp://0.0.0.0:4840/freeopcua/server/"
-)
-await server.set_application_uri(
-    "urn:opcua-demo:server"
-)
+                            <div class="code-box">
+                                <span class="visual-label">Secured Server Configuration</span>
+        <pre><code>server.set_endpoint("opc.tcp://0.0.0.0:4840/freeopcua/server/")
+await server.set_application_uri("urn:opcua-demo:server")
 server.set_security_policy([
     ua.SecurityPolicyType.Basic256Sha256_SignAndEncrypt
 ])
 await server.load_certificate("server_cert.pem")
 await server.load_private_key("server_key.pem")
 
-idx = await server.register_namespace(
-    "http://opcua-demo.wisdom"
-)
+idx = await server.register_namespace("http://opcua-demo.wisdom")
 myobj = await server.nodes.objects.add_object(idx, "MyObject")
 temperature = await myobj.add_variable(idx, "Temperature", 21.5)
 counter = await myobj.add_variable(idx, "Counter", 0)</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/opcua_architecture.png" alt="OPC-UA Server and Client Architecture" class="project-img">
-                            <span class="image-caption">Server-Client Secure Channel Architecture</span>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-
-                    <!-- Slide 4: Web Scraper 
-                    <div class="carousel-slide">
-                        <h3>Automated Web Scraping &amp; Headline Extraction</h3>
-                    <div class="project-grid" data-category="automation">                        
-                        <div class="project-details">                        
-                        <p><strong>System Context:</strong> This project implements a headless web-scraping utility using Selenium WebDriver to automatically collect football news headlines, subtitles, and article links from The Sun's sports section. Built as part of a broader utilities collection for automation, data extraction, and workflow optimization, the script runs without a visible browser window, making it suitable for scheduled or background execution.</p>
-                        <p><strong>Engineering Solution:</strong> Configured a headless Chrome instance via Selenium WebDriver and implemented XPath-based element targeting to reliably identify article teaser blocks within the page's DOM structure. Built extraction logic to pull title, subtitle, and article link from each teaser, then structured the results into a Pandas DataFrame for cleaning and tabular storage. Implemented automatic output file naming using the current date, and wrote the dataset to CSV in the script's working directory. Added graceful browser session teardown to ensure the WebDriver process terminates cleanly after each run, preventing orphaned browser instances.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Verified extraction reliability against the live page's DOM structure, confirming XPath selectors correctly isolate teaser blocks without capturing unrelated page elements. Confirmed CSV output integrity and correct date-based file naming across repeated runs. Demonstrates core competency in browser automation, DOM-based data extraction, and structured data handling — skills directly transferable to industrial contexts such as automated report scraping from web-based dashboards, competitor/market monitoring, and scheduled data collection for downstream analytics pipelines.</p>
-                        <p class="tags">Technologies: Python • Selenium • Pandas • XPath</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation/web-scraper" target="_blank" rel="noopener">View Repository</a>
-                        </div>
-                        <div class="project-media">
-                        <div class="code-box">
-                            <span class="visual-label">Headless Pipeline Engine</span>
-                            <pre><code>options.add_argument("--headless=new")
-driver = webdriver.Chrome(service=Service(path), options=options)
-driver.get(website)
-
-containers = driver.find_elements(
-    "xpath", '//div[@class="teaser__copy-container"]')
-for container in containers:
-    Title = container.find_element(By.XPATH, './/span').text
-    Link = container.find_element(By.XPATH, './/a').get_attribute("href")
-
-now = datetime.now().strftime("%d-%m-%Y")
-df.to_csv(f"headlines_{now}.csv")</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/web_scraper.png" alt="Data Pipeline Output" class="project-img">
-                            <span class="image-caption">Scraper Pipeline</span>
-                        </div>
+                            </div>
+                            <div class="image-wrapper">
+                                <img src="images/opcua_architecture.png" alt="OPC-UA Server and Client Architecture" class="project-img">
+                                <span class="image-caption">Server-Client Secure Channel Architecture</span>
+                            </div>
                         </div>
                     </div>
-                    </div> -->
-
-                </div>
-                </div>
-                
-            </div>            
+                </article>
+            </div>
 
             <!-- ==========================================
                 3. COMPUTER VISION
                 ========================================== -->
-            <div class="carousel-block" data-category="vision">
-                <div class="carousel-controls">
-                <button class="carousel-btn" data-dir="-1" aria-label="Previous">&#8592;</button>
-                <div class="carousel-dots">
-                    <button class="carousel-dot active" aria-label="Slide 1"></button>
-                    <button class="carousel-dot" aria-label="Slide 2"></button>
-                    <button class="carousel-dot" aria-label="Slide 3"></button>
-                    <button class="carousel-dot" aria-label="Slide 4"></button>
-                </div>
-                <button class="carousel-btn" data-dir="1" aria-label="Next">&#8594;</button>
-                <span class="carousel-counter">1 / 4</span>
-                </div>
-                <div class="carousel-wrapper">
-                <div class="carousel-track">
-
-                    <!-- Slide 1: BoVW Scene Classification -->
-                    <div class="carousel-slide">
+            <div class="projects-container" data-category="vision">
+                
+                <!-- Project 1 -->
+                <article class="project-card">
                     <h3>Bag of Visual Words Scene Classification</h3>
+                    <p class="project-subtitle">Scene classification across 8 categories for automated visual recognition pipelines without deep learning.</p>
+                    <div class="tech-tags">
+                        <span class="tag">OpenCV</span><span class="tag">scikit-learn</span><span class="tag">NumPy</span><span class="tag">BoVW</span>
+                    </div>
+                    <div class="project-actions">
+                        <a class="btn-repo" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision/bovw-project" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            View repository
+                        </a>
+                    </div>
                     <div class="model-screenshot-container">
                         <img src="images/Screenshot 2026-11-10 at 16.05.43.png" alt="BoVW Scene Classification Results" loading="lazy">
                     </div>
-                    <div class="project-grid" data-category="vision">
+                    <div class="project-grid">
                         <div class="project-details">
-                            <p><strong>System Context:</strong> Scene classification across 8 categories (coast, forest, highway, insidecity, mountain, opencountry, street, tallbuilding) for automated visual recognition pipelines.</p>
-                            <p><strong>Engineering Solution:</strong> Built a Bag of Visual Words pipeline using dense SIFT descriptors (grid step=8, keypoint size=16), a 512‑word MiniBatchKMeans codebook, horizontal spatial pyramid encoding, PCA (64 components), and an RBF‑kernel SVM classifier.</p>
-                            <p><strong>V&amp;V &amp; Impact:</strong> 8‑fold stratified cross‑validation on 1,882 training images and evaluation on 806 held‑out test images. Replicates the best BoVW configuration from arXiv:2105.04895, delivering robust scene categorization without deep learning.</p>
-                            <p class="tags">Technologies: OpenCV • scikit-learn • NumPy • BoVW • Python</p>
-                            <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision/bovw-project" target="_blank" rel="noopener">View Repository</a>
+                            <p><strong>Engineering Solution:</strong> Built a Bag of Visual Words pipeline using dense SIFT descriptors (grid step=8, keypoint size=16), a 512-word MiniBatchKMeans codebook, horizontal spatial pyramid encoding, PCA (64 components), and an RBF-kernel SVM classifier.</p>
+                            <p><strong>V&amp;V &amp; Impact:</strong> 8-fold stratified cross-validation on 1,882 training images and evaluation on 806 held-out test images. Replicates the best BoVW configuration from arXiv:2105.04895.</p>
                         </div>
                         <div class="project-media">
                             <div class="code-box">
                                 <span class="visual-label">Dense SIFT Pipeline</span>
-                                <pre><code>
-# Dense SIFT descriptor extraction
-def dense_keypoints(size=IMG_SIZE, step=STEP, kp_size=KP_SIZE):
+        <pre><code>def dense_keypoints(size=IMG_SIZE, step=STEP, kp_size=KP_SIZE):
     half = kp_size // 2
     return [
         cv2.KeyPoint(float(x), float(y), kp_size)
@@ -446,12 +357,8 @@ def dense_keypoints(size=IMG_SIZE, step=STEP, kp_size=KP_SIZE):
         for x in range(half, size - half + 1, step)
     ]
 
-
 def extract_dense_sift(path):
-    """Return (descriptors [N,128], y-coordinates [N]) for one image."""
     img = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
-    if img is None:
-        raise IOError(f"Could not read image: {path}")
     img = cv2.resize(img, (IMG_SIZE, IMG_SIZE))
     sift = cv2.SIFT_create()
     kps = dense_keypoints()
@@ -460,29 +367,35 @@ def extract_dense_sift(path):
     return desc.astype(np.float32), ys</code></pre>
                             </div>
                             <div class="image-wrapper">
-                                <img src="images/Bag of Visual Words Pipeline.png" alt="BoVW Pipeline: Dense SIFT → Codebook → Spatial Pyramid → SVM" class="project-img">
+                                <img src="images/Bag of Visual Words Pipeline.png" alt="BoVW Pipeline" class="project-img">
                                 <span class="image-caption">Confusion Matrix &amp; Classification Report</span>
                             </div>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                    <!-- Slide 2: Manual Histogram Matching -->
-                    <div class="carousel-slide">
-                        <h3>Histogram Matching: Arithmetic Approach</h3>
-                    <div class="project-grid" data-category="vision">                        
-                        <div class="project-details">                        
-                        <p><strong>System Context:</strong> Designed for air-gapped embedded vision devices where third-party libraries like `skimage` cannot be installed.</p>
-                        <p><strong>Engineering Solution:</strong> Built histogram specification from raw NumPy using `np.bincount`, cumulative distribution matching, and lookup table indexing.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Achieved library-grade tonal matching with O(1) pixel transformation speed and zero external framework dependencies.</p>
-                        <p class="tags">Technologies: Python • NumPy • Computer Vision • Algorithms</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision/manual-histogram-matching" target="_blank" rel="noopener">View Repository</a>
+                <!-- Project 2 -->
+                <article class="project-card">
+                    <h3>Histogram Matching: Arithmetic Approach</h3>
+                    <p class="project-subtitle">Designed for air-gapped embedded vision devices where third-party libraries like skimage cannot be installed.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Python</span><span class="tag">NumPy</span><span class="tag">Computer Vision</span>
+                    </div>
+                    <div class="project-actions">
+                        <a class="btn-repo" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision/manual-histogram-matching" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            View repository
+                        </a>
+                    </div>
+                    <div class="project-grid">
+                        <div class="project-details">
+                            <p><strong>Engineering Solution:</strong> Built histogram specification from raw NumPy using <code>np.bincount</code>, cumulative distribution matching, and lookup table indexing.</p>
+                            <p><strong>V&amp;V &amp; Impact:</strong> Achieved library-grade tonal matching with O(1) pixel transformation speed and zero external framework dependencies.</p>
                         </div>
                         <div class="project-media">
-                        <div class="code-box">
-                            <span class="visual-label">Manual CDF Lookup Construction</span>
-                            <pre><code>
-hist_a = np.bincount(image.ravel(), minlength=256)
+                            <div class="code-box">
+                                <span class="visual-label">Manual CDF Lookup Construction</span>
+        <pre><code>hist_a = np.bincount(image.ravel(), minlength=256)
 cdf_a  = np.cumsum(hist_a / hist_a.sum())
 
 hist_b = np.bincount(reference.ravel(), minlength=256)
@@ -494,68 +407,81 @@ for i in range(256):
     mapping[i] = np.argmin(diff)
 
 matched_image = mapping[image]</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/2.png" alt="Manual Histogram Logic" class="project-img">
-                            <span class="image-caption">CDF Matching &amp; Remapping Visual</span>
-                        </div>
+                            </div>
+                            <div class="image-wrapper">
+                                <img src="images/2.png" alt="Manual Histogram Logic" class="project-img">
+                                <span class="image-caption">CDF Matching &amp; Remapping Visual</span>
+                            </div>
                         </div>
                     </div>
-                    </div>
+                </article>
 
-                    <!-- Slide 3: EfficientNet Classifier -->
-                    <div class="carousel-slide">
-                        <h3>Part Classifier: Transfer Learning via EfficientNetV2</h3>
-                    <div class="project-grid" data-category="vision">                        
-                        <div class="project-details">                        
-                        <p><strong>System Context:</strong> Automated part recognition for high-mix production cells to ensure proper work-cell routing.</p>
-                        <p><strong>Engineering Solution:</strong> Developed a TensorFlow/Keras pipeline utilizing EfficientNetV2B0, partial layer unfreezing, data augmentation, and early stopping.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Delivered reliable part classification with high accuracy, packaged into a `.keras` deployment format.</p>
-                        <p class="tags">Technologies: TensorFlow • Keras • EfficientNet • Computer Vision</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision/object-classification" target="_blank" rel="noopener">View Repository</a>
+                <!-- Project 3 -->
+                <article class="project-card">
+                    <h3>Part Classifier: Transfer Learning via EfficientNetV2</h3>
+                    <p class="project-subtitle">Automated part recognition for high-mix production cells to ensure proper work-cell routing.</p>
+                    <div class="tech-tags">
+                        <span class="tag">TensorFlow</span><span class="tag">Keras</span><span class="tag">EfficientNet</span>
+                    </div>
+                    <div class="project-actions">
+                        <a class="btn-repo" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision/object-classification" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            View repository
+                        </a>
+                    </div>
+                    <div class="project-grid">
+                        <div class="project-details">
+                            <p><strong>Engineering Solution:</strong> Developed a TensorFlow/Keras pipeline utilizing EfficientNetV2B0, partial layer unfreezing, data augmentation, and early stopping.</p>
+                            <p><strong>V&amp;V &amp; Impact:</strong> Delivered reliable part classification with high accuracy, packaged into a `.keras` deployment format.</p>
                         </div>
                         <div class="project-media">
-                        <div class="code-box">
-                            <span class="visual-label">Fine-Tuned EfficientNet Architecture</span>
-                            <pre><code>
-base_model = EfficientNetV2B0(
-input_shape=(224, 224, 3), include_top=False,
-weights="imagenet", pooling="avg")
+                            <div class="code-box">
+                                <span class="visual-label">Fine-Tuned EfficientNet Architecture</span>
+        <pre><code>base_model = EfficientNetV2B0(
+    input_shape=(224, 224, 3), include_top=False,
+    weights="imagenet", pooling="avg"
+)
 for layer in base_model.layers[:-20]:
-layer.trainable = False
+    layer.trainable = False
 
 model = models.Sequential([
-data_augmentation,
-base_model,
-layers.Dense(256, activation="relu"),
-layers.Dropout(0.3),
-layers.Dense(3, activation="softmax")
-                            ])</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/output2.png" alt="Part Classification Metrics" class="project-img">
-                            <span class="image-caption">Confusion Matrix &amp; Training Loss</span>
-                        </div>
+    data_augmentation,
+    base_model,
+    layers.Dense(256, activation="relu"),
+    layers.Dropout(0.3),
+    layers.Dense(3, activation="softmax")
+])</code></pre>
+                            </div>
+                            <div class="image-wrapper">
+                                <img src="images/output2.png" alt="Part Classification Metrics" class="project-img">
+                                <span class="image-caption">Confusion Matrix &amp; Training Loss</span>
+                            </div>
                         </div>
                     </div>
-                    </div>
+                </article>
 
-                    <!-- Slide 4: ResNet Vehicle Classifier -->
-                    <div class="carousel-slide">
-                        <h3>Vehicle Image Classifier: Two-Stage Fine-Tuning with ResNet50</h3>
-                    <div class="project-grid" data-category="vision">                        
-                        <div class="project-details">                        
-                        <p><strong>System Context:</strong> Automated vehicle class tagging for logistical inspection points and quality tracking.</p>
-                        <p><strong>Engineering Solution:</strong> Implemented a 2-stage training strategy using ResNet50: initial head training at `1e-3` followed by partial backbone unfreezing at `1e-4` with learning rate reduction.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Achieved high precision across vehicle categories while minimizing overfitting on small datasets.</p>
-                        <p class="tags">Technologies: ResNet50 • TensorFlow • Python • Deep Learning</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision/vehicle-classification" target="_blank" rel="noopener">View Repository</a>
+                <!-- Project 4 -->
+                <article class="project-card">
+                    <h3>Vehicle Image Classifier: Two-Stage Fine-Tuning with ResNet50</h3>
+                    <p class="project-subtitle">Automated vehicle class tagging for logistical inspection points and quality tracking.</p>
+                    <div class="tech-tags">
+                        <span class="tag">ResNet50</span><span class="tag">TensorFlow</span><span class="tag">Deep Learning</span>
+                    </div>
+                    <div class="project-actions">
+                        <a class="btn-repo" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Machine_Vision/vehicle-classification" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            View repository
+                        </a>
+                    </div>
+                    <div class="project-grid">
+                        <div class="project-details">
+                            <p><strong>Engineering Solution:</strong> Implemented a 2-stage training strategy using ResNet50: initial head training at `1e-3` followed by partial backbone unfreezing at `1e-4` with learning rate reduction.</p>
+                            <p><strong>V&amp;V &amp; Impact:</strong> Achieved high precision across vehicle categories while minimizing overfitting on small datasets.</p>
                         </div>
                         <div class="project-media">
-                        <div class="code-box">
-                            <span class="visual-label">Two-Stage Fine-Tuning Strategy</span>
-                            <pre><code>
-# Stage 1: Frozen backbone
+                            <div class="code-box">
+                                <span class="visual-label">Two-Stage Fine-Tuning Strategy</span>
+        <pre><code># Stage 1: Frozen backbone
 base_model.trainable = False
 model.compile(optimizer=Adam(1e-3), loss="sparse_categorical_crossentropy")
 model.fit(train_ds, epochs=5)
@@ -567,112 +493,92 @@ for layer in base_model.layers[:-30]:
 
 model.compile(optimizer=Adam(1e-4), loss="sparse_categorical_crossentropy")
 model.fit(train_ds, epochs=30, callbacks=[ReduceLROnPlateau(factor=0.5)])</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/projects/vehicle-classification.jpg" alt="Vehicle Classification Model" class="project-img">
-                            <span class="image-caption">Validation Heatmap &amp; Learning Rate Curves</span>
-                        </div>
+                            </div>
+                            <div class="image-wrapper">
+                                <img src="images/projects/vehicle-classification.jpg" alt="Vehicle Classification Model" class="project-img">
+                                <span class="image-caption">Validation Heatmap &amp; Learning Rate Curves</span>
+                            </div>
                         </div>
                     </div>
-                    </div>
-
-                </div>
-                </div>
-
-                
+                </article>
             </div>
 
             <!-- ==========================================
                 4. INDUSTRIAL ML & ANALYTICS
                 ========================================== -->
-            <div class="carousel-block" data-category="ml">
-                <div class="carousel-controls">
-                <button class="carousel-btn" data-dir="-1" aria-label="Previous">&#8592;</button>
-                <div class="carousel-dots">
-                    <button class="carousel-dot active" aria-label="Slide 1"></button>
-                    <button class="carousel-dot" aria-label="Slide 2"></button>
-                    <button class="carousel-dot" aria-label="Slide 3"></button>
-                    <button class="carousel-dot" aria-label="Slide 4"></button>
-                    <button class="carousel-dot" aria-label="Slide 5"></button>
-                </div>
-                <button class="carousel-btn" data-dir="1" aria-label="Next">&#8594;</button>
-                <span class="carousel-counter">1 / 5</span>
-                </div>
-                <div class="carousel-wrapper">
-                <div class="carousel-track">
-
-                    <!-- Slide 1: PDF RAG bot -->
-                    <div class="carousel-slide">
-                        <h3>Retrieval Augmented Generation Engine</h3>
-                        <div class="model-screenshot-container">
-                            <video width="100%" height="auto" controls muted loop playsinline >
-                                <source src="https://github.com/Chizobawisdom/Portfolio/raw/refs/heads/main/docs/images/Screen%20Recording%202026-08-18%20at%2005.01.35.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                    <div class="project-grid" data-category="automation">                        
+            <div class="projects-container" data-category="ml">
+                
+                <!-- Project 1 -->
+                <article class="project-card">
+                    <h3>Retrieval Augmented Generation Engine</h3>
+                    <p class="project-subtitle">A RAG pipeline in raw Python, built without frameworks to demonstrate direct control over PDF ingestion, chunking, embedding, and grounded LLM generation.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Python</span><span class="tag">NumPy</span><span class="tag">sentence-transformers</span><span class="tag">Anthropic API</span><span class="tag">Streamlit</span>
+                    </div>
+                    <div class="project-actions">
+                        <a class="btn-repo" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation/pdf-rag-bot" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            View repository
+                        </a>
+                    </div>
+                    <div class="model-screenshot-container">
+                        <video width="100%" height="auto" controls muted loop playsinline>
+                            <source src="https://github.com/Chizobawisdom/Portfolio/raw/refs/heads/main/docs/images/Screen%20Recording%202026-08-18%20at%2005.01.35.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="project-grid">
                         <div class="project-details">
-                        <p><strong>System Context:</strong> This project implements a retrieval-augmented generation (RAG) pipeline in raw Python, built without frameworks (no LangChain/LlamaIndex) to demonstrate direct control over every stage: PDF ingestion, chunking, embedding, vector search, and grounded LLM generation. The system indexes a folder of PDF documents and answers natural-language questions using only retrieved passages, citing the exact source file and page for every claim.</p>
-                        <p><strong>Engineering Solution:</strong> Built a page-level PDF text extractor (pypdf) that preserves source traceability down to the page. Implemented a sliding-window chunking algorithm with configurable overlap to prevent context loss at chunk boundaries. Generated 384-dimensional embeddings locally via sentence-transformers (all-MiniLM-L6-v2), normalizing vectors so cosine similarity reduces to a single dot product across the full corpus. Wrote a NumPy-based similarity search (query &middot; chunk<sub>embeddings</sub><sup>T</sup>) ranking thousands of chunks without an external vector database. Engineered a grounding prompt that constrains the Claude API to answer strictly from retrieved context, with an explicit fallback response when no relevant passage exists and verified against out-of-scope queries to confirm the model does not hallucinate beyond the provided sources.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Validated retrieval quality by inspecting similarity-score decay across ranked results (0.71 &rarr; 0.61 &rarr; 0.47 on a known-relevant query), confirming the ranking carries real signal rather than near-uniform scores. Cross-checked generated answers against source PDF text to confirm citation accuracy. Deployed with a Streamlit front end for interactive querying. Demonstrates core competency in unstructured document processing, vector search fundamentals, and LLM grounding: directly applicable to industrial use cases such as searchable equipment manuals, SOP/compliance document Q&amp;A, and maintenance knowledge retrieval.</p>
-                        <p class="tags">Technologies: Python • NumPy • sentence-transformers • Anthropic API • Streamlit • RAG</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Utility_and_Automation/pdf-rag-bot" target="_blank" rel="noopener">View Repository</a>
+                            <p><strong>Engineering Solution:</strong> Built a page-level PDF text extractor that preserves source traceability. Generated 384-dimensional embeddings locally via sentence-transformers, normalizing vectors so cosine similarity reduces to a single dot product. Wrote a NumPy-based similarity search ranking thousands of chunks without an external vector database.</p>
+                            <p><strong>V&amp;V &amp; Impact:</strong> Validated retrieval quality by inspecting similarity-score decay across ranked results, confirming the ranking carries real signal rather than near-uniform scores. Deployed with a Streamlit front end for interactive querying.</p>
                         </div>
                         <div class="project-media">
-                        <div class="code-box">
-                            <span class="visual-label">Retrieval Block</span>
-                            <pre><code>
-def search_chunks(query, chunks, top_k=5):
-    query_embedding = model.encode(
-        [query], normalize_embeddings=True
-    )[0]
-    similarities = [
-        np.dot(query_embedding, chunk['embedding'])
-        for chunk in chunks
-    ]
-    top_indices = np.argsort(similarities)[-top_k:][::-1]
+                            <div class="code-box">
+                                <span class="visual-label">Retrieval Block</span>
+        <pre><code>def search_chunks(query, chunks, top_k=5):
+query_embedding = model.encode([query], normalize_embeddings=True)[0]
+similarities = [
+    np.dot(query_embedding, chunk['embedding'])
+    for chunk in chunks
+]
+top_indices = np.argsort(similarities)[-top_k:][::-1]
 
-    results = []
-    for i in top_indices:
-        result = chunks[i].copy()
-        result['score'] = float(similarities[i])
-        results.append(result)
-    return results
-
-def ask_claude(query, chunks, top_k=5):
-    retrieved_chunks = search_chunks(query, chunks, top_k=top_k)
-    prompt = build_prompt(query, retrieved_chunks)
-
-    response = client.messages.create(
-        model="claude-sonnet-4-5",
-        max_tokens=500,
-        messages=[{"role": "user", "content": prompt}]
-    )
-    return response.content[0].text, retrieved_chunks</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/RAGProcess.png" alt="RAG Workflow" class="project-img">
-                            <span class="image-caption">RAG Workflow based on README</span>
-                        </div>
+results = []
+for i in top_indices:
+    result = chunks[i].copy()
+    result['score'] = float(similarities[i])
+    results.append(result)
+return results</code></pre>
+                            </div>
+                            <div class="image-wrapper">
+                                <img src="images/RAGProcess.png" alt="RAG Workflow" class="project-img">
+                                <span class="image-caption">RAG Workflow based on README</span>
+                            </div>
                         </div>
                     </div>
-                    </div>
+                </article>
 
-                    <!-- Slide 2: Time Series Forecasting -->
-                    <div class="carousel-slide">
-                        <h3>Chronological Forecasting &amp; Time-Series Regression</h3>
-                    <div class="project-grid" data-category="ml">                        
-                        <div class="project-details">                        
-                        <p><strong>System Context:</strong> Demand and load forecasting model to support maintenance and operational planning.</p>
-                        <p><strong>Engineering Solution:</strong> Enforced rolling `TimeSeriesSplit` cross-validation to maintain chronological ordering and eliminate temporal data leakage.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Generated consistent 24-hour demand forecasts that effectively tracked seasonal peaks and operational cycles.</p>
-                        <p class="tags">Technologies: scikit-learn • TimeSeriesSplit • Python • ML</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering/bike-demand-forecasting" target="_blank" rel="noopener">View Repository</a>
+                <!-- Project 2 -->
+                <article class="project-card">
+                    <h3>Chronological Forecasting &amp; Time-Series Regression</h3>
+                    <p class="project-subtitle">Demand and load forecasting model to support maintenance and operational planning.</p>
+                    <div class="tech-tags">
+                        <span class="tag">scikit-learn</span><span class="tag">TimeSeriesSplit</span><span class="tag">ML</span>
+                    </div>
+                    <div class="project-actions">
+                        <a class="btn-repo" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering/bike-demand-forecasting" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            View repository
+                        </a>
+                    </div>
+                    <div class="project-grid">
+                        <div class="project-details">
+                            <p><strong>Engineering Solution:</strong> Enforced rolling <code>TimeSeriesSplit</code> cross-validation to maintain chronological ordering and eliminate temporal data leakage.</p>
+                            <p><strong>V&amp;V &amp; Impact:</strong> Generated consistent 24-hour demand forecasts that effectively tracked seasonal peaks and operational cycles.</p>
                         </div>
                         <div class="project-media">
-                        <div class="code-box">
-                            <span class="visual-label">Temporal Cross-Validation Loop</span>
-                            <pre><code>
-tscv = TimeSeriesSplit(n_splits=10)
+                            <div class="code-box">
+                                <span class="visual-label">Temporal Cross-Validation Loop</span>
+        <pre><code>tscv = TimeSeriesSplit(n_splits=10)
 for train_index, test_index in tscv.split(X):
     X_tr, X_val = X.iloc[train_index], X.iloc[test_index]
     y_tr, y_val = y.iloc[train_index], y.iloc[test_index]
@@ -680,29 +586,37 @@ for train_index, test_index in tscv.split(X):
     pipeline.fit(X_tr, y_tr)
     preds = pipeline.predict(X_val)
     scores.append(mean_squared_error(y_val, preds, squared=False))</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/Screenshot 2026-08-05 011425.png" alt="Time Series Plot" class="project-img">
-                            <span class="image-caption">Rolling Forecast vs. Observed Demand</span>
-                        </div>
+                            </div>
+                            <div class="image-wrapper">
+                                <img src="images/Screenshot 2026-08-05 011425.png" alt="Time Series Plot" class="project-img">
+                                <span class="image-caption">Rolling Forecast vs. Observed Demand</span>
+                            </div>
                         </div>
                     </div>
-                    </div>
+                </article>
 
-                    <!-- Slide 3: Statistical Process Control -->
-                    <div class="carousel-slide">
-                        <h3>Automated Statistical Process Control (SPC) & Quality Capability Engine</h3>
-                    <div class="project-grid" data-category="ml">                        
-                        <div class="project-details">                        
-                        <p><strong>System Context:</strong> Real-time anomaly and drift detection across thousands of continuous factory sensor streams replacing manual plotting with systemic statistical surveillance.</p>
-                        <p><strong>Engineering Solution:</strong> Built a pure NumPy/Pandas engine computing dynamic subgroup means (&#773;X) and ranges (R) using standard control constants (A<sub>2</sub>, D<sub>3</sub>, D<sub>4</sub>). Programmed all 8 Nelson Run Rules, implemented Page-Hinkley and CUSUM drift detectors for micro-shift identification, and computed short/long-term capability indices (<i>C</i><sub>p</sub>, <i>C</i><sub>pk</sub>, <i>P</i><sub>p</sub>, <i>P</i><sub>pk</sub>).</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> A diagnostic framework that runs across thousands of streaming nodes, auto-generating a master quality dashboard and flagging rule violations before defects occur, enabling predictive quality at scale.</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering/continuous-factory-process-control" target="_blank" rel="noopener">View Repository</a>
+                <!-- Project 3 -->
+                <article class="project-card">
+                    <h3>Automated Statistical Process Control (SPC) &amp; Quality Capability Engine</h3>
+                    <p class="project-subtitle">Real-time anomaly and drift detection across thousands of continuous factory sensor streams replacing manual plotting with systemic statistical surveillance.</p>
+                    <div class="tech-tags">
+                        <span class="tag">NumPy</span><span class="tag">Pandas</span><span class="tag">Statistics</span>
+                    </div>
+                    <div class="project-actions">
+                        <a class="btn-repo" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering/continuous-factory-process-control" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            View repository
+                        </a>
+                    </div>
+                    <div class="project-grid">
+                        <div class="project-details">
+                            <p><strong>Engineering Solution:</strong> Built a pure NumPy/Pandas engine computing dynamic subgroup means (X̄) and ranges (R) using standard control constants (A₂, D₃, D₄). Programmed all 8 Nelson Run Rules, implemented Page-Hinkley and CUSUM drift detectors, and computed short/long-term capability indices (C<sub>p</sub>, C<sub>pk</sub>, P<sub>p</sub>, P<sub>pk</sub>).</p>
+                            <p><strong>V&amp;V &amp; Impact:</strong> A diagnostic framework that runs across thousands of streaming nodes, auto-generating a master quality dashboard and flagging rule violations before defects occur, enabling predictive quality at scale.</p>
                         </div>
                         <div class="project-media">
-                        <div class="code-box">
-                        <span class="visual-label">Capability & Limit Formulations</span>
-                        <pre><code># Process Variance Subgroup Logic
+                            <div class="code-box">
+                                <span class="visual-label">Capability &amp; Limit Formulations</span>
+        <pre><code># Process Variance Subgroup Logic
 def subgroup_stats(subgroups: np.ndarray):
     xbar = subgroups.mean(axis=1)
     R = subgroups.max(axis=1) - subgroups.min(axis=1)
@@ -712,41 +626,47 @@ def subgroup_stats(subgroups: np.ndarray):
 Cpos = max(0.0, Cpos + zi - k)
 Cneg = min(0.0, Cneg + zi + k)
 if Cpos > h: ap.append(i); Cpos = 0.0</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/Xbar.png" alt="X Bar for DPC" class="project-img">
-                            <span class="image-caption">NA</span>
-                        </div>
+                            </div>
+                            <div class="image-wrapper">
+                                <img src="images/Xbar.png" alt="X Bar for DPC" class="project-img">
+                            </div>
                         </div>
                     </div>
-                    </div>
+                </article>
 
-                    <!-- Slide 4: NLP to SQL -->
-                    <div class="carousel-slide">
-                        <h3>Agentic NLP-to-SQL Pipeline for the Manufacturing Database</h3>
-                        <div class="model-screenshot-container">
-                            <video width="100%" height="auto" controls muted loop playsinline>
-                                <source src="https://github.com/Chizobawisdom/Portfolio/raw/refs/heads/main/docs/images/demo%20(1).mp4" type="video/mp4">
-                            </video>
-                        </div>
-                    <div class="project-grid" data-category="ml">
+                <!-- Project 4 -->
+                <article class="project-card">
+                    <h3>Agentic NLP-to-SQL Pipeline for the Manufacturing Database</h3>
+                    <p class="project-subtitle">A multi-stage AI pipeline that translates natural language questions into executable SQL queries over a 3.2 GB production database.</p>
+                    <div class="tech-tags">
+                        <span class="tag">LangGraph</span><span class="tag">Docker</span><span class="tag">Anthropic</span><span class="tag">SQL</span><span class="tag">NLP</span>
+                    </div>
+                    <div class="project-actions">
+                        <a class="btn-repo" href="https://github.com/Chizobawisdom/Group_8_Intelligentsystems_Casestudy.git" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            View repository
+                        </a>
+                    </div>
+                    <div class="model-screenshot-container">
+                        <video width="100%" height="auto" controls muted loop playsinline>
+                            <source src="https://github.com/Chizobawisdom/Portfolio/raw/refs/heads/main/docs/images/demo%20(1).mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="project-grid">
                         <div class="project-details">
-                        <p><strong>System Context:</strong> Factory workers and managers require fast access to complex production data (e.g., WIP, First Pass Yield, cycle times) to identify bottlenecks. However, the data resides in a relational MariaDB with over 3.2 GB of production data and complex relationships. This project implements a multi-stage AI pipeline that translates natural language questions into executable SQL queries.</p>
-                        <p><strong>Engineering Solution:</strong> 
+                            <p><strong>Engineering Solution:</strong></p>
                             <ul>
-                                <li>Dockerized Infrastructure: Setup of an isolated, containerized environment (MariaDB, Python App, Streamlit UI) for secure processing of large data volumes without impacting live production systems.</li>
-                                <li>Baseline vs. Agentic Workflow: Development of a baseline (single LLM prompt) and an agent (self-correction loop). The agent uses the database as a tool to detect syntax errors in generated SQL queries, feed them back to the LLM, and correct them autonomously.</li>
-                                <li>Schema-Aware Prompting: Dynamic extraction of the database schema (including sample data) via SQLAlchemy to maximize the LLM's context and minimize hallucinations.</li>
-                                <li>Automated Evaluation Pipeline: Implementation of an evaluator that executes the generated queries against "Gold SQL" and measures Execution Accuracy.</li>
-                            </ul></p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> The pipeline was successfully validated in a Docker environment. Through its self-correction loop, the agent prevented hard pipeline crashes caused by syntax errors (e.g., from chatty LLM output) and improved robustness compared to the baseline. Evaluation on a benchmark dataset yielded an Execution Accuracy of 73.68% for both systems, highlighting that semantic accuracy (business logic) is a greater hurdle in the NLP-to-SQL domain than pure syntax. The system provides an interactive Streamlit dashboard for real-time queries and demonstrates the seamless integration of Large Language Models into industrial database ecosystems.</p>
-                        <p class="tags">Technologies: LangGraph • Docker • Python • Anthropic • SQL • NLP</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Group_8_Intelligentsystems_Casestudy.git" target="_blank" rel="noopener">View Repository</a>
+                                <li>Dockerized Infrastructure: Setup of an isolated, containerized environment (MariaDB, Python App, Streamlit UI).</li>
+                                <li>Baseline vs. Agentic Workflow: Development of an agent (self-correction loop) that uses the database as a tool to detect syntax errors, feed them back to the LLM, and correct them autonomously.</li>
+                                <li>Schema-Aware Prompting: Dynamic extraction of the database schema via SQLAlchemy.</li>
+                                <li>Automated Evaluation: Executes queries against "Gold SQL" to measure Execution Accuracy.</li>
+                            </ul>
+                            <p><strong>V&amp;V &amp; Impact:</strong> The agent prevented hard pipeline crashes caused by syntax errors and improved robustness compared to the baseline. Evaluation yielded an Execution Accuracy of 73.68% for both systems, highlighting that semantic accuracy is a greater hurdle than pure syntax.</p>
                         </div>
                         <div class="project-media">
-                        <div class="code-box">
-                        <span class="visual-label">Correction Logic</span>
-                        <pre><code># Agentic Self-Correction Loop
+                            <div class="code-box">
+                                <span class="visual-label">Correction Logic</span>
+        <pre><code># Agentic Self-Correction Loop
 success, error_msg = execute_sql(engine, sql_query)
 if not success:
     print(f"First attempt failed: {error_msg}")
@@ -761,29 +681,36 @@ if not success:
     success, error_msg = execute_sql(engine, sql_query)
     if success:
         print("Agent successfully corrected the SQL!")</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/Agentischer NLP-zu-SQL-Workflow.png" alt="Workflow_Diagram" class="project-img">
-                            <span class="image-caption">NA</span>
-                        </div>
+                            </div>
+                            <div class="image-wrapper">
+                                <img src="images/Agentischer NLP-zu-SQL-Workflow.png" alt="Workflow Diagram" class="project-img">
+                            </div>
                         </div>
                     </div>
-                    </div>
+                </article>
 
-                    <!-- Slide 5: Time Series Forecasting -->
-                    <div class="carousel-slide">
-                        <h3>Advanced Industrial Defect Reduction Pipeline</h3>
-                    <div class="project-grid" data-category="ml">                        
-                        <div class="project-details">                        
-                        <p><strong>System Context:</strong> Diagnosing structural machinery fault types from high-frequency spectral signals, plagued by severe class imbalance and the curse of dimensionality in FFT-transformed features.</p>
-                        <p><strong>Engineering Solution:</strong> Stabilized features with <code>StandardScaler</code> and applied <code>SMOTE</code> to balance minority fault classes. Isolated FFT columns for targeted PCA, reducing spectral noise into 10 dense orthogonal variance components, then horizontally stacked (<code>np.hstack</code>) with non-FFT features. Executed a 5-fold <code>RandomizedSearchCV</code> over <code>LGBMClassifier</code> hyperparameters to optimize multi-class boundaries.</p>
-                        <p><strong>V&amp;V &amp; Impact:</strong> Deployed a sub-millisecond anomaly mapping pipeline for predictive maintenance shop-floors, delivering detailed confusion matrices and multi-class reports suitable for production integration.</p>
-                        <a class="button-link" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering/industrial-defect-classification" target="_blank" rel="noopener">View Repository</a>
+                <!-- Project 5 -->
+                <article class="project-card">
+                    <h3>Advanced Industrial Defect Reduction Pipeline</h3>
+                    <p class="project-subtitle">Diagnosing structural machinery fault types from high-frequency spectral signals, plagued by severe class imbalance.</p>
+                    <div class="tech-tags">
+                        <span class="tag">LightGBM</span><span class="tag">PCA</span><span class="tag">SMOTE</span><span class="tag">scikit-learn</span>
+                    </div>
+                    <div class="project-actions">
+                        <a class="btn-repo" href="https://github.com/Chizobawisdom/Portfolio/tree/main/Industrial_AI_and_Quality_Engineering/industrial-defect-classification" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            View repository
+                        </a>
+                    </div>
+                    <div class="project-grid">
+                        <div class="project-details">
+                            <p><strong>Engineering Solution:</strong> Stabilized features with <code>StandardScaler</code> and applied <code>SMOTE</code> to balance minority fault classes. Isolated FFT columns for targeted PCA, reducing spectral noise into 10 dense orthogonal variance components, then horizontally stacked (<code>np.hstack</code>) with non-FFT features. Executed a 5-fold <code>RandomizedSearchCV</code> over <code>LGBMClassifier</code> hyperparameters.</p>
+                            <p><strong>V&amp;V &amp; Impact:</strong> Deployed a sub-millisecond anomaly mapping pipeline for predictive maintenance shop-floors, delivering detailed confusion matrices and multi-class reports suitable for production integration.</p>
                         </div>
                         <div class="project-media">
-                        <div class="code-box">
-                        <span class="visual-label">Spectral PCA & Ensemble Execution</span>
-                        <pre><code># Isolated Spectral Decomposition
+                            <div class="code-box">
+                                <span class="visual-label">Spectral PCA &amp; Ensemble Execution</span>
+        <pre><code># Isolated Spectral Decomposition
 pca = PCA(n_components=10)
 X_train_fft = pca.fit_transform(
     X_train_bal[:, [X.columns.get_loc(c) for c in fft_cols]]
@@ -795,22 +722,15 @@ search = RandomizedSearchCV(
     model, param_dist, n_iter=20, scoring='f1_macro', cv=5
 )
 search.fit(X_train_final, y_train_bal)</code></pre>
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/projects/time-series.jpg" alt="Time Series Plot" class="project-img">
-                            <span class="image-caption">NA</span>
-                        </div>
+                            </div>
+                            <div class="image-wrapper">
+                                <img src="images/projects/time-series.jpg" alt="Time Series Plot" class="project-img">
+                            </div>
                         </div>
                     </div>
-                    </div>
-
-                </div>
-                </div>
-
-                
-            </div>          
-
-            </section>
+                </article>
+            </div>
+        </section>
 
         <!-- ===== FOOTER ===== -->
         <footer>
