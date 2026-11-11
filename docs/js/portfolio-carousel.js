@@ -28,47 +28,64 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /* ==========================================
-       2. STICKY NAV SCROLL SPY
+       2. STICKY NAV SCROLL SPY & BACK TO TOP BUTTON
        ========================================== */
     const sections = document.querySelectorAll("section[id]");
     const navLinks = document.querySelectorAll("nav a");
+    const mybutton = document.getElementById("myBtn"); // Back to top button
     let isScrolling = false;
 
-    const updateActiveLink = () => {
+    const handleScroll = () => {
+        // --- A. Handle Navbar Highlighting ---
         let current = "";
-        
-        // Find the current section
         sections.forEach((section) => {
             const sectionTop = section.offsetTop;
-            // 150px offset accounts for the sticky navbar height
             if (window.scrollY >= sectionTop - 150) {
                 current = section.getAttribute("id");
             }
         });
 
-        // Update the navigation links
         navLinks.forEach((link) => {
             link.classList.remove("active");
-            
-            // If the link matches the current section, make it active
-            // Or if we are at the very top, make "Home" active
             if (link.getAttribute("href") === `#${current}` || 
                (window.scrollY === 0 && (link.getAttribute("href") === "#" || link.getAttribute("href") === "#home"))) {
                 link.classList.add("active");
             }
         });
+
+        // --- B. Handle Back to Top Button Visibility ---
+        if (mybutton) {
+            const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+            if (scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
         
         isScrolling = false;
     };
 
+    // Listen for scroll events
     window.addEventListener("scroll", () => {
-        // Use requestAnimationFrame for better scrolling performance
         if (!isScrolling) {
-            window.requestAnimationFrame(updateActiveLink);
+            window.requestAnimationFrame(handleScroll);
             isScrolling = true;
         }
     });
     
-    // Run once on load to set the initial active state
-    updateActiveLink();
+    // Run once on load to set the initial states
+    handleScroll();
+
+    /* ==========================================
+       3. BACK TO TOP CLICK FUNCTION
+       ========================================== */
+    // We attach this to the window object so the HTML 'onclick="topFunction()"' can find it
+    window.topFunction = () => {
+        // Using smooth behavior for a nicer scroll
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    };
 });
