@@ -1004,19 +1004,48 @@ section[id] {
 #myBtn {
   display: none; /* Hidden by default */
   position: fixed; /* Fixed/sticky position */
-  bottom: 20px; /* Place the button at the bottom of the page */
-  right: 30px; /* Place the button 30px from the right */
-  z-index: 99; /* Make sure it does not overlap */
-  border: none; /* Remove borders */
-  outline: none; /* Remove outline */
-  background-color: #141418; /* Set a background color */
-  color: #ffffff; /* Text color */
-  cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 10px; /* Some padding */
-  border-radius: 10px; /* Rounded corners */
-  font-size: 15px; /* Increase font size */
+  
+  /* Positioning */
+  bottom: 20px; 
+  right: 30px; 
+  
+  /* Safe area for modern iPhones (prevents it hiding behind the home swipe bar) */
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px)); 
+  
+  z-index: 99; 
+  border: none; 
+  outline: none; 
+  background-color: #141418; 
+  color: #ffffff; 
+  cursor: pointer; 
+  padding: 10px; 
+  border-radius: 10px; 
+  font-size: 15px; 
+  
+  /* Ensure it's at least 44x44px for touch targets */
+  min-width: 44px;
+  min-height: 44px;
+  
+  /* Smooth fade-in transition (handled by JS setting display to block) */
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 #myBtn:hover {
-  background-color: #21262d; /* Add a dark-grey background on hover */
+  background-color: #21262d;
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* =========================================
+   Responsive adjustments for smaller screens 
+   ========================================= */
+@media (max-width: 768px) {
+  #myBtn {
+    bottom: 15px;
+    right: 15px;
+    padding: 8px 10px;
+    font-size: 14px;
+    /* Slightly smaller on mobile */
+    min-width: 40px;
+    min-height: 40px;
+  }
 }
