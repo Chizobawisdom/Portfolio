@@ -914,6 +914,11 @@ section[id] {
     padding: 2.5rem;
 }
 
+.project-card:hover {
+    transform: translateY(-2px);
+    border-color: #6c757d; /* Cyan glow on hover */
+}
+
 .project-card h3 {
     font-size: 1.6rem;
     color: #ffffff;
