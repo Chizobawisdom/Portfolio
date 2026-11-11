@@ -1019,6 +1019,7 @@ section[id] {
   color: #ffffff; 
   cursor: pointer; 
   padding: 10px; 
+  border: 1px solid #30363d;
   border-radius: 10px; 
   font-size: 15px; 
   
