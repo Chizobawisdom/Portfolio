@@ -45,13 +45,13 @@ body {
   display: flex;
   flex-direction: column;
   padding: 3rem 0;
+  padding-top: 0;
   position: relative;
 }
 
 /* 3. Navigation Bar */
 .language-switch {
   position: absolute;
-  top: 3.25rem;
   right: 0;
   z-index: 10;
 }
@@ -62,9 +62,6 @@ nav:not(.language-switch) {
   align-items: center;
   gap: 1.75rem;
   width: 100%;
-  padding-bottom: 2rem;
-  margin-bottom: 4rem;
-  border-bottom: 1px solid var(--border-color);
 }
 
 nav a {
@@ -98,9 +95,23 @@ nav a.active {
   background-color: rgba(255, 255, 255, 0.03);
 }
 
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid #30363d;
+    display: flex;
+    justify-content: space-between; /* Pushes links left, DE button right */
+    align-items: center;
+    padding: 3rem 0;
+}
+
 /* 4. Name & Headline Section */
 .name-headline {
+  padding-top: 3rem;
   padding-bottom: 3.5rem;
+  padding-left: 2px;
   margin-bottom: 3.5rem;
   border-bottom: 1px solid var(--border-color);
 }
@@ -237,9 +248,6 @@ footer {
     padding: 2rem 0;
   }
   
-  .language-switch {
-    top: 2.1rem;
-  }
   
   .name-headline {
     padding-bottom: 2.5rem;
@@ -312,6 +320,14 @@ section a:hover {
   color: #ffffff;
   text-decoration: underline;
 }
+
+/* Apply this to all sections with an ID */
+section[id] {
+    /* Adjust this value based on the height of your navbar. 
+       80px to 100px is usually a safe bet. */
+    scroll-margin-top: 100px; 
+}
+
 /* --- Download Button --- */
 .btn-download {
   display: inline-flex;
