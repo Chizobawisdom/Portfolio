@@ -912,11 +912,11 @@ if Cpos > h: ap.append(i); Cpos = 0.0</code></pre>
                             <p><strong>Engineering-Lösung:</strong></p>
                             <ul>
                                 <li>Dockerisierte Infrastruktur: Einrichtung einer isolierten, containerisierten Umgebung (MariaDB, Python-App, Streamlit-UI).</li>
-                                <li>Baseline vs. agentischer Workflow: Entwicklung eines Agenten (Selbstkorrektur-Schleife), der die Datenbank als Werkzeug nutzt, um Syntaxfehler zu erkennen, sie an das LLM zurückzuführen und sie autonom zu korrigieren.</li>
+                                <li>Baseline vs. agentischer Workflow: Entwicklung eines Multi-Agenten (Selbstkorrektur-Schleife), der die Datenbank als Werkzeug nutzt, um Syntaxfehler zu erkennen, sie an das LLM zurückzuführen und sie autonom zu korrigieren.</li>
                                 <li>Schema-bewusstes Prompting: Dynamische Extraktion des Datenbankschemas über SQLAlchemy.</li>
                                 <li>Automatisierte Evaluierung: Führt Abfragen gegen "Gold SQL" aus, um die Ausführungsgenauigkeit zu messen.</li>
                             </ul>
-                            <p><strong>V&amp;V &amp; Auswirkung:</strong> Der Agent verhinderte harte Pipeline-Abstürze durch Syntaxfehler und verbesserte die Robustheit im Vergleich zur Baseline. Die Evaluierung ergab eine Ausführungsgenauigkeit von 73,68 % für beide Systeme, was verdeutlicht, dass semantische Genauigkeit eine größere Hürde darstellt als reine Syntax.</p>
+                            <p><strong>V&amp;V &amp; Auswirkung:</strong> Der Agent verhinderte harte Pipeline-Abstürze durch Syntaxfehler und verbesserte die Robustheit im Vergleich zur Baseline. Die Evaluierung ergab eine Ausführungsgenauigkeit von 73,68 % als baseline und 85% mit Multi-agenten, was verdeutlicht, dass semantische Genauigkeit eine größere Hürde darstellt als reine Syntax.</p>
                         </div>
                         <div class="project-media">
                             <div class="code-box">
