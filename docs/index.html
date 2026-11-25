@@ -856,8 +856,8 @@ for train_index, test_index in tscv.split(X):
                     </div>
                     <div class="project-grid">
                         <div class="project-details">
-                            <p><strong>Engineering Solution:</strong> Built a pure NumPy/Pandas engine computing dynamic subgroup means (X̄) and ranges (R) using standard control constants (A₂, D₃, D₄). Programmed all 8 Nelson Run Rules, implemented Page-Hinkley and CUSUM drift detectors, and computed short/long-term capability indices (C<sub>p</sub>, C<sub>pk</sub>, P<sub>p</sub>, P<sub>pk</sub>).</p>
-                            <p><strong>V&amp;V &amp; Impact:</strong> A diagnostic framework that runs across thousands of streaming nodes, auto-generating a master quality dashboard and flagging rule violations before defects occur, enabling predictive quality at scale.</p>
+                            <p><strong>Engineering Solution:</strong> Built a Python notebook for statistical process control using 14,088 timestamped records from a two-stage manufacturing line. For one measurement per stage, it fits a baseline on historical data, checks it on a separate time window, and replays later readings against fixed control limits. It accounts for gaps and suspect readings, logs three-sigma and CUSUM alerts, and annotates the first Stage 1 alert with an operator check.</p>
+                            <p><strong>V&amp;V &amp; Impact:</strong> Verified all eight Nelson rules against known test sequences. In simulation, CUSUM detected 98.6% of sustained ±0.5σ shifts within two minutes, compared with 51.8% for the three-sigma chart. Median detection delay fell from 50 to 23 seconds at a comparable false-alert rate. Both historical baselines remain provisional because too many readings crossed the control limits during qualification.</p>
                         </div>
                         <div class="project-media">
                             <div class="code-box">
@@ -874,7 +874,7 @@ Cneg = min(0.0, Cneg + zi + k)
 if Cpos > h: ap.append(i); Cpos = 0.0</code></pre>
                             </div>
                             <div class="image-wrapper">
-                                <img src="images/Xbar.png" alt="X Bar for DPC" class="project-img">
+                                <img src="images/spc_replay.png" alt="SPC Replay" class="project-img">
                             </div>
                         </div>
                     </div>

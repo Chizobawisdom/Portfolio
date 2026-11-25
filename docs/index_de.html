@@ -865,8 +865,8 @@ for train_index, test_index in tscv.split(X):
                     </div>
                     <div class="project-grid">
                         <div class="project-details">
-                            <p><strong>Engineering-Lösung:</strong> Entwickelte eine reine NumPy/Pandas-Engine zur Berechnung dynamischer Untergruppenmittelwerte (X̄) und Spannweiten (R) unter Verwendung von Standard-Regelkartenkonstanten (A₂, D₃, D₄). Programmierte alle 8 Nelson-Run-Rules, implementierte Page-Hinkley- und CUSUM-Drift-Detektoren und berechnete kurz-/langfristige Prozessfähigkeitsindizes (C<sub>p</sub>, C<sub>pk</sub>, P<sub>p</sub>, P<sub>pk</sub>).</p>
-                            <p><strong>V&amp;V &amp; Auswirkung:</strong> Ein Diagnose-Framework, das über Tausende von Streaming-Knoten läuft, automatisch ein Master-Qualitätsdashboard generiert und Regelverstöße meldet, bevor Defekte auftreten, was prädiktive Qualität im Maßstab ermöglicht.</p>
+                            <p><strong>Engineering-Lösung:</strong> Entwickelte ein Python-Notebook zur statistischen Prozessregelung mit 14.088 zeitgestempelten Datensätzen aus einer zweistufigen Fertigungslinie. Für je eine Messgröße pro Stufe ermittelt das Notebook eine Referenz aus historischen Daten, prüft sie in einem separaten Zeitfenster und wertet spätere Messwerte anhand fester Eingriffsgrenzen aus. Es berücksichtigt Datenlücken und auffällige Messwerte, protokolliert Drei-Sigma- und CUSUM-Alarme und zeigt beim ersten Alarm der Stufe 1, was das Bedienpersonal prüfen sollte.</p>
+                            <p><strong>V&amp;V &amp; Auswirkung:</strong> Alle acht Nelson-Regeln wurden anhand definierter Testsequenzen überprüft. In der Simulation erkannte CUSUM 98,6 % der anhaltenden Verschiebungen um ±0,5σ innerhalb von zwei Minuten. Die Drei-Sigma-Karte erkannte 51,8 %. Bei vergleichbarer Fehlalarmrate sank die mediane Erkennungszeit von 50 auf 23 Sekunden. Beide historischen Referenzen bleiben vorläufig, da bei der Prüfung zu viele Messwerte außerhalb der Eingriffsgrenzen lagen.</p>
                         </div>
                         <div class="project-media">
                             <div class="code-box">
@@ -883,7 +883,7 @@ Cneg = min(0.0, Cneg + zi + k)
 if Cpos > h: ap.append(i); Cpos = 0.0</code></pre>
                             </div>
                             <div class="image-wrapper">
-                                <img src="images/Xbar.png" alt="X Bar for DPC" class="project-img">
+                                <img src="images/spc_replay.png" alt="SPC Replay" class="project-img">
                             </div>
                         </div>
                     </div>
