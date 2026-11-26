@@ -311,7 +311,7 @@
                         <div class="project-media">
                             <div class="code-box">
                                 <span class="visual-label">Stochastic Machine Breakdown Logic</span>
-        <pre><code># Continuous Exponential MTBF/MTTR Process
+                                <pre><code># Continuous Exponential MTBF/MTTR Process
 def breakdown_process(env, station_name):
     mtbf = STATIONS[station_name]["mtbf"]
     mttr = STATIONS[station_name]["mttr"]
@@ -471,6 +471,73 @@ statCycleTime.add( root.systemTimeMeasure.mean() );</code></pre>
                 2. AUTOMATION & TOOLING
                 ========================================== -->
             <div class="projects-container" data-category="automation">
+                <!-- Project: Industrial Data Engine -->
+                <article class="project-card">
+                    <h3>Industrial Data Engine (Simulation to Streaming Analytics)</h3>
+                    <p class="project-subtitle">End-to-end Medallion data architecture simulating a power supply factory, streaming events via Kafka, and transforming them into live Grafana KPIs.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">SimPy</span>
+                        <span class="tag">Kafka</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">dbt Core</span>
+                        <span class="tag">Grafana</span>
+                        <span class="tag">Docker</span>
+                    </div>
+                    <div class="project-actions">
+                        <!-- Update the href with your actual GitHub repository link -->
+                        <a class="btn-repo" href="https://github.com/Chizobawisdom/industrial-data-engine" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            View repository
+                        </a>
+                    </div>
+                    <div class="model-screenshot-container">
+                        <!-- Replace with a screenshot of your Grafana dashboard -->
+                        <img src="images/grafana-dashboard.png" alt="Grafana Manufacturing Dashboard" style="width: 100%; border-radius: 8px;">
+                    </div>
+                    <div class="project-grid">
+                        <div class="project-details">
+                            <p><strong>System Context:</strong> Models a realistic manufacturing plant (Weibull breakdowns, conditional rework loops, scrap logic) using SimPy. Events are streamed through four Kafka topics into a PostgreSQL Bronze layer, transformed via dbt into Silver (typed tables) and Gold (business KPIs) layers, and visualized in Grafana. Includes strict device conservation validation.
+                            <br><br><strong>Data flow</strong><br>SimPy Simulation → Kafka (4 Topics) → Python Consumer → PostgreSQL (Bronze) → dbt Core (Silver/Gold) → Grafana</p>
+                            <p><strong>Engineering Solution:</strong></p>
+                            <ul>
+                                <li>Engineered a discrete-event simulation using SimPy with statistical distributions to model realistic machine behavior and routing.</li>
+                                <li>Built a strict data quality gate using Python set algebra to guarantee device conservation (Created = Packaged + Scrapped + WIP).</li>
+                                <li>Deployed a multi-topic Kafka cluster and a Python consumer with UUID-based idempotency to prevent duplicate database inserts.</li>
+                                <li>Modeled a Medallion architecture using dbt Core, transforming raw JSONB into clean, queryable analytics tables for Grafana.</li>
+                            </ul>
+                        </div>
+                        <div class="project-media">
+                            <div class="code-box">
+                                <span class="visual-label">Strict Device Conservation Validation (Python)</span>
+                                <pre><code>def validate_conservation(created_ids, packaged_ids, scrapped_ids, wip_ids):
+duplicate_outcomes = packaged_ids & scrapped_ids
+accounted_ids = packaged_ids | scrapped_ids | wip_ids
+
+missing_ids = created_ids - accounted_ids
+unexpected_ids = accounted_ids - created_ids
+invalid_wip = wip_ids & (packaged_ids | scrapped_ids)
+
+valid = not any([
+    duplicate_outcomes, 
+    missing_ids, 
+    unexpected_ids, 
+    invalid_wip
+])
+
+print(f"Result: {'PASS' if valid else 'FAIL'}")
+return valid</code></pre>
+                            </div>
+                            <div class="image-wrapper">
+                                <!-- Replace with a screenshot of your architecture diagram -->
+                                <img src="images/data-pipeline-architecture.png" alt="Kafka to Grafana Architecture" class="project-img">
+                                <span class="image-caption">Medallion Architecture (Kafka to Grafana)</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            
                 <!-- Project 1 -->
                 <article class="project-card">
                     <h3>PLC-to-Dashboard OEE Monitor</h3>
@@ -504,7 +571,7 @@ statCycleTime.add( root.systemTimeMeasure.mean() );</code></pre>
                         <div class="project-media">
                             <div class="code-box">
                                 <span class="visual-label">OEE Calculate Core</span>
-        <pre><code>final = readings[-1]
+                                <pre><code>final = readings[-1]
 cycle_count = final["cycle_count"]
 good_count = final["good_count"]
 
@@ -595,7 +662,7 @@ counter = await myobj.add_variable(idx, "Counter", 0)</code></pre>
                         <div class="project-media">
                             <div class="code-box">
                                 <span class="visual-label">Dense SIFT Pipeline</span>
-        <pre><code>def dense_keypoints(size=IMG_SIZE, step=STEP, kp_size=KP_SIZE):
+                                <pre><code>def dense_keypoints(size=IMG_SIZE, step=STEP, kp_size=KP_SIZE):
     half = kp_size // 2
     return [
         cv2.KeyPoint(float(x), float(y), kp_size)
@@ -780,7 +847,7 @@ model.fit(train_ds, epochs=30, callbacks=[ReduceLROnPlateau(factor=0.5)])</code>
                         <div class="project-media">
                             <div class="code-box">
                                 <span class="visual-label">Retrieval Block</span>
-        <pre><code>def search_chunks(query, chunks, top_k=5):
+                                <pre><code>def search_chunks(query, chunks, top_k=5):
 query_embedding = model.encode([query], normalize_embeddings=True)[0]
 similarities = [
     np.dot(query_embedding, chunk['embedding'])
